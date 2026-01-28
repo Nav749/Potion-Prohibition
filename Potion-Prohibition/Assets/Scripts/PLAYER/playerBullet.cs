@@ -4,6 +4,7 @@ public class playerBullet : MonoBehaviour
 {
     public float bulletScriptDamage;
     public float bulletLifetime;
+    private EnemyTest enemyL;
 
     private void Update()
     {
@@ -19,7 +20,10 @@ public class playerBullet : MonoBehaviour
     {
         if(other.GetComponent<EnemyTest>() != null)
         {
-            other.GetComponent<EnemyTest>().testEnemyHealth -= bulletScriptDamage;
+            enemyL = other.GetComponent<EnemyTest>();
+            enemyL.testEnemyHealth = enemyL.testEnemyHealth - bulletScriptDamage;
+            enemyL.isAggroed = true;
+
         }
         Destroy(gameObject);
     }
