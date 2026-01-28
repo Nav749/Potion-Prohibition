@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,56 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    #endregion
+
+    [SerializeField] GameObject playerGO;
+    public GameObject PlayerGO => playerGO;
+
+    private void Start()
+    {
+        StartCoroutine(LoadLevel(levelNames[0]));
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            currentLevelIndex++;
+            StartCoroutine(LoadLevel(levelNames[currentLevelIndex % levelNames.Length]));
+        }
+    }
+
+    #region SceneManagment
+
+    [SerializeField] private string[] levelNames;
+
+    bool isLoading = false;
+    string currentLevelName;
+    int currentLevelIndex = 0;
+
+    IEnumerator LoadLevel(string levelName)
+    {
+        isLoading = true;
+        playerGO.SetActive(false);
+
+        if (!string.IsNullOrEmpty(currentLevelName)) 
+        { 
+            AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
+            while(!asyncUnload.isDone) 
+                yield return null;
+        }
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
+        while (!asyncLoad.isDone)
+            yield return null;
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(levelName));
+        currentLevelName = levelName;
+
+        playerGO.SetActive(true);
+        isLoading = false;
     }
 
     #endregion

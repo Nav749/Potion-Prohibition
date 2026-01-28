@@ -89,7 +89,7 @@ public class MapGenerator : MonoBehaviour
         endRooms = new List<int>();
         Rooms = new List<int>();
 
-        VisitCell(113);
+        VisitCell(67);
 
         GenerateDungeon();
     }
@@ -131,11 +131,11 @@ public class MapGenerator : MonoBehaviour
         enemy1RoomIndex = RandomRoom();
         enemy2RoomIndex = RandomRoom();
         enemy3RoomIndex = RandomRoom();
-        portalRoomIndex = RandomRoom();
+        portalRoomIndex = PortalRoom();
         harvest1RoomIndex = RandomEndRoom();
         harvest2RoomIndex = RandomEndRoom();
 
-        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1) 
+        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || portalRoomIndex == -1) 
         {
             SetupDungeon();
             return;
@@ -162,7 +162,7 @@ public class MapGenerator : MonoBehaviour
                 Destroy(spawnedRooms[index].gameObject);
                 cell.SetRoomType(RoomType.Enemy);
             }
-            if (cell.index == 113)
+            if (cell.index == 67)
             {
                 cell.SetSpecialRoomSprite(start);
                 int index = spawnedCells.IndexOf(cell);
@@ -205,6 +205,22 @@ public class MapGenerator : MonoBehaviour
 
         return index;
     }
+
+    int PortalRoom()
+    {
+        if (nonEndRooms.Count == 0) return -1;
+
+        int randomRoom = Random.Range(0, nonEndRooms.Count);
+        int index = nonEndRooms[randomRoom];
+
+        if (index == 37 || index == 51 || index == 52 || index == 53 || index == 65 || index == 66 || index == 68 || index == 69 || index == 81 || index == 82 || index == 83 || index == 97) return -1;
+
+        nonEndRooms.RemoveAt(randomRoom);
+
+
+        return index;
+    }
+
 
     private int GetNeighbourCount(int index)
     {
