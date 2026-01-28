@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +28,7 @@ public class GameManager : MonoBehaviour
 
             DontDestroyOnLoad(gameObject);
         }
-        else if(instance != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -67,10 +66,10 @@ public class GameManager : MonoBehaviour
         isLoading = true;
         playerGO.SetActive(false);
 
-        if (!string.IsNullOrEmpty(currentLevelName)) 
-        { 
+        if (!string.IsNullOrEmpty(currentLevelName))
+        {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
-            while(!asyncUnload.isDone) 
+            while (!asyncUnload.isDone)
                 yield return null;
         }
 
@@ -80,6 +79,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(levelName));
         currentLevelName = levelName;
+
 
         playerGO.SetActive(true);
         isLoading = false;

@@ -1,9 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using UnityEditor.EditorTools;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -54,8 +51,6 @@ public class MapGenerator : MonoBehaviour
         cellSize = 2f;
         spawnedCells = new();
         spawnedRooms = new();
-
-        SetupDungeon();
     }
 
     // Update is called once per frame
@@ -135,7 +130,7 @@ public class MapGenerator : MonoBehaviour
         harvest1RoomIndex = RandomEndRoom();
         harvest2RoomIndex = RandomEndRoom();
 
-        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || portalRoomIndex == -1) 
+        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || portalRoomIndex == -1)
         {
             SetupDungeon();
             return;
@@ -246,7 +241,7 @@ public class MapGenerator : MonoBehaviour
     {
         int x = index % num;
         int y = index / num;
-        Vector3 position = new Vector3(x * cellSize,0, -y * cellSize);
+        Vector3 position = new Vector3(x * cellSize, 0, -y * cellSize);
 
         Cell newCell = Instantiate(cellPrefab, position, Quaternion.identity);
         newCell.value = 1;
