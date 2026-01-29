@@ -51,6 +51,8 @@ public class MapGenerator : MonoBehaviour
         cellSize = 2f;
         spawnedCells = new();
         spawnedRooms = new();
+
+        Invoke("SetupDungeon", 0.1f);
     }
 
     // Update is called once per frame
@@ -139,43 +141,51 @@ public class MapGenerator : MonoBehaviour
         UpdateSpecialRoomVisuals();
     }
 
+
     void UpdateSpecialRoomVisuals()
     {
-        foreach (var cell in spawnedCells)
+        for (int i = 0; i < spawnedCells.Count; i++)
         {
-            if (cell.index == harvest1RoomIndex || cell.index == harvest2RoomIndex)
             {
-                cell.SetSpecialRoomSprite(harvest);
-                int index = spawnedCells.IndexOf(cell);
-                Destroy(spawnedRooms[index].gameObject);
-                cell.SetRoomType(RoomType.Harvest);
-            }
-            if (cell.index == enemy1RoomIndex || cell.index == enemy2RoomIndex || cell.index == enemy3RoomIndex)
-            {
-                cell.SetSpecialRoomSprite(enemy);
-                int index = spawnedCells.IndexOf(cell);
-                Destroy(spawnedRooms[index].gameObject);
-                cell.SetRoomType(RoomType.Enemy);
-            }
-            if (cell.index == 67)
-            {
-                cell.SetSpecialRoomSprite(start);
-                int index = spawnedCells.IndexOf(cell);
-                Destroy(spawnedRooms[index].gameObject);
-                cell.SetRoomType(RoomType.Start);
-            }
-            if (cell.index == portalRoomIndex)
-            {
-                cell.SetSpecialRoomSprite(portal);
-                int index = spawnedCells.IndexOf(cell);
-                Destroy(spawnedRooms[index].gameObject);
-                cell.SetRoomType(RoomType.Portal);
-            }
+                if (spawnedCells[i].index == harvest1RoomIndex || spawnedCells[i].index == harvest2RoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(harvest);
+                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Harvest, i);
+                }
+                if (spawnedCells[i].index == enemy1RoomIndex || spawnedCells[i].index == enemy2RoomIndex || spawnedCells[i].index == enemy3RoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(enemy);
+                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Enemy, i);
+                }
+                if (spawnedCells[i].index == 67)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(start);
+                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Start, i);
+                }
+                if (spawnedCells[i].index == portalRoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(portal);
+                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Portal, i);
+                }
 
-            CheckNeighbour(cell);
-            cell.door();
+                CheckNeighbour(spawnedCells[i]);
+                spawnedCells[i].Door();
+            }
         }
     }
+    
 
     int RandomEndRoom()
     {

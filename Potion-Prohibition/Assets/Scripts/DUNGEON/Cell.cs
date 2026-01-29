@@ -75,13 +75,48 @@ public class Cell : MonoBehaviour
 
     }
 
+    public void SetRoomType(RoomType newRoomType, int index)
+    {
+        roomType = newRoomType;
+        switch (roomType)
+        {
+            case RoomType.Start:
+                room = staRooms[Random.Range(0, staRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Enemy:
+                room = eneRooms[Random.Range(0, eneRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Harvest:
+                room = harRooms[Random.Range(0, harRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Portal:
+                room = porRooms[Random.Range(0, porRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Regular:
+                room = regRooms[Random.Range(0, regRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+        }
+
+    }
+
     private void SpawnRoom(GameObject room)
     {
         GameObject Spawn = Instantiate(room, transform.position, Quaternion.identity);
         MapGenerator.instance.spawnedRooms.Add(Spawn);
     }
 
-    public void door()
+    private void SpawnRoom(GameObject room, int index)
+    {
+        GameObject Spawn = Instantiate(room, transform.position, Quaternion.identity);
+        MapGenerator.instance.spawnedRooms.Insert(index, Spawn);
+    }
+
+    public void Door()
     {
         if (north)
         {
