@@ -58,6 +58,7 @@ public class MapGenerator : MonoBehaviour
         spawnedPositions = new();
         spawnedStates = new();
         spawnedDoors = new();
+
         if (!GameManager.Instance.HasGenerated)
         {
             GameManager.Instance.SavedRooms.Clear();
@@ -71,15 +72,6 @@ public class MapGenerator : MonoBehaviour
             Invoke("SpawnGeneratedRoom", 0.1f);
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetupDungeon();
-        }
     }
 
     void SetupDungeon()

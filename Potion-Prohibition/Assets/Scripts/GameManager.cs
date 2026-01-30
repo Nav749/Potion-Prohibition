@@ -1,8 +1,10 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        levelsPassed = 0;
         StartCoroutine(LoadLevel(levelNames[0]));
         savedRooms = new();
         savedRoomPositions = new();
@@ -55,6 +58,14 @@ public class GameManager : MonoBehaviour
         {
             currentLevelIndex++;
             StartCoroutine(LoadLevel(levelNames[currentLevelIndex % levelNames.Length]));
+        }
+
+        UpdateDevView();
+
+        if (Input.GetKeyDown(KeyCode.P) && currentLevelName == "Kitchen")
+        {
+            levelsPassed++;
+            hasGenerated = false;
         }
     }
 
@@ -87,7 +98,7 @@ public class GameManager : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(levelName));
         currentLevelName = levelName;
 
-        if(currentLevelName == "Dungeon" && !hasGenerated)
+        if (currentLevelName == "Dungeon" && !hasGenerated)
             hasGenerated = true;
 
         playerGO.SetActive(true);
@@ -105,28 +116,42 @@ public class GameManager : MonoBehaviour
     public List<string> SavedRooms => savedRooms;
     public List<Vector3> SavedRoomPositions => savedRoomPositions;
     public List<bool[]> SavedDoors => savedDoors;
-    
+
     public void SaveRooms(List<string> roomsToSave, List<Vector3> positionsToSave, List<bool[]> doorsToSave)
     {
         savedRooms = roomsToSave;
         savedRoomPositions = positionsToSave;
         savedDoors = doorsToSave;
+        hasGenerated = true;
     }
 
     public void SpawnRooms()
     {
-        for(int i = 0; i < savedRooms.Count; i++)
+        for (int i = 0; i < savedRooms.Count; i++)
         {
             var room = Resources.Load("Models/TEST/TEST ROOMS/" + savedRooms[i]);
             Instantiate(room, savedRoomPositions[i], Quaternion.identity);
             GameObject cell = Instantiate(cellPrefab, savedRoomPositions[i], Quaternion.identity);
             bool[] doorsToSpawn = savedDoors[i];
-            for (int j = 0; j < doorsToSpawn.Length; j++) 
+            for (int j = 0; j < doorsToSpawn.Length; j++)
             {
                 GameObject door = cell.transform.GetChild(j).gameObject;
                 door.SetActive(!doorsToSpawn[j]);
             }
         }
+    }
+
+    #endregion
+
+    #region DevViewport
+
+    private int levelsPassed;
+    public int LevelsPassed => levelsPassed;
+    [SerializeField] Text levelPassedValue;
+
+    void UpdateDevView()
+    {
+        levelPassedValue.text = levelsPassed.ToString();
     }
 
     #endregion
