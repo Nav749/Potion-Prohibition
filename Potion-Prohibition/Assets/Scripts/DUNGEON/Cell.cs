@@ -108,12 +108,14 @@ public class Cell : MonoBehaviour
     {
         GameObject Spawn = Instantiate(room, transform.position, Quaternion.identity);
         MapGenerator.instance.spawnedRooms.Add(Spawn);
+        MapGenerator.instance.spawnedStates.Add(room.name);
     }
 
     private void SpawnRoom(GameObject room, int index)
     {
         GameObject Spawn = Instantiate(room, transform.position, Quaternion.identity);
         MapGenerator.instance.spawnedRooms.Insert(index, Spawn);
+        MapGenerator.instance.spawnedStates.Insert(index, room.name);
     }
 
     public void Door()

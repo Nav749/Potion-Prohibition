@@ -31,6 +31,8 @@ public class MapGenerator : MonoBehaviour
     private List<Cell> spawnedCells;
 
     public List<GameObject> spawnedRooms;
+    public List<Vector3> spawnedPositions;
+    public List<string> spawnedStates;
 
     public List<Cell> getSpawnedCells => spawnedCells;
 
@@ -51,8 +53,20 @@ public class MapGenerator : MonoBehaviour
         cellSize = 2f;
         spawnedCells = new();
         spawnedRooms = new();
+        spawnedPositions = new();
+        spawnedStates = new();
+        if (!GameManager.Instance.HasGenerated)
+        {
+            GameManager.Instance.SavedRooms.Clear();
+            GameManager.Instance.SavedRoomPositions.Clear();
+            Invoke("SetupDungeon", 0.1f);
+            GameManager.Instance.SaveRooms(spawnedStates, spawnedPositions);
+        }
+        else
+        {
+            Invoke("SpawnGeneratedRoom", 0.1f);
+        }
 
-        Invoke("SetupDungeon", 0.1f);
     }
 
     // Update is called once per frame
@@ -79,6 +93,7 @@ public class MapGenerator : MonoBehaviour
         }
 
         spawnedRooms.Clear();
+        spawnedStates.Clear();
 
         floorPlan = new int[num * num];
         floorPlanCount = default;
@@ -150,35 +165,37 @@ public class MapGenerator : MonoBehaviour
                 if (spawnedCells[i].index == harvest1RoomIndex || spawnedCells[i].index == harvest2RoomIndex)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(harvest);
-                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
                     Destroy(spawnedRooms[i].gameObject);
                     spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Harvest, i);
                 }
                 if (spawnedCells[i].index == enemy1RoomIndex || spawnedCells[i].index == enemy2RoomIndex || spawnedCells[i].index == enemy3RoomIndex)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(enemy);
-                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
                     Destroy(spawnedRooms[i].gameObject);
                     spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Enemy, i);
                 }
                 if (spawnedCells[i].index == 67)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(start);
-                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
                     Destroy(spawnedRooms[i].gameObject);
                     spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Start, i);
                 }
                 if (spawnedCells[i].index == portalRoomIndex)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(portal);
-                    //int index = spawnedCells.IndexOf(spawnedCells[i]);
                     Destroy(spawnedRooms[i].gameObject);
                     spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Portal, i);
                 }
+
+                spawnedPositions.Add(spawnedRooms[i].transform.position);
 
                 CheckNeighbour(spawnedCells[i]);
                 spawnedCells[i].Door();
@@ -269,4 +286,8 @@ public class MapGenerator : MonoBehaviour
         if (floorPlan[cell.index + 1] == 1) cell.west = true;
     }
 
+    void SpawnGeneratedRoom()
+    {
+        GameManager.Instance.SpawnRooms();
+    }
 }
