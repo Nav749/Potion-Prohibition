@@ -34,6 +34,8 @@ public class MapGenerator : MonoBehaviour
     public List<Vector3> spawnedPositions;
     public List<string> spawnedStates;
 
+    public List<bool[]> spawnedDoors;
+
     public List<Cell> getSpawnedCells => spawnedCells;
 
     [Header("Sprite References")]
@@ -55,12 +57,14 @@ public class MapGenerator : MonoBehaviour
         spawnedRooms = new();
         spawnedPositions = new();
         spawnedStates = new();
+        spawnedDoors = new();
         if (!GameManager.Instance.HasGenerated)
         {
             GameManager.Instance.SavedRooms.Clear();
             GameManager.Instance.SavedRoomPositions.Clear();
+            GameManager.Instance.SavedDoors.Clear();
             Invoke("SetupDungeon", 0.1f);
-            GameManager.Instance.SaveRooms(spawnedStates, spawnedPositions);
+            GameManager.Instance.SaveRooms(spawnedStates, spawnedPositions, spawnedDoors);
         }
         else
         {
@@ -94,6 +98,7 @@ public class MapGenerator : MonoBehaviour
 
         spawnedRooms.Clear();
         spawnedStates.Clear();
+        spawnedDoors.Clear();
 
         floorPlan = new int[num * num];
         floorPlanCount = default;
@@ -199,6 +204,7 @@ public class MapGenerator : MonoBehaviour
 
                 CheckNeighbour(spawnedCells[i]);
                 spawnedCells[i].Door();
+                AddDoors(spawnedCells[i]);
             }
         }
     }
@@ -284,6 +290,16 @@ public class MapGenerator : MonoBehaviour
         if (floorPlan[cell.index + num] == 1) cell.south = true;
         if (floorPlan[cell.index - 1] == 1) cell.east = true;
         if (floorPlan[cell.index + 1] == 1) cell.west = true;
+    }
+
+    private void AddDoors(Cell cell)
+    {
+        bool[] doorsToSave = new bool[4];
+        doorsToSave[0] = cell.north;
+        doorsToSave [1] = cell.south;
+        doorsToSave[2] = cell.east;
+        doorsToSave[3] = cell.west;
+        spawnedDoors.Add(doorsToSave);
     }
 
     void SpawnGeneratedRoom()

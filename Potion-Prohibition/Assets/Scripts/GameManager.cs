@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(LoadLevel(levelNames[0]));
+        savedRooms = new();
+        savedRoomPositions = new();
+        savedDoors = new();
     }
 
     private void Update()
@@ -94,16 +97,20 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region DungeonInfo
+    [SerializeField] GameObject cellPrefab;
 
     [SerializeField] List<string> savedRooms;
-    [SerializeField] private List<Vector3> savedRoomPositions;
+    [SerializeField] List<Vector3> savedRoomPositions;
+    [SerializeField] List<bool[]> savedDoors;
     public List<string> SavedRooms => savedRooms;
     public List<Vector3> SavedRoomPositions => savedRoomPositions;
+    public List<bool[]> SavedDoors => savedDoors;
     
-    public void SaveRooms(List<string> roomsToSave, List<Vector3> positionsToSave)
+    public void SaveRooms(List<string> roomsToSave, List<Vector3> positionsToSave, List<bool[]> doorsToSave)
     {
         savedRooms = roomsToSave;
         savedRoomPositions = positionsToSave;
+        savedDoors = doorsToSave;
     }
 
     public void SpawnRooms()
@@ -112,6 +119,13 @@ public class GameManager : MonoBehaviour
         {
             var room = Resources.Load("Models/TEST/TEST ROOMS/" + savedRooms[i]);
             Instantiate(room, savedRoomPositions[i], Quaternion.identity);
+            GameObject cell = Instantiate(cellPrefab, savedRoomPositions[i], Quaternion.identity);
+            bool[] doorsToSpawn = savedDoors[i];
+            for (int j = 0; j < doorsToSpawn.Length; j++) 
+            {
+                GameObject door = cell.transform.GetChild(j).gameObject;
+                door.SetActive(!doorsToSpawn[j]);
+            }
         }
     }
 
