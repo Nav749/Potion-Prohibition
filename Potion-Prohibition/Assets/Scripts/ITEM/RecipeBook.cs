@@ -33,4 +33,13 @@ public class RecipeBook : MonoBehaviour
         }
         return -1;
     }
+
+    public bool checkBook(Recipe recipe) {
+        for (int i = 0; i < recipes.Length; i++) {
+            if (recipe == recipes[i]) { 
+                return true;
+            }
+        }
+        return false;
+    }
 }
