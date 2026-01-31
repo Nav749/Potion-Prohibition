@@ -9,7 +9,7 @@ public class EnemyAggroRange : MonoBehaviour
         if (enemyToTrigger.GetComponent<EnemyTest>() != null && other.GetComponent<playerMovement>() != null)
         {
             enemyAggro = enemyToTrigger.GetComponent<EnemyTest>();
-            enemyAggro.isAggroed = true;
+            enemyAggro.rangedIsAggroed = true;
         }
     }
 

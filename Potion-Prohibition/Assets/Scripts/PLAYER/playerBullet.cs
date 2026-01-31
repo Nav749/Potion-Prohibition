@@ -21,8 +21,8 @@ public class playerBullet : MonoBehaviour
         if(other.GetComponent<EnemyTest>() != null)
         {
             enemyL = other.GetComponent<EnemyTest>();
-            enemyL.testEnemyHealth = enemyL.testEnemyHealth - bulletScriptDamage;
-            enemyL.isAggroed = true;
+            enemyL.rangedEnemyHealth = enemyL.rangedEnemyHealth - bulletScriptDamage;
+            enemyL.rangedIsAggroed = true;
 
         }
         Destroy(gameObject);
