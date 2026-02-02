@@ -1,5 +1,3 @@
-using System.Numerics;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -26,8 +24,8 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameManeger.updateInventroy(item.getID());
-        
+        // gameManeger.updateInventroy(item.getID());
+
     }
 
 }
