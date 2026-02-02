@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         savedRooms = new();
         savedRoomPositions = new();
         savedDoors = new();
+        inventory.createInventory(itemList);
     }
 
     private void Update()
@@ -159,4 +160,10 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+
+    #region Inventory
+    public readonly Inventory inventory = new Inventory();
+    [SerializeField] Item[] itemList;
+
+    #endregion
 }

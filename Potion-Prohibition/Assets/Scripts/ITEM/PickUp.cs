@@ -3,7 +3,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     private SpriteRenderer image;
-    //private GameManegerTK gameManeger;
+    private GameManager gameManager;
     [SerializeField] private Item item;
     private GameObject player;
 
@@ -11,7 +11,7 @@ public class PickUp : MonoBehaviour
     void Start()
     {
         image = GetComponent<SpriteRenderer>();
-        //gameManeger = GameObject.Find("GameManeger").GetComponent<GameManegerTK>();
+        gameManager = GameObject.Find("GameManeger").GetComponent<GameManager>();
         image.sprite = item.getImage();
         player = GameObject.Find("Player");
     }
@@ -24,7 +24,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // gameManeger.updateInventroy(item.getID());
+        gameManager.inventory.incrmentIndex(item.getID());
 
     }
 
