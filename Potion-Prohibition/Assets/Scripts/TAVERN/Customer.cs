@@ -1,6 +1,6 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
@@ -39,7 +39,7 @@ public class Customer : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach(char c in lines[textIndex].ToCharArray())
+        foreach (char c in lines[textIndex].ToCharArray())
         {
             textComponet.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -48,11 +48,11 @@ public class Customer : MonoBehaviour
 
     void NextLine()
     {
-        if(textIndex < lines.Length - 1)
+        if (textIndex < lines.Length - 1)
         {
             textIndex++;
             textComponet.text = string.Empty;
-            StartCoroutine (TypeLine());
+            StartCoroutine(TypeLine());
         }
         else
         {
