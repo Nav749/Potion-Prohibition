@@ -9,7 +9,6 @@ public class MapGenerator : MonoBehaviour
     public int[] getFloorPlan => floorPlan;
 
     public int num;
-    private int numOfEndRooms = 2;
 
     private int floorPlanCount;
     private int minRooms;
@@ -52,7 +51,7 @@ public class MapGenerator : MonoBehaviour
         instance = this;
         minRooms = 14;
         maxRooms = 30;
-        cellSize = 100f;
+        cellSize = 64f;
         spawnedCells = new();
         spawnedRooms = new();
         spawnedPositions = new();

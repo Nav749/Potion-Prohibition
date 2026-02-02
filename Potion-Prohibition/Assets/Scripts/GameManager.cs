@@ -105,6 +105,15 @@ public class GameManager : MonoBehaviour
         if (currentLevelName == "Dungeon" && !hasGenerated)
             hasGenerated = true;
 
+        if(currentLevelName == "Kitchen")
+        {
+            playerGO.transform.position = Vector3.zero;
+        }
+        if(currentLevelName == "Dungeon")
+        {
+            playerGO.transform.position = new Vector3(480, 5, -235);
+        }
+
         playerGO.SetActive(true);
         isLoading = false;
     }

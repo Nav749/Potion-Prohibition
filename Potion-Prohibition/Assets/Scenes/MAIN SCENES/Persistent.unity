@@ -267,6 +267,7 @@ MonoBehaviour:
   savedRooms: []
   savedRoomPositions: []
   levelPassedValue: {fileID: 207122518}
+  itemList: []
 --- !u!4 &660065408
 Transform:
   m_ObjectHideFlags: 0
@@ -569,18 +570,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.623295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.397972
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
@@ -615,6 +631,11 @@ PrefabInstance:
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
