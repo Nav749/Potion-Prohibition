@@ -1,7 +1,5 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -56,8 +54,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            currentLevelIndex++;
-            StartCoroutine(LoadLevel(levelNames[currentLevelIndex % levelNames.Length]));
+            LoadLevels();
         }
 
         UpdateDevView();
@@ -78,6 +75,12 @@ public class GameManager : MonoBehaviour
     int currentLevelIndex = 0;
     bool hasGenerated = false;
     public bool HasGenerated => hasGenerated;
+
+    public void LoadLevels()
+    {
+        currentLevelIndex++;
+        StartCoroutine(LoadLevel(levelNames[currentLevelIndex % levelNames.Length]));
+    }
 
     IEnumerator LoadLevel(string levelName)
     {
