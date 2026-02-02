@@ -1,40 +1,38 @@
-using System.ComponentModel;
-using System.Diagnostics.Contracts;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName = "Item", menuName = "Scriptavle Objects/Item")]
+public class Item : ScriptableObject
 {
 
-    [SerializeField] private int ID;
+    private int ID = -1;
     [SerializeField] private new string name;
     [SerializeField] private string description;
     [SerializeField] private Sprite image;
     [SerializeField] private Sprite icon;
     [SerializeField] private int amount;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public int getID()
     {
         return ID;
     }
 
-    
-    // Name comands
-    public string getName() 
+    public void SetID(int input)
     {
-        if (name == null) 
+        if (ID == -1)
+        {
+            ID = input;
+        }
+        else
+        {
+            throw new System.Exception("ID already set");
+        }
+    }
+
+    // Name comands
+    public string getName()
+    {
+        if (name == null)
         {
             Debug.Log("Name value not set");
         }
@@ -52,7 +50,8 @@ public class Item : MonoBehaviour
     }
 
     // image comands
-    public Sprite getImage() {
+    public Sprite getImage()
+    {
         if (image == null)
         {
             Debug.Log("Image not set");
@@ -71,19 +70,24 @@ public class Item : MonoBehaviour
     }
 
     // amount comands
-    public void incrmentAmount() 
+    public int getAmount()
+    {
+        return amount;
+    }
+
+    public void incrmentAmount()
     {
         amount++;
     }
 
-    public void decrementAmount() 
-    { 
+    public void decrementAmount()
+    {
         amount--;
     }
 
-     public int getAmount() 
+    public void resetAmount()
     {
-             return amount;
+        amount = 0;
     }
 
 }

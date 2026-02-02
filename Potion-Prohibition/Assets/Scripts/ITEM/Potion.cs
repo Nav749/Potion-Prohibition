@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class Potion : MonoBehaviour
+[CreateAssetMenu(fileName = "Potion", menuName = "Scriptable Objects/Potion")]
+public class Potion : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private string name;
+    [SerializeField] private Sprite image;
+
+
+    public string getName()
     {
-        
+        return name;
     }
 
-    // Update is called once per frame
-    void Update()
+    public Sprite getImage()
     {
-        
+        return image;
     }
+
+
 }
