@@ -52,7 +52,7 @@ public class MapGenerator : MonoBehaviour
         instance = this;
         minRooms = 14;
         maxRooms = 30;
-        cellSize = 2f;
+        cellSize = 100f;
         spawnedCells = new();
         spawnedRooms = new();
         spawnedPositions = new();
@@ -200,7 +200,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
-    
+
 
     int RandomEndRoom()
     {
@@ -288,7 +288,7 @@ public class MapGenerator : MonoBehaviour
     {
         bool[] doorsToSave = new bool[4];
         doorsToSave[0] = cell.north;
-        doorsToSave [1] = cell.south;
+        doorsToSave[1] = cell.south;
         doorsToSave[2] = cell.east;
         doorsToSave[3] = cell.west;
         spawnedDoors.Add(doorsToSave);
