@@ -3,7 +3,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     private SpriteRenderer image;
-    private GameManegerTK gameManeger;
+    //private GameManegerTK gameManeger;
     [SerializeField] private Item item;
     private GameObject player;
 
@@ -11,7 +11,7 @@ public class PickUp : MonoBehaviour
     void Start()
     {
         image = GetComponent<SpriteRenderer>();
-        gameManeger = GameObject.Find("GameManeger").GetComponent<GameManegerTK>();
+        //gameManeger = GameObject.Find("GameManeger").GetComponent<GameManegerTK>();
         image.sprite = item.getImage();
         player = GameObject.Find("Player");
     }

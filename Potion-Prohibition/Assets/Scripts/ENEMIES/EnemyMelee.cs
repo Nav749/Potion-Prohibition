@@ -48,7 +48,8 @@ public class EnemyMelee : MonoBehaviour
 
             if (meleeTick >= meleeEnemyAttackSpeed * 60 && meleeInRange == true)
             {
-
+                GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
+                meleeTick = 0;
             }
         }
 
