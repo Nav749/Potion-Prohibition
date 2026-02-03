@@ -5,6 +5,8 @@ public class Potion : ScriptableObject
 {
     [SerializeField] private string name;
     [SerializeField] private Sprite image;
+    [SerializeField] private Item[] ingredints;
+
 
 
     public string getName()
