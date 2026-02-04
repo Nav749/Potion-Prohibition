@@ -1,36 +1,33 @@
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ingredient : MonoBehaviour
+public class ingredient : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+    private RectTransform rectTransform;
 
-        public GameObject selectedObject;
-        Vector3 offset;
+    
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        
+        throw new System.NotImplementedException();
+    }
 
-        void Update()
-        {
-            Vector3 mousePosition = Camera.current.ScreenToWorldPoint(Input.mousePosition);
+    public void OnDrag(PointerEventData eventData)
+    {
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+        rectTransform.anchoredPosition += eventData.delta;
+        
+        //throw new System.NotImplementedException();
+    }
 
-                if (targetObject)
-                {
-                    selectedObject = targetObject.transform.gameObject;
-                    offset = selectedObject.transform.position - mousePosition;
-                }
-            }
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
 
-            if (selectedObject)
-            {
-                selectedObject.transform.position = mousePosition + offset;
-            }
-
-            if (Input.GetMouseButtonUp(0) && selectedObject)
-            {
-                selectedObject = null;
-            }
-        }
-
+    private void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
 }

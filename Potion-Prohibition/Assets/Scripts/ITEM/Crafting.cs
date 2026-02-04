@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using System.Xml;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class Crafting : MonoBehaviour
 {
@@ -55,4 +56,5 @@ public class Crafting : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+
 }
