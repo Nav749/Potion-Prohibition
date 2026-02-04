@@ -6,7 +6,7 @@ public class EnemyTest : MonoBehaviour
 
     public float rangedEnemyHealth;
 
-    private GameObject playerTargetForRangedEnemy;  
+    public GameObject playerTargetForRangedEnemy;  
 
     public GameObject rangedEnemyAttackPrefab;
 
@@ -27,11 +27,6 @@ public class EnemyTest : MonoBehaviour
     public int rangedEnemyBulletSpeed = 1;
 
     public Rigidbody enemyRB;
-
-    private void Start()
-    {
-        playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
-    }
 
     private void Update()
     {

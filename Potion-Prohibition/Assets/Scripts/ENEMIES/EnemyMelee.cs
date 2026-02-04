@@ -8,7 +8,7 @@ public class EnemyMelee : MonoBehaviour
 
     public float meleeEnemyHealth;
 
-    private GameObject playerTargetForMeleeEnemy;
+    public GameObject playerTargetForMeleeEnemy;
 
     public GameObject meleeEnemyAttackPrefab;
 
@@ -27,11 +27,6 @@ public class EnemyMelee : MonoBehaviour
     public int meleeEnemyAttackSpeed = 50;
 
     public Rigidbody meleeEnemyRB;
-
-    private void Start()
-    {
-        playerTargetForMeleeEnemy = GameManager.Instance.PlayerGO;
-    }
 
     private void Update()
     {

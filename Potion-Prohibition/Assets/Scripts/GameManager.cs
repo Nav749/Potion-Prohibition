@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
         if(currentLevelName == "Kitchen")
         {
-            playerGO.transform.position = new Vector3(3, 0, -1);
+            playerGO.transform.position = Vector3.zero;
         }
         if(currentLevelName == "Dungeon")
         {
