@@ -53,10 +53,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadLevels();
-        }
 
         UpdateDevView();
 
@@ -108,10 +104,14 @@ public class GameManager : MonoBehaviour
         if(currentLevelName == "Kitchen")
         {
             playerGO.transform.position = Vector3.zero;
+            playerGO.GetComponent<playerSpellShoot>().tavernNeutral = true;
+            playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
         if(currentLevelName == "Dungeon")
         {
             playerGO.transform.position = new Vector3(480, 5, -235);
+            playerGO.GetComponent<playerSpellShoot>().tavernNeutral = false;
+            playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         }
 
         playerGO.SetActive(true);

@@ -6,10 +6,17 @@ public class Customer : MonoBehaviour
 {
     private bool isSpeaking = true;
 
+    public bool canStart = true;
+
     public TextMeshProUGUI textComponet;
     [SerializeField] string[] lines;
     [SerializeField] float textSpeed;
     private int textIndex;
+
+    private void Start()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+    }
 
     private void Update()
     {
@@ -34,16 +41,19 @@ public class Customer : MonoBehaviour
     {
         textComponet.text = string.Empty;
         textIndex = 0;
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
         StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
     {
+        canStart = false;
         foreach (char c in lines[textIndex].ToCharArray())
         {
             textComponet.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        canStart = true;
     }
 
     void NextLine()
@@ -56,7 +66,8 @@ public class Customer : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            canStart = true;
         }
     }
 
