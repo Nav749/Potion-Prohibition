@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 1597761216956056761}
   - component: {fileID: 5654662705306799869}
   - component: {fileID: 2825359422240133951}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 4151764115085463656}
   - component: {fileID: 814526901555690564}
   - component: {fileID: 780810398584725129}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2026,7 +2026,7 @@ GameObject:
   - component: {fileID: 5509584439687794969}
   - component: {fileID: 474002343352968118}
   - component: {fileID: 5843753689620457639}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3412,7 +3412,7 @@ GameObject:
   - component: {fileID: 4152125367867363412}
   - component: {fileID: 2370615403287028042}
   - component: {fileID: 8080091363265983464}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 8314155065190459887}
   - component: {fileID: 2543586407083601944}
   - component: {fileID: 2619391579402193398}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4276,7 +4276,7 @@ GameObject:
   - component: {fileID: 3255798262092241977}
   - component: {fileID: 323365631224040501}
   - component: {fileID: 6306009312325114514}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5012,7 +5012,6 @@ GameObject:
   - component: {fileID: 2901857623965233591}
   - component: {fileID: 9096349756237237534}
   - component: {fileID: 2791305925967958490}
-  - component: {fileID: 5577960802758882587}
   m_Layer: 0
   m_Name: stairs (16)
   m_TagString: Untagged
@@ -5066,7 +5065,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 39ff1cf9f6e872244bfc952d865eb010, type: 2}
+  - {fileID: 2100000, guid: 6ad40da344c4b8f45a6691a25fbada8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5103,24 +5102,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5577960802758882587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6477819958995319849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ff2b1c0ed7518498c46a1f1ae9d89d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6823482886706530437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5556,7 +5543,7 @@ GameObject:
   - component: {fileID: 1635297245361538379}
   - component: {fileID: 7678234199068438824}
   - component: {fileID: 3089867363316922549}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5869,7 +5856,7 @@ GameObject:
   - component: {fileID: 4350755445450099666}
   - component: {fileID: 8031093543880307094}
   - component: {fileID: 3123376361636122658}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: stairs (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
