@@ -19,6 +19,8 @@ public class playerMovement : MonoBehaviour {
     public LayerMask playerGroundMask;
 
     bool playerIsGrounded;
+
+    private bool moveLock = false;
  
     void Update()
     {
@@ -34,7 +36,11 @@ public class playerMovement : MonoBehaviour {
 
         Vector3 move = transform.right * playerX + transform.forward * playerZ;
 
-        playerController.Move(move * playerSpeed * Time.deltaTime);
+        if (!moveLock)
+        {
+            playerController.Move(move * playerSpeed * Time.deltaTime);
+        }
+
 
         if(Input.GetButtonDown("Jump") && playerIsGrounded)
         {
@@ -47,6 +53,11 @@ public class playerMovement : MonoBehaviour {
             playerController.Move(playerVelocity * Time.deltaTime);
         }
         
+    }
+
+    public void setMoveLock(bool moveLock) 
+    {  
+        this.moveLock = moveLock;
     }
 
     

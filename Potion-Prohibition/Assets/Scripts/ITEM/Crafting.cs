@@ -10,6 +10,7 @@ public class Crafting : MonoBehaviour
     private Camera craftingCam;
     private bool isCrafting;
     private Canvas UI;
+    private playerMovement playerMovement;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +20,7 @@ public class Crafting : MonoBehaviour
         craftingCam.enabled = isCrafting;
         UI = GetComponentInChildren<Canvas>();
         UI.enabled = isCrafting;
+        playerMovement = player.GetComponent<playerMovement>();
         
     }
 
@@ -44,6 +46,8 @@ public class Crafting : MonoBehaviour
         craftingCam.enabled = isCrafting;
         UI.enabled = isCrafting;
         toggleCursor();
+        playerMovement.setMoveLock(isCrafting);
+
     }
 
     public void toggleCursor() {
@@ -56,5 +60,6 @@ public class Crafting : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+
 
 }
