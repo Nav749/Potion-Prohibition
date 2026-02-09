@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyMelee : MonoBehaviour
@@ -20,8 +21,6 @@ public class EnemyMelee : MonoBehaviour
 
     private Vector3 meleeEnemyMovement;
 
-    private int meleeTick = 0;
-
     public int meleeEnemySpeed = 1;
 
     public int meleeEnemyAttackSpeed = 50;
@@ -42,16 +41,21 @@ public class EnemyMelee : MonoBehaviour
 
         if (meleeIsAggroed == true)
         {
-            meleeTick += 1;
             meleeEnemyMovement = transform.forward * meleeEnemySpeed;
             meleeEnemyRB.linearVelocity = new Vector3(meleeEnemyMovement.x, meleeEnemyRB.linearVelocity.y, meleeEnemyMovement.z);
 
-            if (meleeTick >= meleeEnemyAttackSpeed * 60 && meleeInRange == true)
+            if (meleeInRange == true)
             {
-                GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
-                meleeTick = 0;
+                StartCoroutine(EnemyPause());
             }
         }
 
+    }
+    IEnumerator EnemyPause()
+    {
+        meleeIsAggroed = false;
+        GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
+        yield return new WaitForSeconds(1.7f);
+        meleeIsAggroed = true;
     }
 }

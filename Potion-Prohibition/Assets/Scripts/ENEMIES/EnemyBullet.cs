@@ -20,6 +20,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.GetComponent<playerMovement>() != null)
         {
+            other.GetComponent<playerHealth>().TakeDamage(enemyBulletDamage);
             Destroy(gameObject);
         }
         Destroy(gameObject);
