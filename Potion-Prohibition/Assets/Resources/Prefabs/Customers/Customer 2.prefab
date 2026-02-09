@@ -124,10 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6da0305e38c6442837572ae2a400ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canStart: 1
   textComponet: {fileID: 1032148383272698172}
-  lines:
-  - Hello World
-  - Mark is Awesome but green
+  linesIntro:
+  - hello world
+  - Mark is awesome but green
+  linesPasstime:
+  - passtime
+  - green
+  linesRight: []
+  linesWrong: []
   textSpeed: 0.3
 --- !u!1 &5464733981178821713
 GameObject:

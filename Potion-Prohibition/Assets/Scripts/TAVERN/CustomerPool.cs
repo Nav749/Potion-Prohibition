@@ -15,7 +15,7 @@ public class CustomerPool : MonoBehaviour
 
     public void Update()
     {
-        if (currentCustomer != null)  c = currentCustomer.GetComponent<Customer>();
+        if (currentCustomer != null) c = currentCustomer.GetComponent<Customer>();
 
         if (Input.GetKeyDown(KeyCode.K))
         {

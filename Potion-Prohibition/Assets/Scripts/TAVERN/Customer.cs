@@ -9,13 +9,19 @@ public class Customer : MonoBehaviour
     public bool canStart = true;
 
     public TextMeshProUGUI textComponet;
-    [SerializeField] string[] lines;
+    [SerializeField] string[] linesIntro;
+    [SerializeField] string[] linesPasstime;
+    [SerializeField] string[] linesRight;
+    [SerializeField] string[] linesWrong;
     [SerializeField] float textSpeed;
     private int textIndex;
+    private int dialoguetime;
+    private string[] lines;
 
     private void Start()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        lines = linesIntro;
     }
 
     private void Update()
@@ -68,6 +74,7 @@ public class Customer : MonoBehaviour
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             canStart = true;
+            lines = linesPasstime;
         }
     }
 
