@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class Customer : MonoBehaviour
 {
@@ -15,16 +16,19 @@ public class Customer : MonoBehaviour
     [SerializeField] string[] linesWrong;
     [SerializeField] float textSpeed;
     [SerializeField] SpriteRenderer potion;
+    [SerializeField] TMP_Text text;
     private int textIndex;
     private int dialoguetime;
     private string[] lines;
     private Sprite potionImage;
     private bool commmenedOrder = false;
 
+
     private void Start()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         lines = linesIntro;
+        text.text = string.Empty;
     }
 
     private void Update()
@@ -87,6 +91,7 @@ public class Customer : MonoBehaviour
         potionImage = GameManager.Instance.currentPotion.getImage();
         potion.sprite = potionImage;
         potion.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        text.text = GameManager.Instance.currentPotion.BottomText();
         commmenedOrder = true;
     }
 

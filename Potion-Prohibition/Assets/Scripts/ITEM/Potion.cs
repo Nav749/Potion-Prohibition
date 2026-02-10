@@ -7,10 +7,14 @@ public class Potion : ScriptableObject
     [SerializeField] private string name;
     [SerializeField] private Sprite image;
     [SerializeField] private Item[] ingredients;
+    [SerializeField] private string bottomText;
     private bool onTheRocks = false;
     private bool spiced = false;
 
-
+    public string BottomText()
+    {
+        return bottomText;
+    }
 
     public string getName()
     {
