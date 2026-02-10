@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     [SerializeField] private Sprite icon;
     [SerializeField] private int amount;
 
+    #region getters and setters
 
     public int getID()
     {
@@ -89,5 +90,6 @@ public class Item : ScriptableObject
     {
         amount = 0;
     }
+    #endregion
 
 }

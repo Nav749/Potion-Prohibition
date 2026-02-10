@@ -12,11 +12,13 @@ public class playerSpellShoot : MonoBehaviour
     public GameObject Wand;
     public GameObject spellBulletPrefab;
 
+    private bool isCrafting = false;
+
     private float bulletTimer;
 
     private void Update()
     {
-        if (tavernNeutral == false)
+        if (tavernNeutral == false && !isCrafting)
         {
             if (bulletTimer > 0)
             {
@@ -51,5 +53,10 @@ public class playerSpellShoot : MonoBehaviour
         spellBullet.GetComponent<playerBullet>().bulletScriptDamage = spellBulletDamage;
 
         bulletTimer = 1;
+    }
+
+    public void setCrafting(bool input) 
+    { 
+        isCrafting = input;
     }
 }

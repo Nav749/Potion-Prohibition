@@ -29,8 +29,6 @@ public class playerLook : MonoBehaviour
        
     }
 
-    public void look(float x, float y) {
 
-    }
 
 }

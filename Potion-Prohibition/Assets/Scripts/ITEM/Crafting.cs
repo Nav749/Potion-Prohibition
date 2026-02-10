@@ -1,16 +1,25 @@
+using NUnit.Framework.Internal;
 using System.Linq.Expressions;
 using System.Xml;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
 
 public class Crafting : MonoBehaviour
 {
+    // other game objects and compontes
     [SerializeField] private Potion[] recipeBook;
     [SerializeField] private GameObject player;
+    [SerializeField] private  GameObject ingredientPrefab;
     private Camera craftingCam;
-    private bool isCrafting;
     private Canvas UI;
-    private playerMovement playerMovement;
+
+    // vars for this class
+    private bool isCrafting;
+    private Item[] input;
+    private bool onTheRocks = false;
+    private bool spiced = false;
+    private int count = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,8 +29,6 @@ public class Crafting : MonoBehaviour
         craftingCam.enabled = isCrafting;
         UI = GetComponentInChildren<Canvas>();
         UI.enabled = isCrafting;
-        playerMovement = player.GetComponent<playerMovement>();
-        
     }
 
     // Update is called once per frame
@@ -40,13 +47,13 @@ public class Crafting : MonoBehaviour
         toggleCrafting();
         
     }
-
     private void toggleCrafting() {
         isCrafting= !isCrafting;
         craftingCam.enabled = isCrafting;
         UI.enabled = isCrafting;
         toggleCursor();
-        playerMovement.setMoveLock(isCrafting);
+        player.GetComponent<playerMovement>().setMoveLock(isCrafting);
+        player.GetComponent<playerSpellShoot>().setCrafting(isCrafting);
 
     }
 
@@ -59,6 +66,24 @@ public class Crafting : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    public void addIngredient(Item item) {
+        if (item.getName() == "Spices")
+        {
+            spiced = true;
+        }
+        else if (item.getName() == "Rocks")
+        {
+            onTheRocks = true;
+        }
+        else 
+        {
+            input[count] = item;
+            count++;
+        }
+
+
     }
 
 
