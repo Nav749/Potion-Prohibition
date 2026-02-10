@@ -14,9 +14,12 @@ public class Customer : MonoBehaviour
     [SerializeField] string[] linesRight;
     [SerializeField] string[] linesWrong;
     [SerializeField] float textSpeed;
+    [SerializeField] SpriteRenderer potion;
     private int textIndex;
     private int dialoguetime;
     private string[] lines;
+    private Sprite potionImage;
+    private bool commmenedOrder = false;
 
     private void Start()
     {
@@ -26,6 +29,7 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
+        if (!commmenedOrder) CommenceOrder();
         if (isSpeaking)
         {
             if (Input.GetMouseButtonDown(0))
@@ -76,6 +80,14 @@ public class Customer : MonoBehaviour
             canStart = true;
             lines = linesPasstime;
         }
+    }
+
+    void CommenceOrder()
+    {
+        potionImage = GameManager.Instance.currentPotion.getImage();
+        potion.sprite = potionImage;
+        potion.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        commmenedOrder = true;
     }
 
 }

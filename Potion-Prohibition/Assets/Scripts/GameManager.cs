@@ -53,6 +53,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(currentPotion == null)
+        {
+            PickRandomPotion();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            PickRandomPotion();
+        }
 
         UpdateDevView();
 
@@ -169,6 +178,17 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Orders
+
+    [SerializeField] Potion[] potions;
+    public Potion currentPotion;
+
+    void PickRandomPotion()
+    {
+        currentPotion = potions[Random.Range(0, potions.Length)];
+    }
+
+    #endregion
 
     #region Inventory
     public readonly Inventory inventory = new Inventory();
