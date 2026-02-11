@@ -17,9 +17,8 @@ public class CraftingLogic : MonoBehaviour
     }
 
     #region item creation
-    [SerializeField] private GameObject parent;
     [SerializeField] private GameObject dragablePrefab;
-    [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private RectTransform parent;
     
     public void createItems() {
         for (int i = 0; i <= gameManager.inventory.Length; i++)
@@ -28,17 +27,22 @@ public class CraftingLogic : MonoBehaviour
             //Debug.Log(gameManager.inventory[i].getAmount() + gameManager.inventory[i].getName());
             for (int j = 0; j < gameManager.inventory[i].getAmount(); j++) 
             {
-               
-                Instantiate(dragablePrefab, rectTransform);
+                //the |abs| uper and lower range of where Items can spawn
+                float widthRange = (parent.rect.width - dragablePrefab.GetComponent<RectTransform>().rect.width) / 2;
+                float HeightRange = (parent.rect.height - dragablePrefab.GetComponent<RectTransform>().rect.height) / 2;
+
+                //random point within those ranges
+                float width = Random.Range(-widthRange, widthRange);
+                float height = Random.Range(-HeightRange, HeightRange);
+
+                //creates the now game object
+                dragablePrefab.GetComponent<ItemDrag>().setItem(gameManager.inventory[i]);
+                GameObject temp = Instantiate(dragablePrefab, parent);
+                temp.transform.localPosition = new Vector3(width, height, 0);
             }
         }
     }
 
-
-    public void testCreate() { 
-        dragablePrefab.GetComponent<ItemDrag>().setItem(gameManager.inventory[3]);
-        Instantiate(dragablePrefab, rectTransform);
-    }
     #endregion
 
 
