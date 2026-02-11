@@ -24,8 +24,17 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.inventory.incrmentIndex(item.getID());
-
+        for (int i = 0; i < gameManager.inventory.Length; i++)
+        {
+            if(gameManager.inventory[i] == item) 
+            {
+                Debug.Log("yay");
+                gameManager.inventory[i].incrmentAmount();
+                break;
+            }
+            
+        }
+        GameObject.Destroy(gameObject);
     }
 
 }

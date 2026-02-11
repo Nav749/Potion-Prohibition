@@ -3,8 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
 public class Item : ScriptableObject
 {
-
-    private int ID = -1;
     [SerializeField] private new string name;
     [SerializeField] private string description;
     [SerializeField] private Sprite image;
@@ -13,22 +11,7 @@ public class Item : ScriptableObject
 
     #region getters and setters
 
-    public int getID()
-    {
-        return ID;
-    }
 
-    public void SetID(int input)
-    {
-        if (ID == -1)
-        {
-            ID = input;
-        }
-        else
-        {
-            throw new System.Exception("ID already set");
-        }
-    }
 
     // Name comands
     public string getName()

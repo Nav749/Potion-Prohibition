@@ -34,12 +34,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        clearInventory();
     }
 
     #endregion
 
     [SerializeField] GameObject playerGO;
     public GameObject PlayerGO => playerGO;
+
+
 
     private void Start()
     {
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
         savedRooms = new();
         savedRoomPositions = new();
         savedDoors = new();
-        inventory.createInventory(itemList);
+
     }
 
     private void Update()
@@ -191,8 +195,14 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Inventory
-    public readonly Inventory inventory = new Inventory();
-    [SerializeField] Item[] itemList;
+
+    public Item[] inventory;
+    public void clearInventory() 
+    {
+        for (int i = 0; i < inventory.Length; i++) {
+            inventory[i].resetAmount();
+        }
+    }
 
     #endregion
 }
