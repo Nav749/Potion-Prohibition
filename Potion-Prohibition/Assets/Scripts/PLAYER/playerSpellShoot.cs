@@ -7,10 +7,10 @@ public class playerSpellShoot : MonoBehaviour
     public float spellBulletFireRate;
     public bool fullAuto;
     public bool tavernNeutral = false;
-
     public Transform spellBulletSpawnLocation;
     public GameObject Wand;
     public GameObject spellBulletPrefab;
+    public playerMana mana;
 
     private bool isCrafting = false;
 
@@ -48,6 +48,7 @@ public class playerSpellShoot : MonoBehaviour
 
     void Shoot()
     {
+        mana.ManaFire(20);
         GameObject spellBullet = Instantiate(spellBulletPrefab, spellBulletSpawnLocation.position, Quaternion.identity, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
         spellBullet.GetComponent<Rigidbody>().AddForce(spellBulletSpawnLocation.forward * spellBulletSpeed, ForceMode.Impulse);
         spellBullet.GetComponent<playerBullet>().bulletScriptDamage = spellBulletDamage;
@@ -55,8 +56,8 @@ public class playerSpellShoot : MonoBehaviour
         bulletTimer = 1;
     }
 
-    public void setCrafting(bool input) 
-    { 
+    public void setCrafting(bool input)
+    {
         isCrafting = input;
     }
 }
