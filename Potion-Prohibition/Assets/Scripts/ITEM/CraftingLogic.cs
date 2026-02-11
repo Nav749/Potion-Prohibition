@@ -25,17 +25,20 @@ public class CraftingLogic : MonoBehaviour
         for (int i = 0; i <= gameManager.inventory.Length; i++)
         {
             dragablePrefab.GetComponent<ItemDrag>().setItem(gameManager.inventory[i]);
-            Debug.Log(gameManager.inventory[i].getAmount() + gameManager.inventory[i].getName());
+            //Debug.Log(gameManager.inventory[i].getAmount() + gameManager.inventory[i].getName());
             for (int j = 0; j < gameManager.inventory[i].getAmount(); j++) 
             {
-                /*
-                 * get the rect transform to spawn in the right  locations
-                 */
-                Instantiate(dragablePrefab, rectTransform, parent);
+               
+                Instantiate(dragablePrefab, rectTransform);
             }
         }
     }
 
+
+    public void testCreate() { 
+        dragablePrefab.GetComponent<ItemDrag>().setItem(gameManager.inventory[3]);
+        Instantiate(dragablePrefab, rectTransform);
+    }
     #endregion
 
 
