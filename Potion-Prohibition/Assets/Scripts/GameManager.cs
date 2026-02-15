@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(currentPotion == null)
+        if(currentOrder == null)
         {
             PickRandomPotion();
         }
@@ -184,12 +184,12 @@ public class GameManager : MonoBehaviour
 
     #region Orders
 
-    [SerializeField] Potion[] potions;
-    public Potion currentPotion;
+    [SerializeField] Potion[] Orders;
+    public Potion currentOrder;
 
     void PickRandomPotion()
     {
-        currentPotion = potions[Random.Range(0, potions.Length)];
+        currentOrder = Orders[Random.Range(0, Orders.Length)];
     }
 
     #endregion

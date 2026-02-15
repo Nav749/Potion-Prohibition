@@ -35,6 +35,7 @@ public class CustomerPool : MonoBehaviour
         foreach (GameObject customer in customers)
         {
             GameObject spawnedCustomer = Instantiate(customer, this.transform.position, Quaternion.identity, this.transform);
+            spawnedCustomer.transform.Rotate(0f, 90f, 0f, Space.Self);
             spawnedCustomer.SetActive(false);
         }
     }

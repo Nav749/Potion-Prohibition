@@ -27,6 +27,7 @@ public class Customer : MonoBehaviour
     private void Start()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
         lines = linesIntro;
         text.text = string.Empty;
     }
@@ -34,6 +35,15 @@ public class Customer : MonoBehaviour
     private void Update()
     {
         if (!commmenedOrder) CommenceOrder();
+
+        if(lines == linesPasstime) gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        else gameObject.transform.GetChild(1).gameObject.SetActive(false);
+
+        if(Input.GetKeyDown(KeyCode.F) && lines == linesPasstime)
+        {
+            
+        }
+
         if (isSpeaking)
         {
             if (Input.GetMouseButtonDown(0))
@@ -88,10 +98,10 @@ public class Customer : MonoBehaviour
 
     void CommenceOrder()
     {
-        potionImage = GameManager.Instance.currentPotion.getImage();
+        potionImage = GameManager.Instance.currentOrder.getImage();
         potion.sprite = potionImage;
         potion.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        text.text = GameManager.Instance.currentPotion.BottomText();
+        text.text = GameManager.Instance.currentOrder.BottomText();
         commmenedOrder = true;
     }
 
