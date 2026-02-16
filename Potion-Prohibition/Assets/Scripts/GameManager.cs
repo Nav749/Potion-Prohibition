@@ -205,4 +205,16 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    #region PotionInventory
+
+    public List<Potion> potions;
+
+    public void clearPotionInventory()
+    {
+        potions.Clear();
+    }
+
+    #endregion
+
 }
