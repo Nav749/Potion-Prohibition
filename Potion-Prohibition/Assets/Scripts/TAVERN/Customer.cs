@@ -5,7 +5,8 @@ using TMPro;
 
 public class Customer : MonoBehaviour
 {
-    private bool isSpeaking = true;
+    public bool isSpeaking = false;
+    public bool isOrdering = false;
 
     public bool canStart = true;
 
@@ -23,7 +24,6 @@ public class Customer : MonoBehaviour
     private Sprite potionImage;
     private bool commmenedOrder = false;
 
-
     private void Start()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
@@ -39,11 +39,6 @@ public class Customer : MonoBehaviour
         if(lines == linesPasstime) gameObject.transform.GetChild(1).gameObject.SetActive(true);
         else gameObject.transform.GetChild(1).gameObject.SetActive(false);
 
-        if(Input.GetKeyDown(KeyCode.F) && lines == linesPasstime)
-        {
-            
-        }
-
         if (isSpeaking)
         {
             if (Input.GetMouseButtonDown(0))
@@ -57,6 +52,13 @@ public class Customer : MonoBehaviour
                     StopAllCoroutines();
                     textComponet.text = lines[textIndex];
                 }
+            }
+        }
+        else if (!isSpeaking && isOrdering)
+        {
+            if (Input.GetKeyDown(KeyCode.F) && lines == linesPasstime)
+            {
+                Debug.Log("Order Time");
             }
         }
     }
@@ -93,6 +95,8 @@ public class Customer : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             canStart = true;
             lines = linesPasstime;
+            isSpeaking = false;
+            GameManager.Instance.orderTime = true;
         }
     }
 

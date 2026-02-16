@@ -4,7 +4,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
 {
     [SerializeField] CustomerPool pool;
-    private bool canSpeak = false;
+    public bool canSpeak = false;
 
     private void Update()
     {
@@ -13,11 +13,19 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) canSpeak = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canSpeak = true;
+            pool.OrderToggle();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) canSpeak = false;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canSpeak = false;
+            pool.OrderToggle();
+        }
     }
 }

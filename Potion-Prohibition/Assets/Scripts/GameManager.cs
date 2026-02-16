@@ -186,6 +186,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Potion[] Orders;
     public Potion currentOrder;
+    public bool orderTime = false;
 
     void PickRandomPotion()
     {

@@ -46,6 +46,12 @@ public class CustomerPool : MonoBehaviour
         {
             c.StartDialogue();
             c.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            c.isSpeaking = true;
         }
+    }
+
+    public void OrderToggle()
+    {
+        c.isOrdering = !c.isOrdering;
     }
 }
