@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Drop : MonoBehaviour, IDropHandler
 {
-    private GameObject droped;
+    
+    private GameObject dropped;
+    [SerializeField] CraftingLogic craftingLogic;
 
     public void OnDrop(PointerEventData eventData)
     {
-        droped = eventData.pointerDrag;
-        Debug.Log(droped.GetComponent<ItemDrag>().getItem().getName());
+        dropped = eventData.pointerDrag;
+        craftingLogic.addItem(dropped.GetComponent<Item>());
+        
     }
 
 
