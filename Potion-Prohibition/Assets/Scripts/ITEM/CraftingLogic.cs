@@ -62,6 +62,7 @@ public class CraftingLogic : MonoBehaviour
 
     [SerializeField] Image[] slots = new Image[5];
     public void addItem(Item item) {
+        Debug.Log(item.getName());
         if (item.getName() == "Rocks")
         {
             if (droppedItems[rocksIdx] == null){
