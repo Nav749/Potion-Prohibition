@@ -4,11 +4,28 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
 {
     [SerializeField] CustomerPool pool;
+    [SerializeField] GameObject UI;
+    [SerializeField] Camera camera;
     public bool canSpeak = false;
+    private bool playerToggle = false;
 
     private void Update()
     {
         if (canSpeak && Input.GetKeyDown(KeyCode.E)) pool.StartSpeaking();
+        if (canSpeak && Input.GetKeyDown(KeyCode.F))
+        {
+            togglePlayer();
+        }
+    }
+
+    private void togglePlayer()
+    {
+        playerToggle = !playerToggle;
+        UI.SetActive(playerToggle);
+        Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
+        camera.enabled = playerToggle;
+        GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
+        GameManager.Instance.PlayerGO.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = !playerToggle;
     }
 
     private void OnTriggerEnter(Collider other)

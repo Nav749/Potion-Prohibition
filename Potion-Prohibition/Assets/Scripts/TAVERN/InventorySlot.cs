@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,22 +11,24 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         if (isChecker)
         {
-            if (this.transform.childCount != 0 && internalbool) 
+            if (this.transform.childCount != 0 && internalbool)
             {
                 InventoryItem potionToCheck = this.transform.GetChild(0).gameObject.transform.GetComponent<InventoryItem>();
                 Debug.Log(potionToCheck.potionName);
+                GameManager.Instance.OrdertoCheck = potionToCheck.getPotion();
                 internalbool = false;
             }
-            else if(this.transform.childCount == 0)
+            else if (this.transform.childCount == 0)
             {
                 internalbool = true;
+                GameManager.Instance.OrdertoCheck = null;
             }
         }
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(transform.childCount == 0)
+        if (transform.childCount == 0)
         {
             GameObject dropped = eventData.pointerDrag;
             InventoryItem inventoryItem = dropped.GetComponent<InventoryItem>();

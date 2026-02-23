@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(currentOrder == null)
+        if (currentOrder == null)
         {
             PickRandomPotion();
         }
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
             PickRandomPotion();
         }
 
-        UpdateDevView();
+        //UpdateDevView();
 
         if (Input.GetKeyDown(KeyCode.P) && currentLevelName == "Kitchen")
         {
@@ -114,13 +114,13 @@ public class GameManager : MonoBehaviour
         if (currentLevelName == "Dungeon" && !hasGenerated)
             hasGenerated = true;
 
-        if(currentLevelName == "Kitchen")
+        if (currentLevelName == "Kitchen")
         {
             playerGO.transform.position = Vector3.zero;
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = true;
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
-        if(currentLevelName == "Dungeon")
+        if (currentLevelName == "Dungeon")
         {
             playerGO.transform.position = new Vector3(480, 5, -235);
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = false;
@@ -186,6 +186,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Potion[] Orders;
     public Potion currentOrder;
+    public Potion OrdertoCheck;
     public bool orderTime = false;
 
     void PickRandomPotion()
@@ -198,9 +199,10 @@ public class GameManager : MonoBehaviour
     #region Inventory
 
     public Item[] inventory;
-    public void clearInventory() 
+    public void clearInventory()
     {
-        for (int i = 0; i < inventory.Length; i++) {
+        for (int i = 0; i < inventory.Length; i++)
+        {
             inventory[i].resetAmount();
         }
     }
