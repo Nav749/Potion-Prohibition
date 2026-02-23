@@ -725,6 +725,7 @@ MonoBehaviour:
   healthSegmentPrefab: {fileID: 2736574869845340601, guid: fc9ce6af5e53dfe458169de3c37a6cdf,
     type: 3}
   maxHealth: 10
+  playerRef: {fileID: 908709146}
   healthbarHolder: {fileID: 1083092693}
 --- !u!4 &908709155 stripped
 Transform:
@@ -745,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barImage: {fileID: 1208893406}
+  ManaKill: 0
 --- !u!1 &1023640022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,7 +2328,7 @@ PrefabInstance:
     - target: {fileID: 4699171015516357260, guid: 92478e2c8ca9f8848a1d15d8065449d5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.37
+      value: 51.88
       objectReference: {fileID: 0}
     - target: {fileID: 4699171015516357260, guid: 92478e2c8ca9f8848a1d15d8065449d5,
         type: 3}
@@ -2336,7 +2338,7 @@ PrefabInstance:
     - target: {fileID: 4699171015516357260, guid: 92478e2c8ca9f8848a1d15d8065449d5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.45
+      value: 47.3
       objectReference: {fileID: 0}
     - target: {fileID: 4699171015516357260, guid: 92478e2c8ca9f8848a1d15d8065449d5,
         type: 3}
@@ -2389,7 +2391,17 @@ PrefabInstance:
     - target: {fileID: 5849938299618838347, guid: 8cb02e3b89cb3cb4c9b3fd88d5ee40b0,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 4.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849938299618838347, guid: 8cb02e3b89cb3cb4c9b3fd88d5ee40b0,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849938299618838347, guid: 8cb02e3b89cb3cb4c9b3fd88d5ee40b0,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7334228984979081348, guid: 8cb02e3b89cb3cb4c9b3fd88d5ee40b0,
         type: 3}
@@ -2543,7 +2555,17 @@ PrefabInstance:
     - target: {fileID: 1683597095898162820, guid: 6b3c788bfbbb36b47820a6fba060eec2,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 4.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683597095898162820, guid: 6b3c788bfbbb36b47820a6fba060eec2,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683597095898162820, guid: 6b3c788bfbbb36b47820a6fba060eec2,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6718425133265920053, guid: 6b3c788bfbbb36b47820a6fba060eec2,
         type: 3}

@@ -39,17 +39,16 @@ public class EnemyMelee : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotatorMeleeEnemy, 85);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 
-        if (meleeIsAggroed == true)
+        if (meleeIsAggroed == true && meleeInRange == false)
         {
             meleeEnemyMovement = transform.forward * meleeEnemySpeed;
             meleeEnemyRB.linearVelocity = new Vector3(meleeEnemyMovement.x, meleeEnemyRB.linearVelocity.y, meleeEnemyMovement.z);
-
-            if (meleeInRange == true)
-            {
-                StartCoroutine(EnemyPause());
-            }
         }
 
+        if (meleeInRange == true && meleeIsAggroed == true)
+        {
+            StartCoroutine(EnemyPause());
+        }
     }
     IEnumerator EnemyPause()
     {

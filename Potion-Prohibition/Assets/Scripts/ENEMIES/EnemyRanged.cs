@@ -6,7 +6,7 @@ public class EnemyTest : MonoBehaviour
 
     public float rangedEnemyHealth;
 
-    public GameObject playerTargetForRangedEnemy;  
+    public GameObject playerTargetForRangedEnemy;
 
     public GameObject rangedEnemyAttackPrefab;
 
@@ -30,7 +30,7 @@ public class EnemyTest : MonoBehaviour
 
     private void Update()
     {
-        if(rangedEnemyHealth <= 0)
+        if (rangedEnemyHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -46,7 +46,7 @@ public class EnemyTest : MonoBehaviour
             rangedEnemyMovement = transform.forward * rangedEnemySpeed;
             enemyRB.linearVelocity = new Vector3(rangedEnemyMovement.x, enemyRB.linearVelocity.y, rangedEnemyMovement.z);
 
-            if(ticker >= rangedEnemyAttackSpeed * 60)
+            if (ticker >= rangedEnemyAttackSpeed * 60)
             {
                 GameObject EnemyAttackInRange = Instantiate(rangedEnemyAttackPrefab, rangedEnemyAttackSource.position, transform.rotation);
                 EnemyAttackInRange.GetComponent<Rigidbody>().AddForce(rangedEnemyAttackSource.forward * rangedEnemyBulletSpeed, ForceMode.Impulse);

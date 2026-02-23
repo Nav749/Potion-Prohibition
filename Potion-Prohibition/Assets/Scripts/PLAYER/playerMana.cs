@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class playerMana : MonoBehaviour
 {
     public Image barImage;
+    public bool ManaKill = false;
     private Mana mana;
 
     private void Awake()
@@ -13,13 +14,32 @@ public class playerMana : MonoBehaviour
 
     private void Update()
     {
-        mana.Update();
+        if (ManaKill == false)
+        {
+            mana.Update();
+        }
         barImage.fillAmount = mana.GetManaNormalized();
     }
 
-    public bool ManaFire(int amount)
+    public void ManaFire(int amount)
     {
-        return mana.TrySpendMana(amount);
+        mana.TrySpendMana(amount);
+    }
+
+    public bool checkMana(int amount)
+    {
+        if (mana.GetMana() >= amount)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void ManaStop()
+    {
+        mana.Empty();
+        ManaKill = true;
+        mana.Update();
     }
 }
 
@@ -41,18 +61,26 @@ public class Mana
         manaAmount = Mathf.Clamp(manaAmount, 0f, Mana_Max);
     }
 
-    public bool TrySpendMana(int amount)
+    public void TrySpendMana(int amount)
     {
         if (manaAmount >= amount)
         {
             manaAmount -= amount;
-            return true;
         }
-        return false;
+    }
+
+    public void Empty()
+    {
+        manaAmount = 0;
     }
 
     public float GetManaNormalized()
     {
         return manaAmount / Mana_Max;
+    }
+
+    public float GetMana()
+    {
+        return manaAmount;
     }
 }

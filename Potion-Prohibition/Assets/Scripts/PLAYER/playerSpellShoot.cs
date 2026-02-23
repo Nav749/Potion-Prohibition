@@ -48,12 +48,15 @@ public class playerSpellShoot : MonoBehaviour
 
     void Shoot()
     {
-        mana.ManaFire(20);
-        GameObject spellBullet = Instantiate(spellBulletPrefab, spellBulletSpawnLocation.position, Quaternion.identity, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
-        spellBullet.GetComponent<Rigidbody>().AddForce(spellBulletSpawnLocation.forward * spellBulletSpeed, ForceMode.Impulse);
-        spellBullet.GetComponent<playerBullet>().bulletScriptDamage = spellBulletDamage;
+        if (mana.checkMana(20) == true)
+        {
+            mana.ManaFire(20);
+            GameObject spellBullet = Instantiate(spellBulletPrefab, spellBulletSpawnLocation.position, Quaternion.identity, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
+            spellBullet.GetComponent<Rigidbody>().AddForce(spellBulletSpawnLocation.forward * spellBulletSpeed, ForceMode.Impulse);
+            spellBullet.GetComponent<playerBullet>().bulletScriptDamage = spellBulletDamage;
 
-        bulletTimer = 1;
+            bulletTimer = 1;
+        }
     }
 
     public void setCrafting(bool input)
