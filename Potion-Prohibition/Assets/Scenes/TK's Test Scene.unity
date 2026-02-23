@@ -213,8 +213,8 @@ MonoBehaviour:
   - {fileID: 312749380}
   - {fileID: 1660025491}
   - {fileID: 1312302672}
-  - {fileID: 1678449917}
-  - {fileID: 911880070}
+  rockSlot: {fileID: 1678449917}
+  spiceSlot: {fileID: 911880070}
 --- !u!1 &113568945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,7 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d07b5c146c8d854481ce5e57438ae0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingLogic: {fileID: 70934569}
+  CraftingLogic: {fileID: 70934569}
 --- !u!114 &1583341428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,7 +2679,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1992964925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 70934569}
+        m_TargetAssemblyTypeName: CraftingLogic, Assembly-CSharp
+        m_MethodName: clearPot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1992964925
 MonoBehaviour:
   m_ObjectHideFlags: 0

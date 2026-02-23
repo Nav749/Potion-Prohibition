@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +8,7 @@ public class CraftingLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -38,11 +38,12 @@ public class CraftingLogic : MonoBehaviour
         temp.transform.localPosition = new Vector3(width, height, 0);
     }
 
-    public void createItems() {
+    public void createItems()
+    {
         for (int i = 0; i <= gameManager.inventory.Length; i++)
         {
 
-            for (int j = 0; j < gameManager.inventory[i].getAmount(); j++) 
+            for (int j = 0; j < gameManager.inventory[i].getAmount(); j++)
             {
                 createItem(gameManager.inventory[i]);
             }
@@ -56,18 +57,21 @@ public class CraftingLogic : MonoBehaviour
 
     #region crafting item management
     int count = 0;
-    Item[] droppedItems = new Item[5];
-    int spicesIdx = 3;
-    int rocksIdx = 4;
+    Item[] droppedItems = new Item[3];
+    Item spice = null;
+    Item rocks = null;
 
-    [SerializeField] Image[] slots = new Image[5];
-    public void addItem(Item item) {
-        Debug.Log(item.getName());
+    [SerializeField] Image[] slots = new Image[3];
+    [SerializeField] Image rockSlot;
+    [SerializeField] Image spiceSlot;
+    public void addItem(Item item)
+    {
         if (item.getName() == "Rocks")
         {
-            if (droppedItems[rocksIdx] == null){
-                droppedItems[rocksIdx] = item;
-                slots[rocksIdx].sprite = item.getImage();
+            if (rocks == null)
+            {
+                rocks = item;
+                rockSlot.sprite = item.getImage();
             }
             else
             {
@@ -76,20 +80,23 @@ public class CraftingLogic : MonoBehaviour
         }
         else if (item.getName() == "Spices")
         {
-            if (droppedItems[spicesIdx] == null)
+            if (spice == null)
             {
-                droppedItems[spicesIdx] = item;
-                slots[spicesIdx].sprite = item.getImage();
+                spice = item;
+                spiceSlot.sprite = item.getImage();
             }
-            else {
+            else
+            {
                 createItem(item);
             }
         }
-        else {
+        else
+        {
             if (count < 3)
             {
                 droppedItems[count] = item;
                 slots[count].sprite = item.getImage();
+                count++;
             }
             else
             {
@@ -98,16 +105,44 @@ public class CraftingLogic : MonoBehaviour
         }
     }
 
-    public void clearPot() {
-        for (int i = 0; i < droppedItems.Length; i++) {
-            if (droppedItems[i] != null) { 
-                createItem(droppedItems[i]); 
+    public void clearPot()
+    {
+        if (spice != null)
+        {
+            createItem(spice);
+            spice = null;
+            spiceSlot.sprite = null;
+        }
+        if (rocks != null)
+        {
+            createItem(rocks);
+            rocks = null;
+            rockSlot.sprite = null;
+
+        }
+        for (int i = 0; i < droppedItems.Length; i++)
+        {
+            if (droppedItems[i] != null)
+            {
+                createItem(droppedItems[i]);
+                slots[i].sprite = null;
                 droppedItems[i] = null;
             }
         }
+
         count = 0;
     }
 
     #endregion
+
+    #region brewing
+
+    public void brew()
+    {
+        //Make a list of ptions in the GM script
+    }
+
+    #endregion
+
 
 }

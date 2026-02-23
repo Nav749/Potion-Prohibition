@@ -1,30 +1,31 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class Drop : MonoBehaviour, IDropHandler
 {
-    
-    private GameObject dropped;
-    [SerializeField] CraftingLogic craftingLogic;
+    [SerializeField] CraftingLogic CraftingLogic;
 
     public void OnDrop(PointerEventData eventData)
     {
-        dropped = eventData.pointerDrag;
-        craftingLogic.addItem(dropped.GetComponent<Item>());
-        
+        GameObject dropped = eventData.pointerDrag;
+        Item droppedItem = dropped.GetComponent<ItemDrag>().getItem();
+        CraftingLogic.addItem(droppedItem);
+        GameObject.Destroy(dropped);
+
+
+
     }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

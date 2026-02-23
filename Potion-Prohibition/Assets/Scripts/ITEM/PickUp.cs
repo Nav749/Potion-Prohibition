@@ -26,13 +26,12 @@ public class PickUp : MonoBehaviour
     {
         for (int i = 0; i < gameManager.inventory.Length; i++)
         {
-            if(gameManager.inventory[i] == item) 
+            if (gameManager.inventory[i] == item)
             {
-                Debug.Log("yay");
                 gameManager.inventory[i].incrmentAmount();
                 break;
             }
-            
+
         }
         GameObject.Destroy(gameObject);
     }
