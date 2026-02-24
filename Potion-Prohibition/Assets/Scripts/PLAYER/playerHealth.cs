@@ -6,9 +6,10 @@ public class playerHealth : MonoBehaviour
     public GameObject healthSegmentPrefab;
     private List<Image> healthSegments = new List<Image>();
     public int maxHealth = 10;
-    private int currentHealth;
+    public int currentHealth;
     public GameObject playerRef;
     [SerializeField] GameObject healthbarHolder;
+    public GameObject GameOverScreen;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class playerHealth : MonoBehaviour
         {
             playerRef.GetComponent<playerMovement>().setMoveLock(true);
             playerRef.GetComponent<playerMana>().ManaStop();
+            GameOverScreen.SetActive(true);
         }
     }
 
