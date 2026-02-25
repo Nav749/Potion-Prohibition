@@ -12,15 +12,34 @@ public class TriggerforcustomerDialogue : MonoBehaviour
     private void Update()
     {
         if (canSpeak && Input.GetKeyDown(KeyCode.E)) pool.StartSpeaking();
-        if (canSpeak && Input.GetKeyDown(KeyCode.F))
+
+        if (GameManager.Instance.orderTime)
         {
-            togglePlayer();
+            if (canSpeak && Input.GetKeyDown(KeyCode.F))
+            {
+                togglePlayer();
+            }
         }
+        else
+        {
+            togglePlayerFalse();
+        }
+
     }
 
     private void togglePlayer()
     {
         playerToggle = !playerToggle;
+        UI.SetActive(playerToggle);
+        Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
+        camera.enabled = playerToggle;
+        GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
+        GameManager.Instance.PlayerGO.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = !playerToggle;
+    }
+
+    private void togglePlayerFalse()
+    {
+        playerToggle = false;
         UI.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
         camera.enabled = playerToggle;
