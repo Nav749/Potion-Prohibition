@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
     public bool checkDone = false;
     public bool orderTime = false;
 
-    void PickRandomPotion()
+    public void PickRandomPotion()
     {
         currentOrder = Orders[Random.Range(0, Orders.Length)];
         checkDone = false;
@@ -226,6 +226,14 @@ public class GameManager : MonoBehaviour
     {
         potions.Clear();
     }
+
+    #endregion
+
+    #region Customers
+
+    public int customerNum;
+    public bool customerGenerated = false;
+    public int currentlines = 0;
 
     #endregion
 

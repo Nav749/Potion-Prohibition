@@ -19,7 +19,6 @@ public class Customer : MonoBehaviour
     [SerializeField] SpriteRenderer potion;
     [SerializeField] TMP_Text text;
     private int textIndex;
-    private int dialoguetime;
     [HideInInspector]public string[] lines;
     private Sprite potionImage;
     private bool commmenedOrder = false;
@@ -28,12 +27,14 @@ public class Customer : MonoBehaviour
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
-        lines = linesIntro;
+        lines = IntToLine();
         text.text = string.Empty;
     }
 
     private void Update()
     {
+        GameManager.Instance.currentlines = lineToInt();
+
         if (GameManager.Instance.checkDone)
         {
             lines = GameManager.Instance.correctOrder ? linesRight : linesWrong;
@@ -66,6 +67,8 @@ public class Customer : MonoBehaviour
                 Debug.Log("Order Time");
             }
         }
+
+        GameManager.Instance.orderTime = lines == linesPasstime ? true : false;
     }
 
     public void StartDialogue()
@@ -99,12 +102,16 @@ public class Customer : MonoBehaviour
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             canStart = true;
+            isSpeaking = false;
+            GameManager.Instance.orderTime = true;
             if (lines == linesIntro)
             {
                 lines = linesPasstime;
             }
-                isSpeaking = false;
-            GameManager.Instance.orderTime = true;
+            else if(lines != linesIntro && lines != linesPasstime)
+            {
+                this.transform.GetComponentInParent<CustomerPool>().ActivateCustomer();
+            }
         }
     }
 
@@ -115,6 +122,18 @@ public class Customer : MonoBehaviour
         potion.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         text.text = GameManager.Instance.currentOrder.BottomText();
         commmenedOrder = true;
+    }
+
+    int lineToInt()
+    {
+        if (lines == linesPasstime) return 1;
+        else return 0;
+    }
+
+    string[] IntToLine()
+    {
+        if (GameManager.Instance.currentlines == 1) return linesPasstime;
+        else return linesIntro;
     }
 
 }
