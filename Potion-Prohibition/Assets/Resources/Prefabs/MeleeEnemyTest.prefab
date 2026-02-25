@@ -108,6 +108,82 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &235924407661607260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7372212987858880950}
+  - component: {fileID: 3418865577649128906}
+  - component: {fileID: 2170888246830376208}
+  - component: {fileID: 8226677481963500559}
+  m_Layer: 8
+  m_Name: MeleeAttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7372212987858880950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235924407661607260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 2.0617301, y: 2.486169, z: 2.486169}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1232367453550006238}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3418865577649128906
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235924407661607260}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &2170888246830376208
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235924407661607260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8226677481963500559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235924407661607260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1860ab8a296fd46bfbeb3f91a8b45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyToIndicate: {fileID: 6718425133265920053}
 --- !u!1 &3036242451626700473
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +381,7 @@ GameObject:
   - component: {fileID: 8224611819846067834}
   - component: {fileID: 1683597095898162820}
   - component: {fileID: 226969214392826266}
+  - component: {fileID: 4743127145252541676}
   m_Layer: 10
   m_Name: MeleeEnemyTest
   m_TagString: Untagged
@@ -330,6 +407,7 @@ Transform:
   - {fileID: 508563655716613131}
   - {fileID: 7584697716981133762}
   - {fileID: 5022580490774466963}
+  - {fileID: 7372212987858880950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6142340727809783363
@@ -393,7 +471,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6718425133265920053}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 4.95
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -428,11 +506,33 @@ MonoBehaviour:
   meleeInRange: 0
   meleeEnemyHealth: 10
   playerTargetForMeleeEnemy: {fileID: 0}
-  meleeEnemyAttackPrefab: {fileID: 0}
+  meleeEnemyAttackPrefab: {fileID: 8450692971338806516, guid: 8226a10f88f08ee43a16dd1b93f8e9ba,
+    type: 3}
   meleeEnemyAttackSource: {fileID: 5022580490774466963}
   meleeEnemySpeed: 5
-  meleeEnemyAttackSpeed: 50
+  meleeEnemyAttackSpeed: 65
   meleeEnemyRB: {fileID: 1683597095898162820}
+--- !u!65 &4743127145252541676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718425133265920053}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 1.0000001, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7070309529362098484
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +666,7 @@ Transform:
   m_GameObject: {fileID: 8725574636782047059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.93}
+  m_LocalPosition: {x: 0, y: 0, z: 1.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

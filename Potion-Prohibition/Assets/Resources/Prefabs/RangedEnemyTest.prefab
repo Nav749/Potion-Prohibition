@@ -488,9 +488,9 @@ MonoBehaviour:
   rangedEnemyAttackPrefab: {fileID: 8450692971338806516, guid: b0038e822072d044bb6b4d34e967f3e5,
     type: 3}
   rangedEnemyAttackSource: {fileID: 7484986045713100571}
-  rangedEnemySpeed: 4
-  rangedEnemyAttackSpeed: 65
-  rangedEnemyBulletSpeed: 20
+  rangedEnemySpeed: 2
+  rangedEnemyAttackSpeed: 9
+  rangedEnemyBulletSpeed: 30
   enemyRB: {fileID: 5849938299618838347}
 --- !u!54 &5849938299618838347
 Rigidbody:
@@ -500,7 +500,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7334228984979081348}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 4.95
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
