@@ -27,6 +27,11 @@ public class EnemyMelee : MonoBehaviour
 
     public Rigidbody meleeEnemyRB;
 
+    private void Start()
+    {
+        playerTargetForMeleeEnemy = GameManager.Instance.PlayerGO;
+    }
+
     private void Update()
     {
         if (meleeEnemyHealth <= 0)

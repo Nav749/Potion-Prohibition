@@ -28,6 +28,11 @@ public class EnemyTest : MonoBehaviour
 
     public Rigidbody enemyRB;
 
+    private void Start()
+    {
+        playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
+    }
+
     private void Update()
     {
         if (rangedEnemyHealth <= 0)
