@@ -137,9 +137,16 @@ public class CraftingLogic : MonoBehaviour
 
     #region brewing
 
+    [SerializeField] private Potion[] potions;
+    
     public void brew()
     {
-        //Make a list of ptions in the GM script
+        for (int i = 0; i < potions.Length; i++) {
+            if (potions[i].checkIngredients(droppedItems)) {
+                gameManager.potions.Add(potions[i]);
+            }
+        }
+
     }
 
     #endregion
