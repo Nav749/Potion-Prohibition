@@ -187,11 +187,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] Potion[] Orders;
     public Potion currentOrder;
     public Potion OrdertoCheck;
+    public bool correctOrder;
     public bool orderTime = false;
 
     void PickRandomPotion()
     {
         currentOrder = Orders[Random.Range(0, Orders.Length)];
+    }
+
+    public void TimeToCheckOrder()
+    {
+        correctOrder = currentOrder == OrdertoCheck;
     }
 
     #endregion

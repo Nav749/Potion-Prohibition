@@ -1621,6 +1621,7 @@ GameObject:
   - component: {fileID: 82245930}
   - component: {fileID: 82245929}
   - component: {fileID: 82245933}
+  - component: {fileID: 82245934}
   m_Layer: 0
   m_Name: Cube
   m_TagString: CustomerTrigger
@@ -1733,6 +1734,19 @@ MonoBehaviour:
   UI: {fileID: 2127563548}
   camera: {fileID: 64355551}
   canSpeak: 0
+--- !u!114 &82245934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82245928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f93ee4c2bb04b4f8951c00e96b6b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 2127563548}
 --- !u!1 &84374331
 GameObject:
   m_ObjectHideFlags: 0
@@ -29060,7 +29074,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1521443463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 82245934}
+        m_TargetAssemblyTypeName: OrderChecker, Assembly-CSharp
+        m_MethodName: OrderCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1521443463
 MonoBehaviour:
   m_ObjectHideFlags: 0
