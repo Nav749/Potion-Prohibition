@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject playerGO;
     public GameObject PlayerGO => playerGO;
+    [SerializeField] GameObject UI;
 
 
 
@@ -57,6 +58,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (currentLevelName == "Kitchen") UI.SetActive(false);
+        else UI.SetActive(true);
+
         if (currentOrder == null)
         {
             PickRandomPotion();
@@ -74,6 +78,8 @@ public class GameManager : MonoBehaviour
             levelsPassed++;
             hasGenerated = false;
         }
+
+
     }
 
     #region SceneManagment
@@ -155,7 +161,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < savedRooms.Count; i++)
         {
-            var room = Resources.Load("Models/TEST/TEST ROOMS/" + savedRooms[i]);
+            var room = Resources.Load("Models/FINAL/FinalRooms" + savedRooms[i]);
             Instantiate(room, savedRoomPositions[i], Quaternion.identity);
             GameObject cell = Instantiate(cellPrefab, savedRoomPositions[i], Quaternion.identity);
             bool[] doorsToSpawn = savedDoors[i];

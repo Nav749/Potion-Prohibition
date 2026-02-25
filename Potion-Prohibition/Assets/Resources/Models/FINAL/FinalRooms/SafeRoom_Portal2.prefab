@@ -2260,6 +2260,7 @@ GameObject:
   - component: {fileID: 6905109741588828564}
   - component: {fileID: 3225923423901059285}
   - component: {fileID: 7650194114047602339}
+  - component: {fileID: 4982106110187011166}
   m_Layer: 0
   m_Name: PortalPlane
   m_TagString: Untagged
@@ -2350,13 +2351,25 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -706963088782157057, guid: b06a26ccaf6696a48b231de22491f8be, type: 3}
+--- !u!114 &4982106110187011166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044141571147209150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ff2b1c0ed7518498c46a1f1ae9d89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4194989001323243961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,7 +2492,7 @@ GameObject:
   - component: {fileID: 7589813217023391288}
   - component: {fileID: 7780142505835827139}
   - component: {fileID: 1164753681755550406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PortalRoom2_Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2819,7 +2832,7 @@ GameObject:
   - component: {fileID: 5588635477635880689}
   - component: {fileID: 1000108094797896555}
   - component: {fileID: 6074442028093244145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
