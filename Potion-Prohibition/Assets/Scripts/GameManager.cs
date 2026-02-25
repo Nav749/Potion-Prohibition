@@ -122,13 +122,13 @@ public class GameManager : MonoBehaviour
 
         if (currentLevelName == "Kitchen")
         {
-            playerGO.transform.position = Vector3.zero;
+            playerGO.transform.position = new Vector3(-26.27864f, -8.846062f, 11.87466f);
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = true;
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
         if (currentLevelName == "Dungeon")
         {
-            playerGO.transform.position = new Vector3(480, 5, -235);
+            playerGO.transform.position = new Vector3(446.5671f, -10f, -257.3981f);
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = false;
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         }
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < savedRooms.Count; i++)
         {
-            var room = Resources.Load("Models/FINAL/FinalRooms" + savedRooms[i]);
+            var room = Resources.Load("Models/FINAL/FinalRooms/" + savedRooms[i]);
             Instantiate(room, savedRoomPositions[i], Quaternion.identity);
             GameObject cell = Instantiate(cellPrefab, savedRoomPositions[i], Quaternion.identity);
             bool[] doorsToSpawn = savedDoors[i];
