@@ -188,16 +188,19 @@ public class GameManager : MonoBehaviour
     public Potion currentOrder;
     public Potion OrdertoCheck;
     public bool correctOrder;
+    public bool checkDone = false;
     public bool orderTime = false;
 
     void PickRandomPotion()
     {
         currentOrder = Orders[Random.Range(0, Orders.Length)];
+        checkDone = false;
     }
 
     public void TimeToCheckOrder()
     {
         correctOrder = currentOrder == OrdertoCheck;
+        checkDone = true;
     }
 
     #endregion

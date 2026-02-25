@@ -45,4 +45,11 @@ public class TriggerforcustomerDialogue : MonoBehaviour
             pool.OrderToggle();
         }
     }
+
+    public void OrderCheck()
+    {
+        GameManager.Instance.TimeToCheckOrder();
+        Debug.Log(GameManager.Instance.correctOrder);
+        togglePlayer();
+    }
 }

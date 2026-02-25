@@ -11,7 +11,7 @@ public class Customer : MonoBehaviour
     public bool canStart = true;
 
     public TextMeshProUGUI textComponet;
-    [SerializeField] string[] linesIntro;
+    public string[] linesIntro;
     [SerializeField] string[] linesPasstime;
     [SerializeField] string[] linesRight;
     [SerializeField] string[] linesWrong;
@@ -20,7 +20,7 @@ public class Customer : MonoBehaviour
     [SerializeField] TMP_Text text;
     private int textIndex;
     private int dialoguetime;
-    private string[] lines;
+    [HideInInspector]public string[] lines;
     private Sprite potionImage;
     private bool commmenedOrder = false;
 
@@ -34,6 +34,11 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.checkDone)
+        {
+            lines = GameManager.Instance.correctOrder ? linesRight : linesWrong;
+        }
+
         if (!commmenedOrder) CommenceOrder();
 
         if(lines == linesPasstime) gameObject.transform.GetChild(1).gameObject.SetActive(true);
@@ -94,8 +99,11 @@ public class Customer : MonoBehaviour
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             canStart = true;
-            lines = linesPasstime;
-            isSpeaking = false;
+            if (lines == linesIntro)
+            {
+                lines = linesPasstime;
+            }
+                isSpeaking = false;
             GameManager.Instance.orderTime = true;
         }
     }

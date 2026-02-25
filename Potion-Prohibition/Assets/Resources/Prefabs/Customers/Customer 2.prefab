@@ -388,6 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6da0305e38c6442837572ae2a400ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSpeaking: 0
+  isOrdering: 0
   canStart: 1
   textComponet: {fileID: 1032148383272698172}
   linesIntro:
@@ -396,8 +398,11 @@ MonoBehaviour:
   linesPasstime:
   - passtime
   - green
-  linesRight: []
-  linesWrong: []
+  linesRight:
+  - wow its right
+  - yay
+  linesWrong:
+  - ts pmo
   textSpeed: 0.3
   potion: {fileID: 2739027923484847869}
   text: {fileID: 8563190087433188785}

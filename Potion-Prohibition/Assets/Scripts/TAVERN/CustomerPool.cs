@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CustomerPool : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class CustomerPool : MonoBehaviour
         if (currentCustomer != null) currentCustomer.SetActive(false);
         currentCustomer = this.gameObject.transform.GetChild(Random.Range(0, customers.Count)).gameObject;
         currentCustomer.SetActive(true);
+        GameManager.Instance.checkDone = false;
+        currentCustomer.GetComponent<Customer>().lines = currentCustomer.GetComponent<Customer>().linesIntro;
     }
 
     void PoolCustomers()
