@@ -215,6 +215,7 @@ MonoBehaviour:
   - {fileID: 1312302672}
   rockSlot: {fileID: 1678449917}
   spiceSlot: {fileID: 911880070}
+  potions: []
 --- !u!1 &113568945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 2000
   playerBody: {fileID: 113568949}
+  referenceForHealth: {fileID: 0}
 --- !u!81 &1583934227
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2320,7 +2322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3e1b67e0288ff41bd82468812bb1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 952989684d28df54a8b3fa3a7d705638, type: 2}
+  item: {fileID: 11400000, guid: be57eb640a88cc3408d6ce75357fd15d, type: 2}
 --- !u!212 &1892816324
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2776,6 +2778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGO: {fileID: 0}
+  UI: {fileID: 0}
   levelNames: []
   cellPrefab: {fileID: 0}
   savedRooms: []
@@ -2783,6 +2786,9 @@ MonoBehaviour:
   levelPassedValue: {fileID: 0}
   Orders: []
   currentOrder: {fileID: 0}
+  OrdertoCheck: {fileID: 0}
+  correctOrder: 0
+  checkDone: 0
   orderTime: 0
   inventory:
   - {fileID: 11400000, guid: 952989684d28df54a8b3fa3a7d705638, type: 2}
@@ -2795,6 +2801,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f6b971730d76144089052dc3d4551a0, type: 2}
   - {fileID: 11400000, guid: ebc5cd098d039934a9f0fa0e5807efd7, type: 2}
   potions: []
+  customerNum: 0
+  customerGenerated: 0
+  currentlines: 0
 --- !u!114 &2056512059
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,12 +43,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGO;
     public GameObject PlayerGO => playerGO;
     [SerializeField] GameObject UI;
+    public int orderQuota;
+    public int currentOrderQuota;
 
 
 
     private void Start()
     {
-        levelsPassed = 0;
+        levelsPassed = 1;
+        orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
+        currentOrderQuota = 0;
         StartCoroutine(LoadLevel(levelNames[0]));
         savedRooms = new();
         savedRoomPositions = new();
@@ -66,11 +70,6 @@ public class GameManager : MonoBehaviour
             PickRandomPotion();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            PickRandomPotion();
-        }
-
         //UpdateDevView();
 
         if (Input.GetKeyDown(KeyCode.P) && currentLevelName == "Kitchen")
@@ -79,6 +78,7 @@ public class GameManager : MonoBehaviour
             hasGenerated = false;
         }
 
+        
 
     }
 
@@ -207,6 +207,14 @@ public class GameManager : MonoBehaviour
     {
         correctOrder = currentOrder == OrdertoCheck;
         checkDone = true;
+    }
+
+    public void UpdateQuota()
+    {
+        if(correctOrder && checkDone)
+        {
+            currentOrderQuota++;
+        }
     }
 
     #endregion

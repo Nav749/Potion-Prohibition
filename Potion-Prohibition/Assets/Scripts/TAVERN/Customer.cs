@@ -110,7 +110,10 @@ public class Customer : MonoBehaviour
             }
             else if(lines != linesIntro && lines != linesPasstime)
             {
+                GameManager.Instance.UpdateQuota();
+                Debug.Log(GameManager.Instance.currentOrderQuota + "/ " + GameManager.Instance.orderQuota);
                 this.transform.GetComponentInParent<CustomerPool>().ActivateCustomer();
+                commmenedOrder = false;
             }
         }
     }
