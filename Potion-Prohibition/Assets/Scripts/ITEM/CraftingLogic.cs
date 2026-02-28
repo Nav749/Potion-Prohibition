@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -141,9 +142,24 @@ public class CraftingLogic : MonoBehaviour
     
     public void brew()
     {
+        
         for (int i = 0; i < potions.Length; i++) {
-            if (potions[i].checkIngredients(droppedItems)) {
-                gameManager.potions.Add(potions[i]);
+            
+            
+            if (potions[i].checkIngredients(droppedItems))
+            { 
+                Potion temp = potions[i].CloneViaFakeSerialization();
+
+                if (spice != null)
+                {
+                    temp.setSpiced(true);
+                }
+                if (rocks != null)
+                {
+                    temp.setOnTheRocks(true);
+                }
+
+                gameManager.potions.Add(temp);
             }
         }
 

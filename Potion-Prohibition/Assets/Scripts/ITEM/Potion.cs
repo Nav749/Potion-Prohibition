@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class Potion : ScriptableObject
 {
     [SerializeField] private string name;
     [SerializeField] private Sprite image;
-    [SerializeField] private Item[] ingredients;
+    [SerializeField] private List<Item> ingredients;
     [SerializeField] private string bottomText;
     private bool onTheRocks = false;
     private bool spiced = false;
@@ -27,7 +28,14 @@ public class Potion : ScriptableObject
     }
 
     public bool checkIngredients(Item[] input) {
-        return input == ingredients;
+        bool check = true;
+        foreach (Item item in input) {
+            if (!ingredients.Contains(item)) {
+                check = false;
+            }
+        }
+        //make sure that null slots dont fuck things up
+        return check;
     }
 
     public void setSpiced(bool input)
@@ -49,5 +57,15 @@ public class Potion : ScriptableObject
     public bool isOnTheRocks() 
     {
         return onTheRocks;
+    }
+
+    public string itemsToString() {
+        string temp = "";
+        for (int i = 0; i < ingredients.Length; i++)
+        {
+            temp = string.Concat(temp, " ", ingredients[i].getName());
+        }
+
+        return temp;
     }
 }
