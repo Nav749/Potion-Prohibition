@@ -20,10 +20,6 @@ public class TriggerforcustomerDialogue : MonoBehaviour
                 togglePlayer();
             }
         }
-        else
-        {
-            togglePlayerFalse();
-        }
 
     }
 
@@ -37,7 +33,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         GameManager.Instance.PlayerGO.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = !playerToggle;
     }
 
-    private void togglePlayerFalse()
+    void togglePlayerFalse()
     {
         playerToggle = false;
         UI.SetActive(playerToggle);

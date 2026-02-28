@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -43,16 +44,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGO;
     public GameObject PlayerGO => playerGO;
     [SerializeField] GameObject UI;
+    [SerializeField] GameObject nextDayScreen;
     public int orderQuota;
     public int currentOrderQuota;
-
-
 
     private void Start()
     {
         levelsPassed = 1;
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
+        nextDayScreen.SetActive(false);
         StartCoroutine(LoadLevel(levelNames[0]));
         savedRooms = new();
         savedRoomPositions = new();
@@ -70,16 +71,13 @@ public class GameManager : MonoBehaviour
             PickRandomPotion();
         }
 
-        //UpdateDevView();
-
-        if (Input.GetKeyDown(KeyCode.P) && currentLevelName == "Kitchen")
+        if(orderQuota == currentOrderQuota)
         {
-            levelsPassed++;
-            hasGenerated = false;
+            nextDayScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
 
-        
-
+        UpdateDevView();
     }
 
     #region SceneManagment
@@ -137,6 +135,17 @@ public class GameManager : MonoBehaviour
         isLoading = false;
     }
 
+    public void NextDay()
+    {
+        Debug.Log("YAY");
+        levelsPassed++;
+        orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
+        currentOrderQuota = 0;
+        Cursor.lockState = CursorLockMode.Locked;
+        nextDayScreen.SetActive(false);
+        hasGenerated = false;
+    }
+
     #endregion
 
     #region DungeonInfo
@@ -179,8 +188,8 @@ public class GameManager : MonoBehaviour
 
     private int levelsPassed;
     public int LevelsPassed => levelsPassed;
-    [SerializeField] Text levelPassedValue;
-
+    [SerializeField] TextMeshProUGUI levelPassedValue;
+    
     void UpdateDevView()
     {
         levelPassedValue.text = levelsPassed.ToString();
