@@ -61,7 +61,7 @@ public class Potion : ScriptableObject
 
     public string itemsToString() {
         string temp = "";
-        for (int i = 0; i < ingredients.Length; i++)
+        for (int i = 0; i < ingredients.Count; i++)
         {
             temp = string.Concat(temp, " ", ingredients[i].getName());
         }
