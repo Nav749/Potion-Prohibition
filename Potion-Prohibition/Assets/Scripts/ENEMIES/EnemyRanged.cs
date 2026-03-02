@@ -4,6 +4,8 @@ public class EnemyTest : MonoBehaviour
 {
     public bool rangedIsAggroed = false;
 
+    public bool rangedInrange = false;
+
     public float rangedEnemyHealth;
 
     public GameObject playerTargetForRangedEnemy;
@@ -48,8 +50,12 @@ public class EnemyTest : MonoBehaviour
         if (rangedIsAggroed == true)
         {
             ticker += 1;
-            rangedEnemyMovement = transform.forward * rangedEnemySpeed;
-            enemyRB.linearVelocity = new Vector3(rangedEnemyMovement.x, enemyRB.linearVelocity.y, rangedEnemyMovement.z);
+
+            if (rangedInrange == false)
+            {
+                rangedEnemyMovement = transform.forward * rangedEnemySpeed;
+                enemyRB.linearVelocity = new Vector3(rangedEnemyMovement.x, enemyRB.linearVelocity.y, rangedEnemyMovement.z);
+            }
 
             if (ticker >= rangedEnemyAttackSpeed * 60)
             {

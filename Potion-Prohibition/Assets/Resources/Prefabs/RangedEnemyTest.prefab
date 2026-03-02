@@ -483,13 +483,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedIsAggroed: 0
+  rangedInrange: 0
   rangedEnemyHealth: 10
   playerTargetForRangedEnemy: {fileID: 0}
   rangedEnemyAttackPrefab: {fileID: 8450692971338806516, guid: b0038e822072d044bb6b4d34e967f3e5,
     type: 3}
   rangedEnemyAttackSource: {fileID: 7484986045713100571}
-  rangedEnemySpeed: 2
-  rangedEnemyAttackSpeed: 9
+  rangedEnemySpeed: 4
+  rangedEnemyAttackSpeed: 55
   rangedEnemyBulletSpeed: 30
   enemyRB: {fileID: 5849938299618838347}
 --- !u!54 &5849938299618838347
@@ -530,7 +531,7 @@ GameObject:
   - component: {fileID: 6627935107418421319}
   - component: {fileID: 7948233841115462727}
   - component: {fileID: 2426299146976491402}
-  - component: {fileID: 1618085928943669465}
+  - component: {fileID: 3970388413806122240}
   m_Layer: 8
   m_Name: RangedAggroRange
   m_TagString: Untagged
@@ -582,7 +583,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1618085928943669465
+--- !u!114 &3970388413806122240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,7 +592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8937184482380095822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc61b61b7307ca74c88b0650cfc71874, type: 3}
+  m_Script: {fileID: 11500000, guid: 7002fa1118237b24396f67891c19d976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToTrigger: {fileID: 7334228984979081348}
+  EnemyToIndicate: {fileID: 7334228984979081348}

@@ -6,6 +6,7 @@ public class playerBullet : MonoBehaviour
     public float bulletLifetime;
     private EnemyTest enemyL;
     private EnemyMelee enemyM;
+    private EyeOfRah enemyR;
 
     private void Update()
     {
@@ -31,6 +32,13 @@ public class playerBullet : MonoBehaviour
             enemyM = other.GetComponent<EnemyMelee>();
             enemyM.meleeEnemyHealth = enemyM.meleeEnemyHealth - bulletScriptDamage;
             enemyM.meleeIsAggroed = true;
+
+        }
+        if (other.GetComponent<EyeOfRah>() != null)
+        {
+            enemyR = other.GetComponent<EyeOfRah>();
+            enemyR.rahEnemyHealth = enemyR.rahEnemyHealth - bulletScriptDamage;
+            enemyR.rahIsAggroed = true;
 
         }
         Destroy(gameObject);
