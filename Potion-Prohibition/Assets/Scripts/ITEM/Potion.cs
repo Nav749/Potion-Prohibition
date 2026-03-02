@@ -27,15 +27,23 @@ public class Potion : ScriptableObject
         return image;
     }
 
-    public bool checkIngredients(Item[] input) {
-        bool check = true;
-        foreach (Item item in input) {
-            if (!ingredients.Contains(item)) {
-                check = false;
-            }
+    public bool checkIngredients(List<Item> input) {
+        bool ingredentsCheck = true;
+        foreach (Item item in ingredients) { 
+            ingredentsCheck = ingredentsCheck && (input.Contains(item));
+
         }
-        //make sure that null slots dont fuck things up
-        return check;
+
+        bool inputCheck = true;
+        foreach(Item item in input)
+        {
+            if (item != null) { 
+                inputCheck = inputCheck && (ingredients.Contains(item));
+            }   
+
+        }
+        
+        return ingredentsCheck && inputCheck;
     }
 
     public void setSpiced(bool input)

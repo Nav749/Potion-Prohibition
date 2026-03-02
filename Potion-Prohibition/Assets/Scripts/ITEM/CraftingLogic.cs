@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class CraftingLogic : MonoBehaviour
 {
@@ -58,7 +59,7 @@ public class CraftingLogic : MonoBehaviour
 
     #region crafting item management
     int count = 0;
-    Item[] droppedItems = new Item[3];
+    List<Item> droppedItems = new List<Item>();
     Item spice = null;
     Item rocks = null;
 
@@ -121,7 +122,7 @@ public class CraftingLogic : MonoBehaviour
             rockSlot.sprite = null;
 
         }
-        for (int i = 0; i < droppedItems.Length; i++)
+        for (int i = 0; i < droppedItems.Count; i++)
         {
             if (droppedItems[i] != null)
             {
@@ -160,6 +161,7 @@ public class CraftingLogic : MonoBehaviour
                 }
 
                 gameManager.potions.Add(temp);
+                break;
             }
         }
 
