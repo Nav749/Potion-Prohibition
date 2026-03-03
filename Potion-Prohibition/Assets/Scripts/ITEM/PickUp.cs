@@ -11,7 +11,7 @@ public class PickUp : MonoBehaviour
     void Start()
     {
         image = GetComponent<SpriteRenderer>();
-        gameManager = GameObject.Find("GameManeger").GetComponent<GameManager>();
+        gameManager = GameManager.Instance;
         image.sprite = item.getImage();
         player = GameObject.Find("Player");
     }
