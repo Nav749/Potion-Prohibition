@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-
-    [SerializeField] bool canBreak = false;
-
     [SerializeField] GameObject[] spawnableObjects;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 7 && canBreak)
+        if(other.gameObject.layer == 7)
         {
             foreach(GameObject item in spawnableObjects)
             {
