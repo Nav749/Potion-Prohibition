@@ -37,7 +37,7 @@ public class PlayerLock : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         toggleCrafting();
-        //craftingLogic.createItems();
+        craftingLogic.createItems();
     }
     private void toggleCrafting() {
         isCrafting= !isCrafting;

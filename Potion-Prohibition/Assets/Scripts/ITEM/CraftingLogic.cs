@@ -50,7 +50,7 @@ public class CraftingLogic : MonoBehaviour
                 createItem(gameManager.inventory[i]);
             }
         }
-        //gameManager.clearInventory();
+        gameManager.clearInventory();
     }
 
 
