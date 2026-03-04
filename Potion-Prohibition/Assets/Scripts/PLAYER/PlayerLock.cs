@@ -8,7 +8,7 @@ using UnityEngine.Animations;
 public class PlayerLock : MonoBehaviour
 {
     // other game objects and compontes
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] private Camera craftingCam;
     [SerializeField] private Canvas UI;
     [SerializeField] private CraftingLogic craftingLogic;
@@ -19,6 +19,8 @@ public class PlayerLock : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameManager.Instance.PlayerGO;
+
         isCrafting = false;
         craftingCam = GetComponentInChildren<Camera>();
         craftingCam.enabled = isCrafting;

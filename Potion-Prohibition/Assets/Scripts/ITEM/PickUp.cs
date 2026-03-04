@@ -24,6 +24,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(item.getName() + " pciked up");
         for (int i = 0; i < gameManager.inventory.Length; i++)
         {
             if (gameManager.inventory[i] == item)

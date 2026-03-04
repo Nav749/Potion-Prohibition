@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 public class CraftingLogic : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame
