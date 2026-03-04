@@ -1,12 +1,16 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum RoomType
 {
     Regular,
-    Enemy,
-    Harvest,
+    Enemy1,
+    Enemy2,
+    Enemy3,
+    Harvest1,
+    Harvest2,
+    Harvest3,
+    Harvest4,
     Portal,
     Start
 }
@@ -16,7 +20,7 @@ public class Cell : MonoBehaviour
     [HideInInspector] public int index;
     [HideInInspector] public int value;
 
-    [HideInInspector]public bool north = false;
+    [HideInInspector] public bool north = false;
     [HideInInspector] public bool south = false;
     [HideInInspector] public bool east = false;
     [HideInInspector] public bool west = false;
@@ -33,18 +37,33 @@ public class Cell : MonoBehaviour
     public GameObject eastDoor;
     public GameObject westDoor;
 
-    [HideInInspector]public RoomType roomType;
+    [HideInInspector] public RoomType roomType;
 
     [Space]
 
     [Header("Rooms To Spawn")]
+    [Space]
+    [Header("Regular Rooms")]
     public GameObject[] regularRooms;
-    public GameObject[] enemyRooms;
-    public GameObject[] harvestRooms;
+    [Space]
+    [Header("Enemy Rooms")]
+    public GameObject[] newtRooms;
+    public GameObject[] slimeRooms;
+    public GameObject[] eyeRooms;
+    [Space]
+    [Header("Harvest Rooms")]
+    public GameObject[] bonesRooms;
+    public GameObject[] cabbageRooms;
+    public GameObject[] oysterRooms;
+    public GameObject[] mushroomRooms;
+    [Space]
+    [Header("Portal Rooms")]
     public GameObject[] portalRooms;
+    [Space]
+    [Header("Start Rooms")]
     public GameObject[] startRooms;
 
-    [HideInInspector]public List<int> cellList = new List<int>();
+    [HideInInspector] public List<int> cellList = new List<int>();
 
     public void SetSpecialRoomSprite(Sprite icon)
     {
@@ -60,12 +79,28 @@ public class Cell : MonoBehaviour
                 room = startRooms[Random.Range(0, startRooms.Length)];
                 SpawnRoom(room);
                 break;
-            case RoomType.Enemy:
-                room = enemyRooms[Random.Range(0, enemyRooms.Length)];
+            case RoomType.Enemy1:
+                room = newtRooms[Random.Range(0, newtRooms.Length)];
                 SpawnRoom(room);
                 break;
-            case RoomType.Harvest:
-                room = harvestRooms[Random.Range(0, harvestRooms.Length)];
+            case RoomType.Enemy2:
+                room = slimeRooms[Random.Range(0, slimeRooms.Length)];
+                SpawnRoom(room);
+                break;
+            case RoomType.Enemy3:
+                room = eyeRooms[Random.Range(0, eyeRooms.Length)];
+                SpawnRoom(room);
+                break;
+            case RoomType.Harvest1:
+                room = bonesRooms[Random.Range(0, bonesRooms.Length)];
+                SpawnRoom(room);
+                break;
+            case RoomType.Harvest2:
+                room = slimeRooms[Random.Range(0, bonesRooms.Length)];
+                SpawnRoom(room);
+                break;
+            case RoomType.Harvest3:
+                room = oysterRooms[Random.Range(0, bonesRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Portal:
@@ -89,12 +124,28 @@ public class Cell : MonoBehaviour
                 room = startRooms[Random.Range(0, startRooms.Length)];
                 SpawnRoom(room, index);
                 break;
-            case RoomType.Enemy:
-                room = enemyRooms[Random.Range(0, enemyRooms.Length)];
+            case RoomType.Enemy1:
+                room = newtRooms[Random.Range(0, newtRooms.Length)];
                 SpawnRoom(room, index);
                 break;
-            case RoomType.Harvest:
-                room = harvestRooms[Random.Range(0, harvestRooms.Length)];
+            case RoomType.Enemy2:
+                room = slimeRooms[Random.Range(0, slimeRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Enemy3:
+                room = eyeRooms[Random.Range(0, eyeRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Harvest1:
+                room = bonesRooms[Random.Range(0, bonesRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Harvest2:
+                room = slimeRooms[Random.Range(0, bonesRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Harvest3:
+                room = oysterRooms[Random.Range(0, bonesRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Portal:
