@@ -13,33 +13,38 @@ public enum RoomType
 
 public class Cell : MonoBehaviour
 {
-    public int index;
-    public int value;
+    [HideInInspector] public int index;
+    [HideInInspector] public int value;
 
-    public GameObject northDoor;
-    public GameObject southDoor;
-    public GameObject eastDoor;
-    public GameObject westDoor;
-
-    public bool north = false;
-    public bool south = false;
-    public bool east = false;
-    public bool west = false;
+    [HideInInspector]public bool north = false;
+    [HideInInspector] public bool south = false;
+    [HideInInspector] public bool east = false;
+    [HideInInspector] public bool west = false;
 
     private GameObject room;
 
     public SpriteRenderer spriteRenderer;
 
-    public RoomType roomType;
+    [Space]
 
+    [Header("Walls To Spawn")]
+    public GameObject northDoor;
+    public GameObject southDoor;
+    public GameObject eastDoor;
+    public GameObject westDoor;
 
-    public GameObject[] regRooms;
-    public GameObject[] eneRooms;
-    public GameObject[] harRooms;
-    public GameObject[] porRooms;
-    public GameObject[] staRooms;
+    [HideInInspector]public RoomType roomType;
 
-    public List<int> cellList = new List<int>();
+    [Space]
+
+    [Header("Rooms To Spawn")]
+    public GameObject[] regularRooms;
+    public GameObject[] enemyRooms;
+    public GameObject[] harvestRooms;
+    public GameObject[] portalRooms;
+    public GameObject[] startRooms;
+
+    [HideInInspector]public List<int> cellList = new List<int>();
 
     public void SetSpecialRoomSprite(Sprite icon)
     {
@@ -52,23 +57,23 @@ public class Cell : MonoBehaviour
         switch (roomType)
         {
             case RoomType.Start:
-                room = staRooms[Random.Range(0, staRooms.Length)];
+                room = startRooms[Random.Range(0, startRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Enemy:
-                room = eneRooms[Random.Range(0, eneRooms.Length)];
+                room = enemyRooms[Random.Range(0, enemyRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Harvest:
-                room = harRooms[Random.Range(0, harRooms.Length)];
+                room = harvestRooms[Random.Range(0, harvestRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Portal:
-                room = porRooms[Random.Range(0, porRooms.Length)];
+                room = portalRooms[Random.Range(0, portalRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Regular:
-                room = regRooms[Random.Range(0, regRooms.Length)];
+                room = regularRooms[Random.Range(0, regularRooms.Length)];
                 SpawnRoom(room);
                 break;
         }
@@ -81,23 +86,23 @@ public class Cell : MonoBehaviour
         switch (roomType)
         {
             case RoomType.Start:
-                room = staRooms[Random.Range(0, staRooms.Length)];
+                room = startRooms[Random.Range(0, startRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Enemy:
-                room = eneRooms[Random.Range(0, eneRooms.Length)];
+                room = enemyRooms[Random.Range(0, enemyRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Harvest:
-                room = harRooms[Random.Range(0, harRooms.Length)];
+                room = harvestRooms[Random.Range(0, harvestRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Portal:
-                room = porRooms[Random.Range(0, porRooms.Length)];
+                room = portalRooms[Random.Range(0, portalRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Regular:
-                room = regRooms[Random.Range(0, regRooms.Length)];
+                room = regularRooms[Random.Range(0, regularRooms.Length)];
                 SpawnRoom(room, index);
                 break;
         }
