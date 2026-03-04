@@ -323,31 +323,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   value: 0
-  northDoor: {fileID: 1411727760893276112}
-  southDoor: {fileID: 7167000204162572263}
-  eastDoor: {fileID: 115905881101191425}
-  westDoor: {fileID: 822070933667207073}
   north: 0
   south: 0
   east: 0
   west: 0
   spriteRenderer: {fileID: 6233239133857871951}
+  northDoor: {fileID: 1411727760893276112}
+  southDoor: {fileID: 7167000204162572263}
+  eastDoor: {fileID: 115905881101191425}
+  westDoor: {fileID: 822070933667207073}
   roomType: 0
-  regRooms:
+  regularRooms:
   - {fileID: 4203303758245392608, guid: 7885366465a30514b9183a1717f2b9ad, type: 3}
   - {fileID: 1418012789189984070, guid: a17ece0326e95cf4682e6a7e3d2e9be5, type: 3}
-  eneRooms:
-  - {fileID: 8200088193522244412, guid: c78edbbceace18347b0d03f3b4ba2834, type: 3}
-  - {fileID: 725204029230927116, guid: c5eec4c72564e86478dc2bc99f046b25, type: 3}
+  newtRooms:
   - {fileID: 1214807634800201870, guid: 02151582e4f30c740ae8b9002b9d2b18, type: 3}
-  harRooms:
-  - {fileID: 7782240847529315375, guid: 63ea5984df069df468ac18821c9d6d96, type: 3}
+  slimeRooms:
+  - {fileID: 8200088193522244412, guid: c78edbbceace18347b0d03f3b4ba2834, type: 3}
+  eyeRooms:
+  - {fileID: 725204029230927116, guid: c5eec4c72564e86478dc2bc99f046b25, type: 3}
+  bonesRooms:
   - {fileID: 4601534590498402579, guid: 4f49553ede988f64c8b9fd22ccc3c703, type: 3}
+  cabbageRooms:
+  - {fileID: 7782240847529315375, guid: 63ea5984df069df468ac18821c9d6d96, type: 3}
+  oysterRooms:
   - {fileID: 4685595226991114479, guid: 9e96090e9f1726345b022d3eaeb167d6, type: 3}
-  porRooms:
+  mushroomRooms: []
+  portalRooms:
   - {fileID: 833784439761104757, guid: 9df12d2c213deaf4485501d5ec21c8e3, type: 3}
   - {fileID: 9131920942071595646, guid: 9134861ea41d1e24ba08d97ec5549236, type: 3}
-  staRooms:
+  startRooms:
   - {fileID: 4739511416371707167, guid: 6db5a42ed8cadc44b826fe7e824d7823, type: 3}
   cellList: 
 --- !u!1 &1411727760893276112

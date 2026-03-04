@@ -22,6 +22,7 @@ public class MapGenerator : MonoBehaviour
     private int enemy3RoomIndex;
     private int harvest1RoomIndex;
     private int harvest2RoomIndex;
+    private int harvest3RoomIndex;
     private int portalRoomIndex;
 
     public Cell cellPrefab;
@@ -142,8 +143,9 @@ public class MapGenerator : MonoBehaviour
         portalRoomIndex = PortalRoom();
         harvest1RoomIndex = RandomEndRoom();
         harvest2RoomIndex = RandomEndRoom();
+        harvest3RoomIndex = RandomEndRoom();
 
-        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || portalRoomIndex == -1)
+        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || harvest3RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || portalRoomIndex == -1)
         {
             SetupDungeon();
             return;
@@ -158,21 +160,53 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i < spawnedCells.Count; i++)
         {
             {
-                if (spawnedCells[i].index == harvest1RoomIndex || spawnedCells[i].index == harvest2RoomIndex)
+                if (spawnedCells[i].index == harvest1RoomIndex)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(harvest);
                     Destroy(spawnedRooms[i].gameObject);
                     spawnedRooms.RemoveAt(i);
                     spawnedStates.RemoveAt(i);
-                    spawnedCells[i].SetRoomType(RoomType.Harvest, i);
+                    spawnedCells[i].SetRoomType(RoomType.Harvest1, i);
                 }
-                if (spawnedCells[i].index == enemy1RoomIndex || spawnedCells[i].index == enemy2RoomIndex || spawnedCells[i].index == enemy3RoomIndex)
+                if (spawnedCells[i].index == harvest2RoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(harvest);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Harvest2, i);
+                }
+                if (spawnedCells[i].index == harvest3RoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(harvest);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Harvest3, i);
+                }
+                if (spawnedCells[i].index == enemy1RoomIndex)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(enemy);
                     Destroy(spawnedRooms[i].gameObject);
                     spawnedRooms.RemoveAt(i);
                     spawnedStates.RemoveAt(i);
-                    spawnedCells[i].SetRoomType(RoomType.Enemy, i);
+                    spawnedCells[i].SetRoomType(RoomType.Enemy1, i);
+                }
+                if (spawnedCells[i].index == enemy2RoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(enemy);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Enemy2, i);
+                }
+                if (spawnedCells[i].index == enemy3RoomIndex)
+                {
+                    spawnedCells[i].SetSpecialRoomSprite(enemy);
+                    Destroy(spawnedRooms[i].gameObject);
+                    spawnedRooms.RemoveAt(i);
+                    spawnedStates.RemoveAt(i);
+                    spawnedCells[i].SetRoomType(RoomType.Enemy3, i);
                 }
                 if (spawnedCells[i].index == 67)
                 {
