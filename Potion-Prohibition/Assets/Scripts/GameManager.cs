@@ -137,7 +137,6 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
-        Debug.Log("YAY");
         levelsPassed++;
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
@@ -216,6 +215,7 @@ public class GameManager : MonoBehaviour
     {
         correctOrder = currentOrder == OrdertoCheck;
         checkDone = true;
+        RemovePotion(OrdertoCheck);
     }
 
     public void UpdateQuota()
@@ -248,6 +248,11 @@ public class GameManager : MonoBehaviour
     public void clearPotionInventory()
     {
         potions.Clear();
+    }
+
+    public void RemovePotion(Potion potion)
+    {
+        potions.Remove(potion);
     }
 
     #endregion

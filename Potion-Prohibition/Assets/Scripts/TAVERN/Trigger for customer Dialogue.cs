@@ -6,17 +6,23 @@ public class TriggerforcustomerDialogue : MonoBehaviour
     [SerializeField] CustomerPool pool;
     [SerializeField] GameObject UI;
     [SerializeField] Camera camera;
+    [SerializeField] OrderInventoryControl orderInventoryControl;
     public bool canSpeak = false;
     private bool playerToggle = false;
+    private bool isOrdering = false;
 
     private void Update()
     {
-        if (canSpeak && Input.GetKeyDown(KeyCode.E)) pool.StartSpeaking();
+        if (canSpeak && Input.GetKeyDown(KeyCode.E) && !isOrdering) pool.StartSpeaking();
 
         if (GameManager.Instance.orderTime)
         {
             if (canSpeak && Input.GetKeyDown(KeyCode.F))
             {
+                if (!playerToggle)
+                {
+                    orderInventoryControl.UpdateUI();
+                }
                 togglePlayer();
             }
         }
@@ -26,16 +32,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
     private void togglePlayer()
     {
         playerToggle = !playerToggle;
-        UI.SetActive(playerToggle);
-        Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
-        camera.enabled = playerToggle;
-        GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
-        GameManager.Instance.PlayerGO.transform.GetChild(2).GetComponent<MeshRenderer>().enabled = !playerToggle;
-    }
-
-    void togglePlayerFalse()
-    {
-        playerToggle = false;
+        isOrdering = !isOrdering;
         UI.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
         camera.enabled = playerToggle;
@@ -63,8 +60,11 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
     public void OrderCheck()
     {
-        GameManager.Instance.TimeToCheckOrder();
-        Debug.Log(GameManager.Instance.correctOrder);
-        togglePlayer();
+        if(GameManager.Instance.OrdertoCheck != null)
+        {
+            GameManager.Instance.TimeToCheckOrder();
+            Debug.Log(GameManager.Instance.correctOrder);
+            togglePlayer();
+        }
     }
 }

@@ -60,13 +60,6 @@ public class Customer : MonoBehaviour
                 }
             }
         }
-        else if (!isSpeaking && isOrdering)
-        {
-            if (Input.GetKeyDown(KeyCode.F) && lines == linesPasstime)
-            {
-                Debug.Log("Order Time");
-            }
-        }
 
         GameManager.Instance.orderTime = lines == linesPasstime ? true : false;
     }

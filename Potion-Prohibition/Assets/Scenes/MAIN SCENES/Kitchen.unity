@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 64355549}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.06, y: -4.26, z: -0.93}
+  m_LocalPosition: {x: 7.23, y: -5.91, z: -0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -326,6 +326,7 @@ MonoBehaviour:
   pool: {fileID: 1585935333}
   UI: {fileID: 2127563548}
   camera: {fileID: 64355551}
+  orderInventoryControl: {fileID: 2127563553}
   canSpeak: 0
 --- !u!1001 &115081368
 PrefabInstance:
@@ -4739,6 +4740,7 @@ GameObject:
   - component: {fileID: 2127563551}
   - component: {fileID: 2127563550}
   - component: {fileID: 2127563549}
+  - component: {fileID: 2127563553}
   m_Layer: 5
   m_Name: Order System UI
   m_TagString: Untagged
@@ -4832,6 +4834,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2127563553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127563548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97acb3a1d8ac86747a54f946cb72fb90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabForItem:
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
+  - {fileID: 8570512517374809850, guid: 177675d780e62e240bcef9d679865d29, type: 3}
 --- !u!1 &2127688219
 GameObject:
   m_ObjectHideFlags: 0

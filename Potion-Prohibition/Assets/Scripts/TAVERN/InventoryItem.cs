@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image image;
-    [SerializeField] Potion potion;
+    public Potion potion;
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public string potionName;
 
