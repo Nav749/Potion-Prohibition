@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject nextDayScreen;
     public int orderQuota;
     public int currentOrderQuota;
-
+    [SerializeField] Timesmet[] stats;
     private void Start()
     {
         levelsPassed = 1;
@@ -58,7 +58,13 @@ public class GameManager : MonoBehaviour
         savedRooms = new();
         savedRoomPositions = new();
         savedDoors = new();
-
+        if(levelsPassed == 1)
+        {
+            for (int i = 0; i < stats.Length; i++)
+            {
+                stats[i].SetInt(0);
+            }
+        }
     }
 
     private void Update()

@@ -18,7 +18,7 @@ public class CustomerPool : MonoBehaviour
             currentCustomer = cus;
             currentCustomer.SetActive(true);
             GameManager.Instance.checkDone = false;
-            currentCustomer.GetComponent<Customer>().lines = currentCustomer.GetComponent<Customer>().linesIntro;
+            currentCustomer.GetComponent<Customer>().lines = currentCustomer.GetComponent<Customer>().LinesIntro();
         }
     }
 
@@ -45,7 +45,7 @@ public class CustomerPool : MonoBehaviour
         GameManager.Instance.customerGenerated = true;
         currentCustomer.SetActive(true);
         GameManager.Instance.checkDone = false;
-        currentCustomer.GetComponent<Customer>().lines = currentCustomer.GetComponent<Customer>().linesIntro;
+        currentCustomer.GetComponent<Customer>().lines = currentCustomer.GetComponent<Customer>().LinesIntro();
         GameManager.Instance.PickRandomPotion();
     }
 

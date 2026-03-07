@@ -227,9 +227,16 @@ MonoBehaviour:
   isOrdering: 0
   canStart: 1
   textComponet: {fileID: 1032148383272698172}
-  linesIntro:
-  - hello world
-  - mark is awesome but cyan
+  linesIntro1:
+  - hello
+  - it is day 1
+  linesIntro: []
+  linesIntro2:
+  - hello
+  - It is day 2
+  linesIntro3:
+  - hello
+  - it is day 3
   linesPasstime:
   - passtime
   - cyan
@@ -238,10 +245,13 @@ MonoBehaviour:
   - yay
   linesWrong:
   - ts pmo
+  linesEnd:
+  - bye
   textSpeed: 0.3
   potion: {fileID: 2797662971955983752}
   text: {fileID: 65500312039760220}
   lines: []
+  history: {fileID: 11400000, guid: 9021d647eebe18f469bec5b1e83be71c, type: 2}
 --- !u!212 &5753681375372522192
 SpriteRenderer:
   m_ObjectHideFlags: 0

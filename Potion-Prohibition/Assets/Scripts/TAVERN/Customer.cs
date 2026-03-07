@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class Customer : MonoBehaviour
 {
@@ -11,17 +12,22 @@ public class Customer : MonoBehaviour
     public bool canStart = true;
 
     public TextMeshProUGUI textComponet;
+    public string[] linesIntro1;
     public string[] linesIntro;
+    public string[] linesIntro2;
+    public string[] linesIntro3;
     [SerializeField] string[] linesPasstime;
     [SerializeField] string[] linesRight;
     [SerializeField] string[] linesWrong;
+    [SerializeField] string[] linesEnd;
     [SerializeField] float textSpeed;
     [SerializeField] SpriteRenderer potion;
     [SerializeField] TMP_Text text;
     private int textIndex;
-    [HideInInspector]public string[] lines;
+    [HideInInspector] public string[] lines;
     private Sprite potionImage;
     private bool commmenedOrder = false;
+    [SerializeField] Timesmet history;
 
     private void Start()
     {
@@ -29,6 +35,8 @@ public class Customer : MonoBehaviour
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
         lines = IntToLine();
         text.text = string.Empty;
+        linesRight = linesRight.Concat(linesEnd).ToArray();
+        linesWrong = linesWrong.Concat(linesEnd).ToArray();
     }
 
     private void Update()
@@ -101,8 +109,12 @@ public class Customer : MonoBehaviour
             {
                 lines = linesPasstime;
             }
-            else if(lines != linesIntro && lines != linesPasstime)
+            else if (lines != linesIntro1 && lines != linesPasstime)
             {
+                if (history.GetInt() != 2)
+                {
+                    history.SetInt(history.GetInt() + 1);
+                }
                 GameManager.Instance.UpdateQuota();
                 Debug.Log(GameManager.Instance.currentOrderQuota + "/ " + GameManager.Instance.orderQuota);
                 this.transform.GetComponentInParent<CustomerPool>().ActivateCustomer();
@@ -129,7 +141,19 @@ public class Customer : MonoBehaviour
     string[] IntToLine()
     {
         if (GameManager.Instance.currentlines == 1) return linesPasstime;
-        else return linesIntro;
+        else
+        {
+            return LinesIntro();
+        }
+    }
+
+    public string[] LinesIntro()
+    {
+        if (history.GetInt() == 0) linesIntro = linesIntro1;
+        else if (history.GetInt() == 1) linesIntro = linesIntro2;
+        else linesIntro = linesIntro3;
+
+        return linesIntro;
     }
 
 }
