@@ -96,11 +96,15 @@ public class Cell : MonoBehaviour
                 SpawnRoom(room);
                 break;
             case RoomType.Harvest2:
-                room = slimeRooms[Random.Range(0, bonesRooms.Length)];
+                room = cabbageRooms[Random.Range(0, bonesRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Harvest3:
                 room = oysterRooms[Random.Range(0, bonesRooms.Length)];
+                SpawnRoom(room);
+                break;
+            case RoomType.Harvest4:
+                room = mushroomRooms[Random.Range(0, bonesRooms.Length)];
                 SpawnRoom(room);
                 break;
             case RoomType.Portal:
@@ -141,11 +145,15 @@ public class Cell : MonoBehaviour
                 SpawnRoom(room, index);
                 break;
             case RoomType.Harvest2:
-                room = slimeRooms[Random.Range(0, bonesRooms.Length)];
+                room = cabbageRooms[Random.Range(0, bonesRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Harvest3:
                 room = oysterRooms[Random.Range(0, bonesRooms.Length)];
+                SpawnRoom(room, index);
+                break;
+            case RoomType.Harvest4:
+                room = mushroomRooms[Random.Range(0, bonesRooms.Length)];
                 SpawnRoom(room, index);
                 break;
             case RoomType.Portal:
