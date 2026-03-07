@@ -28,22 +28,18 @@ public class Potion : ScriptableObject
     }
 
     public bool checkIngredients(List<Item> input) {
-        bool ingredentsCheck = true;
-        foreach (Item item in ingredients) { 
-            ingredentsCheck = ingredentsCheck && (input.Contains(item));
 
-        }
-
-        bool inputCheck = true;
-        foreach(Item item in input)
+        bool check = input[0] == ingredients[0];
+        check = check && (input[1] == ingredients[1]);
+        if (ingredients.Count == 3)
         {
-            if (item != null) { 
-                inputCheck = inputCheck && (ingredients.Contains(item));
-            }   
-
+            check = check && (input[2] == ingredients[2]);
         }
         
-        return ingredentsCheck && inputCheck;
+
+
+
+        return check;
     }
 
     public void setSpiced(bool input)

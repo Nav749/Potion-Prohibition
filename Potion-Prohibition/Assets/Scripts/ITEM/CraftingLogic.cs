@@ -42,7 +42,7 @@ public class CraftingLogic : MonoBehaviour
 
     public void createItems()
     {
-        for (int i = 0; i <= gameManager.inventory.Length; i++)
+        for (int i = 0; i < gameManager.inventory.Length; i++)
         {
 
             for (int j = 0; j < gameManager.inventory[i].getAmount(); j++)
@@ -96,7 +96,7 @@ public class CraftingLogic : MonoBehaviour
         {
             if (count < 3)
             {
-                droppedItems[count] = item;
+                droppedItems.Add(item);
                 slots[count].sprite = item.getImage();
                 count++;
             }
@@ -128,10 +128,9 @@ public class CraftingLogic : MonoBehaviour
             {
                 createItem(droppedItems[i]);
                 slots[i].sprite = null;
-                droppedItems[i] = null;
             }
         }
-
+        droppedItems.Clear();
         count = 0;
     }
 
