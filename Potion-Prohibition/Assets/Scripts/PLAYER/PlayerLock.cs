@@ -1,9 +1,4 @@
-using NUnit.Framework.Internal;
-using System.Linq.Expressions;
-using System.Xml;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Animations;
 
 public class PlayerLock : MonoBehaviour
 {
