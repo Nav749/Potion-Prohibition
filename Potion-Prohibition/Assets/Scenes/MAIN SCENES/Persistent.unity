@@ -1686,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGO: {fileID: 1859079195}
   UI: {fileID: 1577000500}
+  LoadingScreen: {fileID: 1152251748}
   nextDayScreen: {fileID: 2060006310}
   orderQuota: 0
   currentOrderQuota: 0
@@ -2934,7 +2935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1152251749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2996,7 +2997,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1152251752
 RectTransform:
@@ -4632,7 +4633,7 @@ SceneRoots:
   - {fileID: 1579109491}
   - {fileID: 593770303}
   - {fileID: 390180955}
+  - {fileID: 1152251752}
   - {fileID: 1577000504}
   - {fileID: 2060006314}
   - {fileID: 1507968773}
-  - {fileID: 1152251752}
