@@ -125,6 +125,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1068130146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &198322954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 198322956}
+  - component: {fileID: 198322955}
+  m_Layer: 0
+  m_Name: NPC dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &198322955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198322954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccfbda4663de7a48b49a5aae512c2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerCombos: 
+--- !u!4 &198322956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198322954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1119.8118, y: -785.20874, z: -0.30918705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242316587
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,9 +752,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGO: {fileID: 41780868}
   UI: {fileID: 0}
+  LoadingScreen: {fileID: 0}
   nextDayScreen: {fileID: 0}
   orderQuota: 0
   currentOrderQuota: 0
+  stats: []
   levelNames: []
   cellPrefab: {fileID: 0}
   savedRooms: []
@@ -969,3 +1016,4 @@ SceneRoots:
   - {fileID: 2366295314375272422}
   - {fileID: 7473722793658692621}
   - {fileID: 4809825989368405396}
+  - {fileID: 198322956}
