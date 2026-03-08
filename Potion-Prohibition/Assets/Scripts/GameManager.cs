@@ -99,8 +99,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevels()
     {
-        currentLevelIndex++;
-        StartCoroutine(LoadLevel(levelNames[currentLevelIndex % levelNames.Length]));
+        currentLevelIndex = (currentLevelIndex + 1) % levelNames.Length;
+        StartCoroutine(LoadLevel(levelNames[currentLevelIndex]));
     }
 
     IEnumerator LoadLevel(string levelName)

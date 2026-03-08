@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 public class CustomerPool : MonoBehaviour
 {
     [SerializeField] List<GameObject> customers;
+    [SerializeField] CustomerDialogue bannedCustomers;
     GameObject currentCustomer;
+    int customerNum;
     Customer c;
 
     private void Start()
@@ -33,11 +35,13 @@ public class CustomerPool : MonoBehaviour
     public void ActivateCustomer()
     {
         if (currentCustomer != null) currentCustomer.SetActive(false);
-        int customerNum = Random.Range(0, customers.Count);
+        customerNum = Random.Range(0, customers.Count);
+        CheckCustomerNum();
         GameObject customer = this.gameObject.transform.GetChild(customerNum).gameObject;
         while (customer == currentCustomer)
         {
             customerNum = Random.Range(0, customers.Count);
+            CheckCustomerNum();
             customer = this.gameObject.transform.GetChild(customerNum).gameObject;
         }
         GameManager.Instance.customerNum = customerNum;
@@ -72,5 +76,13 @@ public class CustomerPool : MonoBehaviour
     public void OrderToggle()
     {
         c.isOrdering = !c.isOrdering;
+    }
+
+    void CheckCustomerNum()
+    {
+        while(customerNum == bannedCustomers.customerInt1 || customerNum == bannedCustomers.customerInt2)
+        {
+            customerNum = Random.Range(0, customers.Count);
+        }
     }
 }
