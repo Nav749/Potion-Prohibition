@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGO;
     public GameObject PlayerGO => playerGO;
     [SerializeField] GameObject UI;
+    [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject nextDayScreen;
     public int orderQuota;
     public int currentOrderQuota;
@@ -106,7 +107,8 @@ public class GameManager : MonoBehaviour
     {
         isLoading = true;
         playerGO.SetActive(false);
-
+        LoadingScreen.SetActive(true);
+        
         if (!string.IsNullOrEmpty(currentLevelName))
         {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
@@ -137,8 +139,15 @@ public class GameManager : MonoBehaviour
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         }
 
+
+        Invoke("TurnOffLoadingScreen", 2f);
         playerGO.SetActive(true);
         isLoading = false;
+    }
+
+    void TurnOffLoadingScreen()
+    {
+        LoadingScreen.SetActive(false);
     }
 
     public void NextDay()
