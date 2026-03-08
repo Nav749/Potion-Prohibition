@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class CustomerDialogue : MonoBehaviour
 {
-    [Tooltip("Put the Customer Combos as a 2 digit number.  ie. 13 corresponds to customers 1 and 3")]
-    [SerializeField] int[] customerCombos;
+    [SerializeField] Dialogue[] customerCombos;
 
     [SerializeField] Sprite[] Customers;
+
+    public Dialogue currentCustomers;
 
     public int customerInt1;
     public int customerInt2;
@@ -16,7 +17,8 @@ public class CustomerDialogue : MonoBehaviour
 
     void Start()
     {
-        combo = customerCombos[Random.Range(0, customerCombos.Length)];
+        currentCustomers = customerCombos[Random.Range(0, customerCombos.Length)];
+        combo = currentCustomers.GetCombo();
         SpawnCustomers();
     }
 
