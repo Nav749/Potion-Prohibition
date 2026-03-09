@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyTest : MonoBehaviour
@@ -7,6 +8,8 @@ public class EnemyTest : MonoBehaviour
     public bool rangedInrange = false;
 
     public float rangedEnemyHealth;
+
+    public Animator RangedAnimator;
 
     public GameObject playerTargetForRangedEnemy;
 
@@ -33,13 +36,14 @@ public class EnemyTest : MonoBehaviour
     private void Start()
     {
         playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
+        RangedAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (rangedEnemyHealth <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(RangedDeath());
         }
 
         targetDirectionRangedEnemy = (playerTargetForRangedEnemy.transform.position - transform.position).normalized;
@@ -56,14 +60,35 @@ public class EnemyTest : MonoBehaviour
                 rangedEnemyMovement = transform.forward * rangedEnemySpeed;
                 enemyRB.linearVelocity = new Vector3(rangedEnemyMovement.x, enemyRB.linearVelocity.y, rangedEnemyMovement.z);
             }
-
-            if (ticker >= rangedEnemyAttackSpeed * 60)
+            else
             {
-                GameObject EnemyAttackInRange = Instantiate(rangedEnemyAttackPrefab, rangedEnemyAttackSource.position, transform.rotation);
-                EnemyAttackInRange.GetComponent<Rigidbody>().AddForce(rangedEnemyAttackSource.forward * rangedEnemyBulletSpeed, ForceMode.Impulse);
-                ticker = 0;
+                enemyRB.linearVelocity = new Vector3(0, 0, 0);
+            }
+
+            if (ticker >= rangedEnemyAttackSpeed * 60 && rangedIsAggroed == true)
+            {
+                StartCoroutine(RangedAttack());
             }
         }
     }
 
+    IEnumerator RangedAttack()
+    {
+        ticker = 0;
+        RangedAnimator.SetTrigger("IsAttacking");
+        yield return new WaitForSeconds(1f);
+        GameObject EnemyAttackInRange = Instantiate(rangedEnemyAttackPrefab, rangedEnemyAttackSource.position, transform.rotation);
+        EnemyAttackInRange.GetComponent<Rigidbody>().AddForce(rangedEnemyAttackSource.forward * rangedEnemyBulletSpeed, ForceMode.Impulse);
+        RangedAnimator.SetTrigger("backToIdle");
+        yield return new WaitForSeconds(1f);
+    }
+
+    //THis is where the Enemy Dies.
+    IEnumerator RangedDeath()
+    {
+        rangedIsAggroed = false;
+        RangedAnimator.SetTrigger("IsDead");
+        yield return new WaitForSeconds(0.7f);
+        Destroy(gameObject);
+    }
 }

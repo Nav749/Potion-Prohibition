@@ -3187,6 +3187,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1550249911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550249912}
+  - component: {fileID: 1550249914}
+  - component: {fileID: 1550249913}
+  m_Layer: 5
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1550249912
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550249911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.7126, y: 4.7126, z: 4.7126}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1577000504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -725, y: -304}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1550249913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550249911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 36de49eca487dc944ba574f972cc2fec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1550249914
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550249911}
+  m_CullTransparentMesh: 1
 --- !u!1 &1566782511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,6 +3400,7 @@ RectTransform:
   - {fileID: 551466670}
   - {fileID: 1566782512}
   - {fileID: 1254526487}
+  - {fileID: 1550249912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3375,6 +3451,28 @@ PrefabInstance:
       propertyPath: healthbarHolder
       value: 
       objectReference: {fileID: 1691888853}
+    - target: {fileID: 3903144049261212106, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: Idle
+      value: 
+      objectReference: {fileID: 21300000, guid: 36de49eca487dc944ba574f972cc2fec,
+        type: 3}
+    - target: {fileID: 3903144049261212106, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: shoot
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d8c2209f42d9ee44b26abf3cc5f672f,
+        type: 3}
+    - target: {fileID: 3903144049261212106, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: UIHand
+      value: 
+      objectReference: {fileID: 1550249913}
+    - target: {fileID: 5001768330568637811, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: playerSpeed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7652046806132086379, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: mouseSensitivity
@@ -3450,7 +3548,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2581452902936855669, guid: bcf7065a3c69cd540b027a511079b42b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
