@@ -15,14 +15,19 @@ public class InventroyRow : MonoBehaviour
     {
         image.sprite = item.getIcon();
         title.text = item.getName();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        amount.text =  "x" + item.getAmount();
+        updateAmount();
     }
 
+
+    public void updateAmount() { 
+        amount.text = "X" + item.getAmount();
+    }
   
 }

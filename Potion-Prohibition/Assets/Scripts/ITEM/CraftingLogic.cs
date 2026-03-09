@@ -134,6 +134,14 @@ public class CraftingLogic : MonoBehaviour
         count = 0;
     }
 
+    private void clearSlots() { 
+        spiceSlot.sprite = null;
+        rockSlot.sprite = null;
+        for (int i = 0; i < slots.Length; i++) { 
+            slots[i].sprite = null;
+        }
+    }
+    
     #endregion
 
     #region brewing
@@ -142,7 +150,8 @@ public class CraftingLogic : MonoBehaviour
     
     public void brew()
     {
-        
+        bool sucessful;
+
         for (int i = 0; i < potions.Length; i++) {
             
             
@@ -159,10 +168,25 @@ public class CraftingLogic : MonoBehaviour
                     temp.setOnTheRocks(true);
                 }
 
+
+                clearSlots();
+                droppedItems.Clear();
+                /*
+                 * code for showing potion
+                 */
+                
                 gameManager.potions.Add(temp);
+
+
                 break;
             }
         }
+
+        /*
+         * if !sucesufll
+         */
+
+
 
     }
 
