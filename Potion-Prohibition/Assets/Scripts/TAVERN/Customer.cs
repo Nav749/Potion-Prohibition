@@ -1,8 +1,7 @@
 using System.Collections;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using TMPro;
-using System.Linq;
 
 public class Customer : MonoBehaviour
 {
@@ -41,6 +40,11 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
+        Vector3 target = (GameManager.Instance.PlayerGO.transform.position - transform.position).normalized;
+        Quaternion lookingRotation = Quaternion.LookRotation(target);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotation, 85);
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+
         GameManager.Instance.currentlines = lineToInt();
 
         if (GameManager.Instance.checkDone)
@@ -50,7 +54,7 @@ public class Customer : MonoBehaviour
 
         if (!commmenedOrder) CommenceOrder();
 
-        if(lines == linesPasstime) gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        if (lines == linesPasstime) gameObject.transform.GetChild(1).gameObject.SetActive(true);
         else gameObject.transform.GetChild(1).gameObject.SetActive(false);
 
         if (isSpeaking)
