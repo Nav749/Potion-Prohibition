@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerSpellShoot : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class playerSpellShoot : MonoBehaviour
     public GameObject Wand;
     public GameObject spellBulletPrefab;
     public playerMana mana;
+    public Sprite Idle;
+    public Sprite shoot;
+    public Image UIHand;
 
     private bool isCrafting = false;
 
@@ -29,14 +34,14 @@ public class playerSpellShoot : MonoBehaviour
             {
                 if (Input.GetButton("Fire1") && bulletTimer <= 0)
                 {
-                    Shoot();
+                    StartCoroutine(Shoot());
                 }
             }
             else
             {
                 if (Input.GetButtonDown("Fire1") && bulletTimer <= 0)
                 {
-                    Shoot();
+                    StartCoroutine(Shoot());
                 }
             }
         }
@@ -46,16 +51,19 @@ public class playerSpellShoot : MonoBehaviour
         }
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
         if (mana.checkMana(20) == true)
         {
+            UIHand.sprite = shoot;
             mana.ManaFire(20);
             GameObject spellBullet = Instantiate(spellBulletPrefab, spellBulletSpawnLocation.position, Quaternion.identity, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
             spellBullet.GetComponent<Rigidbody>().AddForce(spellBulletSpawnLocation.forward * spellBulletSpeed, ForceMode.Impulse);
             spellBullet.GetComponent<playerBullet>().bulletScriptDamage = spellBulletDamage;
 
             bulletTimer = 1;
+            yield return new WaitForSeconds(0.1f);
+            UIHand.sprite = Idle;
         }
     }
 
