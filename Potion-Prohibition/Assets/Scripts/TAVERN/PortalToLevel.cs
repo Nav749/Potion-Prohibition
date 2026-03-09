@@ -8,6 +8,7 @@ public class PortalToLevel : MonoBehaviour
         {
             //other.GetComponent<playerSpellShoot>().tavernNeutral = true;
             GameManager.Instance.LoadLevels();
+            other.GetComponent<playerMovement>().setJumpLock();
         }
     }
 }
