@@ -12,7 +12,7 @@ public class Customer : MonoBehaviour
 
     public TextMeshProUGUI textComponet;
     public string[] linesIntro1;
-    public string[] linesIntro;
+    [HideInInspector]public string[] linesIntro;
     public string[] linesIntro2;
     public string[] linesIntro3;
     [SerializeField] string[] linesPasstime;
