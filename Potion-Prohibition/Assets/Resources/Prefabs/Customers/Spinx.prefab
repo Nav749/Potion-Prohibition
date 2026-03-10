@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2643474563772387064}
@@ -52,25 +52,30 @@ MonoBehaviour:
   canStart: 1
   textComponet: {fileID: 1032148383272698172}
   linesIntro1:
-  - hello
-  - It is day 1
+  - Hm, so a goblin runs the counter now?
+  - "You\u2019re smaller than I would expect..."
+  - But I suppose greatness can come in humble forms
   linesIntro: []
   linesIntro2:
-  - hello
-  - It is day 2
+  - Ah, the Goblin again, behind the counter
+  - "Let\u2019s see how you\u2019ve improved"
   linesIntro3:
-  - hello
-  - it is day 3
+  - Greetings, little Goblin
+  - I expect nothing less than perfect, like usual
+  - "Let\u2019s see if you keep it up"
   linesPasstime:
-  - passtime
-  - purple
+  - I require a potion worthy of my time and money
+  - See to it, yes?
   linesRight:
-  - wow its right
-  - yay
+  - "This is\u2026 acceptable"
+  - You may take pride in the creation of this potion
   linesWrong:
-  - ts pmo
+  - This is inadequate
+  - Worry not, Goblin
+  - Perfection takes practice
   linesEnd:
-  - bye
+  - You have potential, little Goblin
+  - When I return, I hope to see that your skills have increased
   textSpeed: 0.05
   potion: {fileID: 4202478232269582438}
   text: {fileID: 1248791015467373789}
@@ -120,7 +125,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05cf7693e96e2f241b86e348bb901b2f, type: 3}
+  m_Sprite: {fileID: -1666215683, guid: 0bb861b52174936449a5a1c94a1b3275, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -398,7 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8621072764423437345
 Transform:
   m_ObjectHideFlags: 0
@@ -407,14 +412,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6607009186460238416}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0.568, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -7.02, y: 1.52, z: -0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1657801855920370996}
   m_Father: {fileID: 9140236158355592166}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &7281433026997882439
 GameObject:
   m_ObjectHideFlags: 0
