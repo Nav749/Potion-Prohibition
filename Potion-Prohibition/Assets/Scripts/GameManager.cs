@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
     {
         isLoading = true;
         playerGO.SetActive(false);
+        PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
         LoadingScreen.SetActive(true);
         
         if (!string.IsNullOrEmpty(currentLevelName))
@@ -148,6 +149,7 @@ public class GameManager : MonoBehaviour
     void TurnOffLoadingScreen()
     {
         LoadingScreen.SetActive(false);
+        PlayerGO.GetComponent<playerMovement>().setMoveLock(false);
     }
 
     public void NextDay()
