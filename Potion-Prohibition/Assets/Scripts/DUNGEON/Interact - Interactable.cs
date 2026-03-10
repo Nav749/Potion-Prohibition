@@ -6,7 +6,7 @@ public class InteractInteractable : MonoBehaviour
     [SerializeField] GameObject spawnableObject;
     private bool activateSpawn = false;
 
-    private int itemsLeft = 3;
+    public int itemsLeft = 3;
 
 
     private void Update()
