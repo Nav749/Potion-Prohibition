@@ -38,6 +38,7 @@ public class EnemyMelee : MonoBehaviour
     {
         if (meleeEnemyHealth <= 0)
         {
+            Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
@@ -62,7 +63,6 @@ public class EnemyMelee : MonoBehaviour
         meleeIsAggroed = false;
         GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
         yield return new WaitForSeconds(1.7f);
-        Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
         meleeIsAggroed = true;
     }
 }
