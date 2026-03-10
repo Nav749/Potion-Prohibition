@@ -280,4 +280,17 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Nuke
+
+    public void DeleteGameManager()
+    {
+        if(instance != null)
+        {
+            Destroy(instance);
+            instance = null;
+        }
+    }
+
+    #endregion
+
 }

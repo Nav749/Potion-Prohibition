@@ -2,8 +2,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class buttonSceneLoad : MonoBehaviour
 {
-    public void ChangeSceneWithIndex (int index)
+    public void Retry()
     {
-        SceneManager.LoadScene(index);
+        GameManager.Instance.LoadLevels();
+        GameManager.Instance.DeleteGameManager();
+        SceneManager.LoadScene(1);
+    }
+
+    public void MainMenu()
+    {
+        GameManager.Instance.DeleteGameManager();
+        SceneManager.LoadScene(0);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
