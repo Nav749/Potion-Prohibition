@@ -7,6 +7,7 @@ public class Potion : ScriptableObject
 {
     [SerializeField] private string name;
     [SerializeField] private Sprite image;
+    [SerializeField] private Sprite icon;
     [SerializeField] private List<Item> ingredients;
     [SerializeField] private string bottomText;
     private bool onTheRocks = false;
@@ -25,6 +26,14 @@ public class Potion : ScriptableObject
     public Sprite getImage()
     {
         return image;
+    }
+
+    public Sprite getIcon() { 
+        return icon;
+    }
+
+    public List<Item> getIngredients() { 
+        return ingredients;
     }
 
     public bool checkIngredients(List<Item> input) {
