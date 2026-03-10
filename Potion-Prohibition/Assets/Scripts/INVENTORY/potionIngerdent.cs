@@ -28,7 +28,7 @@ public class potionIngerdent : MonoBehaviour
 
     public void setItem(Item item) {
         this.item = item;
-        updateVisuals();
+        updateVisuals() ;
     }
 
     public void updateVisuals() {

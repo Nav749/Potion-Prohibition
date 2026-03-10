@@ -9,7 +9,7 @@ public class EyeOfRah : MonoBehaviour
 
     public float rahEnemyHealth;
 
-    public GameObject playerTargetForRah;
+    private GameObject playerTargetForRah;
 
     public EyeOfRahBeamAttack beam;
 
@@ -23,6 +23,10 @@ public class EyeOfRah : MonoBehaviour
 
     public Rigidbody enemyRB;
 
+    [SerializeField] GameObject enemyDrop;
+
+    [SerializeField] GameObject spawnPoint;
+
     private void Start()
     {
         playerTargetForRah = GameManager.Instance.PlayerGO;
@@ -32,6 +36,7 @@ public class EyeOfRah : MonoBehaviour
     {
         if (rahEnemyHealth <= 0)
         {
+            Instantiate(enemyDrop, spawnPoint.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 

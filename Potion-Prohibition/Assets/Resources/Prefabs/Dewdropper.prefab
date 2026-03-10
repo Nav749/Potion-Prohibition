@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670804182175340980}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 4.4, y: 5.44, z: 60.1}
   m_LocalScale: {x: 3.4348137, y: 3.4348137, z: 3.4348137}
   m_ConstrainProportionsScale: 0
@@ -138,6 +138,8 @@ MonoBehaviour:
   rangedEnemyAttackSpeed: 7
   rangedEnemyBulletSpeed: 30
   enemyRB: {fileID: 8215029750705351235}
+  EnemyDrop: {fileID: 6180039143089317323, guid: cf0af40ff8328e44d81a3543cced633c,
+    type: 3}
 --- !u!54 &8215029750705351235
 Rigidbody:
   m_ObjectHideFlags: 0

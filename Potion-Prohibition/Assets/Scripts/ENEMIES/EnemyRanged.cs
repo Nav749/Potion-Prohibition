@@ -33,6 +33,7 @@ public class EnemyTest : MonoBehaviour
 
     public Rigidbody enemyRB;
 
+    [SerializeField] GameObject EnemyDrop;
     private void Start()
     {
         playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
@@ -89,6 +90,7 @@ public class EnemyTest : MonoBehaviour
         rangedIsAggroed = false;
         RangedAnimator.SetTrigger("IsDead");
         yield return new WaitForSeconds(0.7f);
+        Instantiate(EnemyDrop, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

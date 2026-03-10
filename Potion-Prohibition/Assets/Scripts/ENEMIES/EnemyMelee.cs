@@ -27,6 +27,8 @@ public class EnemyMelee : MonoBehaviour
 
     public Rigidbody meleeEnemyRB;
 
+    [SerializeField] GameObject enemyDrop;
+
     private void Start()
     {
         playerTargetForMeleeEnemy = GameManager.Instance.PlayerGO;
@@ -60,6 +62,7 @@ public class EnemyMelee : MonoBehaviour
         meleeIsAggroed = false;
         GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
         yield return new WaitForSeconds(1.7f);
+        Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
         meleeIsAggroed = true;
     }
 }
