@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerLock : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerLock : MonoBehaviour
     private GameObject filter;
     [SerializeField] private Camera craftingCam;
     [SerializeField] private Canvas UI;
+    [SerializeField] private Canvas interact;
     [SerializeField] private CraftingLogic craftingLogic;
 
     // vars for this class
@@ -23,6 +25,7 @@ public class PlayerLock : MonoBehaviour
         craftingCam.enabled = isCrafting;
         UI = GetComponentInChildren<Canvas>();
         UI.enabled = isCrafting;
+        interact.enabled = false;
     }
 
     // Update is called once per frame
@@ -30,15 +33,32 @@ public class PlayerLock : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isCrafting)
         {
+            craftingLogic.distroyItems();
             toggleCrafting();
         }
+        if (Input.GetKeyDown(KeyCode.E) && canCraft && !isCrafting) {
+            toggleCrafting();
+            craftingLogic.createItems();
+        }
+
     }
 
+    private bool canCraft = false;
     private void OnTriggerEnter(Collider other)
     {
-        toggleCrafting();
-        craftingLogic.createItems();
+
+        canCraft = true;
+
+        interact.enabled = true;
+
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canCraft= false;
+        interact.enabled = false;
+    }
+
     private void toggleCrafting()
     {
         isCrafting = !isCrafting;
@@ -63,6 +83,5 @@ public class PlayerLock : MonoBehaviour
         }
     }
 
-
-
+ 
 }

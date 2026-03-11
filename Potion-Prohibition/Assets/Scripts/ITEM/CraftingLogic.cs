@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class CraftingLogic : MonoBehaviour
 {
+    [SerializeField] private AudioSource sucsessfulSound;
+    [SerializeField] private AudioSource unsucsessfulSound;
     private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -50,7 +52,15 @@ public class CraftingLogic : MonoBehaviour
                 createItem(gameManager.inventory[i]);
             }
         }
-        gameManager.clearInventory();
+        
+    }
+
+    public void distroyItems() {
+        ItemDrag[] distructable = parent.GetComponentsInChildren<ItemDrag>();
+        foreach (ItemDrag item in distructable) { 
+            GameObject.Destroy(item.gameObject);
+        }
+
     }
 
 
@@ -66,6 +76,7 @@ public class CraftingLogic : MonoBehaviour
     [SerializeField] Image[] slots = new Image[3];
     [SerializeField] Image rockSlot;
     [SerializeField] Image spiceSlot;
+
     public void addItem(Item item)
     {
         if (item.getName() == "Rocks")
@@ -74,6 +85,7 @@ public class CraftingLogic : MonoBehaviour
             {
                 rocks = item;
                 rockSlot.sprite = item.getImage();
+                
             }
             else
             {
@@ -147,10 +159,11 @@ public class CraftingLogic : MonoBehaviour
     #region brewing
 
     [SerializeField] private Potion[] potions;
+    [SerializeField] private Image potionDisplay;
     
     public void brew()
     {
-        bool sucessful;
+        bool sucessful = false;
 
         for (int i = 0; i < potions.Length; i++) {
             
@@ -169,22 +182,25 @@ public class CraftingLogic : MonoBehaviour
                 }
 
 
+                foreach (Item item in droppedItems) { 
+                    item.decrementAmount();
+                }
+
                 clearSlots();
                 droppedItems.Clear();
-                /*
-                 * code for showing potion
-                 */
+                potionDisplay.sprite = temp.getImage();
+                
+                sucsessfulSound.Play();
                 
                 gameManager.potions.Add(temp);
-
-
+                sucessful = true;
                 break;
             }
         }
 
-        /*
-         * if !sucesufll
-         */
+        if (!sucessful) { 
+            unsucsessfulSound.Play();
+        }
 
 
 

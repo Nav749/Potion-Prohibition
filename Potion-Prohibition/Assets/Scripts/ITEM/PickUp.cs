@@ -7,6 +7,8 @@ public class PickUp : MonoBehaviour
     [SerializeField] private Item item;
     private GameObject player;
 
+    [SerializeField] private AudioSource pickupSFX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,7 @@ public class PickUp : MonoBehaviour
         {
             if (gameManager.inventory[i] == item)
             {
+                pickupSFX.Play();
                 gameManager.inventory[i].incrmentAmount();
                 break;
             }
