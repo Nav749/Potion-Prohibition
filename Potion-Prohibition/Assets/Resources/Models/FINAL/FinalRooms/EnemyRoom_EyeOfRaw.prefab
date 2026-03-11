@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8408297022279662960}
   - component: {fileID: 8127792120849802815}
   - component: {fileID: 942053016064129877}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 3954493281277887281}
   - component: {fileID: 5421152966266239100}
   - component: {fileID: 4967906936498678765}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 1369787248439091550}
   - component: {fileID: 8816774264941166854}
   - component: {fileID: 1057489863787310455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 3789030203051390277}
   - component: {fileID: 2973572509228013787}
   - component: {fileID: 6402795459647011407}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8795540109668808750}
   - component: {fileID: 1532160672267694618}
-  m_Layer: 0
+  - component: {fileID: 8713305974846858776}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,6 +542,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &8713305974846858776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464702275754755476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &681505699693403403
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +575,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3456399506360795517}
   - component: {fileID: 7684198975067706203}
-  m_Layer: 0
+  - component: {fileID: 3979157218945455639}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,6 +663,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &3979157218945455639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681505699693403403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &725204029230927116
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +716,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550581736593504042}
+  - {fileID: 1588588026636972004}
   - {fileID: 7228244182652580752}
   - {fileID: 3871967989675578562}
   - {fileID: 3502100115678136676}
@@ -735,7 +784,7 @@ GameObject:
   - component: {fileID: 733914137462722937}
   - component: {fileID: 3520079486723740191}
   - component: {fileID: 7676593616219322505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +895,7 @@ GameObject:
   - component: {fileID: 163594585487042320}
   - component: {fileID: 6659472553421509441}
   - component: {fileID: 2984339647559100995}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1119,7 @@ GameObject:
   - component: {fileID: 8588606535383875253}
   - component: {fileID: 2521314242669322445}
   - component: {fileID: 599024949423779693}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1229,7 @@ GameObject:
   - component: {fileID: 4568747435173933520}
   - component: {fileID: 3963422182758659257}
   - component: {fileID: 7405202754763716562}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1343,7 @@ GameObject:
   - component: {fileID: 8337163583249754336}
   - component: {fileID: 6685910799782245966}
   - component: {fileID: 241926220785151422}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1404,7 +1453,7 @@ GameObject:
   - component: {fileID: 1010969094627122173}
   - component: {fileID: 8009547463530642346}
   - component: {fileID: 8976635785726115059}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1512,7 +1561,8 @@ GameObject:
   m_Component:
   - component: {fileID: 870726559545402112}
   - component: {fileID: 1802729880493251523}
-  m_Layer: 0
+  - component: {fileID: 6590499929089508601}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1599,6 +1649,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &6590499929089508601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476601424264026325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &2514762766289221020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,7 +1684,7 @@ GameObject:
   - component: {fileID: 3442177645629367013}
   - component: {fileID: 2679104457542559098}
   - component: {fileID: 4948762077088668377}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1721,7 +1794,7 @@ GameObject:
   - component: {fileID: 90477582319754436}
   - component: {fileID: 3983932633191706587}
   - component: {fileID: 5239613868544902371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,7 +1908,7 @@ GameObject:
   - component: {fileID: 4839788091410018020}
   - component: {fileID: 2486492276293898616}
   - component: {fileID: 3564409512567194773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,7 +2016,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5169656368281725081}
   - component: {fileID: 8157566958512064276}
-  m_Layer: 0
+  - component: {fileID: 1784490695257035827}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2030,6 +2104,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1784490695257035827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840799186445619255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &2845775260936487014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2139,7 @@ GameObject:
   - component: {fileID: 3962082804993193496}
   - component: {fileID: 8577584402054470044}
   - component: {fileID: 351887756613804862}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stool (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2156,7 +2253,7 @@ GameObject:
   - component: {fileID: 2424950750250024747}
   - component: {fileID: 2828153587994707119}
   - component: {fileID: 2750183566249328616}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SmallShelf (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2268,7 +2365,7 @@ GameObject:
   - component: {fileID: 1562652168293303422}
   - component: {fileID: 2493964616503844385}
   - component: {fileID: 135958509544382461}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lamp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2386,7 +2483,7 @@ GameObject:
   - component: {fileID: 5525419913027472936}
   - component: {fileID: 1204311108541764354}
   - component: {fileID: 3621494408099694484}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,7 +2595,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8045331731497941740}
   - component: {fileID: 2390338324836650444}
-  m_Layer: 0
+  - component: {fileID: 1259941885838047674}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2585,6 +2683,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1259941885838047674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309865645139632155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &3527143448071273596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,7 +2718,7 @@ GameObject:
   - component: {fileID: 3151571015212526004}
   - component: {fileID: 6561018985988764479}
   - component: {fileID: 5084333818435017351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2705,7 +2826,8 @@ GameObject:
   m_Component:
   - component: {fileID: 501853505172376203}
   - component: {fileID: 6789064273389791886}
-  m_Layer: 0
+  - component: {fileID: 8272055805347911041}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2792,6 +2914,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &8272055805347911041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659634909861541056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &3704113926515636370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,7 +2949,7 @@ GameObject:
   - component: {fileID: 1106893211838324435}
   - component: {fileID: 8671815260139747828}
   - component: {fileID: 5047432723798919109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2915,7 +3060,7 @@ GameObject:
   - component: {fileID: 9118538908983276932}
   - component: {fileID: 4948561552770558035}
   - component: {fileID: 6653096857861302476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3024,7 +3169,7 @@ GameObject:
   - component: {fileID: 5234913522808004643}
   - component: {fileID: 741950619423358984}
   - component: {fileID: 4535995782443297508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BigShelf1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3134,7 +3279,7 @@ GameObject:
   - component: {fileID: 8234733571368624808}
   - component: {fileID: 3390744937716738016}
   - component: {fileID: 2284398902876294542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3243,7 +3388,7 @@ GameObject:
   - component: {fileID: 3866542169120472691}
   - component: {fileID: 8729395825678317223}
   - component: {fileID: 4445374779695581420}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3353,7 +3498,7 @@ GameObject:
   - component: {fileID: 634045465742253470}
   - component: {fileID: 6787136157313357303}
   - component: {fileID: 9104097208869772565}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3463,7 +3608,7 @@ GameObject:
   - component: {fileID: 629593494479648122}
   - component: {fileID: 105774340269272425}
   - component: {fileID: 6076493389395793310}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3573,7 +3718,7 @@ GameObject:
   - component: {fileID: 8656033952311860009}
   - component: {fileID: 1189601357199619127}
   - component: {fileID: 5415441647515702434}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3678,6 +3823,114 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3468755486377148355, guid: b06a26ccaf6696a48b231de22491f8be, type: 3}
+--- !u!1 &4622255938852325967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588588026636972004}
+  - component: {fileID: 5909059902261998417}
+  - component: {fileID: 2806932254683753654}
+  - component: {fileID: 6218692530734122059}
+  m_Layer: 3
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588588026636972004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622255938852325967}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -16.07759, z: 1.340002}
+  m_LocalScale: {x: 69.8237, y: 77.6689, z: 1.12431}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4862038247406669885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5909059902261998417
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622255938852325967}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2806932254683753654
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622255938852325967}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6218692530734122059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622255938852325967}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4702329792177280307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,7 +3943,7 @@ GameObject:
   - component: {fileID: 4774191072547282698}
   - component: {fileID: 2350994729687836919}
   - component: {fileID: 7780446942851603711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3801,7 +4054,7 @@ GameObject:
   - component: {fileID: 7768024529731916786}
   - component: {fileID: 218954183359567198}
   - component: {fileID: 8572732695337190745}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3911,7 +4164,7 @@ GameObject:
   - component: {fileID: 2088452737954764976}
   - component: {fileID: 6764143952549524395}
   - component: {fileID: 8975003933623808127}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4021,7 +4274,7 @@ GameObject:
   - component: {fileID: 3255725774101606012}
   - component: {fileID: 8283799793769605965}
   - component: {fileID: 4191446392750473342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4130,7 +4383,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4386308074453622933}
   - component: {fileID: 7530483604715326305}
-  m_Layer: 0
+  - component: {fileID: 5780787937990963163}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4217,6 +4471,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &5780787937990963163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396422222026349016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &5532031210095243783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,7 +4504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 273794775914700610}
   - component: {fileID: 444993833100815488}
-  m_Layer: 0
+  - component: {fileID: 8871509620377912611}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4314,6 +4592,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &8871509620377912611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532031210095243783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &5724975706346861151
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,7 +4627,7 @@ GameObject:
   - component: {fileID: 6708589226486786797}
   - component: {fileID: 8713465386218589842}
   - component: {fileID: 4909879225519335887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4440,7 +4741,7 @@ GameObject:
   - component: {fileID: 286956730499608058}
   - component: {fileID: 8475325179086512745}
   - component: {fileID: 5120168760871068346}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4551,7 +4852,7 @@ GameObject:
   - component: {fileID: 8607424670398233172}
   - component: {fileID: 5836036092449488063}
   - component: {fileID: 2373124751001862576}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4661,7 +4962,7 @@ GameObject:
   - component: {fileID: 877810058112293399}
   - component: {fileID: 1973489064355335867}
   - component: {fileID: 6993567233161430668}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4771,7 +5072,7 @@ GameObject:
   - component: {fileID: 3830484583066531964}
   - component: {fileID: 1401529608961534428}
   - component: {fileID: 390152718952106141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +5186,7 @@ GameObject:
   - component: {fileID: 4451431448479512159}
   - component: {fileID: 442322515838316382}
   - component: {fileID: 1745004361617236015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4995,7 +5296,7 @@ GameObject:
   - component: {fileID: 9005119531395352455}
   - component: {fileID: 6240188932966542477}
   - component: {fileID: 8137993017634826413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5106,7 +5407,7 @@ GameObject:
   - component: {fileID: 2063892871477296926}
   - component: {fileID: 3961982318274686940}
   - component: {fileID: 8098242864730736743}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5217,7 +5518,7 @@ GameObject:
   - component: {fileID: 8821272941972526944}
   - component: {fileID: 1504070473108830430}
   - component: {fileID: 8911645038610464624}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,7 +5632,7 @@ GameObject:
   - component: {fileID: 4420300857209062757}
   - component: {fileID: 4924982846095748721}
   - component: {fileID: 8631587054469106432}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SmallShelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5443,7 +5744,7 @@ GameObject:
   - component: {fileID: 2191491559252908877}
   - component: {fileID: 3681356306126292925}
   - component: {fileID: 1520180995151410770}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EmptyBottle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5553,7 +5854,7 @@ GameObject:
   - component: {fileID: 6577471451327089022}
   - component: {fileID: 6635674613550074529}
   - component: {fileID: 4387590563049316485}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5663,7 +5964,7 @@ GameObject:
   - component: {fileID: 7079864057651252822}
   - component: {fileID: 4368190824733261996}
   - component: {fileID: 3794615204253827025}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stool (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5777,7 +6078,7 @@ GameObject:
   - component: {fileID: 285991367589911973}
   - component: {fileID: 9008787642516395569}
   - component: {fileID: 1907524768363671092}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5891,7 +6192,7 @@ GameObject:
   - component: {fileID: 2580557733612795175}
   - component: {fileID: 91473222832005037}
   - component: {fileID: 401889485568448579}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6004,7 +6305,7 @@ GameObject:
   - component: {fileID: 274193320840678480}
   - component: {fileID: 7628725072206602197}
   - component: {fileID: 2579322804197739657}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Torch (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6116,7 +6417,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1503466675218866141}
   - component: {fileID: 1089226330153105838}
-  m_Layer: 0
+  - component: {fileID: 7711893843034053065}
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6203,6 +6505,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &7711893843034053065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919392373895438350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &9062376923750940290
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,7 +6540,7 @@ GameObject:
   - component: {fileID: 7941440416255549841}
   - component: {fileID: 5309312189412134907}
   - component: {fileID: 2897724415099219646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Box2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6325,7 +6650,7 @@ GameObject:
   - component: {fileID: 8350646834652001474}
   - component: {fileID: 6942158381019576917}
   - component: {fileID: 6597608668182929335}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EyeofRaw Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
