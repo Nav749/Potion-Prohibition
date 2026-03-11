@@ -59,7 +59,7 @@ public class Customer : MonoBehaviour
 
         if (isSpeaking)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (textComponet.text == lines[textIndex])
                 {
