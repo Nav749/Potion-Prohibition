@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string[] levelNames;
 
     bool isLoading = false;
-    string currentLevelName;
+    [HideInInspector] public string currentLevelName;
     int currentLevelIndex = 0;
     bool hasGenerated = false;
     public bool HasGenerated => hasGenerated;
