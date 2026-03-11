@@ -125,6 +125,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1068130146}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &41780874 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1068130146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &242316587
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +404,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bcfd2c6ed50c87e4a8aa60d9b3012cb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -706,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGO: {fileID: 41780868}
+  filter: {fileID: 0}
   UI: {fileID: 0}
   LoadingScreen: {fileID: 0}
   nextDayScreen: {fileID: 0}
@@ -1025,6 +1032,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb161cc1a2dcbf14d949846a6851678e, type: 3}
+--- !u!1001 &9100867498118124824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 849228322668273748, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 41780874}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.1575856
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.3462043
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.092523
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587091122774458234, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909165701546700560, guid: 9739ce423cb6b2941ac717fb7c22147f,
+        type: 3}
+      propertyPath: m_Name
+      value: MINIMAP
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9739ce423cb6b2941ac717fb7c22147f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1040,3 +1120,4 @@ SceneRoots:
   - {fileID: 7473722793658692621}
   - {fileID: 4809825989368405396}
   - {fileID: 6350545553123953009}
+  - {fileID: 9100867498118124824}
