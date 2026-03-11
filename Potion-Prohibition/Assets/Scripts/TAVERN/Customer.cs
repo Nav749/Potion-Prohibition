@@ -10,6 +10,9 @@ public class Customer : MonoBehaviour
 
     public bool canStart = true;
 
+    [SerializeField] private AudioClip sfx;
+    private AudioSource sfxSource;
+
     public TextMeshProUGUI textComponet;
     public string[] linesIntro1;
     [HideInInspector]public string[] linesIntro;
@@ -30,6 +33,8 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
+        sfxSource = GetComponent<AudioSource>();
+        sfxSource.clip = sfx;
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
         lines = IntToLine();
@@ -54,7 +59,11 @@ public class Customer : MonoBehaviour
 
         if (!commmenedOrder) CommenceOrder();
 
-        if (lines == linesPasstime) gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        if (lines == linesPasstime)
+        {
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            sfxSource.Play();
+        } 
         else gameObject.transform.GetChild(1).gameObject.SetActive(false);
 
         if (isSpeaking)
