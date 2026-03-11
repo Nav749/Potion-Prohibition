@@ -693,7 +693,7 @@ Transform:
   m_Children:
   - {fileID: 9103367370365546615}
   - {fileID: 4452049859890021438}
-  - {fileID: 4891531070098216270}
+  - {fileID: 1832020991582108000}
   m_Father: {fileID: 5253801684694607092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828727373065557598
@@ -1736,9 +1736,8 @@ Transform:
   m_LocalPosition: {x: 29.510988, y: 0.11727142, z: 21.282236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5648035227650736026}
-  m_Father: {fileID: 1262092130271930035}
+  m_Children: []
+  m_Father: {fileID: 1071300635354434900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6163577866435752655
 MeshFilter:
@@ -2481,38 +2480,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2487983089758775882, guid: b06a26ccaf6696a48b231de22491f8be, type: 3}
---- !u!1 &2077686722991519850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1262092130271930035}
-  m_Layer: 3
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1262092130271930035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077686722991519850}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1832020991582108000}
-  m_Father: {fileID: 4891531070098216270}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124302405634349803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5717,38 +5684,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3468755486377148355, guid: b06a26ccaf6696a48b231de22491f8be, type: 3}
---- !u!1 &6036490527632059632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4891531070098216270}
-  m_Layer: 3
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4891531070098216270
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036490527632059632}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1262092130271930035}
-  m_Father: {fileID: 1071300635354434900}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6063106533498722523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6188,130 +6123,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8246494051924840529, guid: b06a26ccaf6696a48b231de22491f8be, type: 3}
---- !u!1 &6354382926330504792
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5648035227650736026}
-  - component: {fileID: 5576138574556532207}
-  - component: {fileID: 3042748455395497515}
-  - component: {fileID: 497674989730416899}
-  - component: {fileID: 3177867508618554396}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5648035227650736026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354382926330504792}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.08, y: 22.06, z: -14.16}
-  m_LocalScale: {x: 8.9238, y: 21.668, z: 2.2278}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1832020991582108000}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5576138574556532207
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354382926330504792}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3042748455395497515
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354382926330504792}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 3315921af42c14047b5e8b19bfe17ac2, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &497674989730416899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354382926330504792}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3177867508618554396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6354382926330504792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326ec5a6f6c4cf54891aece6f407776e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnableObject: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
-    type: 3}
-  itemsLeft: 6
 --- !u!1 &6423055544213611591
 GameObject:
   m_ObjectHideFlags: 0
@@ -8169,6 +7980,12 @@ Transform:
   - {fileID: 1117400584922231642}
   - {fileID: 1217094688416016271}
   - {fileID: 8517091897474984978}
+  - {fileID: 1196776621178349580}
+  - {fileID: 903702800184682752}
+  - {fileID: 2709102415772750174}
+  - {fileID: 2706780478231204948}
+  - {fileID: 7183457027383479216}
+  - {fileID: 97062587470688865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7971918725289005971
@@ -10067,6 +9884,302 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1587389293249071479}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3730304111908213952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5253801684694607092}
+    m_Modifications:
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.54709
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup - Satan's Cabbage (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 775321778033a4045bbf539555d63add, type: 3}
+--- !u!4 &7183457027383479216 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+    type: 3}
+  m_PrefabInstance: {fileID: 3730304111908213952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4679163284234827644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5253801684694607092}
+    m_Modifications:
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.54709
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.1648517
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup - Satan's Cabbage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 775321778033a4045bbf539555d63add, type: 3}
+--- !u!4 &1196776621178349580 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+    type: 3}
+  m_PrefabInstance: {fileID: 4679163284234827644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5849228276671032593
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5253801684694607092}
+    m_Modifications:
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.429999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup - Satan's Cabbage (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 775321778033a4045bbf539555d63add, type: 3}
+--- !u!4 &97062587470688865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+    type: 3}
+  m_PrefabInstance: {fileID: 5849228276671032593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6701056218934720112
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5253801684694607092}
+    m_Modifications:
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.1648517
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup - Satan's Cabbage (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 775321778033a4045bbf539555d63add, type: 3}
+--- !u!4 &903702800184682752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+    type: 3}
+  m_PrefabInstance: {fileID: 6701056218934720112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8049214818141230655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10288,4 +10401,152 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6932521772441150821, guid: 215955a16b8b3b6409e5dce1e4533d42,
     type: 3}
   m_PrefabInstance: {fileID: 8130896157628498666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8494946995555846948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5253801684694607092}
+    m_Modifications:
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.429999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup - Satan's Cabbage (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 775321778033a4045bbf539555d63add, type: 3}
+--- !u!4 &2706780478231204948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+    type: 3}
+  m_PrefabInstance: {fileID: 8494946995555846948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8497410151891308078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5253801684694607092}
+    m_Modifications:
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.54709
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180039143089317323, guid: 775321778033a4045bbf539555d63add,
+        type: 3}
+      propertyPath: m_Name
+      value: Pickup - Satan's Cabbage (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 775321778033a4045bbf539555d63add, type: 3}
+--- !u!4 &2709102415772750174 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5797390322250948464, guid: 775321778033a4045bbf539555d63add,
+    type: 3}
+  m_PrefabInstance: {fileID: 8497410151891308078}
   m_PrefabAsset: {fileID: 0}

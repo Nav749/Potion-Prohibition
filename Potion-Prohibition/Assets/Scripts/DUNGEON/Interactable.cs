@@ -3,6 +3,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] GameObject[] spawnableObjects;
+    [SerializeField] Transform[] SpawnPoints;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -10,7 +11,10 @@ public class Interactable : MonoBehaviour
         {
             foreach(GameObject item in spawnableObjects)
             {
-                Instantiate(item, this.transform.position, Quaternion.identity, this.transform.parent.parent.parent);
+                foreach (Transform t in SpawnPoints)
+                {
+                    Instantiate(item, t.position, Quaternion.identity, this.transform.parent.parent.parent);
+                }
             }
             Destroy(this.transform.parent.parent.gameObject);
         }
