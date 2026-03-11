@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,6 +41,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     [SerializeField] GameObject playerGO;
+    public GameObject filter;
     public GameObject PlayerGO => playerGO;
     [SerializeField] GameObject UI;
     [SerializeField] GameObject LoadingScreen;
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         savedRooms = new();
         savedRoomPositions = new();
         savedDoors = new();
-        if(levelsPassed == 1)
+        if (levelsPassed == 1)
         {
             for (int i = 0; i < stats.Length; i++)
             {
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             PickRandomPotion();
         }
 
-        if(orderQuota == currentOrderQuota)
+        if (orderQuota == currentOrderQuota)
         {
             nextDayScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         playerGO.SetActive(false);
         PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
         LoadingScreen.SetActive(true);
-        
+
         if (!string.IsNullOrEmpty(currentLevelName))
         {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
     private int levelsPassed;
     public int LevelsPassed => levelsPassed;
     [SerializeField] TextMeshProUGUI levelPassedValue;
-    
+
     void UpdateDevView()
     {
         levelPassedValue.text = levelsPassed.ToString();
@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateQuota()
     {
-        if(correctOrder && checkDone)
+        if (correctOrder && checkDone)
         {
             currentOrderQuota++;
         }
@@ -286,7 +286,7 @@ public class GameManager : MonoBehaviour
 
     public void DeleteGameManager()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(instance);
             instance = null;
