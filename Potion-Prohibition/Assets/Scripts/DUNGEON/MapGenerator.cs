@@ -20,6 +20,9 @@ public class MapGenerator : MonoBehaviour
     private int enemy1RoomIndex;
     private int enemy2RoomIndex;
     private int enemy3RoomIndex;
+    private int enemy1RoomIndex2;
+    private int enemy2RoomIndex2;
+    private int enemy3RoomIndex2;
     private int harvest1RoomIndex;
     private int harvest2RoomIndex;
     private int harvest3RoomIndex;
@@ -51,8 +54,10 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         instance = this;
-        minRooms = 14;
-        maxRooms = 30;
+        if (GameManager.Instance.LevelsPassed == 1) minRooms = 13;
+        else minRooms = GameManager.Instance.LevelsPassed <= 3 ? 16 : 21;
+        if (GameManager.Instance.LevelsPassed == 1) maxRooms = 15;
+        else maxRooms = GameManager.Instance.LevelsPassed <= 3 ? 20 : 29;
         cellSize = 64f;
         spawnedCells = new();
         spawnedRooms = new();
@@ -141,13 +146,16 @@ public class MapGenerator : MonoBehaviour
         enemy1RoomIndex = RandomRoom();
         enemy2RoomIndex = RandomRoom();
         enemy3RoomIndex = RandomRoom();
-        portalRoomIndex = PortalRoom();
+        enemy1RoomIndex2 = RandomRoom();
+        enemy2RoomIndex2 = RandomRoom();
+        enemy3RoomIndex2 = RandomRoom();
+        if(GameManager.Instance.LevelsPassed > 1) portalRoomIndex = PortalRoom();
         harvest1RoomIndex = RandomEndRoom();
         harvest2RoomIndex = RandomEndRoom();
         harvest3RoomIndex = RandomEndRoom();
         harvest4RoomIndex = RandomEndRoom();
 
-        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || harvest3RoomIndex == -1 || harvest4RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || portalRoomIndex == -1)
+        if (harvest1RoomIndex == -1 || harvest2RoomIndex == -1 || harvest3RoomIndex == -1 || harvest4RoomIndex == -1 || enemy1RoomIndex == -1 || enemy2RoomIndex == -1 || enemy3RoomIndex == -1 || enemy1RoomIndex2 == -1 || enemy2RoomIndex2 == -1 || enemy3RoomIndex2 == -1 || portalRoomIndex == -1)
         {
             SetupDungeon();
             return;
@@ -194,7 +202,7 @@ public class MapGenerator : MonoBehaviour
                     spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Harvest4, i);
                 }
-                if (spawnedCells[i].index == enemy1RoomIndex)
+                if (spawnedCells[i].index == enemy1RoomIndex || spawnedCells[i].index == enemy1RoomIndex2)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(enemy);
                     Destroy(spawnedRooms[i].gameObject);
@@ -202,7 +210,7 @@ public class MapGenerator : MonoBehaviour
                     spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Enemy1, i);
                 }
-                if (spawnedCells[i].index == enemy2RoomIndex)
+                if (spawnedCells[i].index == enemy2RoomIndex || spawnedCells[i].index == enemy2RoomIndex2)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(enemy);
                     Destroy(spawnedRooms[i].gameObject);
@@ -210,7 +218,7 @@ public class MapGenerator : MonoBehaviour
                     spawnedStates.RemoveAt(i);
                     spawnedCells[i].SetRoomType(RoomType.Enemy2, i);
                 }
-                if (spawnedCells[i].index == enemy3RoomIndex)
+                if (spawnedCells[i].index == enemy3RoomIndex || spawnedCells[i].index == enemy3RoomIndex2)
                 {
                     spawnedCells[i].SetSpecialRoomSprite(enemy);
                     Destroy(spawnedRooms[i].gameObject);
@@ -276,7 +284,7 @@ public class MapGenerator : MonoBehaviour
         int randomRoom = Random.Range(0, nonEndRooms.Count);
         int index = nonEndRooms[randomRoom];
 
-        if (index == 37 || index == 51 || index == 52 || index == 53 || index == 65 || index == 66 || index == 68 || index == 69 || index == 81 || index == 82 || index == 83 || index == 97) return -1;
+        if ((index >= 19 && index <= 25) || (index >= 34 && index <= 40) || (index >= 49 && index <= 55) || (index >= 64 && index <= 70) || (index >= 79 && index <= 85) || (index >= 94 && index <= 100) || (index >= 109 && index <= 115)) return -1;
 
         nonEndRooms.RemoveAt(randomRoom);
 
