@@ -52,7 +52,7 @@ public class Mana
     public Mana()
     {
         manaAmount = 0;
-        regenAmount = 20;
+        regenAmount = 5;
     }
 
     public void Update()
