@@ -36,6 +36,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         UI.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
         camera.enabled = playerToggle;
+        GameManager.Instance.PlayerGO.transform.GetChild(0).gameObject.SetActive(!playerToggle);
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
         GameManager.Instance.PlayerGO.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
     }
