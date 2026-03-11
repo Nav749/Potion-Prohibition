@@ -23,8 +23,6 @@ public class EnemyMelee : MonoBehaviour
 
     public int meleeEnemySpeed = 1;
 
-    public int meleeEnemyAttackSpeed = 50;
-
     public Rigidbody meleeEnemyRB;
 
     [SerializeField] GameObject enemyDrop;

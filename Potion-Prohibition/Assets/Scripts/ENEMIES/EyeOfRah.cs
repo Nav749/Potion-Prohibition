@@ -9,7 +9,9 @@ public class EyeOfRah : MonoBehaviour
 
     public float rahEnemyHealth;
 
-    private GameObject playerTargetForRah;
+    public Animator RahAnimator;
+
+    public GameObject playerTargetForRah;
 
     public EyeOfRahBeamAttack beam;
 
@@ -17,7 +19,7 @@ public class EyeOfRah : MonoBehaviour
 
     private Vector3 targetDirectionRah;
 
-    private int ticker = 0;
+    private float ticker = 0;
 
     public int rangedEnemyAttackSpeed = 50;
 
@@ -29,6 +31,7 @@ public class EyeOfRah : MonoBehaviour
 
     private void Start()
     {
+        RahAnimator = GetComponent<Animator>();
         playerTargetForRah = GameManager.Instance.PlayerGO;
     }
 
@@ -36,8 +39,7 @@ public class EyeOfRah : MonoBehaviour
     {
         if (rahEnemyHealth <= 0)
         {
-            Instantiate(enemyDrop, spawnPoint.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            StartCoroutine(RahDeath());
         }
 
 
@@ -50,9 +52,9 @@ public class EyeOfRah : MonoBehaviour
 
         if (rahIsAggroed == true)
         {
-            ticker += 1;
+            ticker += Time.deltaTime;
 
-            if (ticker >= rangedEnemyAttackSpeed * 60)
+            if (ticker >= rangedEnemyAttackSpeed)
             {
                 StartCoroutine(RahBeam());
                 ticker = 0;
@@ -64,11 +66,21 @@ public class EyeOfRah : MonoBehaviour
     {
         rahRotation = false;
         rahIsAggroed = false;
-        yield return new WaitForSeconds(1f);
+        RahAnimator.SetBool("IsAttacking", true);
+        yield return new WaitForSeconds(0.3f);
         beam.FireBeam();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
+        RahAnimator.SetBool("IsAttacking", false);
         rahRotation = true;
         rahIsAggroed = true;
+    }
+
+    IEnumerator RahDeath()
+    {
+        RahAnimator.SetTrigger("IsDead");
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(enemyDrop, spawnPoint.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
 }

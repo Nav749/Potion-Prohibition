@@ -23,11 +23,11 @@ public class EnemyTest : MonoBehaviour
 
     private Vector3 rangedEnemyMovement;
 
-    private int ticker = 0;
+    private float ticker = 0;
 
     public int rangedEnemySpeed = 1;
 
-    public int rangedEnemyAttackSpeed = 50;
+    public int rangedEnemyAttackSpeed = 3;
 
     public int rangedEnemyBulletSpeed = 1;
 
@@ -54,7 +54,7 @@ public class EnemyTest : MonoBehaviour
 
         if (rangedIsAggroed == true)
         {
-            ticker += 1;
+            ticker += Time.deltaTime;
 
             if (rangedInrange == false)
             {
@@ -66,7 +66,7 @@ public class EnemyTest : MonoBehaviour
                 enemyRB.linearVelocity = new Vector3(0, 0, 0);
             }
 
-            if (ticker >= rangedEnemyAttackSpeed * 60 && rangedIsAggroed == true)
+            if (ticker >= rangedEnemyAttackSpeed && rangedIsAggroed == true)
             {
                 StartCoroutine(RangedAttack());
             }
