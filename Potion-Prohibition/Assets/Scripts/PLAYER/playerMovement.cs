@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour {
+public class playerMovement : MonoBehaviour
+{
 
     public CharacterController playerController;
 
@@ -23,12 +24,12 @@ public class playerMovement : MonoBehaviour {
     private bool JumpLock = true;
 
     private bool moveLock = false;
- 
+
     void Update()
     {
         playerIsGrounded = Physics.CheckSphere(playerGroundCheck.position, playerGroundDistance, playerGroundMask);
 
-        if(playerIsGrounded && playerVelocity.y < 0)
+        if (playerIsGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = -1f;
         }
@@ -55,22 +56,24 @@ public class playerMovement : MonoBehaviour {
             playerVelocity.y = Mathf.Sqrt(playerJumpHeight * -2f * playerGravRate);
         }
 
-        if(playerVelocity.y > -150)
+        if (playerVelocity.y < 150)
         {
             playerVelocity.y += playerGravRate * Time.deltaTime;
-            playerController.Move(playerVelocity * Time.deltaTime);
         }
-        
+
+
+        playerController.Move(playerVelocity * Time.deltaTime);
+
     }
 
-    public void setMoveLock(bool moveLock) 
-    {  
+    public void setMoveLock(bool moveLock)
+    {
         this.moveLock = moveLock;
     }
 
     public void setJumpLock()
     {
-        if(JumpLock == false)
+        if (JumpLock == false)
         {
             JumpLock = true;
         }
