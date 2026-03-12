@@ -7,11 +7,14 @@ public class PickUp : MonoBehaviour
     [SerializeField] private Item item;
     private GameObject player;
 
-    [SerializeField] private AudioSource pickupSFX;
+    [SerializeField] private AudioClip pickupSFX;
+    private AudioSource pickupSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        pickupSource = GetComponent<AudioSource>();
+        pickupSource.clip = pickupSFX;
         image = GetComponent<SpriteRenderer>();
         gameManager = GameManager.Instance;
         image.sprite = item.getImage();
@@ -31,7 +34,7 @@ public class PickUp : MonoBehaviour
         {
             if (gameManager.inventory[i] == item)
             {
-                pickupSFX.Play();
+                pickupSource.Play();
                 gameManager.inventory[i].incrmentAmount();
                 break;
             }
