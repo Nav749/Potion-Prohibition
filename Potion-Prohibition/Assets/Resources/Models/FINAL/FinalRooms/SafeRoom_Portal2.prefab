@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ff2b1c0ed7518498c46a1f1ae9d89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: {fileID: 8300000, guid: 1867aa477e6d5da4c8d334ef191acc32, type: 3}
+  sfx: {fileID: 0}
   portalsound: {fileID: 8300000, guid: 5bf94b5566adf534695214efc754375e, type: 3}
   sfxSource: {fileID: 5948689171834343868}
   portalsoundSource: {fileID: 2949444745107754448}
@@ -242,16 +242,16 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 4.4
+  MaxDistance: 46.83
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -284,7 +284,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
