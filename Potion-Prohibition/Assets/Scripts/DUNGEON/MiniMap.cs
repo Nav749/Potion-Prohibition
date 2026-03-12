@@ -3,7 +3,6 @@ using UnityEngine;
 public class MiniMap : MonoBehaviour
 {
     private Transform player;
-    [SerializeField] GameObject playerIcon;
 
     private void Start()
     {
@@ -16,6 +15,6 @@ public class MiniMap : MonoBehaviour
         newPos.y = transform.position.y;
         transform.position = newPos;
 
-        playerIcon.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        //transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
     }
 }
