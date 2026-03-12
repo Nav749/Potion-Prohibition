@@ -8,11 +8,13 @@ public class CraftingLogic : MonoBehaviour
     [SerializeField] private AudioClip sucsessfulSound;
     [SerializeField] private AudioClip unsucsessfulSound;
     private GameManager gameManager;
+    private AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameManager = GameManager.Instance;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -190,7 +192,8 @@ public class CraftingLogic : MonoBehaviour
                 droppedItems.Clear();
                 potionDisplay.sprite = temp.getImage();
                 
-                //sucsessfulSound.Play();
+                audioSource.clip = sucsessfulSound;
+                audioSource.Play();
                 
                 gameManager.potions.Add(temp);
                 sucessful = true;

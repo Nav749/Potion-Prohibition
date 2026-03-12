@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 1caa739bb2eb8eb4c9811f8dd651e088, type: 2}
-  pickupSFX: {fileID: 8300000, guid: 5b6b8261cba1f56459c0395beb779906, type: 3}
+  audioClip: {fileID: 0}
 --- !u!82 &1419886023477277662
 AudioSource:
   m_ObjectHideFlags: 0
@@ -136,8 +136,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_Resource: {fileID: 8300000, guid: e123fd9544899b04bbb1b1aadf49a291, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
