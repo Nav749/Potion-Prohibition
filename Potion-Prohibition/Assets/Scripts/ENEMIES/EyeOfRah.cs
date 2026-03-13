@@ -21,7 +21,7 @@ public class EyeOfRah : MonoBehaviour
 
     private float ticker = 0;
 
-    public int rangedEnemyAttackSpeed = 50;
+    public float rahEnemyAttackSpeed;
 
     public Rigidbody enemyRB;
 
@@ -54,7 +54,7 @@ public class EyeOfRah : MonoBehaviour
         {
             ticker += Time.deltaTime;
 
-            if (ticker >= rangedEnemyAttackSpeed)
+            if (ticker >= rahEnemyAttackSpeed)
             {
                 StartCoroutine(RahBeam());
                 ticker = 0;

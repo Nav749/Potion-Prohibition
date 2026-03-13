@@ -27,7 +27,7 @@ public class EnemyTest : MonoBehaviour
 
     public int rangedEnemySpeed = 1;
 
-    public int rangedEnemyAttackSpeed = 3;
+    public float rangedEnemyAttackSpeed = 3;
 
     public int rangedEnemyBulletSpeed = 1;
 
@@ -78,8 +78,11 @@ public class EnemyTest : MonoBehaviour
         ticker = 0;
         RangedAnimator.SetTrigger("IsAttacking");
         yield return new WaitForSeconds(1f);
-        GameObject EnemyAttackInRange = Instantiate(rangedEnemyAttackPrefab, rangedEnemyAttackSource.position, transform.rotation);
-        EnemyAttackInRange.GetComponent<Rigidbody>().AddForce(rangedEnemyAttackSource.forward * rangedEnemyBulletSpeed, ForceMode.Impulse);
+        if (rangedIsAggroed == true)
+        {
+            GameObject EnemyAttackInRange = Instantiate(rangedEnemyAttackPrefab, rangedEnemyAttackSource.position, transform.rotation);
+            EnemyAttackInRange.GetComponent<Rigidbody>().AddForce(rangedEnemyAttackSource.forward * rangedEnemyBulletSpeed, ForceMode.Impulse);
+        }
         RangedAnimator.SetTrigger("backToIdle");
         yield return new WaitForSeconds(1f);
     }

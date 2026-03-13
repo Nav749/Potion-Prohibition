@@ -9,6 +9,8 @@ public class EnemyMelee : MonoBehaviour
 
     public float meleeEnemyHealth;
 
+    private Animator NewtAnimator;
+
     public GameObject playerTargetForMeleeEnemy;
 
     public GameObject meleeEnemyAttackPrefab;
@@ -29,6 +31,7 @@ public class EnemyMelee : MonoBehaviour
 
     private void Start()
     {
+        NewtAnimator = GetComponent<Animator>();
         playerTargetForMeleeEnemy = GameManager.Instance.PlayerGO;
     }
 
@@ -36,8 +39,7 @@ public class EnemyMelee : MonoBehaviour
     {
         if (meleeEnemyHealth <= 0)
         {
-            Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            StartCoroutine(NewtDeath());
         }
 
         targetDirectionMeleeEnemy = (playerTargetForMeleeEnemy.transform.position - transform.position).normalized;
@@ -50,17 +52,33 @@ public class EnemyMelee : MonoBehaviour
             meleeEnemyMovement = transform.forward * meleeEnemySpeed;
             meleeEnemyRB.linearVelocity = new Vector3(meleeEnemyMovement.x, meleeEnemyRB.linearVelocity.y, meleeEnemyMovement.z);
         }
+        else
+        {
+            meleeEnemyRB.linearVelocity = new Vector3(0, 0, 0);
+        }
 
         if (meleeInRange == true && meleeIsAggroed == true)
         {
             StartCoroutine(EnemyPause());
         }
+
     }
     IEnumerator EnemyPause()
     {
         meleeIsAggroed = false;
+        NewtAnimator.SetBool("NewtAttacking", true);
+        yield return new WaitForSeconds(0.4f);
         GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
-        yield return new WaitForSeconds(1.7f);
+        NewtAnimator.SetBool("NewtAttacking", false);
+        yield return new WaitForSeconds(0.9f);
         meleeIsAggroed = true;
+    }
+
+    IEnumerator NewtDeath()
+    {
+        NewtAnimator.SetTrigger("NewtIsDead");
+        yield return new WaitForSeconds(0.6f);
+        Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
