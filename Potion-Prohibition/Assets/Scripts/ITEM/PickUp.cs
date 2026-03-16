@@ -37,13 +37,21 @@ public class PickUp : MonoBehaviour
             }
 
         }
-
-
-
-
         
 
+        pickupSource?.Play();
+        image.enabled = false;
+        GetComponent<BoxCollider>().enabled = false; 
+        
+
+
+        Invoke("distroy", 2);
+    }
+
+
+    private void distroy() { 
         GameObject.Destroy(gameObject);
+
     }
 
 }
