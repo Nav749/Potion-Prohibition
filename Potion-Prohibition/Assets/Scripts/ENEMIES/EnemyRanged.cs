@@ -5,6 +5,8 @@ public class EnemyTest : MonoBehaviour
 {
     public bool rangedIsAggroed = false;
 
+    private bool OneDeath = false;
+
     public bool rangedInrange = false;
 
     public float rangedEnemyHealth;
@@ -23,6 +25,8 @@ public class EnemyTest : MonoBehaviour
 
     private Vector3 rangedEnemyMovement;
 
+    public AudioSource DewdropSource;
+
     private float ticker = 0;
 
     public int rangedEnemySpeed = 1;
@@ -31,6 +35,10 @@ public class EnemyTest : MonoBehaviour
 
     public int rangedEnemyBulletSpeed = 1;
 
+    public AudioClip DewdropAttackClip;
+
+    public AudioClip DewdropDeathClip;
+
     public Rigidbody enemyRB;
 
     [SerializeField] GameObject EnemyDrop;
@@ -38,12 +46,14 @@ public class EnemyTest : MonoBehaviour
     {
         playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
         RangedAnimator = GetComponent<Animator>();
+        DewdropSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (rangedEnemyHealth <= 0)
+        if (rangedEnemyHealth <= 0 && OneDeath == false)
         {
+            OneDeath = true;
             StartCoroutine(RangedDeath());
         }
 
@@ -78,6 +88,7 @@ public class EnemyTest : MonoBehaviour
         ticker = 0;
         RangedAnimator.SetTrigger("IsAttacking");
         yield return new WaitForSeconds(1f);
+        DewdropSource.PlayOneShot(DewdropAttackClip);
         if (rangedIsAggroed == true)
         {
             GameObject EnemyAttackInRange = Instantiate(rangedEnemyAttackPrefab, rangedEnemyAttackSource.position, transform.rotation);
@@ -92,6 +103,7 @@ public class EnemyTest : MonoBehaviour
     {
         rangedIsAggroed = false;
         RangedAnimator.SetTrigger("IsDead");
+        DewdropSource.PlayOneShot(DewdropDeathClip);
         yield return new WaitForSeconds(0.7f);
         Instantiate(EnemyDrop, this.transform.position, Quaternion.identity);
         Destroy(gameObject);

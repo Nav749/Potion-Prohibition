@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class EyeOfRah : MonoBehaviour
 {
+    private bool OneLove = false;
+
     public bool rahIsAggroed = false;
 
     private bool rahRotation = true;
+
+    public AudioClip RahAttackClip;
+
+    public AudioClip RahDeathClip;
 
     public float rahEnemyHealth;
 
@@ -19,11 +25,13 @@ public class EyeOfRah : MonoBehaviour
 
     private Vector3 targetDirectionRah;
 
+    private AudioSource RahAudioSource;
+
     private float ticker = 0;
 
     public float rahEnemyAttackSpeed;
 
-    public Rigidbody enemyRB;
+    private Rigidbody enemyRB;
 
     [SerializeField] GameObject enemyDrop;
 
@@ -31,14 +39,17 @@ public class EyeOfRah : MonoBehaviour
 
     private void Start()
     {
+        enemyRB = GetComponent<Rigidbody>();
+        RahAudioSource = GetComponent<AudioSource>();
         RahAnimator = GetComponent<Animator>();
         playerTargetForRah = GameManager.Instance.PlayerGO;
     }
 
     private void Update()
     {
-        if (rahEnemyHealth <= 0)
+        if (rahEnemyHealth <= 0 && OneLove == false)
         {
+            OneLove = true;
             StartCoroutine(RahDeath());
         }
 
@@ -68,9 +79,11 @@ public class EyeOfRah : MonoBehaviour
         rahIsAggroed = false;
         RahAnimator.SetBool("IsAttacking", true);
         yield return new WaitForSeconds(0.3f);
+        RahAudioSource.PlayOneShot(RahAttackClip);
         beam.FireBeam();
         yield return new WaitForSeconds(0.3f);
         RahAnimator.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(0.5f);
         rahRotation = true;
         rahIsAggroed = true;
     }
@@ -78,7 +91,8 @@ public class EyeOfRah : MonoBehaviour
     IEnumerator RahDeath()
     {
         RahAnimator.SetTrigger("IsDead");
-        yield return new WaitForSeconds(0.5f);
+        RahAudioSource.PlayOneShot(RahDeathClip);
+        yield return new WaitForSeconds(0.9f);
         Instantiate(enemyDrop, spawnPoint.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
