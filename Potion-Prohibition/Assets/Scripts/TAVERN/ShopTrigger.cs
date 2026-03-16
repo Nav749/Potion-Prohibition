@@ -43,8 +43,10 @@ public class ShopTrigger : MonoBehaviour
     {
         playerToggle = !input;
         ShopScreen.SetActive(playerToggle);
-        cam.enabled = playerToggle;
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked;
+        cam.enabled = playerToggle;
+        GameManager.Instance.PlayerGO.transform.GetChild(0).gameObject.SetActive(!playerToggle);
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
+        GameManager.Instance.PlayerGO.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
     }
 }
