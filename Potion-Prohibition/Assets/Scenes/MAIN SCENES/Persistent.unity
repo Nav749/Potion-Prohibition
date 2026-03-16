@@ -2250,6 +2250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGO: {fileID: 1859079195}
   filter: {fileID: 1058160781}
+  playerStats: {fileID: 11400000, guid: 33f2657da488365449c9af509268e503, type: 2}
   UI: {fileID: 1577000500}
   LoadingScreen: {fileID: 1152251748}
   nextDayScreen: {fileID: 2060006310}
@@ -5678,6 +5679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OcclusionCulling
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662643554469736601, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: currentHealth
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3662643554469736601, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}

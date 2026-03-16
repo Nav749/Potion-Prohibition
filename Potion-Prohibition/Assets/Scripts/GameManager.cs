@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGO;
     public GameObject filter;
     public GameObject PlayerGO => playerGO;
+    [SerializeField] PlayerStats playerStats;
     [SerializeField] GameObject UI;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject nextDayScreen;
@@ -51,6 +52,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Timesmet[] stats;
     private void Start()
     {
+        if (playerStats.GetBool())
+        {
+            playerStats.SetBool(false);
+            PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
+            PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
+        }
         levelsPassed = 1;
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
@@ -291,6 +298,23 @@ public class GameManager : MonoBehaviour
             Destroy(instance);
             instance = null;
         }
+    }
+
+    #endregion
+
+    #region StatUpdate
+
+    public void UpdateHealth()
+    {
+        playerStats.IncrementHealth();
+        PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
+        PlayerGO.GetComponent<playerHealth>().currentHealth = PlayerGO.GetComponent<playerHealth>().maxHealth != PlayerGO.GetComponent<playerHealth>().currentHealth ? PlayerGO.GetComponent<playerHealth>().currentHealth + 1 : PlayerGO.GetComponent<playerHealth>().maxHealth;
+    }
+
+    public void UpdateDamage()
+    {
+        playerStats.IncrementDamage();
+        PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
     }
 
     #endregion
