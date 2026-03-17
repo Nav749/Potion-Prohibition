@@ -343,11 +343,15 @@ public class GameManager : MonoBehaviour
     #region Monies
 
     public int coins = 0;
+    public int healthPrice = 20;
+    public int damagePrice = 20;
     [SerializeField] TextMeshProUGUI text;
 
     private void ResetMonies()
     {
         coins = 0;
+        healthPrice = 20;
+        damagePrice = 20;
     }
 
     #endregion

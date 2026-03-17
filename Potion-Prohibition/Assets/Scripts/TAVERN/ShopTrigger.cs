@@ -1,15 +1,23 @@
+using TMPro;
 using UnityEngine;
 
 public class ShopTrigger : MonoBehaviour
 {
     [SerializeField] GameObject ShopScreen;
     [SerializeField] Camera cam;
+    [SerializeField] TextMeshProUGUI health;
+    [SerializeField] TextMeshProUGUI damage;
 
     private bool activeShop = false;
     private bool playerToggle = false;
+    
 
     private void Update()
     {
+        health.text = GameManager.Instance.healthPrice.ToString() + " coins";
+        damage.text = GameManager.Instance.damagePrice.ToString() + " coins";
+
+
         if (activeShop)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -52,11 +60,21 @@ public class ShopTrigger : MonoBehaviour
 
     public void BuyHealth()
     {
-        GameManager.Instance.UpdateHealth();
+        if(GameManager.Instance.coins >= GameManager.Instance.healthPrice)
+        {
+            GameManager.Instance.UpdateHealth();
+            GameManager.Instance.coins -= GameManager.Instance.healthPrice;
+            GameManager.Instance.healthPrice = (int)(GameManager.Instance.healthPrice * 1.1f);
+        }
     }
 
     public void BuyDamage()
     {
-        GameManager.Instance.UpdateDamage();
+        if (GameManager.Instance.coins >= GameManager.Instance.damagePrice)
+        {
+            GameManager.Instance.UpdateDamage();
+            GameManager.Instance.coins -= GameManager.Instance.damagePrice;
+            GameManager.Instance.damagePrice = (int)(GameManager.Instance.damagePrice * 1.1f);
+        }
     }
 }
