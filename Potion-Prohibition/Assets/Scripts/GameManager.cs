@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
     public int currentOrderQuota;
     [SerializeField] Timesmet[] stats;
     private bool restart;
+    [SerializeField] private Color color1;
     private void Start()
     {
         ResetMonies();
@@ -127,6 +130,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadLevel(string levelName)
     {
+        RenderSettings.fog = false;
         isLoading = true;
         playerGO.SetActive(false);
         PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
@@ -151,12 +155,16 @@ public class GameManager : MonoBehaviour
 
         if (currentLevelName == "Kitchen")
         {
+            RenderSettings.fog = false;
             playerGO.transform.position = new Vector3(-26.27864f, -8.846062f, 11.87466f);
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = true;
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
         if (currentLevelName == "Dungeon")
         {
+            RenderSettings.fog = true;
+            RenderSettings.fogColor = color1;
+            RenderSettings.fogDensity = 0.006f;
             playerGO.transform.position = new Vector3(446.5671f, -10f, -257.3981f);
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = false;
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
