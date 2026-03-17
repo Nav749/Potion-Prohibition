@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnableObject: {fileID: 6180039143089317323, guid: 75162f765f7e9ca44a20e1b52da97cd1,
     type: 3}
+  itemsLeft: 3
 --- !u!65 &6946560460267291235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -167,6 +168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BigShelf2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815920060937312634, guid: 1190a23443483504c8e98280aac5a00f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6427820815848444546, guid: 1190a23443483504c8e98280aac5a00f,
         type: 3}
