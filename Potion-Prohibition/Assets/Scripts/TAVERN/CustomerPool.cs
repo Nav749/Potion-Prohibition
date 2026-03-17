@@ -38,7 +38,7 @@ public class CustomerPool : MonoBehaviour
         customerNum = Random.Range(0, customers.Count);
         CheckCustomerNum();
         GameObject customer = this.gameObject.transform.GetChild(customerNum).gameObject;
-        while (customer == currentCustomer)
+        while (customer == currentCustomer || customerNum == bannedCustomers.customerInt1 || customerNum == bannedCustomers.customerInt2)
         {
             customerNum = Random.Range(0, customers.Count);
             CheckCustomerNum();
