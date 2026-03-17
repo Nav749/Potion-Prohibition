@@ -49,4 +49,14 @@ public class ShopTrigger : MonoBehaviour
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
         GameManager.Instance.PlayerGO.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
     }
+
+    public void BuyHealth()
+    {
+        GameManager.Instance.UpdateHealth();
+    }
+
+    public void BuyDamage()
+    {
+        GameManager.Instance.UpdateDamage();
+    }
 }

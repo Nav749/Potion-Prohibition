@@ -13,8 +13,12 @@ public class playerHealth : MonoBehaviour
 
     void Start()
     {
-
         currentHealth = maxHealth;
+        initializeHealthBar();
+    }
+
+    public void initializeHealthBar()
+    {
         for (int i = 0; i < maxHealth; i++)
         {
             GameObject segment = Instantiate(healthSegmentPrefab, this.transform.position, Quaternion.identity, healthbarHolder.transform);

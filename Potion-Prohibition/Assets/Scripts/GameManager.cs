@@ -36,12 +36,30 @@ public class GameManager : MonoBehaviour
         }
 
         clearInventory();
+
+        restart = playerStats.GetBool();
+        if (!restart)
+        {
+            PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
+            PlayerGO.GetComponent<playerHealth>().currentHealth = PlayerGO.GetComponent<playerHealth>().maxHealth;
+            PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
+        }
+        else
+        {
+            playerStats.SetHealth(5);
+            playerStats.SetDamage(1);
+            PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
+            PlayerGO.GetComponent<playerHealth>().currentHealth = PlayerGO.GetComponent<playerHealth>().maxHealth;
+            PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
+            playerStats.SetBool(true);
+        }
     }
 
     #endregion
 
     [SerializeField] GameObject playerGO;
     public GameObject filter;
+    [SerializeField] int increment;
     public GameObject PlayerGO => playerGO;
     [SerializeField] PlayerStats playerStats;
     [SerializeField] GameObject UI;
@@ -50,14 +68,10 @@ public class GameManager : MonoBehaviour
     public int orderQuota;
     public int currentOrderQuota;
     [SerializeField] Timesmet[] stats;
+    private bool restart;
     private void Start()
     {
-        if (playerStats.GetBool())
-        {
-            playerStats.SetBool(false);
-            PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
-            PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
-        }
+        ResetMonies();
         levelsPassed = 1;
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
@@ -91,6 +105,7 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
+        text.text = coins.ToString();
         UpdateDevView();
     }
 
@@ -162,6 +177,7 @@ public class GameManager : MonoBehaviour
     public void NextDay()
     {
         levelsPassed++;
+        increment = (int)(increment * 1.25f);
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
         Cursor.lockState = CursorLockMode.Locked;
@@ -238,7 +254,11 @@ public class GameManager : MonoBehaviour
     public void TimeToCheckOrder()
     {
         correctOrder = currentOrder == OrdertoCheck;
-        checkDone = true;
+        if (correctOrder)
+        {
+            coins += increment;
+        }
+            checkDone = true;
         RemovePotion(OrdertoCheck);
     }
 
@@ -308,13 +328,26 @@ public class GameManager : MonoBehaviour
     {
         playerStats.IncrementHealth();
         PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
-        PlayerGO.GetComponent<playerHealth>().currentHealth = PlayerGO.GetComponent<playerHealth>().maxHealth != PlayerGO.GetComponent<playerHealth>().currentHealth ? PlayerGO.GetComponent<playerHealth>().currentHealth + 1 : PlayerGO.GetComponent<playerHealth>().maxHealth;
+        PlayerGO.GetComponent<playerHealth>().currentHealth += 1;
+        PlayerGO.GetComponent<playerHealth>().initializeHealthBar();
     }
 
     public void UpdateDamage()
     {
         playerStats.IncrementDamage();
         PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
+    }
+
+    #endregion
+
+    #region Monies
+
+    public int coins = 0;
+    [SerializeField] TextMeshProUGUI text;
+
+    private void ResetMonies()
+    {
+        coins = 0;
     }
 
     #endregion
