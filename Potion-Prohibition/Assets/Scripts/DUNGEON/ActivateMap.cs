@@ -9,12 +9,12 @@ public class ActivateMap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M) && GameManager.Instance.currentLevelName == "Dungeon")
         {
             Map.SetActive(true);
-            GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
+            Time.timeScale = 0;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Map.SetActive(false);
-            GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(false);
+            Time.timeScale = 1;
         }
     }
 }

@@ -19,6 +19,11 @@ public class CustomerDialogue : MonoBehaviour
     {
         currentCustomers = customerCombos[Random.Range(0, customerCombos.Length)];
         combo = currentCustomers.GetCombo();
+        while(combo / 10 == GameManager.Instance.customerNum || combo % 10 == GameManager.Instance.customerNum)
+        {
+            currentCustomers = customerCombos[Random.Range(0, customerCombos.Length)];
+            combo = currentCustomers.GetCombo();
+        }
         SpawnCustomers();
     }
 

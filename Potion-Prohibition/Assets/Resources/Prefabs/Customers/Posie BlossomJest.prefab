@@ -141,7 +141,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2643474563772387064}
@@ -166,25 +166,34 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: 70ddfcf4f16e6564bab4ec79d2eec764, type: 3}
   textComponet: {fileID: 1032148383272698172}
   linesIntro1:
-  - hello
-  - it is day 1
+  - Oh good!
+  - A new bartender to disappoint me!
+  - Haha, only kidding!
   linesIntro: []
   linesIntro2:
-  - hello
-  - it is day 2
+  - Let's see if you're any good today!
+  - Hm, what shall happen when you make it wrong...
+  - Haha, I won't say anything to the king
   linesIntro3:
-  - hello
-  - it is day 3
+  - I've had a dreadful day entertaining this city!
+  - Hm, if you make my potion wrong, I'll report you to the king
+  - (...)
+  - It's worn off, huh?
+  - Ah, too bad. It was fun while it lasted
   linesPasstime:
-  - passtime
-  - orange
+  - hm, let me think... something that will make my petals freeze over and break
+  - That sounds fun!
+  - Haha, only kidding again.
+  - You get riled up so easily!
   linesRight:
-  - wow its right
-  - yay
+  - Oh, this is perfect!
+  - Oh, very good indeed!
   linesWrong:
-  - ts pmo
+  - Oh no.
+  - This is, ah, not so good
   linesEnd:
-  - bye
+  - Well see ya later Goblin
+  - I guess I'll postpone reporting you to the King!
   textSpeed: 0.05
   potion: {fileID: 1641913857228359531}
   text: {fileID: 5637124102663061620}
@@ -234,7 +243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05cf7693e96e2f241b86e348bb901b2f, type: 3}
+  m_Sprite: {fileID: 1242000737, guid: 145fb65766f1ac342b5b52447464e5dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -786,7 +795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &143159729640297026
 Transform:
   m_ObjectHideFlags: 0
@@ -795,14 +804,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5846176916036813390}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0.568, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -5.11, y: 2.2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4010225202198553063}
   m_Father: {fileID: 9140236158355592166}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &7964192150648242068
 GameObject:
   m_ObjectHideFlags: 0
