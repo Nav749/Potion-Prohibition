@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Timesmet[] stats;
     private bool restart;
     [SerializeField] private Color color1;
+    [SerializeField] private float fogDensity;
     private void Start()
     {
         ResetMonies();
@@ -164,7 +165,7 @@ public class GameManager : MonoBehaviour
         {
             RenderSettings.fog = true;
             RenderSettings.fogColor = color1;
-            RenderSettings.fogDensity = 0.006f;
+            RenderSettings.fogDensity = fogDensity;
             playerGO.transform.position = new Vector3(446.5671f, -10f, -257.3981f);
             playerGO.GetComponent<playerSpellShoot>().tavernNeutral = false;
             playerGO.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
