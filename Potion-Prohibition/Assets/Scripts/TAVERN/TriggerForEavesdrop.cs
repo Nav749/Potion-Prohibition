@@ -40,6 +40,10 @@ public class TriggerForEavesdrop : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            StopAllCoroutines();
+        }
     }
 
     void StartDialogue()
@@ -89,7 +93,7 @@ public class TriggerForEavesdrop : MonoBehaviour
         {
             playerListening = false;
             TextBubble.SetActive(false);
-            StopAllCoroutines();
+            //StopAllCoroutines();
         }
     }
 }
