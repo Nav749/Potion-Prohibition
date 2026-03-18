@@ -43,6 +43,7 @@ public class EyeOfRah : MonoBehaviour
         RahAudioSource = GetComponent<AudioSource>();
         RahAnimator = GetComponent<Animator>();
         playerTargetForRah = GameManager.Instance.PlayerGO;
+        rahEnemyHealth = rahEnemyHealth + Mathf.Pow(GameManager.Instance.eyeScale, GameManager.Instance.LevelsPassed - 1);
     }
 
     private void Update()

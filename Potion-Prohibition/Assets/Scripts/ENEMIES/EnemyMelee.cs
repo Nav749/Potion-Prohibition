@@ -33,6 +33,7 @@ public class EnemyMelee : MonoBehaviour
     {
         NewtAnimator = GetComponent<Animator>();
         playerTargetForMeleeEnemy = GameManager.Instance.PlayerGO;
+        meleeEnemyHealth = meleeEnemyHealth + Mathf.Pow(GameManager.Instance.eyeScale, GameManager.Instance.LevelsPassed - 1);
     }
 
     private void Update()

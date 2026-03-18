@@ -47,6 +47,7 @@ public class EnemyTest : MonoBehaviour
         playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
         RangedAnimator = GetComponent<Animator>();
         DewdropSource = GetComponent<AudioSource>();
+        rangedEnemyHealth = rangedEnemyHealth + Mathf.Pow(GameManager.Instance.eyeScale, GameManager.Instance.LevelsPassed - 1);
     }
 
     private void Update()

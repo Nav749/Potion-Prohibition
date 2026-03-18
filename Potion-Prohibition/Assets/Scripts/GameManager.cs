@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEditor.Build;
 
 public class GameManager : MonoBehaviour
 {
@@ -73,6 +74,11 @@ public class GameManager : MonoBehaviour
     private bool restart;
     [SerializeField] private Color color1;
     [SerializeField] private float fogDensity;
+
+    public int slimeScale;
+    public int newtScale;
+    public int eyeScale;
+
     private void Start()
     {
         ResetMonies();
