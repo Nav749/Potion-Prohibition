@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 1774863416444524494}
   - component: {fileID: 5629136479551986967}
   - component: {fileID: -1062206747238261989}
+  - component: {fileID: 7129678350193382628}
   m_Layer: 0
   m_Name: Potion Pixies
   m_TagString: Untagged
@@ -521,6 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSpeaking: 0
   isOrdering: 0
+  Animator: {fileID: 7129678350193382628}
   canStart: 1
   sfx: {fileID: 8300000, guid: 70ddfcf4f16e6564bab4ec79d2eec764, type: 3}
   textComponet: {fileID: 1032148383272698172}
@@ -725,6 +727,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7129678350193382628
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509580520831572139}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ec99eb8f4292634a9e866155c373edb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5061252024003181221
 GameObject:
   m_ObjectHideFlags: 0
