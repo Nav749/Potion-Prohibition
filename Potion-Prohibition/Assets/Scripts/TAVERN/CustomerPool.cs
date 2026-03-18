@@ -6,7 +6,7 @@ public class CustomerPool : MonoBehaviour
 {
     [SerializeField] List<GameObject> customers;
     [SerializeField] CustomerDialogue bannedCustomers;
-    GameObject currentCustomer;
+    public GameObject currentCustomer;
     int customerNum;
     Customer c;
 

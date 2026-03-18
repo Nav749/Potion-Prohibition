@@ -71,7 +71,7 @@ public class Customer : MonoBehaviour
         if (isSpeaking)
         {
             Animator.SetBool("IsTalking", true);
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (textComponet.text == lines[textIndex])
                 {
