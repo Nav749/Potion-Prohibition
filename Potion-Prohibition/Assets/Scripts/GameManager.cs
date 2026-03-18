@@ -116,8 +116,7 @@ public class GameManager : MonoBehaviour
     #region SceneManagment
 
     [SerializeField] private string[] levelNames;
-
-    bool isLoading = false;
+    public bool isLoading = false;
     [HideInInspector] public string currentLevelName;
     int currentLevelIndex = 0;
     bool hasGenerated = false;
@@ -173,14 +172,14 @@ public class GameManager : MonoBehaviour
 
 
         Invoke("TurnOffLoadingScreen", 2f);
-        playerGO.SetActive(true);
-        isLoading = false;
     }
 
     void TurnOffLoadingScreen()
     {
         LoadingScreen.SetActive(false);
         PlayerGO.GetComponent<playerMovement>().setMoveLock(false);
+        playerGO.SetActive(true);
+        isLoading = false;
     }
 
     public void NextDay()

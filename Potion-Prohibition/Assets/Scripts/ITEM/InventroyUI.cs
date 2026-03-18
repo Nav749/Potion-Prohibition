@@ -29,12 +29,16 @@ public class InventroyUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && !open) { 
-            toggleInventrory();
-        }
-        else if((Input.GetKeyDown(KeyCode.Tab) && open) || (Input.GetKeyDown(KeyCode.Escape) && open))
+        if (!GameManager.Instance.isLoading)
         {
-            toggleInventrory();
+            if (Input.GetKeyDown(KeyCode.Tab) && !open)
+            {
+                toggleInventrory();
+            }
+            else if ((Input.GetKeyDown(KeyCode.Tab) && open) || (Input.GetKeyDown(KeyCode.Escape) && open))
+            {
+                toggleInventrory();
+            }
         }
     }
     private void toggleInventrory()
