@@ -49,8 +49,6 @@ public class TriggerForEavesdrop : MonoBehaviour
     {
         textComponent.text = string.Empty;
         index = 0;
-        Debug.Log("lines length: " + lines.Length);
-        Debug.Log("lines[0]: " + (lines[0] == null ? "NULL" : lines[0]));
         StartCoroutine(TypeLine());
     }
 

@@ -15,7 +15,7 @@ public class PickUp : MonoBehaviour
         image = GetComponent<SpriteRenderer>();
         gameManager = GameManager.Instance;
         image.sprite = item.getImage();
-        player = GameObject.Find("Player");
+        player = GameManager.Instance.PlayerGO;
     }
 
     // Update is called once per frame
