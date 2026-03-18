@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class TriggerForEavesdrop : MonoBehaviour
@@ -50,6 +49,8 @@ public class TriggerForEavesdrop : MonoBehaviour
     {
         textComponent.text = string.Empty;
         index = 0;
+        Debug.Log("lines length: " + lines.Length);
+        Debug.Log("lines[0]: " + (lines[0] == null ? "NULL" : lines[0]));
         StartCoroutine(TypeLine());
     }
 
@@ -58,6 +59,7 @@ public class TriggerForEavesdrop : MonoBehaviour
         foreach(char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            textComponent.ForceMeshUpdate();
             yield return new WaitForSeconds(textSpeed);
         }
     }

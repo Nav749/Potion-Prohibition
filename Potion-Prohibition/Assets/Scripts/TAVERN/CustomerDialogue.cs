@@ -15,7 +15,7 @@ public class CustomerDialogue : MonoBehaviour
     private Sprite customer2;
     private int combo = 00;
 
-    void Start()
+    void Awake()
     {
         currentCustomers = customerCombos[Random.Range(0, customerCombos.Length)];
         combo = currentCustomers.GetCombo();

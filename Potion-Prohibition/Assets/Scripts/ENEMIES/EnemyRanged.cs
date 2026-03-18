@@ -85,6 +85,7 @@ public class EnemyTest : MonoBehaviour
 
     IEnumerator RangedAttack()
     {
+
         ticker = 0;
         RangedAnimator.SetTrigger("IsAttacking");
         yield return new WaitForSeconds(1f);

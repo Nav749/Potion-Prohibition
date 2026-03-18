@@ -75,14 +75,19 @@ public class EyeOfRah : MonoBehaviour
 
     IEnumerator RahBeam()
     {
+
         rahRotation = false;
         rahIsAggroed = false;
+
         RahAnimator.SetBool("IsAttacking", true);
         yield return new WaitForSeconds(0.3f);
+
         RahAudioSource.PlayOneShot(RahAttackClip);
         beam.FireBeam();
+
         yield return new WaitForSeconds(0.3f);
         RahAnimator.SetBool("IsAttacking", false);
+
         yield return new WaitForSeconds(0.5f);
         rahRotation = true;
         rahIsAggroed = true;
