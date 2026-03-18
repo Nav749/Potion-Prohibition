@@ -8,6 +8,8 @@ public class Customer : MonoBehaviour
     public bool isSpeaking = false;
     public bool isOrdering = false;
 
+    [SerializeField] private Animator Animator;
+
     public bool canStart = true;
 
     [SerializeField] private AudioClip sfx;
@@ -68,6 +70,7 @@ public class Customer : MonoBehaviour
 
         if (isSpeaking)
         {
+            Animator.SetBool("IsTalking", true);
             if (Input.GetMouseButtonDown(0))
             {
                 if (textComponet.text == lines[textIndex])
@@ -81,8 +84,12 @@ public class Customer : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            Animator.SetBool ("IsTalking", false);
+        }
 
-        GameManager.Instance.orderTime = lines == linesPasstime ? true : false;
+            GameManager.Instance.orderTime = lines == linesPasstime ? true : false;
     }
 
     public void StartDialogue()

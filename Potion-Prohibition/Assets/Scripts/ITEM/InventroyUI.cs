@@ -48,10 +48,12 @@ public class InventroyUI : MonoBehaviour
         if (open)
         {
             Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
         }
         if (!open)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
         }
     }
 
