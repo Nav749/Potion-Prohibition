@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEditor.Build;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -190,13 +191,25 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        isLoading = true;
+        PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
+        playerGO.SetActive(false);
+        LoadingScreen.SetActive(true);
+
         levelsPassed++;
+        playerGO.transform.position = new Vector3(-26.27864f, -8.846062f, 11.87466f);
+        PlayerGO.GetComponent<playerHealth>().currentHealth = PlayerGO.GetComponent<playerHealth>().maxHealth;
+        PlayerGO.GetComponent<playerHealth>().initializeHealthBar();
+        clearPotionInventory();
+        clearInventory();
         increment = (int)(increment * 1.25f);
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
         Cursor.lockState = CursorLockMode.Locked;
         nextDayScreen.SetActive(false);
         hasGenerated = false;
+
+        Invoke("TurnOffLoadingScreen", 2f);
     }
 
     #endregion
