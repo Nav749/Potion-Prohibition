@@ -191,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8849093197883430223
 Transform:
   m_ObjectHideFlags: 0
@@ -200,14 +200,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2637213865069073616}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0.568, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -6.82, y: 2, z: -0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5711522106633654097}
   m_Father: {fileID: 9140236158355592166}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4509580520831572139
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2643474563772387064}
@@ -264,25 +264,28 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: 70ddfcf4f16e6564bab4ec79d2eec764, type: 3}
   textComponet: {fileID: 1032148383272698172}
   linesIntro1:
-  - hello
-  - its is day 1
+  - "Ah\u2026 a speakeasy\u2026 what a delightfully improper place to find oneself
+    in."
+  - (You have no idea what he just said, but you nod along anyway)
   linesIntro: []
   linesIntro2:
-  - hello
-  - it is day 2
+  - he Court can be dreadfully dull, and this place certainly helps
+  - So, yes, I have returned
   linesIntro3:
-  - hello
-  - it is day 3
+  - Good evening, once again
+  - "I\u2019ve heard that my whiskers have been the talk around the speakeasy tonight"
+  - Flattering, really
+  - "(You don\u2019t have the heart to tell him the truth)"
   linesPasstime:
-  - passtime
-  - blue
+  - "I\u2019m not fond of potions, mind you"
+  - But a bit of danger keeps your whiskers up, right?
   linesRight:
-  - wow, its right
-  - yay
+  - "Well now\u2026 that's unexpectedly pleasant"
   linesWrong:
-  - ts pmo
+  - Oh, dear
+  - "Er, its defintely a potion\u2026 I don\u2019t know what I was expecting"
   linesEnd:
-  - bye
+  - I may return, to keep life interesting, of course
   textSpeed: 0.05
   potion: {fileID: 5490038773418245961}
   text: {fileID: 4768008161803268111}
@@ -332,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05cf7693e96e2f241b86e348bb901b2f, type: 3}
+  m_Sprite: {fileID: -1407821492, guid: 4b3c4deed7b434a4dbd61b586e0416a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
