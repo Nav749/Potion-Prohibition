@@ -1,0 +1,92 @@
+using NUnit.Framework;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class TutorialDialogue : MonoBehaviour
+{
+
+    [SerializeField] List<TutorialSO> tutorials;
+    [SerializeField] List<Vector3> positions;
+    [SerializeField] List<Quaternion> rotation;
+    private string[] lines;
+
+    public TextMeshProUGUI textComponent;
+    public float textSpeed;
+    public GameObject TextBubble;
+    private int index;
+    private int currentIndex = 0;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        this.transform.position = positions[currentIndex];
+        this.transform.rotation = rotation[currentIndex];
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+        }
+    }
+
+    void StartDialogue()
+    {
+        textComponent.text = string.Empty;
+        index = 0;
+        StartCoroutine(TypeLine());
+    }
+
+    IEnumerator TypeLine()
+    {
+        foreach (char c in lines[index].ToCharArray())
+        {
+            textComponent.text += c;
+            textComponent.ForceMeshUpdate();
+            yield return new WaitForSeconds(textSpeed);
+        }
+    }
+
+    void NextLine()
+    {
+        if (index < lines.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            TextBubble.SetActive(false);
+            index = 0;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            lines = tutorials[currentIndex].GetDialogue();
+            TextBubble.SetActive(true);
+            StartDialogue();
+            currentIndex++;
+            if (currentIndex == tutorials.Count) currentIndex = 0;
+            this.transform.position = positions[currentIndex];
+            this.transform.rotation = rotation[currentIndex];
+        }
+    }
+
+}

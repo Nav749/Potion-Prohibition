@@ -26,7 +26,7 @@ public class TriggerForEavesdrop : MonoBehaviour
     {
         if (playerListening)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (textComponent.text == lines[index])
                 {
