@@ -275,8 +275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -75}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 849.54083, y: -164.22162}
+  m_SizeDelta: {x: 1649.0817, y: 228.4432}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177966215
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 0
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -500,27 +500,28 @@ PrefabInstance:
     - target: {fileID: 3774096012867756127, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
       propertyPath: lines.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3774096012867756127, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
       propertyPath: 'lines.Array.data[0]'
-      value: yap
+      value: Once you get your order, take a look at your potion book and check what
+        ingredients are needed for the potion
       objectReference: {fileID: 0}
     - target: {fileID: 3774096012867756127, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
       propertyPath: 'lines.Array.data[1]'
-      value: yap
+      value: "There\u2019s a large doorway in the kitchen leading to the dungeon"
       objectReference: {fileID: 0}
     - target: {fileID: 3774096012867756127, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
       propertyPath: 'lines.Array.data[2]'
-      value: yap
+      value: "you can\u2019t miss it"
       objectReference: {fileID: 0}
     - target: {fileID: 3774096012867756127, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
       propertyPath: 'lines.Array.data[3]'
-      value: yap
+      value: "If you do, I\u2019ll reconsider your survival chances"
       objectReference: {fileID: 0}
     - target: {fileID: 3774096012867756127, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
@@ -536,6 +537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Harriet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964192150648242068, guid: e03a5569630026f42becdb259a30bd7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9140236158355592166, guid: e03a5569630026f42becdb259a30bd7f,
         type: 3}
@@ -592,6 +598,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03a5569630026f42becdb259a30bd7f, type: 3}
+--- !u!114 &445263969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4796559565765409901, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1351773696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c784a09915af27f49b85312864f34087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &457838520
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +750,7 @@ MonoBehaviour:
   - {x: 0.49999997, y: -0.49999997, z: -0.49999997, w: -0.49999997}
   - {x: 0.49999997, y: 0.49999997, z: 0.49999997, w: -0.49999997}
   textComponent: {fileID: 177966215}
-  textSpeed: 0.15
+  textSpeed: 0.05
   TextBubble: {fileID: 263042980}
 --- !u!1 &485821167 stripped
 GameObject:
@@ -1187,6 +1205,154 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+--- !u!1001 &1351773696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3987165202656547215, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 445263969}
+    - target: {fileID: 3987165202656547215, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: nextPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987165202656547215, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480086293623707124, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886285952638141261, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_Name
+      value: Tutorial Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073518034006413188, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 445263969}
+    - target: {fileID: 9073518034006413188, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: prevPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073518034006413188, guid: 0dbf8f3d4694289458cf9b811c85da1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0dbf8f3d4694289458cf9b811c85da1b, type: 3}
 --- !u!1 &1390213910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3279723489329110484, guid: bcf7065a3c69cd540b027a511079b42b,
@@ -1472,3 +1638,4 @@ SceneRoots:
   - {fileID: 288024583}
   - {fileID: 118029896}
   - {fileID: 1210105026}
+  - {fileID: 1351773696}

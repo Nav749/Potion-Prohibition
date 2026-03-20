@@ -42,8 +42,8 @@ public class TutorialDialogue : MonoBehaviour
                 }
                 else
                 {
-                    StopAllCoroutines();
-                    textComponent.text = lines[index];
+                    //StopAllCoroutines();
+                    //textComponent.text = lines[index];
                 }
             }
         }

@@ -16,8 +16,8 @@ public class OrderInventoryControl : MonoBehaviour
     {
         for (int i = 0; i < 15; i++)
         {
-            if(this.transform.GetChild(1).GetChild(i).childCount != 0)
-                Destroy(this.transform.GetChild(1).GetChild(i).GetChild(0).gameObject);
+            if(this.transform.GetChild(1).GetChild(0).GetChild(i).childCount != 0)
+                Destroy(this.transform.GetChild(1).GetChild(0).GetChild(i).GetChild(0).gameObject);
         }
 
         if (this.transform.GetChild(2).GetChild(0).childCount != 0)
@@ -31,7 +31,7 @@ public class OrderInventoryControl : MonoBehaviour
             if (i == prefabForItem.Length) return;
             script = prefabForItem[i].GetComponent<InventoryItem>();
             script.potion = GameManager.Instance.potions[i];
-            Instantiate(prefabForItem[i], this.transform.GetChild(1).GetChild(i).position, Quaternion.identity, this.transform.GetChild(1).GetChild(i));
+            Instantiate(prefabForItem[i], this.transform.GetChild(1).GetChild(0).GetChild(i).position, Quaternion.identity, this.transform.GetChild(1).GetChild(0).GetChild(i));
         }
     }
 }

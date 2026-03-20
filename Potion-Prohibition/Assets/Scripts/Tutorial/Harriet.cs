@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Harriet : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] private string[] lines;
-
+    [SerializeField] private Sprite Potion;
+    [SerializeField] private SpriteRenderer image;
+    [SerializeField] private TMP_Text bottomText;
     public TextMeshProUGUI textComponent;
     public float textSpeed;
     public GameObject TextBubble;
     private int index;
+    private bool speakable = false;
 
     // Update is called once per frame
     void Update()
@@ -20,17 +24,19 @@ public class Harriet : MonoBehaviour
         Quaternion lookingRotation = Quaternion.LookRotation(target);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotation, 85);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if (speakable)
         {
-            if (textComponent.text == lines[index])
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
+                if (textComponent.text == lines[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    //StopAllCoroutines();
+                    //textComponent.text = lines[index];
+                }
             }
         }
     }
@@ -38,6 +44,7 @@ public class Harriet : MonoBehaviour
     public void StartDialogue()
     {
         textComponent.text = string.Empty;
+        speakable = true;
         TextBubble.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());
@@ -65,6 +72,10 @@ public class Harriet : MonoBehaviour
         {
             TextBubble.SetActive(false);
             index = 0;
+            speakable = false;
+            this.transform.GetChild(1).gameObject.SetActive(true);
+            image.sprite = Potion;
+            bottomText.text = "Annihilator 3000";
         }
     }
 }
