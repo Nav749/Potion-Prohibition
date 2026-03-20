@@ -46,7 +46,14 @@ public class playerMovement : MonoBehaviour
         {
             if (playerX != 0 || playerZ != 0)
             {
-                playerController.Move(move * playerSpeed * Time.deltaTime);
+                if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
+                    playerController.Move(move * (playerSpeed * 2) * Time.deltaTime);
+                }
+                else
+                {
+                    playerController.Move(move * playerSpeed * Time.deltaTime);
+                }
+                    
             }
         }
 
