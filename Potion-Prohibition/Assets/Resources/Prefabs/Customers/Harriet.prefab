@@ -217,8 +217,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9140236158355592166}
-  - component: {fileID: 1774863416444524494}
   - component: {fileID: 4474287934791798612}
+  - component: {fileID: 3774096012867756127}
   - component: {fileID: 7954832047149716724}
   - component: {fileID: 7873897784201073886}
   m_Layer: 0
@@ -245,45 +245,6 @@ Transform:
   - {fileID: 8728684729617030756}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1774863416444524494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509580520831572139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6da0305e38c6442837572ae2a400ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSpeaking: 0
-  isOrdering: 0
-  Animator: {fileID: 7873897784201073886}
-  canStart: 1
-  sfx: {fileID: 8300000, guid: 70ddfcf4f16e6564bab4ec79d2eec764, type: 3}
-  textComponet: {fileID: 1032148383272698172}
-  linesIntro1:
-  - Hello!
-  linesIntro: []
-  linesIntro2:
-  - Hello!
-  linesIntro3:
-  - Hello!
-  linesPasstime:
-  - Do make my potion real quick, I have people to serve
-  linesRight:
-  - The Customer's should be happy now
-  linesWrong:
-  - The Customer might not be satisfied with this
-  - Oh well, Its out of my hands now
-  linesEnd:
-  - Tata!
-  textSpeed: 0.05
-  potion: {fileID: 6991823289216014028}
-  text: {fileID: 221409159620726526}
-  lines: []
-  history: {fileID: 11400000, guid: c8ef7762c16da1b4a9e63769a575b75d, type: 2}
 --- !u!212 &4474287934791798612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -339,6 +300,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3774096012867756127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509580520831572139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e984d59c2bc65442bde53921781e154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  textComponent: {fileID: 1032148383272698172}
+  textSpeed: 0
+  TextBubble: {fileID: 7964192150648242068}
 --- !u!82 &7954832047149716724
 AudioSource:
   m_ObjectHideFlags: 0

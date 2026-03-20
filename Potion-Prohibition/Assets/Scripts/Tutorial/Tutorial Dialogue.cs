@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class TutorialDialogue : MonoBehaviour
 {
+    [SerializeField] GameObject portalBox;
+    [SerializeField] GameObject portalParticles;
 
     [SerializeField] List<TutorialSO> tutorials;
     [SerializeField] List<Vector3> positions;
@@ -18,6 +20,7 @@ public class TutorialDialogue : MonoBehaviour
     public GameObject TextBubble;
     private int index;
     private int currentIndex = 0;
+    private bool speakable = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,18 +32,23 @@ public class TutorialDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (speakable) 
         {
-            if (textComponent.text == lines[index])
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
+                if (textComponent.text == lines[index])
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    textComponent.text = lines[index];
+                }
             }
         }
+
+
     }
 
     void StartDialogue()
@@ -72,6 +80,7 @@ public class TutorialDialogue : MonoBehaviour
         {
             TextBubble.SetActive(false);
             index = 0;
+            speakable = false;
         }
     }
 
@@ -79,11 +88,17 @@ public class TutorialDialogue : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            speakable = true;
             lines = tutorials[currentIndex].GetDialogue();
             TextBubble.SetActive(true);
             StartDialogue();
             currentIndex++;
-            if (currentIndex == tutorials.Count) currentIndex = 0;
+            if (currentIndex == tutorials.Count)
+            {
+                portalBox.SetActive(false);
+                portalParticles.SetActive(true);
+                currentIndex = 0;
+            }
             this.transform.position = positions[currentIndex];
             this.transform.rotation = rotation[currentIndex];
         }
