@@ -23,6 +23,12 @@ public class CraftingLogic : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        hideSlots();
+        potionDisplay.enabled = false;
+    }
+
     #region item creation
     [SerializeField] private GameObject dragablePrefab;
     [SerializeField] private RectTransform parent;
@@ -87,7 +93,7 @@ public class CraftingLogic : MonoBehaviour
             {
                 rocks = item;
                 rockSlot.sprite = item.getImage();
-                
+                rockSlot.enabled = true;
             }
             else
             {
@@ -100,6 +106,7 @@ public class CraftingLogic : MonoBehaviour
             {
                 spice = item;
                 spiceSlot.sprite = item.getImage();
+                spiceSlot.enabled = true;
             }
             else
             {
@@ -112,12 +119,21 @@ public class CraftingLogic : MonoBehaviour
             {
                 droppedItems.Add(item);
                 slots[count].sprite = item.getImage();
+                slots[count].enabled = true;
                 count++;
             }
             else
             {
                 createItem(item);
             }
+        }
+    }
+
+    private void hideSlots() { 
+        rockSlot.enabled = false;
+        spiceSlot.enabled = false;
+        for (int i = 0; i < slots.Length; i++) {
+            slots[i].enabled = false;
         }
     }
 
@@ -145,6 +161,7 @@ public class CraftingLogic : MonoBehaviour
             }
         }
         droppedItems.Clear();
+        hideSlots();
         count = 0;
     }
 
@@ -191,6 +208,7 @@ public class CraftingLogic : MonoBehaviour
                 clearSlots();
                 droppedItems.Clear();
                 potionDisplay.sprite = temp.getImage();
+                potionDisplay.enabled = true;
                 
                 audioSource.clip = sucsessfulSound;
                 audioSource.Play();
