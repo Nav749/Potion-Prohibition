@@ -13,8 +13,10 @@ public class InventroyUI : MonoBehaviour
 
     private int background;
     [SerializeField] private GameObject[] backGrounds;
-    [SerializeField] private int backgroundOnePos;
-    //[SerializeField] private int backgroundTwoPos;
+    [SerializeField] private int sectionOnePos;
+    [SerializeField] private int sectionTwoPos;
+    [SerializeField] private int sectionThreePos;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -69,38 +71,43 @@ public class InventroyUI : MonoBehaviour
     {
         if (page < pages.Length - 1)
         {
-            if (page + 1 == backgroundOnePos) 
-            {
-                switchBackground(background++);
-            }
+           
             pages[page].SetActive(false);
             page++;
+            switchBackground(page);
             pages[page].SetActive(true);
         }
     }
 
     public void prevPage() {
         if (page > 0) {
-            if(page -1 == backgroundOnePos) 
-            { 
-                switchBackground(background--); 
-            }
             pages[page].SetActive(false);
             page--;
+            switchBackground(page);
             pages[page].SetActive(true);
 
         }
     }
 
-    public void goToPage(int index) { 
-        
+    public void goToPage(int index) {
+        if (index > -1 && index < pages.Length) {
+            pages[page].SetActive(false);
+            page = index;
+            switchBackground(page);
+            pages[page].SetActive(true);
+        }
     }
 
+    public void goToSectionOne() { goToPage(sectionOnePos); }
+    public void goToSectionTwo() { goToPage(sectionTwoPos); }
+    public void goToSectionThree() {  goToPage(sectionThreePos); }
+
+    //toggels backgound to last open page when tab pressed (or just turns them off
     private void toggleBackground(bool input) {
         if (input)
         {
-            switchBackground(background);
-            
+            backGrounds[background].SetActive(true);
+
         }
         else {
             backGrounds[background].SetActive(false);
@@ -108,16 +115,48 @@ public class InventroyUI : MonoBehaviour
     }
 
     private void switchBackground(int index) {
-        for (int i = 0; i < backGrounds.Length; i++) {
-            if (i == index)
-            {
-                backGrounds[i].SetActive(true);
-            }
-            else 
-            { 
-                backGrounds[i].SetActive(false);    
-            }
+        if (index == sectionOnePos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 0;
+            backGrounds[background].SetActive(true);
+
         }
+        else if (index > sectionOnePos && index < sectionTwoPos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 1;
+            backGrounds[background].SetActive(true);
+
+
+        }
+        else if (index == sectionTwoPos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 2;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index > sectionTwoPos && index < sectionThreePos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 3;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index == sectionThreePos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 4;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index > sectionThreePos) 
+        {
+            backGrounds[background].SetActive(false);
+            background = 5;
+            backGrounds[background].SetActive(true);
+        }
+
+                    
+        
     }
 
 }
