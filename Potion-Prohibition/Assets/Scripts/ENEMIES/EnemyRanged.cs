@@ -41,13 +41,22 @@ public class EnemyTest : MonoBehaviour
 
     public Rigidbody enemyRB;
 
+    public bool tutorial;
+
     [SerializeField] GameObject EnemyDrop;
     private void Start()
     {
-        playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
+        if(playerTargetForRangedEnemy == null) playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
         RangedAnimator = GetComponent<Animator>();
         DewdropSource = GetComponent<AudioSource>();
-        rangedEnemyHealth = rangedEnemyHealth + Mathf.Pow(GameManager.Instance.eyeScale, GameManager.Instance.LevelsPassed - 1);
+        if (!tutorial)
+        {
+            rangedEnemyHealth = rangedEnemyHealth + Mathf.Pow(GameManager.Instance.eyeScale, GameManager.Instance.LevelsPassed - 1);
+        }
+        else
+        {
+            rangedEnemyHealth = 3;
+        }
     }
 
     private void Update()
