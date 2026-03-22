@@ -15,6 +15,15 @@ public class Customer : MonoBehaviour
     [SerializeField] private AudioClip sfx;
     private AudioSource sfxSource;
 
+    [Header("Babbles")]
+    [SerializeField] private AudioClip[] dialogueBabbleClips;
+    [SerializeField] private AudioSource audioSourceBabble;
+    [SerializeField] private bool stopAudioSource;
+    [Range (-3,3)]
+    [SerializeField] private float minPitch = 0.5f;
+    [Range (-3,3)]
+    [SerializeField] private float maxPitch = 3f;
+
     public TextMeshProUGUI textComponet;
     public string[] linesIntro1;
     [HideInInspector]public string[] linesIntro;
@@ -106,6 +115,14 @@ public class Customer : MonoBehaviour
         foreach (char c in lines[textIndex].ToCharArray())
         {
             textComponet.text += c;
+            if (stopAudioSource) 
+            {
+                audioSourceBabble.Stop();
+            }
+            int randomIndex = Random.Range(0, dialogueBabbleClips.Length);
+            AudioClip soundClip = dialogueBabbleClips[randomIndex];
+            audioSourceBabble.pitch = Random.Range(minPitch, maxPitch);
+            audioSourceBabble.PlayOneShot(soundClip);
             yield return new WaitForSeconds(textSpeed);
         }
         canStart = true;

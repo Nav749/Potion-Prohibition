@@ -15,6 +15,15 @@ public class TriggerForEavesdrop : MonoBehaviour
 
     private int index;
 
+    [Header("Babbles")]
+    [SerializeField] private AudioClip[] dialogueBabbleClips;
+    [SerializeField] private AudioSource audioSourceBabble;
+    [SerializeField] private bool stopAudioSource;
+    [Range (-3,3)]
+    [SerializeField] private float minPitch = 0.5f;
+    [Range (-3,3)]
+    [SerializeField] private float maxPitch = 3f;
+
     private void Start()
     {
         lines = dialogue.currentCustomers.GetDialogue();
@@ -58,6 +67,14 @@ public class TriggerForEavesdrop : MonoBehaviour
         {
             textComponent.text += c;
             textComponent.ForceMeshUpdate();
+             if (stopAudioSource) 
+            {
+                audioSourceBabble.Stop();
+            }
+            int randomIndex = Random.Range(0, dialogueBabbleClips.Length);
+            AudioClip soundClip = dialogueBabbleClips[randomIndex];
+            audioSourceBabble.pitch = Random.Range(minPitch, maxPitch);
+            audioSourceBabble.PlayOneShot(soundClip);
             yield return new WaitForSeconds(textSpeed);
         }
     }

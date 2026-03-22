@@ -17,6 +17,15 @@ public class Harriet : MonoBehaviour
     private int index;
     private bool speakable = false;
 
+    [Header("Babbles")]
+    [SerializeField] private AudioClip[] dialogueBabbleClips;
+    [SerializeField] private AudioSource audioSourceBabble;
+    [SerializeField] private bool stopAudioSource;
+    [Range (-3,3)]
+    [SerializeField] private float minPitch = 0.5f;
+    [Range (-3,3)]
+    [SerializeField] private float maxPitch = 3f;
+
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +65,14 @@ public class Harriet : MonoBehaviour
         {
             textComponent.text += c;
             textComponent.ForceMeshUpdate();
+            if (stopAudioSource) 
+            {
+                audioSourceBabble.Stop();
+            }
+            int randomIndex = Random.Range(0, dialogueBabbleClips.Length);
+            AudioClip soundClip = dialogueBabbleClips[randomIndex];
+            audioSourceBabble.pitch = Random.Range(minPitch, maxPitch);
+            audioSourceBabble.PlayOneShot(soundClip);
             yield return new WaitForSeconds(textSpeed);
         }
     }
