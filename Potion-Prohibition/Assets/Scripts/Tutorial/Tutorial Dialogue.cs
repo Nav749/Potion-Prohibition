@@ -9,6 +9,8 @@ public class TutorialDialogue : MonoBehaviour
 {
     [SerializeField] GameObject portalBox;
     [SerializeField] GameObject portalParticles;
+    [SerializeField] GameObject blocker;
+    [SerializeField] playerMovement player;
 
     [SerializeField] List<TutorialSO> tutorials;
     [SerializeField] List<Vector3> positions;
@@ -54,8 +56,14 @@ public class TutorialDialogue : MonoBehaviour
     void StartDialogue()
     {
         textComponent.text = string.Empty;
+        Invoke("lockPlayer", 0.3f);
         index = 0;
         StartCoroutine(TypeLine());
+    }
+
+    void lockPlayer()
+    {
+        player.setMoveLock(speakable);
     }
 
     IEnumerator TypeLine()
@@ -81,6 +89,7 @@ public class TutorialDialogue : MonoBehaviour
             TextBubble.SetActive(false);
             index = 0;
             speakable = false;
+            lockPlayer();
         }
     }
 
@@ -97,6 +106,7 @@ public class TutorialDialogue : MonoBehaviour
             {
                 portalBox.SetActive(false);
                 portalParticles.SetActive(true);
+                blocker.SetActive(true);
                 currentIndex = 0;
             }
             this.transform.position = positions[currentIndex];
