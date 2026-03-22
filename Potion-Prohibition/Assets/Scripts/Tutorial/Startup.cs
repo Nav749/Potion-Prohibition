@@ -3,6 +3,7 @@ using UnityEngine;
 public class Startup : MonoBehaviour
 {
     [SerializeField] GameObject LoadingScreen;
+    [SerializeField] TutorialInventory inventory;
     [SerializeField] playerMovement Player;
     [SerializeField] bool enableJump;
 
@@ -11,6 +12,11 @@ public class Startup : MonoBehaviour
     {
         LoadingScreen.SetActive(true);
         Player.setMoveLock(true);
+
+        foreach (var item in inventory.inventory)
+        {
+            item.resetAmount();
+        }
 
         if (enableJump)
         {
