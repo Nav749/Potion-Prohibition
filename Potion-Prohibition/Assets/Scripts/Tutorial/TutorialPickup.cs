@@ -14,6 +14,14 @@ public class TutorialPickup : MonoBehaviour
         pickupSource = GetComponent<AudioSource>();
         image = GetComponent<SpriteRenderer>();
         image.sprite = item.getImage();
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+        if(inventory == null)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<TutorialInventory>();
+        }
     }
 
     // Update is called once per frame
