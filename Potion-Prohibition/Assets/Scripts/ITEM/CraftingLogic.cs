@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 
 public class CraftingLogic : MonoBehaviour
 {
@@ -142,14 +143,11 @@ public class CraftingLogic : MonoBehaviour
         if (spice != null)
         {
             createItem(spice);
-            spice = null;
-            spiceSlot.sprite = null;
+
         }
         if (rocks != null)
         {
             createItem(rocks);
-            rocks = null;
-            rockSlot.sprite = null;
 
         }
         for (int i = 0; i < droppedItems.Count; i++)
@@ -157,20 +155,24 @@ public class CraftingLogic : MonoBehaviour
             if (droppedItems[i] != null)
             {
                 createItem(droppedItems[i]);
-                slots[i].sprite = null;
             }
         }
         droppedItems.Clear();
-        hideSlots();
+        clearSlots();
+        //hideSlots();
         count = 0;
     }
 
     private void clearSlots() { 
         spiceSlot.sprite = null;
+        spiceSlot.enabled = false;
         rockSlot.sprite = null;
+        rockSlot.enabled = false;
         for (int i = 0; i < slots.Length; i++) { 
             slots[i].sprite = null;
+            slots[i].enabled = false;
         }
+        count = 0;
     }
     
     #endregion
@@ -215,9 +217,13 @@ public class CraftingLogic : MonoBehaviour
                 
                 gameManager.potions.Add(temp);
                 sucessful = true;
+
+                Invoke("clearPotion", 3);
+
                 break;
             }
         }
+
 
         if (!sucessful) { 
             //unsucsessfulSound.Play();
@@ -225,6 +231,11 @@ public class CraftingLogic : MonoBehaviour
 
 
 
+    }
+
+
+    private void clearPotion() {
+        potionDisplay.enabled = false;
     }
 
     #endregion
