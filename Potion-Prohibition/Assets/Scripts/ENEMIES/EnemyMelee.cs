@@ -7,9 +7,17 @@ public class EnemyMelee : MonoBehaviour
 
     public bool meleeInRange = false;
 
+    private bool NewtsDieOnce = false;
+
     public float meleeEnemyHealth;
 
     private Animator NewtAnimator;
+
+    private AudioSource NewtAudioSource;
+
+    public AudioClip NewtDeathClip;
+
+    public AudioClip NewtAttackClip;
 
     public GameObject playerTargetForMeleeEnemy;
 
@@ -31,6 +39,7 @@ public class EnemyMelee : MonoBehaviour
 
     private void Start()
     {
+        NewtAudioSource = GetComponent<AudioSource>();
         NewtAnimator = GetComponent<Animator>();
         playerTargetForMeleeEnemy = GameManager.Instance.PlayerGO;
         meleeEnemyHealth = meleeEnemyHealth + Mathf.Pow(GameManager.Instance.eyeScale, GameManager.Instance.LevelsPassed - 1);
@@ -38,8 +47,9 @@ public class EnemyMelee : MonoBehaviour
 
     private void Update()
     {
-        if (meleeEnemyHealth <= 0)
+        if (meleeEnemyHealth <= 0 && NewtsDieOnce == false)
         {
+            NewtsDieOnce = true;
             StartCoroutine(NewtDeath());
         }
 
@@ -69,6 +79,7 @@ public class EnemyMelee : MonoBehaviour
         meleeIsAggroed = false;
         NewtAnimator.SetBool("NewtAttacking", true);
         yield return new WaitForSeconds(0.4f);
+        NewtAudioSource.PlayOneShot(NewtAttackClip);
         GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
         NewtAnimator.SetBool("NewtAttacking", false);
         yield return new WaitForSeconds(0.9f);
@@ -78,6 +89,7 @@ public class EnemyMelee : MonoBehaviour
     IEnumerator NewtDeath()
     {
         NewtAnimator.SetTrigger("NewtIsDead");
+        NewtAudioSource.PlayOneShot(NewtDeathClip);
         yield return new WaitForSeconds(0.6f);
         Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
