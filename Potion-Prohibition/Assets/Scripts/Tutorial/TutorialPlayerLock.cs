@@ -8,7 +8,7 @@ public class TutorialPlayerLock : MonoBehaviour
     [SerializeField] private Camera craftingCam;
     [SerializeField] private Canvas UI;
     [SerializeField] private Canvas interact;
-    [SerializeField] private CraftingLogic craftingLogic;
+    [SerializeField] private TutorialCraftingLogic craftingLogic;
 
     // vars for this class
     public bool isCrafting;
