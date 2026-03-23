@@ -14,6 +14,7 @@ public class SecondHarriet : MonoBehaviour
     [SerializeField] private SpriteRenderer image;
     [SerializeField] private TMP_Text bottomText;
     public TextMeshProUGUI textComponent;
+    [HideInInspector] public bool canOrder;
     public float textSpeed;
     public GameObject TextBubble;
     private int index;
@@ -34,6 +35,7 @@ public class SecondHarriet : MonoBehaviour
         image.sprite = Potion;
         bottomText.text = "Annihilator 3000";
         lines = waitingDialogue;
+        canOrder = true;
     }
 
     // Update is called once per frame
