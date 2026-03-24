@@ -6,6 +6,7 @@ public class TutorialInevtorySlot : MonoBehaviour, IDropHandler
     [SerializeField] bool isChecker = false;
     [SerializeField] TutorialPotionCollection potionCollection;
     private bool internalbool = true;
+    public InventoryItem potionToCheck;
     public bool isCorrect;
 
     public void Update()
@@ -14,16 +15,14 @@ public class TutorialInevtorySlot : MonoBehaviour, IDropHandler
         {
             if (this.transform.childCount != 0 && internalbool)
             {
-                InventoryItem potionToCheck = this.transform.GetChild(0).gameObject.transform.GetComponent<InventoryItem>();
-                Debug.Log(potionToCheck.potionName);
+                potionToCheck = this.transform.GetChild(0).gameObject.transform.GetComponent<InventoryItem>();
                 isCorrect = potionCollection.CheckPotion(potionToCheck.potion);
-                Debug.Log(isCorrect.ToString());
                 internalbool = false;
             }
             else if (this.transform.childCount == 0)
             {
                 internalbool = true;
-                GameManager.Instance.OrdertoCheck = null;
+                //GameManager.Instance.OrdertoCheck = null;
             }
         }
     }

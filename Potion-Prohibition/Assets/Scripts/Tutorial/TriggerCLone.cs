@@ -6,17 +6,18 @@ public class TriggerCLone : MonoBehaviour
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject player;
     [SerializeField] Camera camera;
+    [SerializeField] TutorialInevtorySlot checker;
     private bool playerToggle;
 
     private void Update()
     {
-        Debug.Log(Harriet.canOrder);
 
         if (Harriet.canOrder)
         {
             if(!canvas.activeInHierarchy && Input.GetKeyDown(KeyCode.F))
             {
                 canvas.SetActive(true);
+                canvas.GetComponent<TutorialOrderInventoyrtControl>().UpdateUI();
                 togglePlayer();
             }
             else if(canvas.activeInHierarchy &&(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
@@ -35,6 +36,17 @@ public class TriggerCLone : MonoBehaviour
         camera.enabled = playerToggle;
         player.GetComponent<playerMovement>().setMoveLock(playerToggle);
         player.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
+    }
+
+    public void InitiateCheck()
+    {
+        if(checker.potionToCheck != null)
+        {
+            Debug.Log(checker.isCorrect);
+            canvas.SetActive(false);
+            togglePlayer();
+            Harriet.changeMind(checker.isCorrect);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ public class SecondHarriet : MonoBehaviour
     public GameObject TextBubble;
     private int index;
     private bool speakable = false;
+    [SerializeField] GameObject EndDay;
 
     [Header("Babbles")]
     [SerializeField] private AudioClip[] dialogueBabbleClips;
@@ -35,6 +37,8 @@ public class SecondHarriet : MonoBehaviour
         image.sprite = Potion;
         bottomText.text = "Annihilator 3000";
         lines = waitingDialogue;
+        RightDialogue = RightDialogue.Concat(EndDialogue).ToArray();
+        WrongDialogue = WrongDialogue.Concat(EndDialogue).ToArray();
         canOrder = true;
     }
 
@@ -103,6 +107,17 @@ public class SecondHarriet : MonoBehaviour
             TextBubble.SetActive(false);
             index = 0;
             speakable = false;
+
+            if(lines == RightDialogue || lines == WrongDialogue)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                EndDay.SetActive(true);
+            }
         }
+    }
+
+    public void changeMind(bool isCorrect)
+    {
+        lines = isCorrect ? RightDialogue : WrongDialogue;
     }
 }
