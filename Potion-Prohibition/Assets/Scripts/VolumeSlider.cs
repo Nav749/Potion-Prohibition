@@ -6,10 +6,11 @@ public class VolumeSlider : MonoBehaviour
 {
     public AudioMixer theMixer;
     public Slider volumeSlider;
+    public string volumeLabel;
 
     public void SetSound(float value)
     {
         float volumeInDb = Mathf.Log10(value) * 20;
-        theMixer.SetFloat("MasterAudioParam", volumeInDb);
+        theMixer.SetFloat(volumeLabel, volumeInDb);
     }
 }

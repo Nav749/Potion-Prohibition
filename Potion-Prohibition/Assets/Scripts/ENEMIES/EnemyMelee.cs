@@ -9,6 +9,8 @@ public class EnemyMelee : MonoBehaviour
 
     private bool NewtsDieOnce = false;
 
+    private bool AttackBehaviour = false;
+
     public float meleeEnemyHealth;
 
     private Animator NewtAnimator;
@@ -63,12 +65,13 @@ public class EnemyMelee : MonoBehaviour
             meleeEnemyMovement = transform.forward * meleeEnemySpeed;
             meleeEnemyRB.linearVelocity = new Vector3(meleeEnemyMovement.x, meleeEnemyRB.linearVelocity.y, meleeEnemyMovement.z);
         }
+
         else
         {
             meleeEnemyRB.linearVelocity = new Vector3(0, 0, 0);
         }
 
-        if (meleeInRange == true && meleeIsAggroed == true)
+        if (meleeInRange == true && meleeIsAggroed == true && AttackBehaviour == false)
         {
             StartCoroutine(EnemyPause());
         }
@@ -76,14 +79,14 @@ public class EnemyMelee : MonoBehaviour
     }
     IEnumerator EnemyPause()
     {
-        meleeIsAggroed = false;
+        AttackBehaviour = true;
         NewtAnimator.SetBool("NewtAttacking", true);
         yield return new WaitForSeconds(0.4f);
         NewtAudioSource.PlayOneShot(NewtAttackClip);
         GameObject EnemyAttackInRange = Instantiate(meleeEnemyAttackPrefab, meleeEnemyAttackSource.position, transform.rotation);
         NewtAnimator.SetBool("NewtAttacking", false);
         yield return new WaitForSeconds(0.9f);
-        meleeIsAggroed = true;
+        AttackBehaviour = false;
     }
 
     IEnumerator NewtDeath()

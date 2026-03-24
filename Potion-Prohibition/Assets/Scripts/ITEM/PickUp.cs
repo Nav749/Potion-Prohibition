@@ -26,26 +26,29 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pickupSource.Play();
-        Debug.Log(item.getName() + " pciked up");
-        for (int i = 0; i < gameManager.inventory.Length; i++)
+        if (other.gameObject.CompareTag("Player"))
         {
-            if (gameManager.inventory[i] == item)
+            pickupSource.Play();
+            Debug.Log(item.getName() + " pciked up");
+            for (int i = 0; i < gameManager.inventory.Length; i++)
             {
-                gameManager.inventory[i].incrmentAmount();
-                break;
+                if (gameManager.inventory[i] == item)
+                {
+                    gameManager.inventory[i].incrmentAmount();
+                    break;
+                }
+
             }
 
+
+            pickupSource?.Play();
+            image.enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+
+
+
+            Invoke("distroy", 2);
         }
-        
-
-        pickupSource?.Play();
-        image.enabled = false;
-        GetComponent<BoxCollider>().enabled = false; 
-        
-
-
-        Invoke("distroy", 2);
     }
 
 

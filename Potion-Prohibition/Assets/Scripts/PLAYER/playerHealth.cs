@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
     public GameObject healthSegmentPrefab;
+    public Sprite Empties;
     private List<Image> healthSegments = new List<Image>();
     public int maxHealth = 10;
     public int currentHealth;
@@ -55,7 +56,7 @@ public class playerHealth : MonoBehaviour
             }
             else
             {
-                healthSegments[i].enabled = false;
+                healthSegments[i].GetComponent<Image>().sprite = Empties;
             }
         }
     }

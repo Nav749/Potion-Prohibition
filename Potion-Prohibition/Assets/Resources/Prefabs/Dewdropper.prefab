@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1766176858357476941}
+  - {fileID: 2480084726901457402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &2616694365561856366
@@ -138,10 +139,11 @@ MonoBehaviour:
   DewdropSource: {fileID: 6468588803962237682}
   rangedEnemySpeed: 4
   rangedEnemyAttackSpeed: 2
-  rangedEnemyBulletSpeed: 65
+  rangedEnemyBulletSpeed: 80
   DewdropAttackClip: {fileID: 8300000, guid: 4a641c587cc26c644a1f35e2ee8bf5fb, type: 3}
   DewdropDeathClip: {fileID: 8300000, guid: 5e4601204b6db104e992d495840fe3d2, type: 3}
   enemyRB: {fileID: 8215029750705351235}
+  tutorial: 0
   EnemyDrop: {fileID: 6180039143089317323, guid: cf0af40ff8328e44d81a3543cced633c,
     type: 3}
 --- !u!54 &8215029750705351235
@@ -322,7 +324,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.1, z: -0.011}
-  m_LocalScale: {x: 6.317149, y: 6.317149, z: 6.317149}
+  m_LocalScale: {x: 10.2323065, y: 10.2323065, z: 10.2323065}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460383201553546302}
@@ -467,3 +469,79 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7822097283402673271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2480084726901457402}
+  - component: {fileID: 5060147044802624585}
+  - component: {fileID: 1629733981868700627}
+  - component: {fileID: 8581814026545811837}
+  m_Layer: 8
+  m_Name: DewdropperDeAggroer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2480084726901457402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822097283402673271}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 4.761e-12, z: -4.761e-12}
+  m_LocalScale: {x: 39.88252, y: 39.88252, z: 39.88252}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1460383201553546302}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5060147044802624585
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822097283402673271}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &1629733981868700627
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822097283402673271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8581814026545811837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822097283402673271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15719b6143d698409d2a0f81080bad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DewdropperDown: {fileID: 7102934618898785162}
