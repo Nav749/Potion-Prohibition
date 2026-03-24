@@ -17,7 +17,7 @@ public class buttonSceneLoad : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Comic");
     }
 
     public void Quit()
