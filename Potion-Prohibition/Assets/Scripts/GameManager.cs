@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour
     public int newtScale;
     public int eyeScale;
 
+    public bool inMenu = false;
+
     private void Start()
     {
         ResetMonies();

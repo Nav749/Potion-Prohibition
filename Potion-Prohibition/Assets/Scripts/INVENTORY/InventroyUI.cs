@@ -33,11 +33,11 @@ public class InventroyUI : MonoBehaviour
     {
         if (!GameManager.Instance.isLoading)
         {
-            if (Input.GetKeyDown(KeyCode.Tab) && !open)
+            if (Input.GetKeyDown(KeyCode.Tab) && !open && !GameManager.Instance.inMenu)
             {
                 toggleInventrory();
             }
-            else if ((Input.GetKeyDown(KeyCode.Tab) && open) || (Input.GetKeyDown(KeyCode.Escape) && open))
+            else if ((Input.GetKeyDown(KeyCode.Tab) && open) || (Input.GetKeyDown(KeyCode.Escape) && open) && !GameManager.Instance.inMenu)
             {
                 toggleInventrory();
             }
@@ -50,6 +50,7 @@ public class InventroyUI : MonoBehaviour
         toggleBackground(open);
         genralUI.SetActive(open);
         toggleCursor();
+        GameManager.Instance.inMenu = open;
         
     }
 

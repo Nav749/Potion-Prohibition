@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class PlayerLock : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class PlayerLock : MonoBehaviour
         toggleCursor();
         player.GetComponent<playerMovement>().setMoveLock(isCrafting);
         player.GetComponent<playerSpellShoot>().setCrafting(isCrafting);
+        GameManager.Instance.inMenu = isCrafting;
 
     }
 
