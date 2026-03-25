@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class playerSpellShoot : MonoBehaviour
 {
+    public AudioSource ZapMaker;
+    public AudioClip zap;
     public float spellBulletSpeed;
     public float spellBulletDamage;
     public float spellBulletFireRate;
@@ -57,6 +59,7 @@ public class playerSpellShoot : MonoBehaviour
         {
             UIHand.sprite = shoot;
             mana.ManaFire(20);
+            ZapMaker.PlayOneShot(zap);
             GameObject spellBullet = Instantiate(spellBulletPrefab, spellBulletSpawnLocation.position, Quaternion.identity, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
             spellBullet.GetComponent<Rigidbody>().AddForce(spellBulletSpawnLocation.forward * spellBulletSpeed, ForceMode.Impulse);
             spellBullet.GetComponent<playerBullet>().bulletScriptDamage = spellBulletDamage;

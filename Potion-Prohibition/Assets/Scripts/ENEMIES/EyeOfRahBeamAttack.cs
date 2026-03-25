@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngineInternal;
 
 public class EyeOfRahBeamAttack : MonoBehaviour
 {
+    public LayerMask noCollidePlease;
     private LineRenderer lr;
     public float beamLength = 50f;
     public float beamDuration = 1f;
@@ -50,7 +50,7 @@ public class EyeOfRahBeamAttack : MonoBehaviour
 
         if (BeamOff)
         {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, beamLength))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, beamLength, noCollidePlease))
             {
                 lr.SetPosition(1, hit.point);
                 if (hit.collider.GetComponent<playerMovement>() != null)
