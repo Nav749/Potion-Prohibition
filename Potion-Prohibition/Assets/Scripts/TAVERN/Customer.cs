@@ -19,14 +19,16 @@ public class Customer : MonoBehaviour
     [SerializeField] private AudioClip[] dialogueBabbleClips;
     [SerializeField] private AudioSource audioSourceBabble;
     [SerializeField] private bool stopAudioSource;
-    [Range (-3,3)]
+    [Range(-3, 3)]
     [SerializeField] private float minPitch = 0.5f;
-    [Range (-3,3)]
+    [Range(-3, 3)]
     [SerializeField] private float maxPitch = 3f;
+    [SerializeField] private int frequency = 2;
+    private int counter;
 
     public TextMeshProUGUI textComponet;
     public string[] linesIntro1;
-    [HideInInspector]public string[] linesIntro;
+    [HideInInspector] public string[] linesIntro;
     public string[] linesIntro2;
     public string[] linesIntro3;
     [SerializeField] string[] linesPasstime;
@@ -74,7 +76,7 @@ public class Customer : MonoBehaviour
         {
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
             sfxSource.Play();
-        } 
+        }
         else gameObject.transform.GetChild(1).gameObject.SetActive(false);
 
         if (isSpeaking)
@@ -95,10 +97,10 @@ public class Customer : MonoBehaviour
         }
         else
         {
-            Animator.SetBool ("IsTalking", false);
+            Animator.SetBool("IsTalking", false);
         }
 
-            GameManager.Instance.orderTime = lines == linesPasstime ? true : false;
+        GameManager.Instance.orderTime = lines == linesPasstime ? true : false;
     }
 
     public void StartDialogue()
@@ -111,18 +113,24 @@ public class Customer : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        counter = 0;
         canStart = false;
         foreach (char c in lines[textIndex].ToCharArray())
         {
             textComponet.text += c;
-            if (stopAudioSource) 
+            counter++;
+            if (stopAudioSource)
             {
                 audioSourceBabble.Stop();
             }
-            int randomIndex = Random.Range(0, dialogueBabbleClips.Length);
-            AudioClip soundClip = dialogueBabbleClips[randomIndex];
-            audioSourceBabble.pitch = Random.Range(minPitch, maxPitch);
-            audioSourceBabble.PlayOneShot(soundClip);
+            if (counter == frequency)
+            {
+                int randomIndex = Random.Range(0, dialogueBabbleClips.Length);
+                AudioClip soundClip = dialogueBabbleClips[randomIndex];
+                audioSourceBabble.pitch = Random.Range(minPitch, maxPitch);
+                audioSourceBabble.PlayOneShot(soundClip);
+                counter = 0;
+            }
             yield return new WaitForSeconds(textSpeed);
         }
         canStart = true;
