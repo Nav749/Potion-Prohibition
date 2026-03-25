@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class PlayerLock : MonoBehaviour
 {
@@ -37,7 +35,8 @@ public class PlayerLock : MonoBehaviour
             craftingLogic.distroyItems();
             toggleCrafting();
         }
-        if (Input.GetKeyDown(KeyCode.E) && canCraft && !isCrafting) {
+        if (Input.GetKeyDown(KeyCode.E) && canCraft && !isCrafting)
+        {
             toggleCrafting();
             craftingLogic.createItems();
         }
@@ -56,7 +55,7 @@ public class PlayerLock : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        canCraft= false;
+        canCraft = false;
         interact.enabled = false;
     }
 
@@ -69,7 +68,14 @@ public class PlayerLock : MonoBehaviour
         toggleCursor();
         player.GetComponent<playerMovement>().setMoveLock(isCrafting);
         player.GetComponent<playerSpellShoot>().setCrafting(isCrafting);
-        GameManager.Instance.inMenu = isCrafting;
+        if (isCrafting)
+        {
+            GameManager.Instance.inMenu = true;
+        }
+        else if (!isCrafting)
+        {
+            Invoke("changeInMenu", 1);
+        }
 
     }
 
@@ -85,5 +91,10 @@ public class PlayerLock : MonoBehaviour
         }
     }
 
- 
+
+    private void changeInMenu()
+    {
+        GameManager.Instance.inMenu = isCrafting;
+    }
+
 }
