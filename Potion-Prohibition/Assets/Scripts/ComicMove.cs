@@ -16,7 +16,7 @@ public class ComicMove : MonoBehaviour
     void Update()
     {
         if (this.transform.position.y < limit)
-        this.transform.position += new Vector3(0, 0.001f, 0);
+        this.transform.position += new Vector3(0, 0.005f, 0);
         else if(this.transform.position.y > limit)
         {
             Buttons.SetActive(true);
