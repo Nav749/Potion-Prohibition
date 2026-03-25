@@ -48,6 +48,7 @@ public class CustomerPool : MonoBehaviour
         currentCustomer = customer;
         GameManager.Instance.customerGenerated = true;
         currentCustomer.SetActive(true);
+        currentCustomer.GetComponent<Customer>().ResetSprite();
         GameManager.Instance.checkDone = false;
         currentCustomer.GetComponent<Customer>().lines = currentCustomer.GetComponent<Customer>().LinesIntro();
         GameManager.Instance.PickRandomPotion();

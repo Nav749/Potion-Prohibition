@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
@@ -44,6 +45,17 @@ public class Customer : MonoBehaviour
     private bool commmenedOrder = false;
     [SerializeField] Timesmet history;
 
+    private SpriteRenderer characterRenderer;
+    [SerializeField] Sprite Idle;
+    [SerializeField] Sprite Correct;
+    [SerializeField] Sprite Wrong;
+    [SerializeField] Sprite Back;
+    [SerializeField] Sprite Revealed;
+    [SerializeField] Sprite revealedRight;
+    [SerializeField] Sprite revealedWrong;
+    public bool isChildren;
+    private bool drank = false;
+
     private void Start()
     {
         sfxSource = GetComponent<AudioSource>();
@@ -54,6 +66,14 @@ public class Customer : MonoBehaviour
         text.text = string.Empty;
         linesRight = linesRight.Concat(linesEnd).ToArray();
         linesWrong = linesWrong.Concat(linesEnd).ToArray();
+        characterRenderer = this.GetComponent<SpriteRenderer>();
+        characterRenderer.sprite = Idle;
+    }
+
+    public void ResetSprite()
+    {
+        if (history.GetInt() > 0)
+        characterRenderer.sprite = Idle;
     }
 
     private void Update()
@@ -68,6 +88,11 @@ public class Customer : MonoBehaviour
         if (GameManager.Instance.checkDone)
         {
             lines = GameManager.Instance.correctOrder ? linesRight : linesWrong;
+            characterRenderer.sprite = GameManager.Instance.correctOrder ? Correct : Wrong;
+            if (isChildren && !drank && history.GetInt() < 2)
+            {
+                characterRenderer.sprite = Back;
+            }
         }
 
         if (!commmenedOrder) CommenceOrder();
@@ -86,6 +111,11 @@ public class Customer : MonoBehaviour
             {
                 if (textComponet.text == lines[textIndex])
                 {
+                    if(isChildren && GameManager.Instance.checkDone)
+                    {
+                        drank = true;
+                        characterRenderer.sprite = GameManager.Instance.correctOrder ? Correct : Wrong;
+                    }
                     NextLine();
                 }
                 else
@@ -105,6 +135,12 @@ public class Customer : MonoBehaviour
 
     public void StartDialogue()
     {
+        if(lines != linesRight || lines != linesWrong) drank = false;
+        if(isChildren && history.GetInt() > 1)
+        {
+            Correct = revealedRight;
+            Wrong = revealedWrong;
+        }
         textComponet.text = string.Empty;
         textIndex = 0;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
@@ -140,6 +176,7 @@ public class Customer : MonoBehaviour
     {
         if (textIndex < lines.Length - 1)
         {
+            if (isChildren && history.GetInt() > 1 && textIndex > 2) characterRenderer.sprite = Revealed;
             textIndex++;
             textComponet.text = string.Empty;
             StartCoroutine(TypeLine());

@@ -515,6 +515,7 @@ MonoBehaviour:
   stopAudioSource: 1
   minPitch: 1.5
   maxPitch: 3
+  frequency: 2
   textComponet: {fileID: 1032148383272698172}
   linesIntro1:
   - Hello, fellow adult bartender!
@@ -537,9 +538,9 @@ MonoBehaviour:
   - We would like one completely normal adult potion.
   - --For completely normal adult reasons!
   linesRight:
-  - Yes, this is VERY adult.
   - (They turn around, and you swear you see the potion pour onto the ground beneath
     them...)
+  - Yes, this is VERY adult.
   - Whew! That was.. great! Thank you, kind Goblin!
   linesWrong:
   - (They bring the potion to their nose, taking a whiff, only to recoil immediately.)
@@ -553,6 +554,14 @@ MonoBehaviour:
   text: {fileID: 221409159620726526}
   lines: []
   history: {fileID: 11400000, guid: b9175067bcf313244971ab3247efec6b, type: 2}
+  Idle: {fileID: -1780319651, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  Correct: {fileID: 1525409432, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  Wrong: {fileID: -1276849354, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  Back: {fileID: -1276973869, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  Revealed: {fileID: 565188303, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  revealedRight: {fileID: -508181458, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  revealedWrong: {fileID: -1907701512, guid: 0c2ec889d290c594eb7c26a8d3ee04cf, type: 3}
+  isChildren: 1
 --- !u!212 &4474287934791798612
 SpriteRenderer:
   m_ObjectHideFlags: 0
