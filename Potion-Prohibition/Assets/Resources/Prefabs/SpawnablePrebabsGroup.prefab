@@ -1,0 +1,1313 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6880398675324120782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4346584878353060221}
+  m_Layer: 3
+  m_Name: SpawnablePrebabsGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4346584878353060221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6880398675324120782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9130724149428246138}
+  - {fileID: 1613781017381475849}
+  - {fileID: 5923993034957554917}
+  - {fileID: 896220393689521650}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &876390816078782612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4346584878353060221}
+    m_Modifications:
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167132527500273449, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawnable Prefabs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: spawnableProps.Array.size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4264764965680429461, guid: fcf61c2966317e345a8d6834a6591bca,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4852787015184491181, guid: dc63ba5a1fa10d843b1d9231e5315525,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6288411801449433136, guid: c06e024deb5de1042a7f79354231bef5,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[3]'
+      value: 
+      objectReference: {fileID: 7816352219532660206, guid: c90f7519f8d25af48a4cf98805198985,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[4]'
+      value: 
+      objectReference: {fileID: 468350892386357754, guid: 45c7e9d157f17cc48813f3fc92ed2eb7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[5]'
+      value: 
+      objectReference: {fileID: 6275813028015733488, guid: 9065d70f3e3b15042899694d87562a72,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[6]'
+      value: 
+      objectReference: {fileID: 6732323142269819589, guid: db86415f1ece5be4eb79cd172d0a9a55,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[7]'
+      value: 
+      objectReference: {fileID: 3078905114011563819, guid: bb3a7509b0ab7ee44933f7ab44cd903a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8650802419108244218, guid: 62c87cfacfdb97b4e8b8eda793140b40,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[9]'
+      value: 
+      objectReference: {fileID: 217089435293124370, guid: db9d945d3e1df524daff6fc74529f661,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[10]'
+      value: 
+      objectReference: {fileID: 520215555389279569, guid: 7d016e49788abb6439aef573bb7d5456,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1247104398921336899, guid: b1a5aaa879b80e34d95d86041afa2c20,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[12]'
+      value: 
+      objectReference: {fileID: 6116383923377606114, guid: b0382f641f480814a818771536f0b6ff,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[13]'
+      value: 
+      objectReference: {fileID: 8625120016046327163, guid: 6cb08025d7fd4b745860a13b584708dc,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[14]'
+      value: 
+      objectReference: {fileID: 6233202957510301143, guid: 7f959a8d34fd9af49bc90c0035a40867,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[15]'
+      value: 
+      objectReference: {fileID: 5611607176479052192, guid: 747a28c4d24554d43b83d47dcce1236c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[16]'
+      value: 
+      objectReference: {fileID: 3627681920635887301, guid: dc8dfeb2225713d4d8159da10ddfb27e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[17]'
+      value: 
+      objectReference: {fileID: 305833550274748456, guid: 89e59437c6b0037408bc45ca56072f0b,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2432497210291845056, guid: 99937ed66353ca047a7cd029575b0c4d,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[19]'
+      value: 
+      objectReference: {fileID: 5371061837708592263, guid: 02e9aec9aba571342989c3bb473d58b2,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[20]'
+      value: 
+      objectReference: {fileID: 711718386998930755, guid: b24cac15339acf340a9a5c4034363a13,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[21]'
+      value: 
+      objectReference: {fileID: 2344098762816417572, guid: cc7bb262002720a4fbdd3b242f4e77e5,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[22]'
+      value: 
+      objectReference: {fileID: 6196759432640080818, guid: 3ae8db51c6d4d1740b11e8d4672c1e9f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[23]'
+      value: 
+      objectReference: {fileID: 7895055497698880033, guid: 33d9005bba5ca5b4491571ef4e3f1492,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[24]'
+      value: 
+      objectReference: {fileID: 8620797898478446571, guid: 777f6259f7151984aa00904a68ce6b06,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[25]'
+      value: 
+      objectReference: {fileID: 707977558683239264, guid: e78df71e8ee7eda4db7f327f0129bb0f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[26]'
+      value: 
+      objectReference: {fileID: 769071798155532938, guid: dcc9f76ab6ee80848be7b4fb5ed48d90,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[27]'
+      value: 
+      objectReference: {fileID: 8411145270276853366, guid: e76e2b6377648994a81e19cb1be559e4,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[28]'
+      value: 
+      objectReference: {fileID: 7957644995485999185, guid: 2ed26deacd4cb0749b63ec5160805749,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[29]'
+      value: 
+      objectReference: {fileID: 3819797389594093815, guid: 9ff9b8b387fdb3c47971ea01e432ea1c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[30]'
+      value: 
+      objectReference: {fileID: 809363629748293767, guid: 110cc9bfab5f13949ac3c3a8a30483ef,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[31]'
+      value: 
+      objectReference: {fileID: 4806777017824605822, guid: d7c632fb8901fc1459d46cc77955507f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[32]'
+      value: 
+      objectReference: {fileID: 5501390742724964561, guid: 70a201e6eea086e4b80825105cb6ed1a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[33]'
+      value: 
+      objectReference: {fileID: 8879072271780429807, guid: b68932e788102d149bf4e0026d334d89,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[34]'
+      value: 
+      objectReference: {fileID: 5947451936138765292, guid: aac5042fbbb36fa4fbc4202f97119fd2,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[35]'
+      value: 
+      objectReference: {fileID: 3191233501342638101, guid: 45b0dae60086983499c87af362832f39,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[36]'
+      value: 
+      objectReference: {fileID: 5643030834646243907, guid: c76e61b026d972242945ecc0225dc9ff,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[37]'
+      value: 
+      objectReference: {fileID: 1868982846478538521, guid: 195c7558c9782e14da2e1b583c40ad49,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[38]'
+      value: 
+      objectReference: {fileID: 1212139901003222604, guid: 929f82392dc1bb042927ae30e81fe2d6,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[39]'
+      value: 
+      objectReference: {fileID: 8804602771249608592, guid: a3a555aa3cd5e974cb898885df4b4989,
+        type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb161cc1a2dcbf14d949846a6851678e, type: 3}
+--- !u!4 &1613781017381475849 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+    type: 3}
+  m_PrefabInstance: {fileID: 876390816078782612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1602399891698740079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4346584878353060221}
+    m_Modifications:
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167132527500273449, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawnable Prefabs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: spawnableProps.Array.size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8672469334668630367, guid: 1572cda8fb41ae046826a17dc22938d1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4332764067546181070, guid: 282d2a69a23ee394da66614c0b78a7c6,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3644673836736016862, guid: 5799aa16d95eaaf489a2fb298ff383cd,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[3]'
+      value: 
+      objectReference: {fileID: 369491555973448589, guid: 7aeef659a4d5daa45b3ff6430bd5e51a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1268572948368325902, guid: 81e05ccceef24ca47aa5752cbf4348a7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[5]'
+      value: 
+      objectReference: {fileID: 5475665088324249409, guid: de71314830629f948b09ebcbe5437aeb,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[6]'
+      value: 
+      objectReference: {fileID: 9005719018757887149, guid: 90edb7985587b8a4ba238107a02933f7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[7]'
+      value: 
+      objectReference: {fileID: 3228165855257301907, guid: 15d6ec61657ab5a43936fc39854f77e7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[8]'
+      value: 
+      objectReference: {fileID: 6007558782016173797, guid: 7320f94f3c5c46244be3d0d8fb698baf,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[9]'
+      value: 
+      objectReference: {fileID: 6959325112251846041, guid: 26b1e01b1083a9845a8fffe3ac1eb310,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[10]'
+      value: 
+      objectReference: {fileID: 6527669650337502837, guid: dd40de60f34894f4faf87c7e5d5dfe48,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[11]'
+      value: 
+      objectReference: {fileID: 7454367266418154876, guid: 14df29020b9dd6e418d38c6759db7e6c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[12]'
+      value: 
+      objectReference: {fileID: 5320734445485041144, guid: da33ef15de2aa594eb6bf701e1e9c24a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[13]'
+      value: 
+      objectReference: {fileID: 6718795356207236439, guid: 189705b139c44384cb113b0b0474422f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[14]'
+      value: 
+      objectReference: {fileID: 8610812509127307297, guid: b27c708f93563cd499c03d5bd4c6f93d,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[15]'
+      value: 
+      objectReference: {fileID: 8379306245118586766, guid: d70bfa07ec050a1488b61cf675ec8f2b,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[16]'
+      value: 
+      objectReference: {fileID: 1606997973667159102, guid: 1c8209c5662cf0343aa66db7c549efaf,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[17]'
+      value: 
+      objectReference: {fileID: 7252355582703632113, guid: 81a25ef8baa75d04e971adfb8d8d453e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[18]'
+      value: 
+      objectReference: {fileID: 2484599745802798421, guid: 87a29df3be188f54a97ea88bd07d1cbc,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[19]'
+      value: 
+      objectReference: {fileID: 9004476371209439859, guid: 6b24684b917c5904ca8c8eb26fbcfcff,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[20]'
+      value: 
+      objectReference: {fileID: 6258411964023807078, guid: 854b83050834f114d8e3bd1b70c34e0c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[21]'
+      value: 
+      objectReference: {fileID: 6379592987829359725, guid: 783698ea94057b74a806df4eaa303dc3,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[22]'
+      value: 
+      objectReference: {fileID: 3978528173857347708, guid: c7282a00b6f943b4396e817b54dceb82,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[23]'
+      value: 
+      objectReference: {fileID: 5907769675903842237, guid: 5b33b96562a71234c975056b40300e63,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[24]'
+      value: 
+      objectReference: {fileID: 6978570136919479143, guid: f182dea095bded0498e54142a25e8b6b,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[25]'
+      value: 
+      objectReference: {fileID: 8847100119549540703, guid: cb30226392fcce44a9042f409f0f7284,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[26]'
+      value: 
+      objectReference: {fileID: 4035141488323251568, guid: 2f2fc210eeebd3c4090d35374cdc27b1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[27]'
+      value: 
+      objectReference: {fileID: 253388981244955187, guid: 5136a1248070350448fcd461d3ac342e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[28]'
+      value: 
+      objectReference: {fileID: 1442733440058446989, guid: 90d6c1aca298d694ea63f639c0c885fe,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[29]'
+      value: 
+      objectReference: {fileID: 1623526842065793390, guid: fb9bdb14e32ba164f8afc5db2c123237,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[30]'
+      value: 
+      objectReference: {fileID: 349431783326209920, guid: 0a152ff40b3ba0f4ba8beb2d7b29db3e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[31]'
+      value: 
+      objectReference: {fileID: 5926369268090699164, guid: e74c4cfb83d5a3d4eba31dd18465e346,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[32]'
+      value: 
+      objectReference: {fileID: 3091338188665430583, guid: b3c439c722d862e4abe42bc4b39f273f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[33]'
+      value: 
+      objectReference: {fileID: 8133792437499792483, guid: 00eefb87be518064f97b517ee9ee65e9,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[34]'
+      value: 
+      objectReference: {fileID: 7734989319810906377, guid: 030cb9cf777f13c4b8c2140728448bbe,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[35]'
+      value: 
+      objectReference: {fileID: 62821895495203478, guid: 67de8b853d8d5de4fb40488536b4ccd1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[36]'
+      value: 
+      objectReference: {fileID: 5646717312264115067, guid: b3914c255aff0e94bb2601e2c8760a53,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[37]'
+      value: 
+      objectReference: {fileID: 6110388298173383616, guid: feca9d5b62bd8d6438d78a92e4be75d0,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[38]'
+      value: 
+      objectReference: {fileID: 1284116379646671657, guid: bcbc3bc59cea90b48969a24bc404e1b7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[39]'
+      value: 
+      objectReference: {fileID: 2982392992309846435, guid: a8cad451605a81d4bb6fffa843f83bfd,
+        type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb161cc1a2dcbf14d949846a6851678e, type: 3}
+--- !u!4 &896220393689521650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1602399891698740079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5222660176150557304
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4346584878353060221}
+    m_Modifications:
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167132527500273449, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawnable Prefabs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: spawnableProps.Array.size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1594632968318990005, guid: 34d167edb21071942985fb983bee498e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 659071367226667654, guid: c05c7a7ba4dbc0641a557b52c35cadbe,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5460388414208720401, guid: eec0e021c32b8a34186c97a373a6a192,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5162335730541338273, guid: 9c460d9e37346494dbb485daa3787d5e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8508619924055366579, guid: f15f34a7b789d774eb7713661c23e6c1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[5]'
+      value: 
+      objectReference: {fileID: 3477016358696805466, guid: 4706a7770fc13e9479b034d23d0661fd,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[6]'
+      value: 
+      objectReference: {fileID: 9186127832499552047, guid: 3a5bc3c4e83c7fd4bb797d48b7c2be98,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[7]'
+      value: 
+      objectReference: {fileID: 7719491310314174178, guid: b7d73636327fc9d4fbee08f09e275c6a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[8]'
+      value: 
+      objectReference: {fileID: 6223743724014636279, guid: 7edd32a91de80df49b9573a3355f97bc,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1373850159842683961, guid: f4ad36894c68b304a88114471dbd26ce,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[10]'
+      value: 
+      objectReference: {fileID: 8869152806434292219, guid: 78c1eeb43fe80a840aced4fa6dc7620a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[11]'
+      value: 
+      objectReference: {fileID: 295423294072042824, guid: 17436bf60b5ecbf488a226aff0976a52,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[12]'
+      value: 
+      objectReference: {fileID: 2001106173512365827, guid: 62d8629bf9da82040bbd7f3d94feee12,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[13]'
+      value: 
+      objectReference: {fileID: 6194346995766740570, guid: 9e0b72d0266ea2b4f84af129ba14fd05,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[14]'
+      value: 
+      objectReference: {fileID: 7878051152893207446, guid: 5acb0d39bfd7eab4daaecb4ed8b6daa5,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[15]'
+      value: 
+      objectReference: {fileID: 7746172122275603398, guid: 832a0a789a7413e4dbef251e0ffc192c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[16]'
+      value: 
+      objectReference: {fileID: 324991768044965469, guid: 29d4cbe282c42a646bb261d0af671ce1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[17]'
+      value: 
+      objectReference: {fileID: 7399174247982225524, guid: fae5cb283c0bd6044bd34e92850b076f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[18]'
+      value: 
+      objectReference: {fileID: 960342408939114496, guid: 27f5919b22273f94698f2e7da8f3c708,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[19]'
+      value: 
+      objectReference: {fileID: 8135635601596420616, guid: 1cc78c74969685149af0e56aa1fd9ea1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[20]'
+      value: 
+      objectReference: {fileID: 7722243131287789144, guid: ae57f600d12b1d54d8273f8c751ddae1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[21]'
+      value: 
+      objectReference: {fileID: 1298061919409335586, guid: dbd5f23c702eec847ab270fe45f7e2c7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[22]'
+      value: 
+      objectReference: {fileID: 3585558273197582031, guid: 5f85bd2e36309234ba2d8b71ec37a458,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[23]'
+      value: 
+      objectReference: {fileID: 5343999968204773220, guid: 7ec4e4acae0bcba448c4685cb2577d0d,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[24]'
+      value: 
+      objectReference: {fileID: 8296828449478729892, guid: 56c534489d62e4b4e9084d37c8394713,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[25]'
+      value: 
+      objectReference: {fileID: 3453987813874283537, guid: f09ee5cc85ecae646bd4da0eb1d5d13c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[26]'
+      value: 
+      objectReference: {fileID: 3056163509008670335, guid: b9421a69ac767e446a131bf5ef06852a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[27]'
+      value: 
+      objectReference: {fileID: 1413935026414375956, guid: 4a32ec56440f7b844a372dc5e25668af,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[28]'
+      value: 
+      objectReference: {fileID: 2823146236595017901, guid: c90fe966295bbe245ba595bc23464a0e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[29]'
+      value: 
+      objectReference: {fileID: 6886860178707895636, guid: 9fee54055d4ca1344ababdfb740134bd,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[30]'
+      value: 
+      objectReference: {fileID: 8874475059747617594, guid: 19e3059b7cee55645932db6097519f62,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[31]'
+      value: 
+      objectReference: {fileID: 471581043534859859, guid: 3f4b248f475587c4e80b28751d4c4023,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[32]'
+      value: 
+      objectReference: {fileID: 4772696175100636631, guid: a44db34112d21164a85ea39420786128,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[33]'
+      value: 
+      objectReference: {fileID: 7251241741490362427, guid: fb2698326e562714da589b422b49f780,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[34]'
+      value: 
+      objectReference: {fileID: 7362049639401732212, guid: 01b1a97d1a121f14ca050396774d8bc3,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[35]'
+      value: 
+      objectReference: {fileID: 864876305543744240, guid: 135570e859ec37143a01acc2a1b01bc0,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[36]'
+      value: 
+      objectReference: {fileID: 2433389458179732344, guid: 06d369f2c2959914b985d52b7e6a9629,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[37]'
+      value: 
+      objectReference: {fileID: 4443812922660387421, guid: d220764de8664bd4dae002d1fb4b08d2,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[38]'
+      value: 
+      objectReference: {fileID: 1797876144501187753, guid: 80606abc4c26c804289a3f60ade9e296,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[39]'
+      value: 
+      objectReference: {fileID: 1277484802439834223, guid: ecdc5f781694cd141af8720c305b9db8,
+        type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb161cc1a2dcbf14d949846a6851678e, type: 3}
+--- !u!4 &5923993034957554917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5222660176150557304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7276133342972518631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4346584878353060221}
+    m_Modifications:
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167132527500273449, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawnable Prefabs
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: spawnableProps.Array.size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6218551395802126063, guid: 55f9c7df0e796f44d99b0109b5287c58,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4743300930254781578, guid: e68c9134310f7fb4cb441f29de9b2ed5,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2006851310894502092, guid: 777c6ed4fa709bf488107effcc298a1a,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[3]'
+      value: 
+      objectReference: {fileID: 797778105768637951, guid: d1c47ad8dff65624c9f71b3752fe8bd0,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2466342796738688966, guid: 210194db5e3280042a8ab4a7365ac52b,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[5]'
+      value: 
+      objectReference: {fileID: 4283660649905111154, guid: 6dc120473df2d1446bf4037c2c8f0c73,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8433518606635911003, guid: 9a3c5364d9751c4458bf80ea38ff265c,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[7]'
+      value: 
+      objectReference: {fileID: 6833918502928596458, guid: 19e9fa4943d1b1b4bbc7cb172a8f692b,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1274728423408969798, guid: c64efc1d64af4284181a5c66a88b97d2,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[9]'
+      value: 
+      objectReference: {fileID: 6272870368335757566, guid: 3b8e2d4432f1b224da1862479ef5abbb,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[10]'
+      value: 
+      objectReference: {fileID: 8480675465910882747, guid: 0416bf4e04824c648a5f7cd7af063bb4,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[11]'
+      value: 
+      objectReference: {fileID: 7567296437187471167, guid: 8d9ff77f128f1134983b18542288cfc1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[12]'
+      value: 
+      objectReference: {fileID: 2630224954970611863, guid: acf7323c85287dc43a74505f2aac4de1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[13]'
+      value: 
+      objectReference: {fileID: 7290573438265838358, guid: e847633889b3e8643b13d44908b62635,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[14]'
+      value: 
+      objectReference: {fileID: 406350740113634356, guid: ed503baf43040174fbbadcd3bed6c165,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[15]'
+      value: 
+      objectReference: {fileID: 6958212573925900042, guid: 3f184f710f44f3f46b9577b9688db272,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[16]'
+      value: 
+      objectReference: {fileID: 5026462016772519586, guid: 9722dcd81241cc54d87c3554fd8f638d,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[17]'
+      value: 
+      objectReference: {fileID: 1886231532826330744, guid: 2d9948ec4d1e74642971647a8eb40752,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[18]'
+      value: 
+      objectReference: {fileID: 8201500488598887049, guid: e1ddb038a9025964f8c5397878d39cb8,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[19]'
+      value: 
+      objectReference: {fileID: 7627940137642999067, guid: 0affc0cd62cf8f3409ab06cecc898f5e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[20]'
+      value: 
+      objectReference: {fileID: 496431206212632711, guid: f16d4154691b74a4ea23a28a2cf3076f,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[21]'
+      value: 
+      objectReference: {fileID: 3767457402778777869, guid: 268d54288863281479bfe0bd3d5a235e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[22]'
+      value: 
+      objectReference: {fileID: 668372708017545091, guid: 71da058db56b38442a7a228be80829d4,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[23]'
+      value: 
+      objectReference: {fileID: 3555757350590614584, guid: e97531fd9f2d49447ab6eef10d55e632,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[24]'
+      value: 
+      objectReference: {fileID: 7797163940799249106, guid: 29c045e708a90574bad4b50c58040ecb,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[25]'
+      value: 
+      objectReference: {fileID: 7245802965825132812, guid: eb6bfd2535d6b344eaf4eba32d4dfa39,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[26]'
+      value: 
+      objectReference: {fileID: 6643536597975503109, guid: 3d3cb78cea36b2549a8c9de11773b233,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[27]'
+      value: 
+      objectReference: {fileID: 5441415981164385637, guid: 18aae3c4249a5ac47be4e0e4dfd98ab7,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[28]'
+      value: 
+      objectReference: {fileID: 8278072321831760849, guid: 8123e41364a72cd44bb854fff31820ab,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[29]'
+      value: 
+      objectReference: {fileID: 2131213584260784684, guid: 051551a9244bf3a4c9c30636710718b1,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[30]'
+      value: 
+      objectReference: {fileID: 70553360646440554, guid: d1f291746eda7a44481001d166280668,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[31]'
+      value: 
+      objectReference: {fileID: 3620801202998506443, guid: c9813eff39d87e644a171c00e4418f2b,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[32]'
+      value: 
+      objectReference: {fileID: 3546265361151132867, guid: b628b32dd2f219a41ba1b02769be48b3,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[33]'
+      value: 
+      objectReference: {fileID: 6016864708450603090, guid: f9b97cd95ab89164dafa99475dc4bea4,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[34]'
+      value: 
+      objectReference: {fileID: 9131495148203938308, guid: 0522604f6658dbe418ac1076dcbd22ba,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[35]'
+      value: 
+      objectReference: {fileID: 3130335479028175534, guid: a6de29a7cfa56744eb09544be77fbcdd,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[36]'
+      value: 
+      objectReference: {fileID: 8317907413031799109, guid: a6e8d8f3112535942bc225de90b478b3,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[37]'
+      value: 
+      objectReference: {fileID: 8309521230879398139, guid: e62b90831428eaf4089b6058d4d1121e,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[38]'
+      value: 
+      objectReference: {fileID: 8534481718608228615, guid: 8d66b98d7210af44fa8054dd73460405,
+        type: 3}
+    - target: {fileID: 3857372780280659436, guid: fb161cc1a2dcbf14d949846a6851678e,
+        type: 3}
+      propertyPath: 'spawnableProps.Array.data[39]'
+      value: 
+      objectReference: {fileID: 1771901217983629122, guid: 95102e9c978de1546bc2af1583b1f602,
+        type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb161cc1a2dcbf14d949846a6851678e, type: 3}
+--- !u!4 &9130724149428246138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1895133107363837597, guid: fb161cc1a2dcbf14d949846a6851678e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7276133342972518631}
+  m_PrefabAsset: {fileID: 0}

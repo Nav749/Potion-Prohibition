@@ -9,7 +9,7 @@ public class SpawnProps : MonoBehaviour
     void Start()
     {
         int randint = Random.Range(0, spawnableProps.Count);
-        Instantiate(spawnableProps[randint], this.transform.position, Quaternion.identity, this.transform);
+        Instantiate(spawnableProps[randint], this.transform);
     }
 
 }
