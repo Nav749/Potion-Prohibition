@@ -1,11 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventroyUI : MonoBehaviour
 {
     //[SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject genralUI;
-    
+
 
     private int page;
     [SerializeField] private GameObject[] pages;
@@ -16,12 +15,12 @@ public class InventroyUI : MonoBehaviour
     [SerializeField] private int sectionOnePos;
     [SerializeField] private int sectionTwoPos;
     [SerializeField] private int sectionThreePos;
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
         page = 0;
         open = false;
         genralUI.SetActive(open);
@@ -50,10 +49,18 @@ public class InventroyUI : MonoBehaviour
         toggleBackground(open);
         genralUI.SetActive(open);
         toggleCursor();
-        GameManager.Instance.inMenu = open;
-        
+        if (open)
+        {
+            GameManager.Instance.inMenu = true;
+        }
+        else if (!open)
+        {
+            Invoke("changeInMenu", 1);
+        }
+
     }
 
+    private void changeInMenu() { GameManager.Instance.inMenu = false; }
     public void toggleCursor()
     {
         if (open)
@@ -72,7 +79,7 @@ public class InventroyUI : MonoBehaviour
     {
         if (page < pages.Length - 1)
         {
-           
+
             pages[page].SetActive(false);
             page++;
             switchBackground(page);
@@ -80,8 +87,10 @@ public class InventroyUI : MonoBehaviour
         }
     }
 
-    public void prevPage() {
-        if (page > 0) {
+    public void prevPage()
+    {
+        if (page > 0)
+        {
             pages[page].SetActive(false);
             page--;
             switchBackground(page);
@@ -90,8 +99,10 @@ public class InventroyUI : MonoBehaviour
         }
     }
 
-    public void goToPage(int index) {
-        if (index > -1 && index < pages.Length) {
+    public void goToPage(int index)
+    {
+        if (index > -1 && index < pages.Length)
+        {
             pages[page].SetActive(false);
             page = index;
             switchBackground(page);
@@ -101,21 +112,24 @@ public class InventroyUI : MonoBehaviour
 
     public void goToSectionOne() { goToPage(sectionOnePos); }
     public void goToSectionTwo() { goToPage(sectionTwoPos); }
-    public void goToSectionThree() {  goToPage(sectionThreePos); }
+    public void goToSectionThree() { goToPage(sectionThreePos); }
 
     //toggels backgound to last open page when tab pressed (or just turns them off
-    private void toggleBackground(bool input) {
+    private void toggleBackground(bool input)
+    {
         if (input)
         {
             backGrounds[background].SetActive(true);
 
         }
-        else {
+        else
+        {
             backGrounds[background].SetActive(false);
         }
     }
 
-    private void switchBackground(int index) {
+    private void switchBackground(int index)
+    {
         if (index == sectionOnePos)
         {
             backGrounds[background].SetActive(false);
@@ -149,15 +163,15 @@ public class InventroyUI : MonoBehaviour
             background = 4;
             backGrounds[background].SetActive(true);
         }
-        else if (index > sectionThreePos) 
+        else if (index > sectionThreePos)
         {
             backGrounds[background].SetActive(false);
             background = 5;
             backGrounds[background].SetActive(true);
         }
 
-                    
-        
+
+
     }
 
 }

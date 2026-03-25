@@ -12,12 +12,16 @@ public class ActivateMap : MonoBehaviour
             mapUp = true;
             Map.SetActive(true);
             Time.timeScale = 0;
+            GameManager.Instance.inMenu = true;
         }
         else if ((mapUp && Input.GetKeyDown(KeyCode.Escape)) || (mapUp && Input.GetKeyDown(KeyCode.M)))
         {
             mapUp = false;
             Map.SetActive(false);
             Time.timeScale = 1;
+            Invoke("changeInMenu", 1);
         }
     }
+
+    private void chnageInMenu() { GameManager.Instance.inMenu = false; }
 }

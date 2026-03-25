@@ -92,9 +92,6 @@ public class PlayerLock : MonoBehaviour
     }
 
 
-    private void changeInMenu()
-    {
-        GameManager.Instance.inMenu = isCrafting;
-    }
+    private void changeInMenu() { GameManager.Instance.inMenu = isCrafting; }
 
 }
