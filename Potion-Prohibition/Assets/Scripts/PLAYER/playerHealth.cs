@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
     public GameObject healthSegmentPrefab;
+    public AudioClip hitClip;
+    public AudioClip deathClip;
     public Sprite Empties;
     private List<Image> healthSegments = new List<Image>();
     public int maxHealth = 10;
@@ -11,9 +13,11 @@ public class playerHealth : MonoBehaviour
     public GameObject playerRef;
     [SerializeField] GameObject healthbarHolder;
     public GameObject GameOverScreen;
+    private AudioSource healthbarSource;
 
     void Start()
     {
+        healthbarSource = this.GetComponent<AudioSource>();
         currentHealth = maxHealth;
         initializeHealthBar();
     }
@@ -31,6 +35,14 @@ public class playerHealth : MonoBehaviour
     public void TakeDamage(int health)
     {
         currentHealth = currentHealth - health;
+        if (currentHealth < 0)
+        {
+            healthbarSource.PlayOneShot(hitClip);
+        }
+        else
+        {
+            healthbarSource.PlayOneShot(deathClip);
+        }
         UpdateHealth(currentHealth);
     }
 
