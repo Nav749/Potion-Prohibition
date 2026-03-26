@@ -171,6 +171,7 @@ public class GameManager : MonoBehaviour
         }
         if (currentLevelName == "Dungeon")
         {
+            playerGO.GetComponent<playerHealth>().initializeHealthBar();
             RenderSettings.fog = true;
             RenderSettings.fogColor = color1;
             RenderSettings.fogDensity = fogDensity;

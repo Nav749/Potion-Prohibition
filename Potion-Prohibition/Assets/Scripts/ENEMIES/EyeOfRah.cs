@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EyeOfRah : MonoBehaviour
@@ -57,7 +58,8 @@ public class EyeOfRah : MonoBehaviour
 
         if (rahRotation == true)
         {
-            targetDirectionRah = (playerTargetForRah.transform.position - transform.position).normalized;
+            Vector3 target = new Vector3(playerTargetForRah.transform.position.x, playerTargetForRah.transform.position.y - 2f, playerTargetForRah.transform.position.z);
+            targetDirectionRah = (target - transform.position).normalized;
             lookingRotatorRah = Quaternion.LookRotation(targetDirectionRah);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookingRotatorRah, 85);
         }
