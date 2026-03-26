@@ -143,6 +143,7 @@ public class CraftingLogic : MonoBehaviour
         if (spice != null)
         {
             createItem(spice);
+            
 
         }
         if (rocks != null)
@@ -166,8 +167,10 @@ public class CraftingLogic : MonoBehaviour
     private void clearSlots() { 
         spiceSlot.sprite = null;
         spiceSlot.enabled = false;
+        spice = null;
         rockSlot.sprite = null;
         rockSlot.enabled = false;
+        rocks = null;
         for (int i = 0; i < slots.Length; i++) { 
             slots[i].sprite = null;
             slots[i].enabled = false;
@@ -206,6 +209,7 @@ public class CraftingLogic : MonoBehaviour
                 foreach (Item item in droppedItems) { 
                     item.decrementAmount();
                 }
+
 
                 clearSlots();
                 droppedItems.Clear();
