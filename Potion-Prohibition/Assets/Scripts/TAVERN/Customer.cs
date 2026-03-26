@@ -186,6 +186,7 @@ public class Customer : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             canStart = true;
             isSpeaking = false;
+            GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(false);
             GameManager.Instance.orderTime = true;
             if (lines == linesIntro)
             {

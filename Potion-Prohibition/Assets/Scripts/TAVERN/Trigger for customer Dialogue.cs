@@ -13,7 +13,11 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (canSpeak && Input.GetKeyDown(KeyCode.E) && !isOrdering && !pool.currentCustomer.GetComponent<Customer>().isSpeaking) pool.StartSpeaking();
+        if (canSpeak && Input.GetKeyDown(KeyCode.E) && !isOrdering && !pool.currentCustomer.GetComponent<Customer>().isSpeaking)
+        {
+            pool.StartSpeaking();
+            GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
+        }
 
         if (GameManager.Instance.orderTime)
         {
