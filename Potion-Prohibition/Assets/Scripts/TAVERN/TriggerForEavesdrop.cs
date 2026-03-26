@@ -10,6 +10,7 @@ public class TriggerForEavesdrop : MonoBehaviour
     private string[] lines;
 
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI name;
     public float textSpeed;
     public GameObject TextBubble;
 
@@ -33,6 +34,8 @@ public class TriggerForEavesdrop : MonoBehaviour
 
     private void Update()
     {
+        name.text = dialogue.currentCustomers.GetNames()[index%2];
+
         if (playerListening)
         {
             if (Input.GetKeyDown(KeyCode.E))

@@ -5,6 +5,7 @@ public class Dialogue : ScriptableObject
 {
     public int combo;
     public string[] dialogue;
+    public string[] names;
 
     public int GetCombo()
     {
@@ -14,5 +15,10 @@ public class Dialogue : ScriptableObject
     public string[] GetDialogue()
     {
         return dialogue;
+    }
+
+    public string[] GetNames()
+    {
+        return names;
     }
 }
