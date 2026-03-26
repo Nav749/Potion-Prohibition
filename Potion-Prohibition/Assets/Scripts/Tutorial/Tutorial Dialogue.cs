@@ -11,6 +11,7 @@ public class TutorialDialogue : MonoBehaviour
     [SerializeField] GameObject portalParticles;
     [SerializeField] GameObject blocker;
     [SerializeField] playerMovement player;
+    [SerializeField] Fade fade;
 
     [SerializeField] List<TutorialSO> tutorials;
     [SerializeField] List<Vector3> positions;
@@ -59,6 +60,7 @@ public class TutorialDialogue : MonoBehaviour
         Invoke("lockPlayer", 0.3f);
         index = 0;
         StartCoroutine(TypeLine());
+        fade.FadeIn();
     }
 
     void lockPlayer()
@@ -86,11 +88,17 @@ public class TutorialDialogue : MonoBehaviour
         }
         else
         {
-            TextBubble.SetActive(false);
+            fade.FadeOut();
             index = 0;
             speakable = false;
             lockPlayer();
+            Invoke("Wait", 1f);
         }
+    }
+
+    private void Wait()
+    {
+        fade.ResetAnim();
     }
 
     private void OnTriggerExit(Collider other)
