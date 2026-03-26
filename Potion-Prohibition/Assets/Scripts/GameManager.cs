@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGO;
     public GameObject filter;
     [SerializeField] int increment;
+    public bool speakable = true;
     public GameObject PlayerGO => playerGO;
     [SerializeField] PlayerStats playerStats;
     [SerializeField] GameObject UI;
@@ -193,7 +195,6 @@ public class GameManager : MonoBehaviour
     {
         isLoading = true;
         PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
-        playerGO.SetActive(false);
         LoadingScreen.SetActive(true);
 
         levelsPassed++;
@@ -208,6 +209,8 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         nextDayScreen.SetActive(false);
         hasGenerated = false;
+        playerGO.SetActive(false);
+        speakable = false;
 
         Invoke("TurnOffLoadingScreen", 2f);
     }

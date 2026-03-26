@@ -13,7 +13,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (canSpeak && Input.GetKeyDown(KeyCode.E) && !isOrdering && !pool.currentCustomer.GetComponent<Customer>().isSpeaking)
+        if (canSpeak && Input.GetKeyDown(KeyCode.E) && !isOrdering && !pool.currentCustomer.GetComponent<Customer>().isSpeaking && GameManager.Instance.speakable)
         {
             pool.StartSpeaking();
             GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(true);
@@ -52,6 +52,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         {
             canSpeak = true;
             pool.OrderToggle();
+            GameManager.Instance.speakable = true;
         }
     }
 
@@ -61,6 +62,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         {
             canSpeak = false;
             pool.OrderToggle();
+            GameManager.Instance.speakable = false;
         }
     }
 
