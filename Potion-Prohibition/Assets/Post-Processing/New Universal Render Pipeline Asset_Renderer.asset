@@ -71,7 +71,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -2550751465708949631}
   - {fileID: 3827424739798759851}
-  m_RendererFeatureMap: 816f1c700ee999dcab393fb485be1d35
+  - {fileID: 5552141017076993078}
+  m_RendererFeatureMap: 816f1c700ee999dcab393fb485be1d35360cc0a9d62a0d4d
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -139,3 +140,29 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &5552141017076993078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_Settings:
+    AOMethod: 1
+    Downsample: 1
+    AfterOpaque: 1
+    Source: 0
+    NormalSamples: 2
+    Intensity: 3.8
+    DirectLightingStrength: 0.738
+    Radius: 1.44
+    Samples: 1
+    BlurQuality: 1
+    Falloff: 84.83
+    SampleCount: -1

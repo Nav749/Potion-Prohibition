@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2ce10a9b6f73844a6b086d70442155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZapMaker: {fileID: 0}
+  zap: {fileID: 0}
   spellBulletSpeed: 50
   spellBulletDamage: 2
   spellBulletFireRate: 0.3
@@ -187,6 +189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSegmentPrefab: {fileID: 2736574869845340601, guid: fc9ce6af5e53dfe458169de3c37a6cdf,
     type: 3}
+  hitClip: {fileID: 0}
+  deathClip: {fileID: 0}
+  Empties: {fileID: 0}
   maxHealth: 10
   currentHealth: 5
   playerRef: {fileID: 3279723489329110484}
@@ -339,7 +344,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
