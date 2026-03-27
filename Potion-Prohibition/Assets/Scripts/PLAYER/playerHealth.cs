@@ -8,7 +8,7 @@ public class playerHealth : MonoBehaviour
     public AudioClip deathClip;
     public Sprite Empties;
     private List<Image> healthSegments = new List<Image>();
-    public int maxHealth = 10;
+    public int maxHealth;
     public int currentHealth;
     public GameObject playerRef;
     [SerializeField] GameObject healthbarHolder;
@@ -18,7 +18,6 @@ public class playerHealth : MonoBehaviour
     void Start()
     {
         healthbarSource = this.GetComponent<AudioSource>();
-        currentHealth = maxHealth;
         initializeHealthBar();
     }
 
@@ -26,8 +25,11 @@ public class playerHealth : MonoBehaviour
     {
         for (int i = 0; i < maxHealth; i++)
         {
-            GameObject segment = Instantiate(healthSegmentPrefab, this.transform.position, Quaternion.identity, healthbarHolder.transform);
-            healthSegments.Add(segment.GetComponent<Image>());
+            if (healthSegments.Count < maxHealth)
+            {
+                GameObject segment = Instantiate(healthSegmentPrefab, this.transform.position, Quaternion.identity, healthbarHolder.transform);
+                healthSegments.Add(segment.GetComponent<Image>());
+            }
         }
         UpdateHealthBar();
     }
