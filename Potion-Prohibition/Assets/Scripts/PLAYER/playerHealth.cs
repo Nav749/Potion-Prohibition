@@ -4,8 +4,10 @@ using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
     public GameObject healthSegmentPrefab;
-    public AudioClip hitClip;
+    public AudioClip[] hitClips;
     public AudioClip deathClip;
+    public AudioClip soundToPlay;
+    [SerializeField] public AudioSource playerSourceAudio;
     public Sprite Empties;
     private List<Image> healthSegments = new List<Image>();
     public int maxHealth;
@@ -37,15 +39,17 @@ public class playerHealth : MonoBehaviour
     public void TakeDamage(int health)
     {
         currentHealth = currentHealth - health;
-        if (currentHealth < 0)
+        if (currentHealth > 0)
         {
-            healthbarSource.PlayOneShot(hitClip);
+            int randomIndex = Random.Range(0, hitClips.Length);
+            AudioClip soundToPlay = hitClips[randomIndex];
+            healthbarSource.PlayOneShot(soundToPlay);
         }
-        else
+        if (currentHealth == 0)
         {
             healthbarSource.PlayOneShot(deathClip);
         }
-        UpdateHealth(currentHealth);
+         UpdateHealth(currentHealth); 
     }
 
     public void UpdateHealth(int health)

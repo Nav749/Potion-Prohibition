@@ -25,6 +25,8 @@ public class playerMovement : MonoBehaviour
 
     private bool moveLock = false;
 
+    [SerializeField] private AudioClip walkingSound;
+
     void Update()
     {
         playerIsGrounded = Physics.CheckSphere(playerGroundCheck.position, playerGroundDistance, playerGroundMask);
