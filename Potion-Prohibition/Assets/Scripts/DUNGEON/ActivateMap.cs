@@ -19,7 +19,7 @@ public class ActivateMap : MonoBehaviour
             mapUp = false;
             Map.SetActive(false);
             Time.timeScale = 1;
-            Invoke("changeInMenu", 1);
+            Invoke("changeInMenu", 0.1f);
         }
     }
 

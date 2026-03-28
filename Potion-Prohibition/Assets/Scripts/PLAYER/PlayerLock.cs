@@ -74,7 +74,7 @@ public class PlayerLock : MonoBehaviour
         }
         else if (!isCrafting)
         {
-            Invoke("changeInMenu", 1);
+            Invoke("changeInMenu", 0.1f);
         }
 
     }

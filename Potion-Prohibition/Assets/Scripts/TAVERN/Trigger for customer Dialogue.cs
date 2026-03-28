@@ -44,6 +44,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         camera.enabled = playerToggle;
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
         GameManager.Instance.PlayerGO.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
+        GameManager.Instance.inMenu = playerToggle;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -36,7 +36,7 @@ public class InventroyUI : MonoBehaviour
             {
                 toggleInventrory();
             }
-            else if ((Input.GetKeyDown(KeyCode.Tab) && open) || (Input.GetKeyDown(KeyCode.Escape) && open) && !GameManager.Instance.inMenu)
+            else if ((Input.GetKeyDown(KeyCode.Tab) && open) || (Input.GetKeyDown(KeyCode.Escape) && open))
             {
                 toggleInventrory();
             }
@@ -49,13 +49,14 @@ public class InventroyUI : MonoBehaviour
         toggleBackground(open);
         genralUI.SetActive(open);
         toggleCursor();
+        
         if (open)
         {
             GameManager.Instance.inMenu = true;
         }
         else if (!open)
         {
-            Invoke("changeInMenu", 1);
+            Invoke("changeInMenu", 0.1f);
         }
 
     }
@@ -114,7 +115,7 @@ public class InventroyUI : MonoBehaviour
     public void goToSectionTwo() { goToPage(sectionTwoPos); }
     public void goToSectionThree() { goToPage(sectionThreePos); }
 
-    //toggels backgound to last open page when tab pressed (or just turns them off
+    
     private void toggleBackground(bool input)
     {
         if (input)

@@ -160,7 +160,6 @@ public class CraftingLogic : MonoBehaviour
         }
         droppedItems.Clear();
         clearSlots();
-        //hideSlots();
         count = 0;
     }
 
