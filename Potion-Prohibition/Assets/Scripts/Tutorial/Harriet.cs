@@ -43,8 +43,8 @@ public class Harriet : MonoBehaviour
                 }
                 else
                 {
-                    //StopAllCoroutines();
-                    //textComponent.text = lines[index];
+                    StopAllCoroutines();
+                    textComponent.text = lines[index];
                 }
             }
         }
