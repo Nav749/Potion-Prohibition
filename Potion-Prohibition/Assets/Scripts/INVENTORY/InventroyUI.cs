@@ -48,7 +48,9 @@ public class InventroyUI : MonoBehaviour
         pages[page].SetActive(open);
         toggleBackground(open);
         genralUI.SetActive(open);
+        GameManager.Instance.lockCamara(open);
         toggleCursor();
+
         
         if (open)
         {

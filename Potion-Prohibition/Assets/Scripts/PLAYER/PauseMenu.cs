@@ -30,6 +30,8 @@ public class PauseMenu : MonoBehaviour
     { 
         isPaused = true;
         uiElements.SetActive(true);
+        GameManager.Instance.inMenu = true;
+        GameManager.Instance.lockCamara(isPaused);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         
@@ -40,6 +42,8 @@ public class PauseMenu : MonoBehaviour
     { 
         isPaused = false;
         uiElements.SetActive(false);
+        GameManager.Instance.inMenu = false;
+        GameManager.Instance.lockCamara(isPaused);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
     }

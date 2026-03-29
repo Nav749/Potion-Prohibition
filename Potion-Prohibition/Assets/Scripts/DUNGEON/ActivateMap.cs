@@ -7,10 +7,11 @@ public class ActivateMap : MonoBehaviour
 
     void Update()
     {
-        if (!mapUp && Input.GetKeyDown(KeyCode.M) && GameManager.Instance.currentLevelName == "Dungeon")
+        if (!mapUp && Input.GetKeyDown(KeyCode.M) && GameManager.Instance.currentLevelName == "Dungeon" && !GameManager.Instance.inMenu)
         {
             mapUp = true;
             Map.SetActive(true);
+            GameManager.Instance.lockCamara(true);
             Time.timeScale = 0;
             GameManager.Instance.inMenu = true;
         }
@@ -18,6 +19,7 @@ public class ActivateMap : MonoBehaviour
         {
             mapUp = false;
             Map.SetActive(false);
+            GameManager.Instance.lockCamara(false);
             Time.timeScale = 1;
             Invoke("changeInMenu", 0.1f);
         }

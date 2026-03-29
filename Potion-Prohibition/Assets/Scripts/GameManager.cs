@@ -387,4 +387,14 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region camLock
+
+    public void lockCamara(bool input) {
+        
+        playerGO.GetComponentInChildren<playerLook>().locked = input;
+      
+    }
+
+    #endregion
+
 }

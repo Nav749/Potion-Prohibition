@@ -30,7 +30,7 @@ public class PlayerLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isCrafting)
+        if ((Input.GetKeyDown(KeyCode.Escape) && isCrafting) || (Input.GetKeyDown(KeyCode.E) && isCrafting))
         {
             craftingLogic.distroyItems();
             toggleCrafting();
@@ -68,6 +68,7 @@ public class PlayerLock : MonoBehaviour
         toggleCursor();
         player.GetComponent<playerMovement>().setMoveLock(isCrafting);
         player.GetComponent<playerSpellShoot>().setCrafting(isCrafting);
+        GameManager.Instance.lockCamara(isCrafting);
         if (isCrafting)
         {
             GameManager.Instance.inMenu = true;
