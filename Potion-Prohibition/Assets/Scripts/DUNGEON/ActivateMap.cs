@@ -23,5 +23,5 @@ public class ActivateMap : MonoBehaviour
         }
     }
 
-    private void chnageInMenu() { GameManager.Instance.inMenu = false; }
+    private void changeInMenu() { GameManager.Instance.inMenu = false; }
 }
