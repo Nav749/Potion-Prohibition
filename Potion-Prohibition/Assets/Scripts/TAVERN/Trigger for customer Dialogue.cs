@@ -44,7 +44,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         isOrdering = !isOrdering;
         UI.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
-        
+
         GameManager.Instance.PlayerGO.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = !playerToggle;
         camera.enabled = playerToggle;
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
