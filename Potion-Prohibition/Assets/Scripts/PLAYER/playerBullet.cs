@@ -24,6 +24,7 @@ public class playerBullet : MonoBehaviour
         {
             enemyL = other.GetComponent<EnemyTest>();
             enemyL.rangedEnemyHealth = enemyL.rangedEnemyHealth - bulletScriptDamage;
+            enemyL.GetComponent<DamageFlash>().CallDamageFlash();
             enemyL.rangedIsAggroed = true;
 
         }
@@ -31,6 +32,7 @@ public class playerBullet : MonoBehaviour
         {
             enemyM = other.GetComponent<EnemyMelee>();
             enemyM.meleeEnemyHealth = enemyM.meleeEnemyHealth - bulletScriptDamage;
+            enemyM.GetComponent<DamageFlash>().CallDamageFlash();
             enemyM.meleeIsAggroed = true;
 
         }
@@ -38,6 +40,7 @@ public class playerBullet : MonoBehaviour
         {
             enemyR = other.GetComponent<EyeOfRah>();
             enemyR.rahEnemyHealth = enemyR.rahEnemyHealth - bulletScriptDamage;
+            enemyR.GetComponent<DamageFlash>().CallDamageFlash();
             enemyR.rahIsAggroed = true;
 
         }
