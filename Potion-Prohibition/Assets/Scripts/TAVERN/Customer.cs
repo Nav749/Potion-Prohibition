@@ -33,8 +33,8 @@ public class Customer : MonoBehaviour
     public string[] linesIntro2;
     public string[] linesIntro3;
     [SerializeField] string[] linesPasstime;
-    [SerializeField] string[] linesRight;
-    [SerializeField] string[] linesWrong;
+    public string[] linesRight;
+    public string[] linesWrong;
     [SerializeField] string[] linesEnd;
     [SerializeField] float textSpeed;
     [SerializeField] SpriteRenderer potion;
@@ -55,6 +55,7 @@ public class Customer : MonoBehaviour
     [SerializeField] Sprite revealedWrong;
     public bool isChildren;
     private bool drank = false;
+    private bool hasBegun = true;
 
     private void Start()
     {
@@ -92,6 +93,11 @@ public class Customer : MonoBehaviour
             if (isChildren && !drank && history.GetInt() < 2)
             {
                 characterRenderer.sprite = Back;
+            }
+            if (!isSpeaking && hasBegun)
+            {
+                StartDialogue();
+                hasBegun = false;
             }
         }
 
@@ -201,6 +207,7 @@ public class Customer : MonoBehaviour
                 GameManager.Instance.UpdateQuota();
                 Debug.Log(GameManager.Instance.currentOrderQuota + "/ " + GameManager.Instance.orderQuota);
                 this.transform.GetComponentInParent<CustomerPool>().ActivateCustomer();
+                hasBegun = true;
                 commmenedOrder = false;
             }
         }
