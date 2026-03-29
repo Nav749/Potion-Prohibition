@@ -195,6 +195,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f7280df918b710948a12e3a2ffc2c83b, type: 3}
   - {fileID: 8300000, guid: d06320758d8688d4f966586acc478970, type: 3}
   deathClip: {fileID: 8300000, guid: d3a1d8fe8d66d264684c850439ff5949, type: 3}
+  soundToPlay: {fileID: 0}
+  playerSourceAudio: {fileID: 0}
   Empties: {fileID: 0}
   maxHealth: 5
   currentHealth: 5
@@ -420,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b4a8d1b6228934b9cd1600131f792c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 400
+  mouseSensitivity: 5
   playerBody: {fileID: 8598875380693100386}
   referenceForHealth: {fileID: 3662643554469736601}
 --- !u!114 &3313064193259309176
