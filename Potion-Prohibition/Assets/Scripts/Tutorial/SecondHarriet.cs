@@ -52,6 +52,7 @@ public class SecondHarriet : MonoBehaviour
 
         if (speakable)
         {
+            player.GetComponent<playerMovement>().setMoveLock(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (textComponent.text == lines[index])
@@ -104,6 +105,7 @@ public class SecondHarriet : MonoBehaviour
         }
         else
         {
+            player.GetComponent<playerMovement>().setMoveLock(false);
             TextBubble.SetActive(false);
             index = 0;
             speakable = false;

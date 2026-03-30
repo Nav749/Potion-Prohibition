@@ -35,6 +35,7 @@ public class Harriet : MonoBehaviour
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         if (speakable)
         {
+            player.GetComponent<playerMovement>().setMoveLock(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (textComponent.text == lines[index])
@@ -45,6 +46,7 @@ public class Harriet : MonoBehaviour
                 {
                     StopAllCoroutines();
                     textComponent.text = lines[index];
+                    
                 }
             }
         }
@@ -87,6 +89,7 @@ public class Harriet : MonoBehaviour
         }
         else
         {
+            player.GetComponent<playerMovement>().setMoveLock(false);
             TextBubble.SetActive(false);
             index = 0;
             speakable = false;
