@@ -46,7 +46,7 @@ public class EnemyTest : MonoBehaviour
     [SerializeField] GameObject EnemyDrop;
     private void Start()
     {
-        if(playerTargetForRangedEnemy == null) playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
+        if (playerTargetForRangedEnemy == null) playerTargetForRangedEnemy = GameManager.Instance.PlayerGO;
         RangedAnimator = GetComponent<Animator>();
         DewdropSource = GetComponent<AudioSource>();
         if (!tutorial)
@@ -61,6 +61,11 @@ public class EnemyTest : MonoBehaviour
 
     private void Update()
     {
+        if (playerTargetForRangedEnemy.GetComponent<playerHealth>().currentHealth <= 0)
+        {
+            rangedIsAggroed = false;
+        }
+
         if (rangedEnemyHealth <= 0 && OneDeath == false)
         {
             OneDeath = true;

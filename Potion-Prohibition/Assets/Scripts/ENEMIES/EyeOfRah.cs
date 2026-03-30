@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EyeOfRah : MonoBehaviour
@@ -49,6 +48,11 @@ public class EyeOfRah : MonoBehaviour
 
     private void Update()
     {
+        if (playerTargetForRah.GetComponent<playerHealth>().currentHealth <= 0)
+        {
+            rahIsAggroed = false;
+        }
+
         if (rahEnemyHealth <= 0 && OneLove == false)
         {
             OneLove = true;
