@@ -49,7 +49,7 @@ public class playerHealth : MonoBehaviour
         {
             healthbarSource.PlayOneShot(deathClip);
         }
-         UpdateHealth(currentHealth); 
+        UpdateHealth(currentHealth);
     }
 
     public void UpdateHealth(int health)
@@ -70,7 +70,7 @@ public class playerHealth : MonoBehaviour
         {
             if (i < currentHealth)
             {
-                healthSegments[i].enabled = true;
+                healthSegments[i].GetComponent<Image>().sprite = healthSegmentPrefab.GetComponent<Image>().sprite;
             }
             else
             {
