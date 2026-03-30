@@ -32,7 +32,7 @@ public class InventroyUI : MonoBehaviour
     {
         if (!GameManager.Instance.isLoading)
         {
-            if (Input.GetKeyDown(KeyCode.Tab) && !open && !GameManager.Instance.inMenu)
+            if (Input.GetKeyDown(KeyCode.Tab) && !open && !GameManager.Instance.inMenu && !GameManager.Instance.isLoading)
             {
                 toggleInventrory();
             }

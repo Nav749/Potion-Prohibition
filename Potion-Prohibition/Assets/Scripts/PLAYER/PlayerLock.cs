@@ -35,7 +35,7 @@ public class PlayerLock : MonoBehaviour
             craftingLogic.distroyItems();
             toggleCrafting();
         }
-        if (Input.GetKeyDown(KeyCode.E) && canCraft && !isCrafting)
+        if (Input.GetKeyDown(KeyCode.E) && canCraft && !isCrafting && !GameManager.Instance.inMenu)
         {
             toggleCrafting();
             craftingLogic.createItems();

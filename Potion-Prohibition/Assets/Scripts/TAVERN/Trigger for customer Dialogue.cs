@@ -18,6 +18,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
             && !isOrdering 
             && !pool.currentCustomer.GetComponent<Customer>().isSpeaking 
             && GameManager.Instance.speakable 
+            && !GameManager.Instance.inMenu
             )
         {
             pool.StartSpeaking();

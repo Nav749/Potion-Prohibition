@@ -20,12 +20,13 @@ public class ShopTrigger : MonoBehaviour
 
         if (activeShop)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.inMenu)
             {
+               
                 playerToggleSwap(playerToggle);
                 
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            else if ((Input.GetKeyDown(KeyCode.Escape) && playerToggle) || (Input.GetKeyDown(KeyCode.E) && playerToggle))
             {
                 playerToggleSwap(true);
 
@@ -62,7 +63,7 @@ public class ShopTrigger : MonoBehaviour
         {
             GameManager.Instance.inMenu = true;
         }
-        else if (playerToggle) {
+        else if (!playerToggle) {
             Invoke("changeInMenu", 0.1f);
         }
         
