@@ -2042,8 +2042,8 @@ MonoBehaviour:
     a slime-like ball that hurts anyone nearby but otherwise, it is quite easy to
     out-maneuver the creature."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e85211f9f010d1c4597edf3c406255df, type: 2}
-  m_sharedMaterial: {fileID: 5558014874930910414, guid: e85211f9f010d1c4597edf3c406255df,
+  m_fontAsset: {fileID: 11400000, guid: d3e365899774e944db9eaadfadc44a49, type: 2}
+  m_sharedMaterial: {fileID: -1131564717138508063, guid: d3e365899774e944db9eaadfadc44a49,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3060,8 +3060,8 @@ MonoBehaviour:
     with which he attacks anything that comes near. Be wary of sharp corners as it
     likes to sneak up on unsuspecting victims.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e85211f9f010d1c4597edf3c406255df, type: 2}
-  m_sharedMaterial: {fileID: 5558014874930910414, guid: e85211f9f010d1c4597edf3c406255df,
+  m_fontAsset: {fileID: 11400000, guid: d3e365899774e944db9eaadfadc44a49, type: 2}
+  m_sharedMaterial: {fileID: -1131564717138508063, guid: d3e365899774e944db9eaadfadc44a49,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6747,7 +6747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DewDroper
+  m_text: DewDropper
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3e365899774e944db9eaadfadc44a49, type: 2}
   m_sharedMaterial: {fileID: -1131564717138508063, guid: d3e365899774e944db9eaadfadc44a49,
@@ -10516,7 +10516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305, y: 245}
+  m_AnchoredPosition: {x: -330, y: 245}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1347488220 stripped
@@ -11717,7 +11717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 382, y: 245}
+  m_AnchoredPosition: {x: 356, y: 245}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1610954632
@@ -15335,8 +15335,8 @@ MonoBehaviour:
     beam from its eyes. It may take a while to charge up. It\u2019s best to hide
     behind pillars to avoid its attack."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e85211f9f010d1c4597edf3c406255df, type: 2}
-  m_sharedMaterial: {fileID: 5558014874930910414, guid: e85211f9f010d1c4597edf3c406255df,
+  m_fontAsset: {fileID: 11400000, guid: d3e365899774e944db9eaadfadc44a49, type: 2}
+  m_sharedMaterial: {fileID: -1131564717138508063, guid: d3e365899774e944db9eaadfadc44a49,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15361,10 +15361,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.45
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -15523,7 +15523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305, y: 245}
+  m_AnchoredPosition: {x: -330, y: 245}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1588606168278906763
@@ -15773,6 +15773,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284563937763787763, guid: 6ba12d229f760e14db91d2e66798d273,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131280424733678737, guid: 6ba12d229f760e14db91d2e66798d273,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
