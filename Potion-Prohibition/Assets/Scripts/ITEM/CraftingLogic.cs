@@ -16,18 +16,28 @@ public class CraftingLogic : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            if (bookOpen)
+            {
+                closeBook();
+            }
+            else if (!bookOpen) { 
+                openBook();
+            }
+        }
     }
 
     private void Awake()
     {
         hideSlots();
         potionDisplay.enabled = false;
+        closeBook();
     }
 
     #region item creation
@@ -243,5 +253,43 @@ public class CraftingLogic : MonoBehaviour
 
     #endregion
 
+
+    #region Book
+    [SerializeField] private GameObject bookUI;
+    [SerializeField] private GameObject[] pages;
+    private bool bookOpen = false;
+    private int page = 0;
+
+    public void openBook() { 
+        bookOpen = true;
+        bookUI.SetActive(true);
+        pages[page].SetActive(true);
+    }
+
+    public void closeBook() { 
+        bookOpen = false;
+        bookUI.SetActive(false);
+        pages[page].SetActive(false);
+    }
+
+    public void nextPage()
+    {
+        if (page < pages.Length - 1)
+        {
+            pages[page].SetActive(false);
+            page++;
+            pages[page].SetActive(true);
+        }
+    }
+
+    public void prevPage() {
+        if (page >= 1)
+        {
+            pages[page].SetActive(false);
+            page--;
+            pages[page].SetActive(true);
+        }
+    }
+    #endregion
 
 }
