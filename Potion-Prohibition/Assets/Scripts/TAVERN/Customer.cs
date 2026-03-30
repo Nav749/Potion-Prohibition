@@ -112,7 +112,7 @@ public class Customer : MonoBehaviour
 
         if (isSpeaking)
         {
-            GameManager.Instance.lockCamara(true);
+            
             Animator.SetBool("IsTalking", true);
             if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.speakable)
             {
@@ -135,7 +135,7 @@ public class Customer : MonoBehaviour
         else
         {
             Animator.SetBool("IsTalking", false);
-            GameManager.Instance.lockCamara(false);
+            
         }
 
         GameManager.Instance.orderTime = lines == linesPasstime ? true : false;

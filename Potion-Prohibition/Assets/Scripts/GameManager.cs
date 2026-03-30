@@ -390,7 +390,7 @@ public class GameManager : MonoBehaviour
     #region camLock
 
     public void lockCamara(bool input) {
-        
+        Debug.Log("kms");
         playerGO.GetComponentInChildren<playerLook>().locked = input;
       
     }

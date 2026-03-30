@@ -23,12 +23,12 @@ public class ShopTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 playerToggleSwap(playerToggle);
-                GameManager.Instance.inMenu = true;
+                
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 playerToggleSwap(true);
-                Invoke("changeInMenu", 0.1f);
+
             }
         }
     }
@@ -58,7 +58,13 @@ public class ShopTrigger : MonoBehaviour
         GameManager.Instance.PlayerGO.transform.GetChild(0).gameObject.SetActive(!playerToggle);
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
         GameManager.Instance.PlayerGO.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
-            
+        if (playerToggle)
+        {
+            GameManager.Instance.inMenu = true;
+        }
+        else if (playerToggle) {
+            Invoke("changeInMenu", 0.1f);
+        }
         
 
     }
