@@ -24,4 +24,14 @@ public class buttonSceneLoad : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void RetryTutorial()
+    {
+        SceneManager.LoadScene("Tutorial2");
+    }
+
+    public void MainMenuTutorial()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
 }
