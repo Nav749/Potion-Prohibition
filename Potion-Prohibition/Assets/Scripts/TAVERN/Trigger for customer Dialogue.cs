@@ -26,7 +26,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
         if (GameManager.Instance.orderTime)
         {
-            if (canSpeak && Input.GetKeyDown(KeyCode.F))
+            if (canSpeak && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.Escape) && playerToggle) ))
             {
                 if (!playerToggle)
                 {
