@@ -39,6 +39,7 @@ public class playerSpellShoot : MonoBehaviour
                     StartCoroutine(Shoot());
                 }
             }
+
             else
             {
                 if (Input.GetButtonDown("Fire1") && bulletTimer <= 0)
