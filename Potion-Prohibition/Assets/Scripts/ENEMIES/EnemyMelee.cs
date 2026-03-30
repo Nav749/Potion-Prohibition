@@ -49,6 +49,11 @@ public class EnemyMelee : MonoBehaviour
 
     private void Update()
     {
+        if (playerTargetForMeleeEnemy.GetComponent<playerHealth>().currentHealth <= 0)
+        {
+            meleeIsAggroed = false;
+        }
+
         if (meleeEnemyHealth <= 0 && NewtsDieOnce == false)
         {
             NewtsDieOnce = true;
