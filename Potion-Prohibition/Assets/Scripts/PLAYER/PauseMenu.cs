@@ -4,6 +4,7 @@ public class PauseMenu : MonoBehaviour
 {
     private bool isPaused = false;
     [SerializeField] private GameObject uiElements;
+    [SerializeField] private GameObject contols;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,5 +47,14 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.lockCamara(isPaused);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void showContols() { 
+        contols.SetActive(true);
+    }
+
+    public void hideContols() { 
+        contols.SetActive(false);
+
     }
 }
