@@ -225,6 +225,7 @@ public class TutorialCraftingLogic : MonoBehaviour
                 }
 
                 clearSlots();
+                hideSlots();
                 droppedItems.Clear();
                 potionDisplay.sprite = temp.getImage();
                 potionDisplay.enabled = true;
