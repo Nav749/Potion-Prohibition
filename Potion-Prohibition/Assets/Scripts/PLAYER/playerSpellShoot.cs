@@ -25,7 +25,7 @@ public class playerSpellShoot : MonoBehaviour
 
     private void Update()
     {
-        if (tavernNeutral == false && !isCrafting)
+        if (tavernNeutral == false && !isCrafting && Time.timeScale > 0)
         {
             if (bulletTimer > 0)
             {
