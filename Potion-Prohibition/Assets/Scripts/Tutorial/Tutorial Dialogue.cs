@@ -1,8 +1,8 @@
-using NUnit.Framework;
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialDialogue : MonoBehaviour
@@ -12,6 +12,17 @@ public class TutorialDialogue : MonoBehaviour
     [SerializeField] GameObject blocker;
     [SerializeField] playerMovement player;
     [SerializeField] Fade fade;
+
+    [Header("Babbles")]
+    [SerializeField] private AudioClip[] dialogueBabbleClips;
+    [SerializeField] private AudioSource audioSourceBabble;
+    [SerializeField] private bool stopAudioSource;
+    [Range(-3, 3)]
+    [SerializeField] private float minPitch = 0.5f;
+    [Range(-3, 3)]
+    [SerializeField] private float maxPitch = 3f;
+    [SerializeField] private int frequency = 2;
+    private int counter;
 
     [SerializeField] List<TutorialSO> tutorials;
     [SerializeField] List<Vector3> positions;
@@ -73,7 +84,19 @@ public class TutorialDialogue : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
-            textComponent.ForceMeshUpdate();
+            counter++;
+            if (stopAudioSource)
+            {
+                audioSourceBabble.Stop();
+            }
+            if (counter == frequency)
+            {
+                int randomIndex = Random.Range(0, dialogueBabbleClips.Length);
+                AudioClip soundClip = dialogueBabbleClips[randomIndex];
+                audioSourceBabble.pitch = Random.Range(minPitch, maxPitch);
+                audioSourceBabble.PlayOneShot(soundClip);
+                counter = 0;
+            }
             yield return new WaitForSeconds(textSpeed);
         }
     }
