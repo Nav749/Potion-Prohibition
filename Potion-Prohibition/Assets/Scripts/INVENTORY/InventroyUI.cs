@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InventroyUI : MonoBehaviour
 {
-    //[SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject[] confictiionUI;
     [SerializeField] private GameObject genralUI;
 
 
@@ -15,6 +15,9 @@ public class InventroyUI : MonoBehaviour
     [SerializeField] private int sectionOnePos;
     [SerializeField] private int sectionTwoPos;
     [SerializeField] private int sectionThreePos;
+    [SerializeField] private int sectionFourPos;
+    [SerializeField] private int sectionFivePos;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -50,6 +53,9 @@ public class InventroyUI : MonoBehaviour
         genralUI.SetActive(open);
         GameManager.Instance.lockCamara(open);
         toggleCursor();
+        foreach (GameObject g in confictiionUI) { 
+            g.SetActive(!open);
+        }
 
         
         if (open)
@@ -116,8 +122,11 @@ public class InventroyUI : MonoBehaviour
     public void goToSectionOne() { goToPage(sectionOnePos); }
     public void goToSectionTwo() { goToPage(sectionTwoPos); }
     public void goToSectionThree() { goToPage(sectionThreePos); }
+    public void goToSectionFour() { goToPage(sectionFourPos); }
+    public void goToSectionFive() { goToPage(sectionFivePos); }
 
-    
+
+
     private void toggleBackground(bool input)
     {
         if (input)
@@ -166,10 +175,33 @@ public class InventroyUI : MonoBehaviour
             background = 4;
             backGrounds[background].SetActive(true);
         }
-        else if (index > sectionThreePos)
+        else if (index > sectionThreePos && index < sectionFourPos)
         {
             backGrounds[background].SetActive(false);
             background = 5;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index == sectionFourPos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 6;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index > sectionFourPos && index < sectionFivePos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 7;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index == sectionFivePos)
+        {
+            backGrounds[background].SetActive(false);
+            background = 8;
+            backGrounds[background].SetActive(true);
+        }
+        else if (index > sectionFivePos) {
+            backGrounds[background].SetActive(false);
+            background = 9;
             backGrounds[background].SetActive(true);
         }
 
