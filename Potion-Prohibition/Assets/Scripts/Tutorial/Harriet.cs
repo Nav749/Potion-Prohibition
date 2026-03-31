@@ -15,7 +15,7 @@ public class Harriet : MonoBehaviour
     public float textSpeed;
     public GameObject TextBubble;
     private int index;
-    private bool speakable = false;
+    public bool speakable = false;
 
     [Header("Babbles")]
     [SerializeField] private AudioClip[] dialogueBabbleClips;

@@ -19,7 +19,7 @@ public class SecondHarriet : MonoBehaviour
     public float textSpeed;
     public GameObject TextBubble;
     private int index;
-    private bool speakable = false;
+    public bool speakable = false;
     [SerializeField] GameObject EndDay;
 
     [Header("Babbles")]

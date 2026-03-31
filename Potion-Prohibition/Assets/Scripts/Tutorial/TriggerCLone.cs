@@ -8,9 +8,15 @@ public class TriggerCLone : MonoBehaviour
     [SerializeField] Camera camera;
     [SerializeField] TutorialInevtorySlot checker;
     private bool playerToggle;
+    private bool talkingTime = false;
 
     private void Update()
     {
+
+        if (talkingTime && Input.GetKeyDown(KeyCode.E) && !Harriet.speakable)
+        {
+            Harriet.StartDialogue();
+        }
 
         if (Harriet.canOrder)
         {
@@ -31,6 +37,7 @@ public class TriggerCLone : MonoBehaviour
     private void togglePlayer()
     {
         playerToggle = !playerToggle;
+        talkingTime = !playerToggle;
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
         player.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = !playerToggle;
         camera.enabled = playerToggle;
@@ -46,6 +53,7 @@ public class TriggerCLone : MonoBehaviour
             canvas.SetActive(false);
             togglePlayer();
             Harriet.changeMind(checker.isCorrect);
+            Harriet.StartDialogue();
         }
     }
 
@@ -53,7 +61,16 @@ public class TriggerCLone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Harriet.StartDialogue();
+            talkingTime = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            talkingTime = false;
         }
     }
 }
