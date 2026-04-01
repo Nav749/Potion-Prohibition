@@ -1,10 +1,7 @@
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class playerMovement : MonoBehaviour
+public class TutorialPLayerMove : MonoBehaviour
 {
-
     public CharacterController playerController;
 
     public float playerSpeed = 12f;
@@ -57,24 +54,12 @@ public class playerMovement : MonoBehaviour
                 }
                 else
                 {
-                    if(SceneManager.GetActiveScene().buildIndex > 3)
-                    {
-                        if (Time.timeScale > 0)
-                            isMoving = true;
-                        else
-                            isMoving = false;
-
-                        playerController.Move(move * playerSpeed * Time.deltaTime);
-                    }
+                    if (Time.timeScale > 0 && !GameManager.Instance.inMenu)
+                        isMoving = true;
                     else
-                    {
-                        if (Time.timeScale > 0 && !GameManager.Instance.inMenu)
-                            isMoving = true;
-                        else
-                            isMoving = false;
+                        isMoving = false;
 
-                        playerController.Move(move * playerSpeed * Time.deltaTime);
-                    }
+                    playerController.Move(move * playerSpeed * Time.deltaTime);
                 }
             }
             else
