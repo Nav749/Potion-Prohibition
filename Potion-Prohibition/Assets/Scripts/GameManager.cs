@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -396,4 +397,37 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region SaveData
+
+    [System.Serializable]
+    public class PlayerData
+    {
+        public int health = 5;
+        public float damage = 1;
+        public int levels = 1;
+        public int money = 0;
+    }
+
+    public PlayerData playerData = new PlayerData();
+
+    public void WriteJSON()
+    {
+        playerData.health = playerGO.gameObject.GetComponent<playerHealth>().maxHealth;
+        playerData.damage = playerGO.gameObject.GetComponent < playerSpellShoot>().spellBulletDamage;
+        playerData.levels = levelsPassed;
+        playerData.money = coins;
+
+        string stringOutput = JsonUtility.ToJson(playerData);
+        File.WriteAllText(Application.persistentDataPath + "/PlayerData.json", stringOutput);
+    }
+
+    public void ReadJSON()
+    {
+        string filepath = Application.persistentDataPath + "/PlayerData.json";
+        string playerDataRead = System.IO.File.ReadAllText(filepath);
+
+        playerData = JsonUtility.FromJson<PlayerData>(playerDataRead);
+    }
+
+    #endregion
 }
