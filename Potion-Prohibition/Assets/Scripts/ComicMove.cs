@@ -1,27 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class ComicMove : MonoBehaviour
 {
     public float limit;
     public GameObject Buttons;
+    public VideoPlayer video;
     public GameObject SkipButton;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        this.transform.position = Vector3.zero;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.position.y < limit)
-        this.transform.position += new Vector3(0, 0.005f, 0);
-        else if(this.transform.position.y > limit)
+        if (!video.isPlaying)
         {
             Buttons.SetActive(true);
             SkipButton.SetActive(false);
+        }
+        else
+        {
+            Buttons.SetActive(false);
+            SkipButton.SetActive(true);
         }
     }
 
@@ -37,6 +36,6 @@ public class ComicMove : MonoBehaviour
 
     public void Skip()
     {
-        this.transform.position = new Vector3(0, limit + 0.01f, 0);
+        video.time = video.length;
     }
 }
