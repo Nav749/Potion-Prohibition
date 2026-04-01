@@ -51,10 +51,12 @@ public class PauseMenu : MonoBehaviour
 
     public void showContols() { 
         contols.SetActive(true);
+        uiElements.SetActive(false);
     }
 
     public void hideContols() { 
         contols.SetActive(false);
+        uiElements.SetActive(true);
 
     }
 }
