@@ -6,7 +6,7 @@ public class EyeOfRahBeamAttack : MonoBehaviour
     public LayerMask noCollidePlease;
     private LineRenderer lr;
     public float beamLength = 50f;
-    public float beamDuration = 1f;
+    public float beamDuration = 2f;
     public int beamDmg = 0;
     public GameObject player;
     private bool BeamOff = true;

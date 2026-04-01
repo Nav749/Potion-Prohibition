@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e09a8aff275f94ba2a332b0be9915f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 4, g: 4, b: 4, a: 1}
+  flashColor: {r: 16, g: 0, b: 0, a: 1}
   flashTime: 0.25
 --- !u!54 &8506245547525526673
 Rigidbody:
@@ -397,7 +397,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -630,7 +630,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   beamLength: 50
-  beamDuration: 0.3
+  beamDuration: 0.6
   beamDmg: 2
   player: {fileID: 0}
 --- !u!120 &8113691506990218690

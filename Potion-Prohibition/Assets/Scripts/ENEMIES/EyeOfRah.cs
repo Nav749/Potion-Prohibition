@@ -95,7 +95,7 @@ public class EyeOfRah : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         RahAnimator.SetBool("IsAttacking", false);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.9f);
         rahRotation = true;
         rahIsAggroed = true;
     }
@@ -104,7 +104,7 @@ public class EyeOfRah : MonoBehaviour
     {
         RahAnimator.SetTrigger("IsDead");
         RahAudioSource.PlayOneShot(RahDeathClip);
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1f);
         Instantiate(enemyDrop, spawnPoint.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
