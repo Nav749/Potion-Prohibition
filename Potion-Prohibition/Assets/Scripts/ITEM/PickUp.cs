@@ -29,7 +29,6 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             pickupSource.Play();
-            Debug.Log(item.getName() + " pciked up");
             for (int i = 0; i < gameManager.inventory.Length; i++)
             {
                 if (gameManager.inventory[i] == item)

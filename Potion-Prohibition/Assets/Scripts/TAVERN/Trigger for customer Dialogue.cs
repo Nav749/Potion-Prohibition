@@ -78,7 +78,6 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         if(GameManager.Instance.OrdertoCheck != null)
         {
             GameManager.Instance.TimeToCheckOrder();
-            Debug.Log(GameManager.Instance.correctOrder);
             togglePlayer();
         }
     }
