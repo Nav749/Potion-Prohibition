@@ -120,7 +120,7 @@ public class EnemyTest : MonoBehaviour
         rangedIsAggroed = false;
         RangedAnimator.SetTrigger("IsDead");
         DewdropSource.PlayOneShot(DewdropDeathClip);
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         Instantiate(EnemyDrop, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

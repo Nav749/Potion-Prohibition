@@ -98,7 +98,7 @@ public class EnemyMelee : MonoBehaviour
     {
         NewtAnimator.SetTrigger("NewtIsDead");
         NewtAudioSource.PlayOneShot(NewtDeathClip);
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1f);
         Instantiate(enemyDrop, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
