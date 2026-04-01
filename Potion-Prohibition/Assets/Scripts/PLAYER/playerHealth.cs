@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,11 +17,19 @@ public class playerHealth : MonoBehaviour
     [SerializeField] GameObject healthbarHolder;
     public GameObject GameOverScreen;
     private AudioSource healthbarSource;
+    [SerializeField] GameObject damageOverlay;
 
     void Start()
     {
         healthbarSource = this.GetComponent<AudioSource>();
         initializeHealthBar();
+    }
+
+    private IEnumerator toggleObjectRoutine()
+    {
+        damageOverlay.SetActive(true);
+        yield return new WaitForSeconds(0.15f);
+        damageOverlay.SetActive(false);
     }
 
     public void initializeHealthBar()
@@ -41,6 +50,7 @@ public class playerHealth : MonoBehaviour
         currentHealth = currentHealth - health;
         if (currentHealth > 0)
         {
+            StartCoroutine(toggleObjectRoutine());
             int randomIndex = Random.Range(0, hitClips.Length);
             AudioClip soundToPlay = hitClips[randomIndex];
             healthbarSource.PlayOneShot(soundToPlay);

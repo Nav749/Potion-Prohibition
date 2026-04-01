@@ -25,7 +25,9 @@ public class playerMovement : MonoBehaviour
 
     private bool moveLock = false;
 
-    [SerializeField] private AudioClip walkingSound;
+    [SerializeField] private AudioSource walkingSound;
+    private bool isMoving;
+    private bool isPlayingSound;
 
     void Update()
     {
@@ -54,8 +56,15 @@ public class playerMovement : MonoBehaviour
                 }
                 else
                 {
+                    isMoving = true;
                     playerController.Move(move * playerSpeed * Time.deltaTime);
                 }
+
+            }
+            else
+            {
+
+                isMoving = false;
 
             }
         }
@@ -90,6 +99,18 @@ public class playerMovement : MonoBehaviour
         else
         {
             JumpLock = false;
+        }
+    }
+
+    public void playWalkingSound()
+    {
+        if (isMoving == true)
+        {
+            AudioSource Temp = gameObject.GetComponent<AudioSource>();
+            if (Temp != null)
+            {
+                walkingSound.Play();
+            }
         }
     }
 }
