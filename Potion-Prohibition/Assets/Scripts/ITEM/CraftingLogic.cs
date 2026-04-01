@@ -1,8 +1,7 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using UnityEngine.Rendering;
 
 public class CraftingLogic : MonoBehaviour
 {
@@ -16,20 +15,26 @@ public class CraftingLogic : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         audioSource = GetComponent<AudioSource>();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
             if (bookOpen)
             {
                 closeBook();
             }
-            else if (!bookOpen) { 
+            else if (!bookOpen)
+            {
                 openBook();
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && bookOpen)
+        {
+            closeBook();
         }
     }
 
@@ -71,12 +76,14 @@ public class CraftingLogic : MonoBehaviour
                 createItem(gameManager.inventory[i]);
             }
         }
-        
+
     }
 
-    public void distroyItems() {
+    public void distroyItems()
+    {
         ItemDrag[] distructable = parent.GetComponentsInChildren<ItemDrag>();
-        foreach (ItemDrag item in distructable) { 
+        foreach (ItemDrag item in distructable)
+        {
             GameObject.Destroy(item.gameObject);
         }
 
@@ -140,10 +147,12 @@ public class CraftingLogic : MonoBehaviour
         }
     }
 
-    private void hideSlots() { 
+    private void hideSlots()
+    {
         rockSlot.enabled = false;
         spiceSlot.enabled = false;
-        for (int i = 0; i < slots.Length; i++) {
+        for (int i = 0; i < slots.Length; i++)
+        {
             slots[i].enabled = false;
         }
     }
@@ -153,7 +162,7 @@ public class CraftingLogic : MonoBehaviour
         if (spice != null)
         {
             createItem(spice);
-            
+
 
         }
         if (rocks != null)
@@ -173,36 +182,39 @@ public class CraftingLogic : MonoBehaviour
         count = 0;
     }
 
-    private void clearSlots() { 
+    private void clearSlots()
+    {
         spiceSlot.sprite = null;
         spiceSlot.enabled = false;
         spice = null;
         rockSlot.sprite = null;
         rockSlot.enabled = false;
         rocks = null;
-        for (int i = 0; i < slots.Length; i++) { 
+        for (int i = 0; i < slots.Length; i++)
+        {
             slots[i].sprite = null;
             slots[i].enabled = false;
         }
         count = 0;
     }
-    
+
     #endregion
 
     #region brewing
 
     [SerializeField] private Potion[] potions;
     [SerializeField] private Image potionDisplay;
-    
+
     public void brew()
     {
         bool sucessful = false;
 
-        for (int i = 0; i < potions.Length; i++) {
-            
-            
+        for (int i = 0; i < potions.Length; i++)
+        {
+
+
             if (potions[i].checkIngredients(droppedItems))
-            { 
+            {
                 Potion temp = potions[i].CloneViaFakeSerialization();
 
                 if (spice != null)
@@ -215,7 +227,8 @@ public class CraftingLogic : MonoBehaviour
                 }
 
 
-                foreach (Item item in droppedItems) { 
+                foreach (Item item in droppedItems)
+                {
                     item.decrementAmount();
                 }
 
@@ -224,10 +237,10 @@ public class CraftingLogic : MonoBehaviour
                 droppedItems.Clear();
                 potionDisplay.sprite = temp.getImage();
                 potionDisplay.enabled = true;
-                
+
                 audioSource.clip = sucsessfulSound;
                 audioSource.Play();
-                
+
                 gameManager.potions.Add(temp);
                 sucessful = true;
 
@@ -238,7 +251,8 @@ public class CraftingLogic : MonoBehaviour
         }
 
 
-        if (!sucessful) { 
+        if (!sucessful)
+        {
             //unsucsessfulSound.Play();
         }
 
@@ -247,7 +261,8 @@ public class CraftingLogic : MonoBehaviour
     }
 
 
-    private void clearPotion() {
+    private void clearPotion()
+    {
         potionDisplay.enabled = false;
     }
 
@@ -256,18 +271,24 @@ public class CraftingLogic : MonoBehaviour
 
     #region Book
     [SerializeField] private GameObject bookUI;
+    [SerializeField] private GameObject bookOpenUI;
     [SerializeField] private GameObject[] pages;
-    private bool bookOpen = false;
+
+    public bool bookOpen = false;
     private int page = 0;
 
-    public void openBook() { 
+    public void openBook()
+    {
         bookOpen = true;
+        bookOpenUI.SetActive(false);
         bookUI.SetActive(true);
         pages[page].SetActive(true);
     }
 
-    public void closeBook() { 
+    public void closeBook()
+    {
         bookOpen = false;
+        bookOpenUI.SetActive(true);
         bookUI.SetActive(false);
         pages[page].SetActive(false);
     }
@@ -282,7 +303,8 @@ public class CraftingLogic : MonoBehaviour
         }
     }
 
-    public void prevPage() {
+    public void prevPage()
+    {
         if (page >= 1)
         {
             pages[page].SetActive(false);
