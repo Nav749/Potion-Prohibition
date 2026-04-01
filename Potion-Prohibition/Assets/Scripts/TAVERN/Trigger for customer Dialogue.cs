@@ -4,6 +4,8 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
 {
     [SerializeField] CustomerPool pool;
+    [SerializeField] GameObject interactTalk;
+    [SerializeField] GameObject orderTalk;
     [SerializeField] GameObject UI;
     [SerializeField] Camera camera;
     [SerializeField] OrderInventoryControl orderInventoryControl;
@@ -27,8 +29,11 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
         if (GameManager.Instance.orderTime)
         {
+            orderTalk.SetActive(!isOrdering);
+            interactTalk.SetActive(!isOrdering);
             if (canSpeak && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.Escape) && playerToggle) ))
             {
+                orderTalk.SetActive(false);
                 if (!playerToggle)
                 {
                     orderInventoryControl.UpdateUI();
@@ -45,7 +50,6 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         isOrdering = !isOrdering;
         UI.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked; //sets the lock state as none if true, locked if false
-
         GameManager.Instance.PlayerGO.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = !playerToggle;
         camera.enabled = playerToggle;
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
@@ -58,8 +62,10 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSpeak = true;
+            interactTalk.SetActive(true);
             pool.OrderToggle();
             GameManager.Instance.speakable = true;
+            if (GameManager.Instance.orderTime) { isOrdering = false; }
         }
     }
 
@@ -68,8 +74,10 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSpeak = false;
+            interactTalk.SetActive(false);
             pool.OrderToggle();
             GameManager.Instance.speakable = false;
+            if (GameManager.Instance.orderTime) { isOrdering= true; }
         }
     }
 

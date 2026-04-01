@@ -4,6 +4,7 @@ using UnityEngine;
 public class ShopTrigger : MonoBehaviour
 {
     [SerializeField] GameObject ShopScreen;
+    [SerializeField] GameObject interactTalk;
     [SerializeField] Camera cam;
     [SerializeField] TextMeshProUGUI health;
     [SerializeField] TextMeshProUGUI damage;
@@ -39,6 +40,7 @@ public class ShopTrigger : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             activeShop = true;
+            interactTalk.SetActive(true);
         }
     }
 
@@ -47,12 +49,14 @@ public class ShopTrigger : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             activeShop = false;
+            interactTalk.SetActive(false);
         }
     }
 
     void playerToggleSwap(bool input)
     {
         playerToggle = !input;
+        interactTalk.SetActive(!playerToggle);
         ShopScreen.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked;
         cam.enabled = playerToggle;
