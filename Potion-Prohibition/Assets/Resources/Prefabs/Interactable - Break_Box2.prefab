@@ -105,6 +105,9 @@ MonoBehaviour:
   SpawnPoints:
   - {fileID: 8052279336787969434}
   sfx: {fileID: 8300000, guid: 93ef33c427cbc8d45a68d4efb38ce2df, type: 3}
+  meshRenderer: {fileID: 8068426528504090705}
+  collider: {fileID: 8106358888345339852}
+  trigger: {fileID: 3790307014253818674}
 --- !u!82 &5832982995960759075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -414,6 +417,12 @@ Rigidbody:
 --- !u!4 &4175145242750026870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 509566251745426900, guid: 4bae455ae99fdb24c8fa86abccd5ae17,
+    type: 3}
+  m_PrefabInstance: {fileID: 4531553286038698402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8068426528504090705 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5844406339027347955, guid: 4bae455ae99fdb24c8fa86abccd5ae17,
     type: 3}
   m_PrefabInstance: {fileID: 4531553286038698402}
   m_PrefabAsset: {fileID: 0}

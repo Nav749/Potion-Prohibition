@@ -105,6 +105,9 @@ MonoBehaviour:
   SpawnPoints:
   - {fileID: 8052279336787969434}
   sfx: {fileID: 8300000, guid: 93ef33c427cbc8d45a68d4efb38ce2df, type: 3}
+  meshRenderer: {fileID: 2220196570310587657}
+  collider: {fileID: 2628155854334648921}
+  trigger: {fileID: 7969698954614469424}
 --- !u!136 &7969698954614469424
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -369,6 +372,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2628155854334648921}
   m_SourcePrefab: {fileID: 100100000, guid: cfbb182d782fc7d4eb57df071c9e792b, type: 3}
+--- !u!23 &2220196570310587657 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3701070920189711276, guid: cfbb182d782fc7d4eb57df071c9e792b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3284075618471814821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2666572416630482373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 617820102281511776, guid: cfbb182d782fc7d4eb57df071c9e792b,

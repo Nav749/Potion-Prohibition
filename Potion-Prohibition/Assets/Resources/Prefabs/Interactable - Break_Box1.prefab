@@ -105,6 +105,9 @@ MonoBehaviour:
   SpawnPoints:
   - {fileID: 8052279336787969434}
   sfx: {fileID: 8300000, guid: 93ef33c427cbc8d45a68d4efb38ce2df, type: 3}
+  meshRenderer: {fileID: 9025562887326682909}
+  collider: {fileID: 2146750188556658784}
+  trigger: {fileID: 3790307014253818674}
 --- !u!82 &5832982995960759075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -276,6 +279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1341058905526536480, guid: b6b6b64304c56304aa16508457369b50,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341058905526536480, guid: b6b6b64304c56304aa16508457369b50,
+        type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -370,6 +378,12 @@ PrefabInstance:
 --- !u!4 &6067304746288574632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4318457112382715541, guid: b6b6b64304c56304aa16508457369b50,
+    type: 3}
+  m_PrefabInstance: {fileID: 8060696044180522557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &9025562887326682909 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1341058905526536480, guid: b6b6b64304c56304aa16508457369b50,
     type: 3}
   m_PrefabInstance: {fileID: 8060696044180522557}
   m_PrefabAsset: {fileID: 0}
