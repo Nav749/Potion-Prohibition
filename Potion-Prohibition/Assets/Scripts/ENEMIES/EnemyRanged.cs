@@ -39,7 +39,7 @@ public class EnemyTest : MonoBehaviour
 
     public AudioClip DewdropDeathClip;
 
-
+    [SerializeField] private AudioClip hitSound;
 
     public Rigidbody enemyRB;
 
@@ -105,6 +105,7 @@ public class EnemyTest : MonoBehaviour
     {
         if (other.GetComponent<playerBullet>() != null && OneDeath == false)
         {
+            DewdropSource.PlayOneShot(hitSound);
             rangedIsAggroed = true;
             rangedEnemyHealth -= other.GetComponent<playerBullet>().bulletScriptDamage;
             this.GetComponent<DamageFlash>().CallDamageFlash();

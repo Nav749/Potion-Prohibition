@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
     private bool moveLock = false;
 
     [SerializeField] private AudioSource walkingSound;
-    private bool isMoving;
+    public bool isMoving;
     private bool isPlayingSound;
 
     void Update()
@@ -37,7 +37,6 @@ public class playerMovement : MonoBehaviour
         {
             playerVelocity.y = -1f;
         }
-
 
         float playerX = Input.GetAxis("Horizontal");
         float playerZ = Input.GetAxis("Vertical");
@@ -56,17 +55,23 @@ public class playerMovement : MonoBehaviour
                 }
                 else
                 {
-                    isMoving = true;
+                    if (Time.timeScale > 0 && !GameManager.Instance.inMenu)
+                        isMoving = true;
+                    else
+                        isMoving = false;
+
                     playerController.Move(move * playerSpeed * Time.deltaTime);
                 }
-
             }
             else
             {
-
                 isMoving = false;
-
             }
+        }
+        else
+        {
+            isMoving = false;
+
         }
 
 
@@ -82,6 +87,14 @@ public class playerMovement : MonoBehaviour
 
 
         playerController.Move(playerVelocity * Time.deltaTime);
+
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.M))
+        {
+            isMoving = false;
+        }
+
+        playWalkingSound();
 
     }
 
@@ -101,16 +114,20 @@ public class playerMovement : MonoBehaviour
             JumpLock = false;
         }
     }
-
+    bool playingWalk = false;
     public void playWalkingSound()
     {
-        if (isMoving == true)
+        if (isMoving == true && !playingWalk)
         {
-            AudioSource Temp = gameObject.GetComponent<AudioSource>();
-            if (Temp != null)
-            {
-                walkingSound.Play();
-            }
+            walkingSound.Play();
+            playingWalk = true;
+        }
+
+        if (isMoving == false)
+        {
+            walkingSound.Stop();
+            playingWalk = false;
         }
     }
+
 }

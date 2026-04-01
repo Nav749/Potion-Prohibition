@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             if (checkerbool)
             {
                 checkerbool = false;
-                
+
                 for (int i = 0; i < 8; i++)
                     nextDayScreen.transform.GetChild(i + 2).gameObject.SetActive(false);
                 switch (orderQuota)
