@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     private bool restart;
     [SerializeField] private Color color1;
     [SerializeField] private float fogDensity;
+    [SerializeField]private GameObject aListen;
 
     public int slimeScale;
     public int newtScale;
@@ -121,6 +122,9 @@ public class GameManager : MonoBehaviour
 
         text.text = coins.ToString();
         UpdateDevView();
+
+        if (!isLoading) aListen.SetActive(false);
+        else aListen.SetActive(true);
     }
 
     #region SceneManagment
