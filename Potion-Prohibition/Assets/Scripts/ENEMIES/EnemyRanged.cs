@@ -65,6 +65,7 @@ public class EnemyTest : MonoBehaviour
     {
         if (playerTargetForRangedEnemy.GetComponent<playerHealth>().currentHealth <= 0)
         {
+            OneDeath = true;
             rangedIsAggroed = false;
         }
 
@@ -100,9 +101,18 @@ public class EnemyTest : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<playerBullet>() != null && OneDeath == false)
+        {
+            rangedIsAggroed = true;
+            rangedEnemyHealth -= other.GetComponent<playerBullet>().bulletScriptDamage;
+            this.GetComponent<DamageFlash>().CallDamageFlash();
+        }
+    }
+
     IEnumerator RangedAttack()
     {
-
         ticker = 0;
         RangedAnimator.SetTrigger("IsAttacking");
         yield return new WaitForSeconds(1f);

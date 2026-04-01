@@ -51,6 +51,7 @@ public class EnemyMelee : MonoBehaviour
     {
         if (playerTargetForMeleeEnemy.GetComponent<playerHealth>().currentHealth <= 0)
         {
+            NewtsDieOnce = true;
             meleeIsAggroed = false;
         }
 
@@ -82,6 +83,17 @@ public class EnemyMelee : MonoBehaviour
         }
 
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<playerBullet>() != null && NewtsDieOnce == false)
+        {
+            meleeIsAggroed = true;
+            meleeEnemyHealth -= other.GetComponent<playerBullet>().bulletScriptDamage;
+            this.GetComponent<DamageFlash>().CallDamageFlash();
+        }
+    }
+
     IEnumerator EnemyPause()
     {
         AttackBehaviour = true;
@@ -96,6 +108,7 @@ public class EnemyMelee : MonoBehaviour
 
     IEnumerator NewtDeath()
     {
+        meleeIsAggroed = false;
         NewtAnimator.SetTrigger("NewtIsDead");
         NewtAudioSource.PlayOneShot(NewtDeathClip);
         yield return new WaitForSeconds(1f);

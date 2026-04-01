@@ -50,6 +50,7 @@ public class EyeOfRah : MonoBehaviour
     {
         if (playerTargetForRah.GetComponent<playerHealth>().currentHealth <= 0)
         {
+            OneLove = true;
             rahIsAggroed = false;
         }
 
@@ -80,9 +81,18 @@ public class EyeOfRah : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<playerBullet>() != null && OneLove == false)
+        {
+            rahIsAggroed = true;
+            rahEnemyHealth -= other.GetComponent<playerBullet>().bulletScriptDamage;
+            this.GetComponent<DamageFlash>().CallDamageFlash();
+        }
+    }
+
     IEnumerator RahBeam()
     {
-
         rahRotation = false;
         rahIsAggroed = false;
 

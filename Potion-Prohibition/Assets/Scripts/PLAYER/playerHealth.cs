@@ -34,6 +34,7 @@ public class playerHealth : MonoBehaviour
 
     public void initializeHealthBar()
     {
+
         for (int i = 0; i < maxHealth; i++)
         {
             if (healthSegments.Count < maxHealth)

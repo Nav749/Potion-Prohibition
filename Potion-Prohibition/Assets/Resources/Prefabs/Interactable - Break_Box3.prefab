@@ -101,10 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbac4b0e7e7f13e45a22ecbbbfc77bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableObjects: []
+  spawnableObjects:
+  - {fileID: 6180039143089317323, guid: 70c75aa0673d1924ebe22f1c07818bc7, type: 3}
   SpawnPoints:
   - {fileID: 8052279336787969434}
   sfx: {fileID: 8300000, guid: 93ef33c427cbc8d45a68d4efb38ce2df, type: 3}
+  meshRenderer: {fileID: 6768026408766932348}
+  collider: {fileID: 4131728230346497276}
+  trigger: {fileID: 3790307014253818674}
 --- !u!82 &5832982995960759075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -417,3 +421,9 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!23 &6768026408766932348 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1108282061087273662, guid: 7c44124b7cd7f734a81d5fa878556bf2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5948609147477915586}
+  m_PrefabAsset: {fileID: 0}
