@@ -15,32 +15,33 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.inMenu && !GameManager.Instance.isLoading) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.isLoading)
+        {
             if (isPaused)
             {
                 resume();
             }
-            else if (!isPaused)
+            else if (!isPaused && !GameManager.Instance.inMenu)
             {
                 pause();
             }
         }
     }
 
-    private void pause() 
-    { 
+    private void pause()
+    {
         isPaused = true;
         uiElements.SetActive(true);
         GameManager.Instance.inMenu = true;
         GameManager.Instance.lockCamara(isPaused);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
-        
+
 
     }
 
-    public void resume() 
-    { 
+    public void resume()
+    {
         isPaused = false;
         uiElements.SetActive(false);
         GameManager.Instance.inMenu = false;
@@ -49,12 +50,14 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void showContols() { 
+    public void showContols()
+    {
         contols.SetActive(true);
         uiElements.SetActive(false);
     }
 
-    public void hideContols() { 
+    public void hideContols()
+    {
         contols.SetActive(false);
         uiElements.SetActive(true);
 
