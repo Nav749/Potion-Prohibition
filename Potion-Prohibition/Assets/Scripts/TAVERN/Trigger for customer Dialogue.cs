@@ -12,6 +12,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
     public bool canSpeak = false;
     private bool playerToggle = false;
     private bool isOrdering = false;
+    private bool inBox = false;
 
     private void Update()
     {
@@ -29,8 +30,8 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
         if (GameManager.Instance.orderTime)
         {
-            orderTalk.SetActive(!isOrdering);
-            interactTalk.SetActive(!isOrdering);
+            orderTalk.SetActive(!isOrdering && inBox);
+            interactTalk.SetActive(!isOrdering && inBox);
             if (canSpeak && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.Escape) && playerToggle) ))
             {
                 orderTalk.SetActive(false);
@@ -41,6 +42,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
                 togglePlayer();
             }
         }
+        else orderTalk.SetActive (false);
 
     }
 
@@ -62,6 +64,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSpeak = true;
+            inBox = true;
             interactTalk.SetActive(true);
             pool.OrderToggle();
             GameManager.Instance.speakable = true;
@@ -75,6 +78,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         {
             canSpeak = false;
             interactTalk.SetActive(false);
+            inBox = false;
             pool.OrderToggle();
             GameManager.Instance.speakable = false;
             if (GameManager.Instance.orderTime) { isOrdering= true; }
