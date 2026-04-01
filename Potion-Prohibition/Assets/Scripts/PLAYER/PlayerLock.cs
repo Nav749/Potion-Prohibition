@@ -30,7 +30,7 @@ public class PlayerLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Escape) && isCrafting) || (Input.GetKeyDown(KeyCode.E) && isCrafting))
+        if ((Input.GetKeyDown(KeyCode.Escape) && isCrafting && !GetComponentInChildren<CraftingLogic>().bookOpen) || (Input.GetKeyDown(KeyCode.E) && isCrafting))
         {
             craftingLogic.distroyItems();
             toggleCrafting();

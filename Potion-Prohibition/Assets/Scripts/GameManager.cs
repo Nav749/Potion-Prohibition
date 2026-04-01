@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
-using Unity.VisualScripting;
-using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -76,7 +73,7 @@ public class GameManager : MonoBehaviour
     private bool restart;
     [SerializeField] private Color color1;
     [SerializeField] private float fogDensity;
-    [SerializeField]private GameObject aListen;
+    [SerializeField] private GameObject aListen;
 
     public int slimeScale;
     public int newtScale;
@@ -86,8 +83,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ReadJSON();
         ResetMonies();
-        levelsPassed = 1;
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
         nextDayScreen.SetActive(false);
@@ -102,6 +99,7 @@ public class GameManager : MonoBehaviour
                 stats[i].SetInt(0);
             }
         }
+        WriteJSON();
     }
 
     private void Update()
@@ -217,6 +215,7 @@ public class GameManager : MonoBehaviour
         hasGenerated = false;
         playerGO.SetActive(false);
         speakable = false;
+        WriteJSON();
 
         Invoke("TurnOffLoadingScreen", 2f);
     }
@@ -294,7 +293,7 @@ public class GameManager : MonoBehaviour
         {
             coins += increment;
         }
-            checkDone = true;
+        checkDone = true;
         RemovePotion(OrdertoCheck);
     }
 
@@ -385,7 +384,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetMonies()
     {
-        coins = 0;
         healthPrice = 20;
         damagePrice = 20;
     }
@@ -394,9 +392,10 @@ public class GameManager : MonoBehaviour
 
     #region camLock
 
-    public void lockCamara(bool input) {
+    public void lockCamara(bool input)
+    {
         playerGO.GetComponentInChildren<playerLook>().locked = input;
-      
+
     }
 
     #endregion
@@ -417,7 +416,7 @@ public class GameManager : MonoBehaviour
     public void WriteJSON()
     {
         playerData.health = playerGO.gameObject.GetComponent<playerHealth>().maxHealth;
-        playerData.damage = playerGO.gameObject.GetComponent < playerSpellShoot>().spellBulletDamage;
+        playerData.damage = playerGO.gameObject.GetComponent<playerSpellShoot>().spellBulletDamage;
         playerData.levels = levelsPassed;
         playerData.money = coins;
 
@@ -431,6 +430,11 @@ public class GameManager : MonoBehaviour
         string playerDataRead = System.IO.File.ReadAllText(filepath);
 
         playerData = JsonUtility.FromJson<PlayerData>(playerDataRead);
+
+        playerGO.gameObject.GetComponent<playerHealth>().maxHealth = playerData.health;
+        playerGO.gameObject.GetComponent<playerSpellShoot>().spellBulletDamage = playerData.damage;
+        levelsPassed = playerData.levels;
+        coins = playerData.money;
     }
 
     #endregion
