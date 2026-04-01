@@ -857,6 +857,11 @@ PrefabInstance:
       propertyPath: playerSpeed
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 5001768330568637811, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: walkingSound
+      value: 
+      objectReference: {fileID: 177322474}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -924,6 +929,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce7d62d07e73524c801468d30a0f01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &177322474 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1835214970069346078, guid: bcf7065a3c69cd540b027a511079b42b,
+    type: 3}
+  m_PrefabInstance: {fileID: 177322472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &294662644
 Mesh:
   m_ObjectHideFlags: 0

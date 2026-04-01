@@ -3734,6 +3734,11 @@ PrefabInstance:
       propertyPath: tavernNeutral
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5001768330568637811, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: walkingSound
+      value: 
+      objectReference: {fileID: 975570240}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3809,6 +3814,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf7065a3c69cd540b027a511079b42b, type: 3}
+--- !u!82 &975570240 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1835214970069346078, guid: bcf7065a3c69cd540b027a511079b42b,
+    type: 3}
+  m_PrefabInstance: {fileID: 975570239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987713599
 PrefabInstance:
   m_ObjectHideFlags: 0
