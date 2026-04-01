@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject UI;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject nextDayScreen;
+    public GameObject alwayson;
     public int orderQuota;
     public int currentOrderQuota;
     [SerializeField] Timesmet[] stats;

@@ -57,6 +57,7 @@ public class ShopTrigger : MonoBehaviour
     {
         playerToggle = !input;
         interactTalk.SetActive(!playerToggle);
+        GameManager.Instance.alwayson.SetActive(!playerToggle);
         ShopScreen.SetActive(playerToggle);
         Cursor.lockState = playerToggle ? CursorLockMode.None : CursorLockMode.Locked;
         cam.enabled = playerToggle;
