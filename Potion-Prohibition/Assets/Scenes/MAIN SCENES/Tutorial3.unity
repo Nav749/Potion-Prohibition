@@ -1664,12 +1664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &427202935 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3493057870509917494, guid: 8ea78842a18d3be4fb1a78e8f24897b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 427202926}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &427202937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,7 +1682,7 @@ MonoBehaviour:
   potionCollection: {fileID: 583892529}
   dragablePrefab: {fileID: 1142205358977948444, guid: a6601fd218e41c448bf5864880cbcaa8,
     type: 3}
-  parent: {fileID: 427202935}
+  parent: {fileID: 1110623390}
   slots:
   - {fileID: 608275702}
   - {fileID: 1186649287}
@@ -4719,6 +4713,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091927350}
   m_CullTransparentMesh: 1
+--- !u!224 &1110623390 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1940392373470025446, guid: 8ea78842a18d3be4fb1a78e8f24897b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 427202926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1128737835
 PrefabInstance:
   m_ObjectHideFlags: 0
