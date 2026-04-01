@@ -11,7 +11,7 @@ public class ShopTrigger : MonoBehaviour
 
     private bool activeShop = false;
     private bool playerToggle = false;
-    
+
 
     private void Update()
     {
@@ -23,9 +23,9 @@ public class ShopTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.inMenu)
             {
-               
+
                 playerToggleSwap(playerToggle);
-                
+
             }
             else if ((Input.GetKeyDown(KeyCode.Escape) && playerToggle) || (Input.GetKeyDown(KeyCode.E) && playerToggle))
             {
@@ -67,10 +67,11 @@ public class ShopTrigger : MonoBehaviour
         {
             GameManager.Instance.inMenu = true;
         }
-        else if (!playerToggle) {
+        else if (!playerToggle)
+        {
             Invoke("changeInMenu", 0.1f);
         }
-        
+
 
     }
 
@@ -78,7 +79,7 @@ public class ShopTrigger : MonoBehaviour
 
     public void BuyHealth()
     {
-        if(GameManager.Instance.coins >= GameManager.Instance.healthPrice)
+        if (GameManager.Instance.coins >= GameManager.Instance.healthPrice)
         {
             GameManager.Instance.UpdateHealth();
             GameManager.Instance.coins -= GameManager.Instance.healthPrice;

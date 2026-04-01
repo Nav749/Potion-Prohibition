@@ -16,11 +16,11 @@ public class TriggerforcustomerDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (canSpeak 
-            && Input.GetKeyDown(KeyCode.E) 
-            && !isOrdering 
-            && !pool.currentCustomer.GetComponent<Customer>().isSpeaking 
-            && GameManager.Instance.speakable 
+        if (canSpeak
+            && Input.GetKeyDown(KeyCode.E)
+            && !isOrdering
+            && !pool.currentCustomer.GetComponent<Customer>().isSpeaking
+            && GameManager.Instance.speakable
             && !GameManager.Instance.inMenu
             )
         {
@@ -32,7 +32,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         {
             orderTalk.SetActive(!isOrdering && inBox);
             interactTalk.SetActive(!isOrdering && inBox);
-            if (canSpeak && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.Escape) && playerToggle) ))
+            if (canSpeak && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.Escape) && playerToggle)))
             {
                 orderTalk.SetActive(false);
                 if (!playerToggle)
@@ -40,9 +40,10 @@ public class TriggerforcustomerDialogue : MonoBehaviour
                     orderInventoryControl.UpdateUI();
                 }
                 togglePlayer();
+
             }
         }
-        else orderTalk.SetActive (false);
+        else orderTalk.SetActive(false);
 
     }
 
@@ -57,6 +58,7 @@ public class TriggerforcustomerDialogue : MonoBehaviour
         GameManager.Instance.PlayerGO.GetComponent<playerMovement>().setMoveLock(playerToggle);
         GameManager.Instance.PlayerGO.transform.GetChild(3).GetComponent<MeshRenderer>().enabled = !playerToggle;
         GameManager.Instance.inMenu = playerToggle;
+        GameManager.Instance.lockCamara(playerToggle);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,13 +83,13 @@ public class TriggerforcustomerDialogue : MonoBehaviour
             inBox = false;
             pool.OrderToggle();
             GameManager.Instance.speakable = false;
-            if (GameManager.Instance.orderTime) { isOrdering= true; }
+            if (GameManager.Instance.orderTime) { isOrdering = true; }
         }
     }
 
     public void OrderCheck()
     {
-        if(GameManager.Instance.OrdertoCheck != null)
+        if (GameManager.Instance.OrdertoCheck != null)
         {
             GameManager.Instance.TimeToCheckOrder();
             togglePlayer();
