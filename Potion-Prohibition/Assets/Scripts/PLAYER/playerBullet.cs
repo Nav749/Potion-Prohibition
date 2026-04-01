@@ -11,7 +11,6 @@ public class playerBullet : MonoBehaviour
     private void Update()
     {
         bulletLifetime -= Time.deltaTime;
-
         if (bulletLifetime < 0)
         {
             Destroy(gameObject);
@@ -20,30 +19,6 @@ public class playerBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<EnemyTest>() != null)
-        {
-            enemyL = other.GetComponent<EnemyTest>();
-            enemyL.rangedEnemyHealth = enemyL.rangedEnemyHealth - bulletScriptDamage;
-            enemyL.GetComponent<DamageFlash>().CallDamageFlash();
-            enemyL.rangedIsAggroed = true;
-
-        }
-        if (other.GetComponent<EnemyMelee>() != null)
-        {
-            enemyM = other.GetComponent<EnemyMelee>();
-            enemyM.meleeEnemyHealth = enemyM.meleeEnemyHealth - bulletScriptDamage;
-            enemyM.GetComponent<DamageFlash>().CallDamageFlash();
-            enemyM.meleeIsAggroed = true;
-
-        }
-        if (other.GetComponent<EyeOfRah>() != null)
-        {
-            enemyR = other.GetComponent<EyeOfRah>();
-            enemyR.rahEnemyHealth = enemyR.rahEnemyHealth - bulletScriptDamage;
-            enemyR.GetComponent<DamageFlash>().CallDamageFlash();
-            enemyR.rahIsAggroed = true;
-
-        }
         Destroy(gameObject);
     }
 }
