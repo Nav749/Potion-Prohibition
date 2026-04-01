@@ -82,7 +82,6 @@ public class EyeOfRah : MonoBehaviour
 
     IEnumerator RahBeam()
     {
-
         rahRotation = false;
         rahIsAggroed = false;
 

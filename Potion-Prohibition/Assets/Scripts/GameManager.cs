@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     public int eyeScale;
 
     public bool inMenu = false;
+    private bool checkerbool;
 
     private void Start()
     {
@@ -114,6 +115,56 @@ public class GameManager : MonoBehaviour
 
         if (orderQuota == currentOrderQuota)
         {
+            if (checkerbool)
+            {
+                checkerbool = false;
+                
+                for (int i = 0; i < 8; i++)
+                    nextDayScreen.transform.GetChild(i + 2).gameObject.SetActive(false);
+                switch (orderQuota)
+                {
+                    case 3:
+                        {
+                            nextDayScreen.transform.GetChild(2).gameObject.SetActive(true);
+                            break;
+                        }
+                    case 4:
+                        {
+                            nextDayScreen.transform.GetChild(3).gameObject.SetActive(true);
+                            break;
+                        }
+                    case 5:
+                        {
+                            nextDayScreen.transform.GetChild(4).gameObject.SetActive(true);
+                            break;
+                        }
+                    case 6:
+                        {
+                            nextDayScreen.transform.GetChild(5).gameObject.SetActive(true);
+                            break;
+                        }
+                    case 7:
+                        {
+                            nextDayScreen.transform.GetChild(6).gameObject.SetActive(true);
+                            break;
+                        }
+                    case 8:
+                        {
+                            nextDayScreen.transform.GetChild(7).gameObject.SetActive(true);
+                            break;
+                        }
+                    case 9:
+                        {
+                            nextDayScreen.transform.GetChild(8).gameObject.SetActive(true);
+                            break;
+                        }
+                    default:
+                        {
+                            nextDayScreen.transform.GetChild(9).gameObject.SetActive(true);
+                            break;
+                        }
+                }
+            }
             nextDayScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
         }
@@ -216,7 +267,7 @@ public class GameManager : MonoBehaviour
         playerGO.SetActive(false);
         speakable = false;
         WriteJSON();
-
+        checkerbool = true;
         Invoke("TurnOffLoadingScreen", 2f);
     }
 

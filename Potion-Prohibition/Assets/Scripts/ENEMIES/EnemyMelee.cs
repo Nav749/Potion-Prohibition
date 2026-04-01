@@ -96,6 +96,7 @@ public class EnemyMelee : MonoBehaviour
 
     IEnumerator NewtDeath()
     {
+        meleeIsAggroed = false;
         NewtAnimator.SetTrigger("NewtIsDead");
         NewtAudioSource.PlayOneShot(NewtDeathClip);
         yield return new WaitForSeconds(1f);
