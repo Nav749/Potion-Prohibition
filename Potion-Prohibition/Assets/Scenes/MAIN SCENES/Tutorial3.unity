@@ -93,8 +93,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5344152494d36a045b597547a0180bc1,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e1047d072c1cdd147a24b43afd9260ea,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3739,6 +3741,11 @@ PrefabInstance:
       propertyPath: walkingSound
       value: 
       objectReference: {fileID: 975570240}
+    - target: {fileID: 7019053149836661658, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8598875380693100386, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5930,7 +5937,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4946132455654914671, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7097158538992252927, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 271158957070935052, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 7766288522146501494, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 3575940661262967297, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 4975880963803101442, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 7782206627586013909, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 3112087453828771018, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 5716338828252649405, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 1957508646885048001, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 4206099970470652496, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 6620223573500194452, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
+    - {fileID: 6738025145897876192, guid: a53ca5a7c8644254694d7bef73b3e5ba, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6494039977089271833, guid: a53ca5a7c8644254694d7bef73b3e5ba,
