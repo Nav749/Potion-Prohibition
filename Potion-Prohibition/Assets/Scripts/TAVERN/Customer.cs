@@ -112,7 +112,6 @@ public class Customer : MonoBehaviour
 
         if (isSpeaking)
         {
-            
             Animator.SetBool("IsTalking", true);
             if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.speakable)
             {
