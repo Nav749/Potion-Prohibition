@@ -210,6 +210,7 @@ public class Customer : MonoBehaviour
                 this.transform.GetComponentInParent<CustomerPool>().ActivateCustomer();
                 hasBegun = true;
                 commmenedOrder = false;
+                GameManager.Instance.OrdertoCheck = null;
                 //lines = linesIntro;
             }
         }

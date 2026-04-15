@@ -8,8 +8,8 @@ public class VolumeSlider : MonoBehaviour
     [System.Serializable]
     public class VolumeData
     {
-        public float sfx = 1;
-        public float music = 1;
+        public float sfx = 100;
+        public float music = 100;
     }
 
     public VolumeData playerData = new VolumeData();
@@ -17,8 +17,8 @@ public class VolumeSlider : MonoBehaviour
     public AudioMixer theMixer;
     public Slider volumeSlider;
     public string volumeLabel;
-    private float sfxValue = 1;
-    private float musicVolume = 1;
+    private float sfxValue = 100;
+    private float musicVolume = 100;
     private float volumeValue;
     public bool isMusic;
     public GameObject TitleCanvas;
@@ -49,7 +49,7 @@ public class VolumeSlider : MonoBehaviour
         ReadJson();
 
         volumeValue = isMusic ? musicVolume : sfxValue;
-        volumeSlider.value = volumeValue == 1 ? 1 : volumeValue;
+        volumeSlider.value = volumeValue == 100 ? 100 : volumeValue;
         volumeValue = volumeSlider.value;
     }
 

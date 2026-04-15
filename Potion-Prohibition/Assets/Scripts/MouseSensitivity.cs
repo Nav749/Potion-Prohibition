@@ -36,7 +36,6 @@ public class MouseSensitivity : MonoBehaviour
         playerData.sens = mouseSens;
 
         string stringOutput = JsonUtility.ToJson(playerData);
-        Debug.Log(stringOutput);
         File.WriteAllText(Application.persistentDataPath + "/MouseData.json", stringOutput);
     }
 
