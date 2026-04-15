@@ -490,4 +490,11 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    #region Settings
+
+    [HideInInspector] public float sfxVolume;
+    [HideInInspector] public float musicVolume;
+
+    #endregion
 }

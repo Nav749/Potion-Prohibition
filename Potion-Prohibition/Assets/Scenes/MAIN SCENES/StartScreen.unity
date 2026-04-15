@@ -1294,9 +1294,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 597763426}
   m_Direction: 0
   m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1360,9 +1360,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c53aa858bc81b74d9bf36677bece821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    sfx: 1
+    music: 1
   theMixer: {fileID: 24100000, guid: 77c3a468120ea4149808781b0c37c55c, type: 2}
   volumeSlider: {fileID: 1491333333}
   volumeLabel: SpeakParam
+  isMusic: 1
+  TitleCanvas: {fileID: 1849821819}
+  SettingsCanvas: {fileID: 1493564251}
 --- !u!1 &1285444806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,9 +1945,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 764719984}
   m_Direction: 0
   m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2137,9 +2143,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c53aa858bc81b74d9bf36677bece821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    sfx: 1
+    music: 1
   theMixer: {fileID: 24100000, guid: 058e1a2bd1fd9c544b870002e72e3a48, type: 2}
   volumeSlider: {fileID: 1186792768}
   volumeLabel: MasterAudioParam
+  isMusic: 0
+  TitleCanvas: {fileID: 1849821819}
+  SettingsCanvas: {fileID: 1493564251}
 --- !u!1 &1535291438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,8 +2733,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1359653789}
-        m_TargetAssemblyTypeName: CanvasSwap, Assembly-CSharp
+      - m_Target: {fileID: 1508251891}
+        m_TargetAssemblyTypeName: VolumeSlider, Assembly-CSharp
+        m_MethodName: changeTheCanvasToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1267957205}
+        m_TargetAssemblyTypeName: VolumeSlider, Assembly-CSharp
         m_MethodName: changeTheCanvasToTitle
         m_Mode: 1
         m_Arguments:

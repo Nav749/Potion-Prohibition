@@ -11,9 +11,5 @@ public class CanvasSwap : MonoBehaviour
         SettingsCanvas.SetActive(true);
     }
 
-    public void changeTheCanvasToTitle()
-    {
-        TitleCanvas.SetActive(true);
-        SettingsCanvas.SetActive(false);
-    }
+
 }

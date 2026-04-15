@@ -1,16 +1,78 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class VolumeSlider : MonoBehaviour
 {
+    [System.Serializable]
+    public class VolumeData
+    {
+        public float sfx = 1;
+        public float music = 1;
+    }
+
+    public VolumeData playerData = new VolumeData();
+
     public AudioMixer theMixer;
     public Slider volumeSlider;
     public string volumeLabel;
+    private float sfxValue = 1;
+    private float musicVolume = 1;
+    private float volumeValue;
+    public bool isMusic;
+    public GameObject TitleCanvas;
+    public GameObject SettingsCanvas;
+
+    public void WriteJson()
+    {
+        Debug.Log(sfxValue);
+        playerData.sfx = sfxValue;
+        playerData.music = musicVolume;
+
+        string stringOutput = JsonUtility.ToJson(playerData);
+        Debug.Log(stringOutput);
+        File.WriteAllText(Application.persistentDataPath + "/VolumeData.json", stringOutput);
+    }
+
+    public void ReadJson()
+    {
+        string filepath = Application.persistentDataPath + "/VolumeData.json";
+        string playerDataRead = System.IO.File.ReadAllText(filepath);
+
+        playerData = JsonUtility.FromJson<VolumeData>(playerDataRead);
+
+        sfxValue = playerData.sfx;
+        musicVolume = playerData.music;
+    }
+
+    private void Start()
+    {
+        ReadJson();
+
+        volumeValue = isMusic ? musicVolume : sfxValue;
+        volumeSlider.value = volumeValue == 1 ? 1 : volumeValue;
+        volumeValue = volumeSlider.value;
+    }
 
     public void SetSound(float value)
     {
-        float volumeInDb = Mathf.Log10(value) * 20;
+        float volumeInDb = Mathf.Log10(value / 100) * 20;
         theMixer.SetFloat(volumeLabel, volumeInDb);
+    }
+
+    public void changeTheCanvasToTitle()
+    {
+        if (isMusic)
+        {
+            musicVolume = volumeSlider.value;
+        }
+        else
+        {
+            sfxValue = volumeSlider.value;
+        }
+        WriteJson();
+        TitleCanvas.SetActive(true);
+        SettingsCanvas.SetActive(false);
     }
 }
