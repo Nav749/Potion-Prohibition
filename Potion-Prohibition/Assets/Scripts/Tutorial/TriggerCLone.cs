@@ -9,6 +9,8 @@ public class TriggerCLone : MonoBehaviour
     [SerializeField] TutorialInevtorySlot checker;
     private bool playerToggle;
     private bool talkingTime = false;
+    [SerializeField] GameObject eToInteract;
+    [SerializeField] GameObject fToInteract;
 
     private void Update()
     {
@@ -16,6 +18,7 @@ public class TriggerCLone : MonoBehaviour
         if (talkingTime && Input.GetKeyDown(KeyCode.E) && !Harriet.speakable)
         {
             Harriet.StartDialogue();
+            eToInteract.SetActive(false);
         }
 
         if (Harriet.canOrder)
@@ -25,11 +28,14 @@ public class TriggerCLone : MonoBehaviour
                 canvas.SetActive(true);
                 canvas.GetComponent<TutorialOrderInventoyrtControl>().UpdateUI();
                 togglePlayer();
+                eToInteract.SetActive(false);
+                fToInteract.SetActive(false);
             }
             else if(canvas.activeInHierarchy &&(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
             {
                 canvas.SetActive(false);
                 togglePlayer();
+                fToInteract.SetActive(true);
             }
         }
     }
@@ -62,6 +68,8 @@ public class TriggerCLone : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             talkingTime = true;
+            eToInteract.SetActive(true);
+            fToInteract.SetActive(true);
         }
     }
 
@@ -71,6 +79,8 @@ public class TriggerCLone : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             talkingTime = false;
+            eToInteract.SetActive(false);
+            fToInteract.SetActive(false);
         }
     }
 }
