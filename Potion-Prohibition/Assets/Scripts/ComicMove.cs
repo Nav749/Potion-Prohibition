@@ -1,13 +1,11 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Video;
 
 public class ComicMove : MonoBehaviour
 {
-    [SerializeField] List<Vector3> cameraPositions;
+    [SerializeField] List<Transform> cameraPositions;
     [SerializeField] Camera cam;
     private int index;
     public float wait;
@@ -22,12 +20,12 @@ public class ComicMove : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && index < cameraPositions.Count && cam.transform.position != cameraPositions[cameraPositions.Count - 1])
+        if (Input.GetMouseButtonDown(0) && index < cameraPositions.Count && cam.transform.position != cameraPositions[cameraPositions.Count - 1].position)
         {
-            if(cam.transform.position != cameraPositions[index])
+            if (cam.transform.position != cameraPositions[index].position)
             {
                 StopAllCoroutines();
-                cam.transform.position = cameraPositions[index];
+                cam.transform.position = cameraPositions[index].position;
             }
             else
             {
@@ -36,19 +34,19 @@ public class ComicMove : MonoBehaviour
             }
         }
 
-        if((index > cameraPositions.Count-1 || cam.transform.position == cameraPositions[cameraPositions.Count - 1]))
+        if ((index > cameraPositions.Count - 1 || cam.transform.position == cameraPositions[cameraPositions.Count - 1].position))
         {
             StopAllCoroutines();
-            cam.transform.position = cameraPositions[cameraPositions.Count - 1];
+            cam.transform.position = cameraPositions[cameraPositions.Count - 1].position;
             Buttons.SetActive(true);
         }
     }
 
     IEnumerator CameraMove()
     {
-        while(cam.transform.position != cameraPositions[index])
+        while (cam.transform.position != cameraPositions[index].position)
         {
-            cam.transform.position = Vector3.MoveTowards(cam.transform.position, cameraPositions[index], speed);
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, cameraPositions[index].position, speed);
             yield return new WaitForSeconds(wait);
         }
     }
