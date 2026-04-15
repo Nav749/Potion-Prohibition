@@ -1,26 +1,55 @@
+using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class ComicMove : MonoBehaviour
 {
-    public float limit;
+    [SerializeField] List<Vector3> cameraPositions;
+    [SerializeField] Camera cam;
+    private int index;
+    public float wait;
+    public float speed;
     public GameObject Buttons;
-    public VideoPlayer video;
-    public GameObject SkipButton;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (!video.isPlaying)
+        StartCoroutine(CameraMove());
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && index < cameraPositions.Count && cam.transform.position != cameraPositions[cameraPositions.Count - 1])
         {
-            Buttons.SetActive(true);
-            SkipButton.SetActive(false);
+            if(cam.transform.position != cameraPositions[index])
+            {
+                StopAllCoroutines();
+                cam.transform.position = cameraPositions[index];
+            }
+            else
+            {
+                index++;
+                StartCoroutine(CameraMove());
+            }
         }
-        else
+
+        if((index > cameraPositions.Count-1 || cam.transform.position == cameraPositions[cameraPositions.Count - 1]))
         {
-            Buttons.SetActive(false);
-            SkipButton.SetActive(true);
+            StopAllCoroutines();
+            cam.transform.position = cameraPositions[cameraPositions.Count - 1];
+            Buttons.SetActive(true);
+        }
+    }
+
+    IEnumerator CameraMove()
+    {
+        while(cam.transform.position != cameraPositions[index])
+        {
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, cameraPositions[index], speed);
+            yield return new WaitForSeconds(wait);
         }
     }
 
@@ -32,10 +61,5 @@ public class ComicMove : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Persistent");
-    }
-
-    public void Skip()
-    {
-        video.time = video.length;
     }
 }
