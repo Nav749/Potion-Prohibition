@@ -8,6 +8,8 @@ public class ShopTrigger : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] TextMeshProUGUI health;
     [SerializeField] TextMeshProUGUI damage;
+    [SerializeField] TextMeshProUGUI healthup;
+    [SerializeField] TextMeshProUGUI damageup;
 
     private bool activeShop = false;
     private bool playerToggle = false;
@@ -18,6 +20,8 @@ public class ShopTrigger : MonoBehaviour
         health.text = GameManager.Instance.healthPrice.ToString() + " coins";
         damage.text = GameManager.Instance.damagePrice.ToString() + " coins";
 
+        healthup.text = "Health Upgrades recevied: " + GameManager.Instance.healthups.ToString();
+        damageup.text = "Damage Upgrades recevied: " + GameManager.Instance.damageups.ToString();
 
         if (activeShop)
         {

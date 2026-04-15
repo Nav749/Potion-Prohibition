@@ -26,12 +26,10 @@ public class VolumeSlider : MonoBehaviour
 
     public void WriteJson()
     {
-        Debug.Log(sfxValue);
         playerData.sfx = sfxValue;
         playerData.music = musicVolume;
 
         string stringOutput = JsonUtility.ToJson(playerData);
-        Debug.Log(stringOutput);
         File.WriteAllText(Application.persistentDataPath + "/VolumeData.json", stringOutput);
     }
 

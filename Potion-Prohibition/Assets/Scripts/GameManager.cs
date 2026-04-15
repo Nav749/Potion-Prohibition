@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Color color1;
     [SerializeField] private float fogDensity;
     [SerializeField] private GameObject aListen;
+    [SerializeField] public int healthups;
+    [SerializeField] public int damageups;
 
     public int slimeScale;
     public int newtScale;
@@ -86,6 +88,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ReadJSON();
+        MouseReadJson();
         ResetMonies();
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
@@ -417,12 +420,14 @@ public class GameManager : MonoBehaviour
         PlayerGO.GetComponent<playerHealth>().maxHealth = playerStats.GetHealth();
         PlayerGO.GetComponent<playerHealth>().currentHealth += 1;
         PlayerGO.GetComponent<playerHealth>().initializeHealthBar();
+        healthups++;
     }
 
     public void UpdateDamage()
     {
         playerStats.IncrementDamage();
         PlayerGO.GetComponent<playerSpellShoot>().spellBulletDamage = playerStats.GetDamage();
+        damageups++;
     }
 
     #endregion
@@ -465,6 +470,14 @@ public class GameManager : MonoBehaviour
 
     public PlayerData playerData = new PlayerData();
 
+    [System.Serializable]
+    public class MouseData
+    {
+        public float sens = 4.50f;
+    }
+
+    public MouseData playerData2 = new MouseData();
+
     public void WriteJSON()
     {
         playerData.health = playerGO.gameObject.GetComponent<playerHealth>().maxHealth;
@@ -487,14 +500,19 @@ public class GameManager : MonoBehaviour
         playerGO.gameObject.GetComponent<playerSpellShoot>().spellBulletDamage = playerData.damage;
         levelsPassed = playerData.levels;
         coins = playerData.money;
+        healthups = playerData.health - 5;
+        damageups = (int)(playerData.damage - 1);
     }
 
-    #endregion
+    public void MouseReadJson()
+    {
+        string filepath = Application.persistentDataPath + "/MouseData.json";
+        string playerDataRead = System.IO.File.ReadAllText(filepath);
 
-    #region Settings
+        playerData2 = JsonUtility.FromJson<MouseData>(playerDataRead);
 
-    [HideInInspector] public float sfxVolume;
-    [HideInInspector] public float musicVolume;
+        playerGO.transform.GetChild(0).gameObject.GetComponent<playerLook>().mouseSensitivity = playerData2.sens;
+    }
 
     #endregion
 }
