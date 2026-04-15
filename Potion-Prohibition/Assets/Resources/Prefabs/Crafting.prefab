@@ -739,7 +739,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2238346175992411264}
   m_LocalRotation: {x: -0, y: -0.00000005960463, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00011253}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -748,7 +748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342, y: -425}
+  m_AnchoredPosition: {x: -287, y: -425}
   m_SizeDelta: {x: 192.5677, y: 55.7114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7175436692264597729
@@ -1564,7 +1564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -710, y: -425}
+  m_AnchoredPosition: {x: -655, y: -425}
   m_SizeDelta: {x: 199.4241, y: 55.711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1787349114378846908
@@ -2406,7 +2406,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7316086614606786037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000023842}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2415,7 +2415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -484.77, y: 410}
+  m_AnchoredPosition: {x: -455, y: 410}
   m_SizeDelta: {x: 299.0364, y: 164.5929}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3824539165972279881
@@ -2881,12 +2881,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4642a1fc4202f0a408f03a81c23609a9, type: 2}
   potionDisplay: {fileID: 4053569694165980264}
   bookUI: {fileID: 4139741911920600458}
+  bookOpenUI: {fileID: 0}
   pages:
   - {fileID: 166315638385613605}
   - {fileID: 7278251031386123638}
   - {fileID: 5982318378098735509}
   - {fileID: 6448127452874232426}
   - {fileID: 4037848840818448201}
+  bookOpen: 0
 --- !u!82 &1908164571440854994
 AudioSource:
   m_ObjectHideFlags: 0
