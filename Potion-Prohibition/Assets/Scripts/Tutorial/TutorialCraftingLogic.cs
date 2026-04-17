@@ -176,6 +176,7 @@ public class TutorialCraftingLogic : MonoBehaviour
             }
         }
         droppedItems.Clear();
+        clearSlots();
         hideSlots();
         count = 0;
     }

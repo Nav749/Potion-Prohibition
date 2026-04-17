@@ -30,6 +30,7 @@ public class TutorialPlayerLock : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isCrafting)
         {
+            craftingLogic.clearPot();
             craftingLogic.distroyItems();
             toggleCrafting();
         }
@@ -37,6 +38,7 @@ public class TutorialPlayerLock : MonoBehaviour
         {
             toggleCrafting();
             craftingLogic.createItems();
+
         }
 
     }
