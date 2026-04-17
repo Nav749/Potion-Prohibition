@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ShopTrigger : MonoBehaviour
 {
+    public GameObject playertomakegold;
     [SerializeField] GameObject ShopScreen;
     [SerializeField] GameObject interactTalk;
     [SerializeField] Camera cam;
@@ -14,6 +15,10 @@ public class ShopTrigger : MonoBehaviour
     private bool activeShop = false;
     private bool playerToggle = false;
 
+    private void Start()
+    {
+        playertomakegold = GameManager.Instance.PlayerGO;
+    }
 
     private void Update()
     {
@@ -89,6 +94,7 @@ public class ShopTrigger : MonoBehaviour
             GameManager.Instance.UpdateHealth();
             GameManager.Instance.coins -= GameManager.Instance.healthPrice;
             GameManager.Instance.healthPrice = (int)(GameManager.Instance.healthPrice * 1.1f);
+            playertomakegold.GetComponent<playerHealth>().gotAnUpgrade();
         }
     }
 

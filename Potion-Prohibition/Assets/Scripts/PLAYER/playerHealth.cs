@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class playerHealth : MonoBehaviour
 {
+    private bool HealthIsUpgraded = false;
     public GameObject healthSegmentPrefab;
     public AudioClip[] hitClips;
     public AudioClip deathClip;
     public AudioClip soundToPlay;
     [SerializeField] public AudioSource playerSourceAudio;
     public Sprite Empties;
+    public Sprite FullGoldenHeart;
+    public Sprite EmptyGoldenHeart;
     private List<Image> healthSegments = new List<Image>();
     public int maxHealth;
     public int currentHealth;
@@ -30,6 +33,12 @@ public class playerHealth : MonoBehaviour
         damageOverlay.SetActive(true);
         yield return new WaitForSeconds(0.15f);
         damageOverlay.SetActive(false);
+    }
+
+    public void gotAnUpgrade()
+    {
+        HealthIsUpgraded = true;
+        UpdateHealthBar();
     }
 
     public void initializeHealthBar()
@@ -77,15 +86,32 @@ public class playerHealth : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        for (int i = 0; i < healthSegments.Count; i++)
+        if (HealthIsUpgraded == false)
         {
-            if (i < currentHealth)
+            for (int i = 0; i < healthSegments.Count; i++)
             {
-                healthSegments[i].GetComponent<Image>().sprite = healthSegmentPrefab.GetComponent<Image>().sprite;
+                if (i < currentHealth)
+                {
+                    healthSegments[i].GetComponent<Image>().sprite = healthSegmentPrefab.GetComponent<Image>().sprite;
+                }
+                else
+                {
+                    healthSegments[i].GetComponent<Image>().sprite = Empties;
+                }
             }
-            else
+        }
+        else
+        {
+            for (int i = 0; i < healthSegments.Count; i++)
             {
-                healthSegments[i].GetComponent<Image>().sprite = Empties;
+                if (i < currentHealth)
+                {
+                    healthSegments[i].GetComponent<Image>().sprite = FullGoldenHeart;
+                }
+                else
+                {
+                    healthSegments[i].GetComponent<Image>().sprite = EmptyGoldenHeart;
+                }
             }
         }
     }

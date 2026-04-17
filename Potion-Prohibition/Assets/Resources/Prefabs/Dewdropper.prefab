@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7102934618898785162}
   - component: {fileID: 5966851497413378904}
   - component: {fileID: 8215029750705351235}
-  - component: {fileID: 675669052505985785}
   - component: {fileID: 6468588803962237682}
+  - component: {fileID: 4221520296155388769}
   m_Layer: 10
   m_Name: Dewdropper
   m_TagString: Untagged
@@ -39,6 +39,7 @@ Transform:
   - {fileID: 1766176858357476941}
   - {fileID: 2480084726901457402}
   - {fileID: 3565492883667131329}
+  - {fileID: 6461083453706406913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &2616694365561856366
@@ -145,7 +146,6 @@ MonoBehaviour:
   DewdropAttackClip: {fileID: 8300000, guid: 4a641c587cc26c644a1f35e2ee8bf5fb, type: 3}
   DewdropDeathClip: {fileID: 8300000, guid: 5e4601204b6db104e992d495840fe3d2, type: 3}
   hitSound: {fileID: 8300000, guid: d0d05de1af9ead549884b31c0f21e36a, type: 3}
-  hitSource: {fileID: 6468588803962237682}
   enemyRB: {fileID: 8215029750705351235}
   tutorial: 0
   EnemyDrop: {fileID: 6180039143089317323, guid: cf0af40ff8328e44d81a3543cced633c,
@@ -191,29 +191,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &675669052505985785
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670804182175340980}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.64
-  m_Height: 1.28
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &6468588803962237682
 AudioSource:
   m_ObjectHideFlags: 0
@@ -312,6 +289,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &4221520296155388769
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670804182175340980}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.46546328
+  m_Center: {x: 7.5646924e-17, y: -0.09597544, z: -0.07856141}
 --- !u!1 &1951969160670176335
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +485,81 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5683082623377920913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6461083453706406913}
+  - component: {fileID: 494600839027382726}
+  - component: {fileID: 8411274651076114050}
+  - component: {fileID: 8930128119961953203}
+  m_Layer: 10
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6461083453706406913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683082623377920913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.088, z: 0.060001}
+  m_LocalScale: {x: 1.052488, y: 1.052488, z: 1.052488}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1460383201553546302}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &494600839027382726
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683082623377920913}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &8411274651076114050
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683082623377920913}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5195301
+  m_Center: {x: -0.0000019125719, y: 0.019529337, z: -0.000019059768}
+--- !u!114 &8930128119961953203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683082623377920913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c57a7e5252c02542bedb08e033e7a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7822097283402673271
 GameObject:
   m_ObjectHideFlags: 0

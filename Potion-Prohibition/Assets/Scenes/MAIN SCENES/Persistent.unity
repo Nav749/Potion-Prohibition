@@ -6265,6 +6265,8 @@ MonoBehaviour:
   color1: {r: 0.4392157, g: 0.16862746, b: 0.5176471, a: 0}
   fogDensity: 0.01
   aListen: {fileID: 1116150220}
+  healthups: 0
+  damageups: 0
   slimeScale: 2
   newtScale: 2
   eyeScale: 2
@@ -6318,6 +6320,8 @@ MonoBehaviour:
     damage: 1
     levels: 1
     money: 0
+  playerData2:
+    sens: 4.5
 --- !u!4 &660065408
 Transform:
   m_ObjectHideFlags: 0
@@ -15800,9 +15804,21 @@ PrefabInstance:
       objectReference: {fileID: 1566782511}
     - target: {fileID: 3662643554469736601, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
+      propertyPath: FullGoldenHeart
+      value: 
+      objectReference: {fileID: 21300000, guid: 40d4eb4649277af48992de3f36680edc,
+        type: 3}
+    - target: {fileID: 3662643554469736601, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
       propertyPath: healthbarHolder
       value: 
       objectReference: {fileID: 1691888853}
+    - target: {fileID: 3662643554469736601, guid: bcf7065a3c69cd540b027a511079b42b,
+        type: 3}
+      propertyPath: EmptyGoldenHeart
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b190ef2ca14d844daf61ce993d084b1,
+        type: 3}
     - target: {fileID: 3903144049261212106, guid: bcf7065a3c69cd540b027a511079b42b,
         type: 3}
       propertyPath: UIHand
