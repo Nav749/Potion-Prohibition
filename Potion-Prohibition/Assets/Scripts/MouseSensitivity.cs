@@ -21,8 +21,12 @@ public class MouseSensitivity : MonoBehaviour
 
     private void Start()
     {
+        if(File.Exists(Application.persistentDataPath + "/MouseData.json"))
         ReadJson();
+    }
 
+    public void Setting()
+    {
         MouseSensSlider.value = mouseSens == 4.50f ? 4.50f : mouseSens;
     }
 
@@ -51,9 +55,14 @@ public class MouseSensitivity : MonoBehaviour
 
     public void changeTheCanvasToTitle()
     {
-        mouseSens = MouseSensSlider.value;
-        WriteJson();
+        WriteJsonTime();
         TitleCanvas.SetActive(true);
         SettingsCanvas.SetActive(false);
+    }
+
+    public void WriteJsonTime()
+    {
+        mouseSens = MouseSensSlider.value;
+        WriteJson();
     }
 }

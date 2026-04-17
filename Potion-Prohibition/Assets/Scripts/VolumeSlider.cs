@@ -46,8 +46,12 @@ public class VolumeSlider : MonoBehaviour
 
     private void Start()
     {
-        ReadJson();
+        if (File.Exists(Application.persistentDataPath + "/VolumeData.json"))
+            ReadJson();
+    }
 
+    public void Setting()
+    {
         volumeValue = isMusic ? musicVolume : sfxValue;
         volumeSlider.value = volumeValue == 100 ? 100 : volumeValue;
         volumeValue = volumeSlider.value;
@@ -61,6 +65,13 @@ public class VolumeSlider : MonoBehaviour
 
     public void changeTheCanvasToTitle()
     {
+        WriteJsonTime();
+        TitleCanvas.SetActive(true);
+        SettingsCanvas.SetActive(false);
+    }
+
+    public void WriteJsonTime()
+    {
         if (isMusic)
         {
             musicVolume = volumeSlider.value;
@@ -70,7 +81,5 @@ public class VolumeSlider : MonoBehaviour
             sfxValue = volumeSlider.value;
         }
         WriteJson();
-        TitleCanvas.SetActive(true);
-        SettingsCanvas.SetActive(false);
     }
 }
