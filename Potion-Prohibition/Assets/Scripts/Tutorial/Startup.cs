@@ -6,10 +6,12 @@ public class Startup : MonoBehaviour
     [SerializeField] TutorialInventory inventory;
     [SerializeField] playerMovement Player;
     [SerializeField] bool enableJump;
+    public bool isLoading;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isLoading = true;
         LoadingScreen.SetActive(true);
         Player.setMoveLock(true);
 
@@ -30,5 +32,6 @@ public class Startup : MonoBehaviour
     {
         LoadingScreen.SetActive(false);
         Player.setMoveLock(false);
+        isLoading = false;
     }
 }

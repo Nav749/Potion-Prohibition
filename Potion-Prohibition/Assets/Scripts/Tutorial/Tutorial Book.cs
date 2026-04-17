@@ -9,7 +9,7 @@ public class TutorialBook : MonoBehaviour
     private int page;
     [SerializeField] private GameObject[] pages;
     private bool open;
-
+    [SerializeField] Startup startup;
     private int background;
     [SerializeField] private GameObject[] backGrounds;
     [SerializeField] private int sectionOnePos;
@@ -30,6 +30,8 @@ public class TutorialBook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!startup.isLoading)
+        {
             if (Input.GetKeyDown(KeyCode.Tab) && !open)
             {
                 toggleInventrory();
@@ -38,6 +40,7 @@ public class TutorialBook : MonoBehaviour
             {
                 toggleInventrory();
             }
+        }
     }
     private void toggleInventrory()
     {
