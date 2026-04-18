@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
@@ -365,9 +366,11 @@ public class GameManager : MonoBehaviour
     public void TimeToCheckOrder()
     {
         correctOrder = currentOrder == OrdertoCheck;
+        int rPrice = OrdertoCheck.isOnTheRocks() ? (int)(increment * 0.1) : 0;
+        int sPrice = OrdertoCheck.isSpiced() ? (int)(increment * 0.1) : 0;
         if (correctOrder)
         {
-            coins += increment;
+            coins += increment + rPrice + sPrice;
         }
         checkDone = true;
         RemovePotion(OrdertoCheck);
