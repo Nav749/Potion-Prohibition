@@ -23,7 +23,7 @@ public class VolumeSlider : MonoBehaviour
     public bool isMusic;
     public GameObject TitleCanvas;
     public GameObject SettingsCanvas;
-    private string line = "/VolumeData.json"
+    private string line = "/VolumeData.json";
 
     public void WriteJson()
     {
