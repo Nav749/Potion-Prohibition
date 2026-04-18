@@ -11,7 +11,6 @@ public class Startup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Time.timeScale = 1;
         isLoading = true;
         LoadingScreen.SetActive(true);
         Player.setMoveLock(true);
