@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -107,8 +108,7 @@ public class playerMovement : MonoBehaviour
             isMoving = false;
         }
 
-        if(playerIsGrounded)
-            playWalkingSound();
+        playWalkingSound();
 
     }
 
