@@ -360,9 +360,11 @@ public class GameManager : MonoBehaviour
     public void TimeToCheckOrder()
     {
         correctOrder = currentOrder == OrdertoCheck;
+        int rPrice = OrdertoCheck.isOnTheRocks() ? (int)(increment * 0.1) : 0;
+        int sPrice = OrdertoCheck.isSpiced() ? (int)(increment * 0.1) : 0;
         if (correctOrder)
         {
-            coins += increment;
+            coins += increment + rPrice + sPrice;
         }
         checkDone = true;
         RemovePotion(OrdertoCheck);
