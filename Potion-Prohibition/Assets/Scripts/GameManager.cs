@@ -87,9 +87,25 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ReadJSON();
-        MouseReadJson();
-        ResetMonies();
+        if(File.Exists(Application.persistentDataPath + "/PlayerData.json")){
+            ReadJSON();
+        }
+        else
+        {
+            playerGO.gameObject.GetComponent<playerHealth>().maxHealth = 5;
+            playerGO.gameObject.GetComponent<playerSpellShoot>().spellBulletDamage = 1;
+            levelsPassed = 1;
+            coins = 0;
+        }
+        if(File.Exists(Application.persistentDataPath + "/MouseData.json"))
+        {
+            MouseReadJson();
+        }
+        else
+        {
+            playerGO.transform.GetChild(0).gameObject.GetComponent<playerLook>().mouseSensitivity = 4.5f;
+        }
+            ResetMonies();
         orderQuota = (int)(3 * Mathf.Sqrt(levelsPassed));
         currentOrderQuota = 0;
         nextDayScreen.SetActive(false);
@@ -502,6 +518,14 @@ public class GameManager : MonoBehaviour
         coins = playerData.money;
         healthups = playerData.health - 5;
         damageups = (int)(playerData.damage - 1);
+    }
+
+    public void MouseWriteJson()
+    {
+        playerData2.sens = playerGO.transform.GetChild(0).gameObject.GetComponent<playerLook>().mouseSensitivity;
+
+        string stringOutput = JsonUtility.ToJson(playerData2);
+        File.WriteAllText(Application.persistentDataPath + "/MouseData.json", stringOutput);
     }
 
     public void MouseReadJson()
