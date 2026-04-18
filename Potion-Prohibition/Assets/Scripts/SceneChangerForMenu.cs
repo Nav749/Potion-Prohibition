@@ -17,6 +17,7 @@ public class buttonSceneLoad : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Comic");
     }
 
