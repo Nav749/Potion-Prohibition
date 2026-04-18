@@ -255,7 +255,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        Invoke("TurnOffLoadingScreen", 2f);
+        Invoke("TurnOffLoadingScreen", 2.5f);
     }
 
     void TurnOffLoadingScreen()

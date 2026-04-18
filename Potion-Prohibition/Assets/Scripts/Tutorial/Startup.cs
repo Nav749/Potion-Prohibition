@@ -25,7 +25,7 @@ public class Startup : MonoBehaviour
             Player.setJumpLock();
         }
 
-        Invoke("TurnOff", 2f);
+        Invoke("TurnOff", 2.5f);
     }
 
     void TurnOff()
