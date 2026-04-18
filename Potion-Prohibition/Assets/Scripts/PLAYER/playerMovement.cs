@@ -108,7 +108,11 @@ public class playerMovement : MonoBehaviour
             isMoving = false;
         }
 
-        playWalkingSound();
+        if ((playerIsGrounded))
+        {
+            playWalkingSound();
+
+        }
 
     }
 
