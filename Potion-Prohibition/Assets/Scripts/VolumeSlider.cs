@@ -23,6 +23,7 @@ public class VolumeSlider : MonoBehaviour
     public bool isMusic;
     public GameObject TitleCanvas;
     public GameObject SettingsCanvas;
+    private string line = "/VolumeData.json";
 
     public void WriteJson()
     {
@@ -30,12 +31,13 @@ public class VolumeSlider : MonoBehaviour
         playerData.music = musicVolume;
 
         string stringOutput = JsonUtility.ToJson(playerData);
-        File.WriteAllText(Application.persistentDataPath + "/VolumeData.json", stringOutput);
+        Debug.Log(stringOutput);
+        File.WriteAllText(Application.persistentDataPath + line, stringOutput);
     }
 
     public void ReadJson()
     {
-        string filepath = Application.persistentDataPath + "/VolumeData.json";
+        string filepath = Application.persistentDataPath + line;
         string playerDataRead = System.IO.File.ReadAllText(filepath);
 
         playerData = JsonUtility.FromJson<VolumeData>(playerDataRead);
@@ -46,7 +48,8 @@ public class VolumeSlider : MonoBehaviour
 
     private void Start()
     {
-        if (File.Exists(Application.persistentDataPath + "/VolumeData.json"))
+        if (isMusic) line = "/VolumeData2.json";
+        if (File.Exists(Application.persistentDataPath + line))
             ReadJson();
     }
 
