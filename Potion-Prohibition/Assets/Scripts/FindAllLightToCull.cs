@@ -46,12 +46,14 @@ public class FindAllLightToCull : MonoBehaviour
         //loop through the gameobjects to finds lights to add to the light list
         for (int i = 0; i < objs.Length; i++)
         {
-            if(objs[i].layer == 3) lights.Add(objs[i]);
-
-            string layerName = LayerMask.LayerToName(objs[i].layer);
-            Debug.Log("This object is on layer: " + layerName + objs[i].layer);
+            if (objs[i].layer == 3)
+            {
+                for(int j = 0; j < objs[i].transform.childCount; j++)
+                {
+                    if (objs[i].transform.GetChild(j).gameObject.layer == 13) lights.Add(objs[i].transform.GetChild(j).gameObject);
+                }
+            }
         }
-
         
         //return the list, return null if list is empty
         if (lights.Count == 0) return null;
