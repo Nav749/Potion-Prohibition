@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 788627358533035793}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyRoom_Newt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 6691497434229269300}
   - component: {fileID: 1442622025878658178}
   - component: {fileID: 7929317260831941439}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 6600618538357087514}
   - component: {fileID: 5951173228449646590}
   - component: {fileID: 5567471762818006957}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 8602786970042393571}
   - component: {fileID: 5231780518645613252}
   - component: {fileID: 8271632709780596958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2172,7 +2172,7 @@ GameObject:
   - component: {fileID: 7399086779608608138}
   - component: {fileID: 4242132813507107409}
   - component: {fileID: 9156265087438705792}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2434,7 @@ GameObject:
   - component: {fileID: 4259346765998333300}
   - component: {fileID: 6674578633222504953}
   - component: {fileID: 1193325575459849617}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2663,7 +2663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6679442066863158266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2815,6 +2815,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 788627358533035793}
     m_Modifications:
+    - target: {fileID: 289515430665602554, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716117367976185735, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3094402177454918522, guid: 61f5682726f6cd447a3221824137a26b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2865,10 +2875,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4709310617199725949, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861820791376168671, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5857507690145240572, guid: 61f5682726f6cd447a3221824137a26b,
         type: 3}
       propertyPath: m_Name
       value: NewtWAnim (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857507690145240572, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2889,6 +2914,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 788627358533035793}
     m_Modifications:
+    - target: {fileID: 589951465469692998, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313541738988783549, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4346584878353060221, guid: 883603bcb702d7a428303aca1227d640,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2939,10 +2974,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6226699614759769425, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6880398675324120782, guid: 883603bcb702d7a428303aca1227d640,
         type: 3}
       propertyPath: m_Name
       value: SpawnablePrebabsGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856670842111231950, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2963,6 +3008,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 788627358533035793}
     m_Modifications:
+    - target: {fileID: 289515430665602554, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716117367976185735, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3094402177454918522, guid: 61f5682726f6cd447a3221824137a26b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3013,10 +3068,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4709310617199725949, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861820791376168671, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5857507690145240572, guid: 61f5682726f6cd447a3221824137a26b,
         type: 3}
       propertyPath: m_Name
       value: NewtWAnim (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857507690145240572, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3037,6 +3107,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 788627358533035793}
     m_Modifications:
+    - target: {fileID: 289515430665602554, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716117367976185735, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3094402177454918522, guid: 61f5682726f6cd447a3221824137a26b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3087,10 +3167,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4709310617199725949, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861820791376168671, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5857507690145240572, guid: 61f5682726f6cd447a3221824137a26b,
         type: 3}
       propertyPath: m_Name
       value: NewtWAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857507690145240572, guid: 61f5682726f6cd447a3221824137a26b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

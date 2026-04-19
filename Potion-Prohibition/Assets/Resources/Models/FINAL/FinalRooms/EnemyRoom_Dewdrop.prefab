@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7167968309705864718}
   - component: {fileID: 5774095790590899077}
   - component: {fileID: 6845762481289814876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 6018266088948059476}
   - component: {fileID: 4752865944854718680}
   - component: {fileID: 6776462312056737769}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 7113639259123769660}
   - component: {fileID: 4119806341295570113}
   - component: {fileID: 829939401918924976}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 449195024654742780}
   - component: {fileID: 2667677993137975233}
   - component: {fileID: 7790485253759391931}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 7046887150876070096}
   - component: {fileID: 5970350704267504572}
   - component: {fileID: 7871400009466737917}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5377173508045105484}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,7 +1984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153279302838888078}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyRoom_Dewdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,6 +2146,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 153279302838888078}
     m_Modifications:
+    - target: {fileID: 589951465469692998, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313541738988783549, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4346584878353060221, guid: 883603bcb702d7a428303aca1227d640,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2196,10 +2206,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6226699614759769425, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6880398675324120782, guid: 883603bcb702d7a428303aca1227d640,
         type: 3}
       propertyPath: m_Name
       value: SpawnablePrebabsGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856670842111231950, guid: 883603bcb702d7a428303aca1227d640,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2275,6 +2295,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dewdropper (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1670804182175340980, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951969160670176335, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683082623377920913, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822097283402673271, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059764758919136493, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2349,6 +2394,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dewdropper (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1670804182175340980, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951969160670176335, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683082623377920913, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822097283402673271, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059764758919136493, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2422,6 +2492,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dewdropper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670804182175340980, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951969160670176335, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683082623377920913, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822097283402673271, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059764758919136493, guid: 29a63b14f570aea41822390b4a5fe6c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

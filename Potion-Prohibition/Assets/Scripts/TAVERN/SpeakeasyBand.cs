@@ -17,7 +17,6 @@ public class SpeakeasyBand : MonoBehaviour
     void Awake()
     {
         int randint = Random.Range(0, 100) % songs.Count;
-        Debug.Log(randint);
         newsong = songs[randint];
         PlayCrossfade(newsong);
     }
