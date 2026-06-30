@@ -65,8 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2104936e928c97245bb0be44ed4eb4b8, type: 2}
-  - {fileID: 2100000, guid: d9d57a87e6285174fae112ebc77088ae, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -296,8 +296,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2104936e928c97245bb0be44ed4eb4b8, type: 2}
-  - {fileID: 2100000, guid: d9d57a87e6285174fae112ebc77088ae, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2865,8 +2865,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2104936e928c97245bb0be44ed4eb4b8, type: 2}
-  - {fileID: 2100000, guid: d9d57a87e6285174fae112ebc77088ae, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5933,10 +5933,10 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1d0f138dd8a1954429d0307d6a767e5a, type: 2}
-  - {fileID: 2100000, guid: 869a2d13ced970a4aaab25b8a02df61c, type: 2}
-  - {fileID: 2100000, guid: 440196dc2322dc14a8d1299558fe955a, type: 2}
-  - {fileID: 2100000, guid: 2104936e928c97245bb0be44ed4eb4b8, type: 2}
-  - {fileID: 2100000, guid: 49af8ab4c6c261b4c9c80ad55c21686e, type: 2}
+  - {fileID: 0}
+  - {fileID: 2100000, guid: 1d0f138dd8a1954429d0307d6a767e5a, type: 2}
+  - {fileID: 2100000, guid: 1d0f138dd8a1954429d0307d6a767e5a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6638,8 +6638,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2104936e928c97245bb0be44ed4eb4b8, type: 2}
-  - {fileID: 2100000, guid: d9d57a87e6285174fae112ebc77088ae, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
+  - {fileID: 2100000, guid: 8783d30c1f26a7346a04527d1efc38fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7789,9 +7789,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebace7de889b20c4d98f613f394d0d6c, type: 2}
-  - {fileID: 2100000, guid: 30a97ac1397ebde4a989dc160413f36c, type: 2}
-  - {fileID: 2100000, guid: f40423f18ca9dd64ea7a1f693ea3d36e, type: 2}
+  - {fileID: 2100000, guid: dc0fe61a6ebbb494fad1e67e7b5f913e, type: 2}
+  - {fileID: 2100000, guid: a6c17d5c6a34af8409a21c0301f3ed25, type: 2}
+  - {fileID: 2100000, guid: e8d607aaa9c3f184690f4847229e1e21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8258,6 +8258,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4455628805436769491, guid: 944495d4e23fe5444987622b0c72b3c5,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 74121bb31da93a34fb2aeb68acbcd3c8, type: 2}
     - target: {fileID: 8685128432223406586, guid: 944495d4e23fe5444987622b0c72b3c5,
         type: 3}
       propertyPath: m_Name
@@ -8436,6 +8441,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455628805436769491, guid: 944495d4e23fe5444987622b0c72b3c5,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 74121bb31da93a34fb2aeb68acbcd3c8, type: 2}
     - target: {fileID: 8685128432223406586, guid: 944495d4e23fe5444987622b0c72b3c5,
         type: 3}
       propertyPath: m_Name
